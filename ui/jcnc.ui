@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>994</width>
-    <height>643</height>
+    <width>1024</width>
+    <height>742</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -63,6 +63,9 @@
           </property>
           <item row="0" column="2">
            <widget class="ActionButton" name="actionbutton_10">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
             <property name="minimumSize">
              <size>
               <width>50</width>
@@ -74,6 +77,12 @@
               <width>50</width>
               <height>50</height>
              </size>
+            </property>
+            <property name="text">
+             <string>POWER</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.power.toggle</string>
             </property>
            </widget>
           </item>
@@ -96,6 +105,12 @@
               <width>50</width>
               <height>50</height>
              </size>
+            </property>
+            <property name="text">
+             <string>E-STOP</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.estop.toggle</string>
             </property>
            </widget>
           </item>
@@ -138,6 +153,9 @@
           <property name="text">
            <string>ALL</string>
           </property>
+          <property name="actionName" stdset="0">
+           <string>machine.home.axis:all</string>
+          </property>
          </widget>
         </item>
         <item>
@@ -178,6 +196,9 @@
             <property name="text">
              <string>X</string>
             </property>
+            <property name="actionName" stdset="0">
+             <string>machine.home.axis:x</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="1">
@@ -197,6 +218,9 @@
             <property name="text">
              <string>Y</string>
             </property>
+            <property name="actionName" stdset="0">
+             <string>machine.home.axis:y</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="2">
@@ -215,6 +239,9 @@
             </property>
             <property name="text">
              <string>Z</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.home.axis:z</string>
             </property>
            </widget>
           </item>
@@ -252,6 +279,12 @@
               <height>50</height>
              </size>
             </property>
+            <property name="text">
+             <string>RUN</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.run</string>
+            </property>
            </widget>
           </item>
          </layout>
@@ -270,6 +303,12 @@
             <height>50</height>
            </size>
           </property>
+          <property name="text">
+           <string>PAUSE</string>
+          </property>
+          <property name="actionName" stdset="0">
+           <string>program.pause</string>
+          </property>
          </widget>
         </item>
         <item>
@@ -285,6 +324,12 @@
             <width>50</width>
             <height>50</height>
            </size>
+          </property>
+          <property name="text">
+           <string>STOP</string>
+          </property>
+          <property name="actionName" stdset="0">
+           <string>program.abort</string>
           </property>
          </widget>
         </item>
@@ -333,6 +378,10 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <zorder>dial</zorder>
            </widget>
           </item>
           <item>
@@ -375,6 +424,12 @@
                   <height>50</height>
                  </size>
                 </property>
+                <property name="text">
+                 <string>+Y</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:y,pos</string>
+                </property>
                </widget>
               </item>
               <item row="1" column="2">
@@ -390,6 +445,12 @@
                   <width>50</width>
                   <height>50</height>
                  </size>
+                </property>
+                <property name="text">
+                 <string>-Y</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:y,neg</string>
                 </property>
                </widget>
               </item>
@@ -407,6 +468,12 @@
                   <height>50</height>
                  </size>
                 </property>
+                <property name="text">
+                 <string>-X</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:x,neg</string>
+                </property>
                </widget>
               </item>
               <item row="1" column="3">
@@ -422,6 +489,12 @@
                   <width>50</width>
                   <height>50</height>
                  </size>
+                </property>
+                <property name="text">
+                 <string>+X</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:x,pos</string>
                 </property>
                </widget>
               </item>
@@ -462,6 +535,12 @@
                   <height>50</height>
                  </size>
                 </property>
+                <property name="text">
+                 <string>+Z</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:z,pos</string>
+                </property>
                </widget>
               </item>
               <item row="1" column="0">
@@ -477,6 +556,12 @@
                   <width>50</width>
                   <height>50</height>
                  </size>
+                </property>
+                <property name="text">
+                 <string>-Z</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:z,neg</string>
                 </property>
                </widget>
               </item>
@@ -554,6 +639,9 @@
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
                 </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.feed-override.set</string>
+                </property>
                </widget>
               </item>
              </layout>
@@ -593,6 +681,13 @@
                   <height>50</height>
                  </size>
                 </property>
+                <property name="text">
+                 <string>SPINDLE
+ON</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>spindle.forward</string>
+                </property>
                </widget>
               </item>
               <item row="1" column="0">
@@ -608,6 +703,13 @@
                   <width>50</width>
                   <height>50</height>
                  </size>
+                </property>
+                <property name="text">
+                 <string>SPINDLE
+OFF</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>spindle.off</string>
                 </property>
                </widget>
               </item>
@@ -650,6 +752,7 @@
             <height>16777215</height>
            </size>
           </property>
+          <zorder>gcodebackplot</zorder>
          </widget>
         </item>
        </layout>
@@ -663,8 +766,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>994</width>
-     <height>20</height>
+     <width>1024</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuExit">
@@ -1031,7 +1134,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../qtpyvcp/examples/brender/resources/brender.qrc"/>
+  <include location="../resources/jcnc.qrc"/>
  </resources>
  <connections/>
  <designerdata>
