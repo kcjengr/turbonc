@@ -62,7 +62,7 @@
            <number>10</number>
           </property>
           <item row="0" column="2">
-           <widget class="ActionButton" name="actionbutton_10">
+           <widget class="ActionButton" name="power_abutton">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -87,7 +87,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="ActionButton" name="actionbutton">
+           <widget class="ActionButton" name="estop_abutton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -137,7 +137,7 @@
          </widget>
         </item>
         <item>
-         <widget class="ActionButton" name="actionbutton_15">
+         <widget class="ActionButton" name="homeall_abutton">
           <property name="minimumSize">
            <size>
             <width>50</width>
@@ -180,7 +180,7 @@
            <number>10</number>
           </property>
           <item row="1" column="0">
-           <widget class="ActionButton" name="actionbutton_11">
+           <widget class="ActionButton" name="homex_abutton">
             <property name="minimumSize">
              <size>
               <width>50</width>
@@ -202,7 +202,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="ActionButton" name="actionbutton_12">
+           <widget class="ActionButton" name="homey_abutton">
             <property name="minimumSize">
              <size>
               <width>50</width>
@@ -224,7 +224,7 @@
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="ActionButton" name="actionbutton_14">
+           <widget class="ActionButton" name="homez_abutton">
             <property name="minimumSize">
              <size>
               <width>50</width>
@@ -266,7 +266,7 @@
         <item>
          <layout class="QGridLayout" name="gridLayout_6">
           <item row="0" column="0">
-           <widget class="ActionButton" name="actionbutton_13">
+           <widget class="ActionButton" name="run_abutton">
             <property name="minimumSize">
              <size>
               <width>50</width>
@@ -290,7 +290,7 @@
          </layout>
         </item>
         <item>
-         <widget class="ActionButton" name="actionbutton_17">
+         <widget class="ActionButton" name="pause_abutton">
           <property name="minimumSize">
            <size>
             <width>50</width>
@@ -312,7 +312,7 @@
          </widget>
         </item>
         <item>
-         <widget class="ActionButton" name="actionbutton_16">
+         <widget class="ActionButton" name="stop_abutton">
           <property name="minimumSize">
            <size>
             <width>50</width>
@@ -371,7 +371,7 @@
            <number>15</number>
           </property>
           <item>
-           <widget class="GcodeBackplot" name="gcodebackplot">
+           <widget class="GcodeBackplot" name="gcodebackplot" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -381,7 +381,6 @@
             <property name="styleSheet">
              <string notr="true"/>
             </property>
-            <zorder>dial</zorder>
            </widget>
           </item>
           <item>
@@ -411,7 +410,7 @@
                <number>10</number>
               </property>
               <item row="0" column="2">
-               <widget class="ActionButton" name="actionbutton_3">
+               <widget class="ActionButton" name="jogyplus_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -433,7 +432,7 @@
                </widget>
               </item>
               <item row="1" column="2">
-               <widget class="ActionButton" name="actionbutton_2">
+               <widget class="ActionButton" name="jogymin_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -455,7 +454,7 @@
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="ActionButton" name="actionbutton_5">
+               <widget class="ActionButton" name="jogxmin_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -477,7 +476,7 @@
                </widget>
               </item>
               <item row="1" column="3">
-               <widget class="ActionButton" name="actionbutton_4">
+               <widget class="ActionButton" name="jogxplus_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -522,7 +521,7 @@
                <number>10</number>
               </property>
               <item row="0" column="0">
-               <widget class="ActionButton" name="actionbutton_6">
+               <widget class="ActionButton" name="jogzplus_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -544,7 +543,7 @@
                </widget>
               </item>
               <item row="1" column="0">
-               <widget class="ActionButton" name="actionbutton_7">
+               <widget class="ActionButton" name="jogzmin_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -668,7 +667,7 @@
                <number>10</number>
               </property>
               <item row="0" column="0">
-               <widget class="ActionButton" name="actionbutton_8">
+               <widget class="ActionButton" name="spindleon_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -691,7 +690,7 @@ ON</string>
                </widget>
               </item>
               <item row="1" column="0">
-               <widget class="ActionButton" name="actionbutton_9">
+               <widget class="ActionButton" name="spindleoff_abutton">
                 <property name="minimumSize">
                  <size>
                   <width>50</width>
@@ -752,7 +751,6 @@ OFF</string>
             <height>16777215</height>
            </size>
           </property>
-          <zorder>gcodebackplot</zorder>
          </widget>
         </item>
        </layout>
@@ -767,7 +765,7 @@ OFF</string>
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>25</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuExit">
@@ -1106,15 +1104,15 @@ OFF</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>GcodeEditor</class>
-   <extends>QFrame</extends>
-   <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>VCPMainWindow</class>
    <extends>QMainWindow</extends>
    <header>qtpyvcp.widgets.form_widgets.main_window</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GcodeEditor</class>
+   <extends>QFrame</extends>
+   <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
    <container>1</container>
   </customwidget>
   <customwidget>
