@@ -1147,7 +1147,7 @@ OFF</string>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../resources/jcnc.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
  <designerdata>
