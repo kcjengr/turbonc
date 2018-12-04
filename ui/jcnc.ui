@@ -622,38 +622,39 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
-               <widget class="StatusLabel" name="statuslabel">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>300</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>300</width>
-                  <height>50</height>
-                 </size>
-                </property>
+               <widget class="StatusLabel" name="feedover_slabel">
                 <property name="text">
-                 <string>FEED OVERRIDE: 0%</string>
+                 <string>&lt;b&gt;Feed Override:&lt;/b&gt; 0%</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
                 </property>
+                <property name="rules" stdset="0">
+                 <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;channel&quot;: &quot;status.feedrate&quot;, 
+                &quot;trigger&quot;: true, 
+                &quot;type&quot;: &quot;float&quot;
+            }
+        ], 
+        &quot;expression&quot;: &quot;\&quot;Feed Override: {:.0%}\&quot;.format(ch[0])&quot;, 
+        &quot;name&quot;: &quot;New Rule&quot;, 
+        &quot;property&quot;: &quot;Text&quot;
+    }
+]</string>
+                </property>
                 <property name="format" stdset="0">
                  <string>&lt;b&gt;Feed Override:&lt;/b&gt; {:.0%}</string>
+                </property>
+                <property name="statusItem" stdset="0">
+                 <string>feedrate</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="ActionSlider" name="actionslider">
+               <widget class="ActionSlider" name="feedover_aslider">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
