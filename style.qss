@@ -1,6 +1,5 @@
 /* QDarkStyleSheet -------------------------------------------------------- */
 
-
 QsciScintilla {
     qproperty-backgroundcolor: #454545;
     qproperty-marginbackgroundcolor: #5c5c5c;
@@ -1824,4 +1823,10 @@ QAbstractView:hover{
 QAbstractView:selected {
     background: #1464A0;
     color: #454545;
+}
+
+DROWidget {
+    background-color: transparent;
+    color: #AA5500;
+    font-size: 26px;
 }
