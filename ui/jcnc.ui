@@ -160,7 +160,7 @@
            <string>ALL</string>
           </property>
           <property name="actionName" stdset="0">
-           <string>machine.home.axis:all</string>
+           <string>machine.home.all</string>
           </property>
          </widget>
         </item>
@@ -377,7 +377,7 @@
            <number>15</number>
           </property>
           <item>
-           <widget class="GcodeBackplot" name="gcodebackplot" native="true">
+           <widget class="GcodeBackplot" name="gcodebackplot">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -387,6 +387,37 @@
             <property name="styleSheet">
              <string notr="true"/>
             </property>
+            <widget class="QWidget" name="verticalLayoutWidget">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>191</width>
+               <height>91</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="DRO">
+              <item>
+               <widget class="DROWidget" name="x_dro"/>
+              </item>
+              <item>
+               <widget class="DROWidget" name="y_dro">
+                <property name="axis">
+                 <enum>DROWidget::Y</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="DROWidget" name="z_dro">
+                <property name="axis">
+                 <enum>DROWidget::Z</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <zorder>x_dro</zorder>
+            <zorder>verticalLayoutWidget</zorder>
            </widget>
           </item>
           <item>
@@ -437,28 +468,6 @@
                 </property>
                </widget>
               </item>
-              <item row="1" column="2">
-               <widget class="ActionButton" name="jogymin_abutton">
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>-Y</string>
-                </property>
-                <property name="actionName" stdset="0">
-                 <string>machine.jog.axis:y,neg</string>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="1">
                <widget class="ActionButton" name="jogxmin_abutton">
                 <property name="minimumSize">
@@ -503,6 +512,28 @@
                 </property>
                </widget>
               </item>
+              <item row="1" column="2">
+               <widget class="ActionButton" name="jogymin_abutton">
+                <property name="minimumSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>-Y</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:y,neg</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </item>
             <item>
@@ -526,28 +557,6 @@
               <property name="spacing">
                <number>10</number>
               </property>
-              <item row="0" column="0">
-               <widget class="ActionButton" name="jogzplus_abutton">
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>+Z</string>
-                </property>
-                <property name="actionName" stdset="0">
-                 <string>machine.jog.axis:z,pos</string>
-                </property>
-               </widget>
-              </item>
               <item row="1" column="0">
                <widget class="ActionButton" name="jogzmin_abutton">
                 <property name="minimumSize">
@@ -567,6 +576,28 @@
                 </property>
                 <property name="actionName" stdset="0">
                  <string>machine.jog.axis:z,neg</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="ActionButton" name="jogzplus_abutton">
+                <property name="minimumSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>+Z</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.jog.axis:z,pos</string>
                 </property>
                </widget>
               </item>
@@ -923,6 +954,9 @@ OFF</string>
    <property name="text">
     <string>Home All</string>
    </property>
+   <property name="shortcut">
+    <string>Home</string>
+   </property>
   </action>
   <action name="actionRun_Program">
    <property name="text">
@@ -1119,15 +1153,15 @@ OFF</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VCPMainWindow</class>
-   <extends>QMainWindow</extends>
-   <header>qtpyvcp.widgets.form_widgets.main_window</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>VCPMainWindow</class>
+   <extends>QMainWindow</extends>
+   <header>qtpyvcp.widgets.form_widgets.main_window</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -1139,6 +1173,11 @@ OFF</string>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
+  </customwidget>
+  <customwidget>
+   <class>DROWidget</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
   </customwidget>
   <customwidget>
    <class>StatusLabel</class>
