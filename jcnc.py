@@ -8,13 +8,16 @@ from qtpyvcp.widgets.form_widgets.main_window import VCPMainWindow
 
 # Setup logging
 from qtpyvcp.utilities import logger
+
 LOG = logger.getLogger('QtPyVCP.' + __name__)
 
 from qtpyvcp import actions
 
+import resources
+
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
 UI_FILE = os.path.join(VCP_DIR, 'ui/jcnc.ui')
-STYLESHEET = os.path.join(VCP_DIR, 'resources/style.qss')
+STYLESHEET = os.path.join(VCP_DIR, 'style.qss')
 
 
 class MainWindow(VCPMainWindow):
@@ -27,9 +30,9 @@ class MainWindow(VCPMainWindow):
 
         self.setWindowTitle("Jauria CNC")
 
-    #==========================================================================
-    #  Add/Override methods and slots below to customize the main window
-    #==========================================================================
+        # ==========================================================================
+        #  Add/Override methods and slots below to customize the main window
+        # ==========================================================================
 
         # actions.bindWidget(self.flood, action='coolant.flood.toggle')
         # actions.bindWidget(self.floodCheckBox, action="coolant.flood.toggle")

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>742</height>
+    <width>1079</width>
+    <height>807</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -64,7 +64,7 @@
           <item row="0" column="2">
            <widget class="ActionButton" name="power_abutton">
             <property name="enabled">
-             <bool>true</bool>
+             <bool>false</bool>
             </property>
             <property name="minimumSize">
              <size>
@@ -80,6 +80,9 @@
             </property>
             <property name="text">
              <string>POWER</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
             </property>
             <property name="actionName" stdset="0">
              <string>machine.power.toggle</string>
@@ -108,6 +111,9 @@
             </property>
             <property name="text">
              <string>E-STOP</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
             </property>
             <property name="actionName" stdset="0">
              <string>machine.estop.toggle</string>
@@ -751,6 +757,15 @@ OFF</string>
             <height>16777215</height>
            </size>
           </property>
+          <property name="backgroundcolor" stdset="0">
+           <string>#454545</string>
+          </property>
+          <property name="marginbackgroundcolor" stdset="0">
+           <string>#5c5c5c</string>
+          </property>
+          <property name="thingstyle" stdset="0">
+           <string>#ffffff</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -764,7 +779,7 @@ OFF</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
+     <width>1079</width>
      <height>20</height>
     </rect>
    </property>
