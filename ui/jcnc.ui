@@ -398,12 +398,19 @@
              </property>
              <layout class="QVBoxLayout" name="DRO">
               <item>
-               <widget class="DROWidget" name="x_dro"/>
+               <widget class="DROWidget" name="x_dro">
+                <property name="imperial_template" stdset="0">
+                 <string>%9.4f</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="DROWidget" name="y_dro">
                 <property name="axis">
                  <enum>DROWidget::Y</enum>
+                </property>
+                <property name="imperial_template" stdset="0">
+                 <string>%9.4f</string>
                 </property>
                </widget>
               </item>
@@ -412,12 +419,16 @@
                 <property name="axis">
                  <enum>DROWidget::Z</enum>
                 </property>
+                <property name="metric_template" stdset="0">
+                 <string>%10.3f</string>
+                </property>
+                <property name="imperial_template" stdset="0">
+                 <string>%9.4f</string>
+                </property>
                </widget>
               </item>
              </layout>
             </widget>
-            <zorder>x_dro</zorder>
-            <zorder>verticalLayoutWidget</zorder>
            </widget>
           </item>
           <item>
@@ -624,7 +635,7 @@
               <item>
                <widget class="StatusLabel" name="feedover_slabel">
                 <property name="text">
-                 <string>&lt;b&gt;Feed Override:&lt;/b&gt; 0%</string>
+                 <string>Feed Override: 0%</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
