@@ -1825,7 +1825,7 @@ QAbstractView:selected {
     color: #454545;
 }
 
-DROWidget {
+#x_dro, #y_dro, #z_dro {
     background-color: transparent;
     color: #AA5500;
     font-size: 26px;

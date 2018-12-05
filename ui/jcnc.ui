@@ -398,32 +398,38 @@
              </property>
              <layout class="QVBoxLayout" name="DRO">
               <item>
-               <widget class="DROWidget" name="x_dro">
-                <property name="imperial_template" stdset="0">
-                 <string>%9.4f</string>
+               <widget class="StatusLabel" name="x_dro">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="rules" stdset="0">
+                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;X {: 7.4f}\&quot;.format(ch[0][0]) if ch[1] == 'in' else \&quot;X {: 7.3f}\&quot;.format(ch[0][0])&quot;, &quot;name&quot;: &quot;rel pos&quot;}]</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="DROWidget" name="y_dro">
-                <property name="axis">
-                 <enum>DROWidget::Y</enum>
+               <widget class="StatusLabel" name="y_dro">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
                 </property>
-                <property name="imperial_template" stdset="0">
-                 <string>%9.4f</string>
+                <property name="rules" stdset="0">
+                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Y {: 7.4f}\&quot;.format(ch[0][1]) if ch[1] == 'in' else \&quot;Y {: 7.3f}\&quot;.format(ch[0][1])&quot;, &quot;name&quot;: &quot;rel pos&quot;}]</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="DROWidget" name="z_dro">
-                <property name="axis">
-                 <enum>DROWidget::Z</enum>
+               <widget class="StatusLabel" name="z_dro">
+                <property name="font">
+                 <font>
+                  <pointsize>13</pointsize>
+                 </font>
                 </property>
-                <property name="metric_template" stdset="0">
-                 <string>%10.3f</string>
-                </property>
-                <property name="imperial_template" stdset="0">
-                 <string>%9.4f</string>
+                <property name="rules" stdset="0">
+                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Z {: 7.4f}\&quot;.format(ch[0][2]) if ch[1] == 'in' else \&quot;Z {: 7.3f}\&quot;.format(ch[0][2])&quot;, &quot;name&quot;: &quot;rel pos&quot;}]</string>
                 </property>
                </widget>
               </item>
@@ -1185,11 +1191,6 @@ OFF</string>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
-  </customwidget>
-  <customwidget>
-   <class>DROWidget</class>
-   <extends>QLabel</extends>
-   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
   </customwidget>
   <customwidget>
    <class>StatusLabel</class>
