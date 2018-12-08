@@ -855,27 +855,32 @@ QProgressBar::chunk:disabled {
 
 /* QAbstractButton ------------------------------------------------------------ */
 
-QAbstractButton {
+ActionButton {
+    color: black;
     font: bold;
-    font-size: 10px;
-    image: url(":/images/BotonON2.png");
+    font-size: 8px;
+    image: url(":/images/Boton_OFF.png");
 }
 
-
-QAbstractButton:checked {
-    image: url(":/images/BotonPUSH2.png");
+ActionButton:checked {
+    image: url(":/images/Boton_ON.png");
 }
 
-QAbstractButton:pressed {
-    image: url(":/images/BotonPUSH2.png");
+ActionButton:pressed {
+    image: url(":/images/Boton_ON.png");
 }
 
 #estop_abutton {
-    image: url(":/images/SetaP.png");
+    color: white;
+    image: url(":/images/Seta_ON.png");
+}
+
+#estop_abutton:pressed {
+    image: url(":/images/Seta_OFF.png");
 }
 
 #estop_abutton:checked {
-    image: url(":/images/Seta.png");
+    image: url(":/images/Seta_OFF.png");
 }
 
 
