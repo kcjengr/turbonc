@@ -855,6 +855,24 @@ QProgressBar::chunk:disabled {
 
 /* QAbstractButton ------------------------------------------------------------ */
 
+QPushButton {
+    height: 50px;
+    width: 50px;
+    color: black;
+    font: bold;
+    font-size: 8px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+QPushButton:checked {
+    image: url(":/images/Boton_ON.png");
+}
+
+QPushButton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+
 ActionButton {
     color: black;
     font: bold;
@@ -871,7 +889,9 @@ ActionButton:pressed {
 }
 
 #estop_abutton {
-    color: white;
+    color: black;
+    font: bold;
+    font-size: 8px;
     image: url(":/images/Seta_ON.png");
 }
 
@@ -882,6 +902,22 @@ ActionButton:pressed {
 #estop_abutton:checked {
     image: url(":/images/Seta_OFF.png");
 }
+
+#zero_dbutton {
+    color: black;
+    font: bold;
+    font-size: 8px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+#zero_dbutton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+#zero_dbutton:checked {
+    image: url(":/images/Boton_ON.png");
+}
+
 
 
 /* QToolButton ------------------------------------------------------------ */
@@ -1723,9 +1759,15 @@ QToolBox::tab:hover {
     border-bottom: 2px solid #AA6600;
 }
 
-QToolBox QScrollArea QWidget QWidget {
+QToolBox QScrollArea QWidget {
     padding: 0px;
     background-color: #2d2d2d;
+}
+
+QWidget {
+    padding: 0px;
+    background-image: url(:/images/red_iron.png);
+    background-color: rgba( 2,2,2,2);
 }
 
 /* QFrame ----------------------------------------------------------------- */

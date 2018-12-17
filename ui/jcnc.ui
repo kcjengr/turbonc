@@ -50,46 +50,18 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
+            <width>13</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout_4">
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
           <property name="spacing">
            <number>10</number>
           </property>
-          <item row="0" column="2">
-           <widget class="ActionButton" name="power_abutton">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>POWER</string>
-            </property>
-            <property name="checkable">
-             <bool>false</bool>
-            </property>
-            <property name="actionName" stdset="0">
-             <string>machine.power.toggle</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
+          <item>
            <widget class="ActionButton" name="estop_abutton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -120,6 +92,34 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="ActionButton" name="power_abutton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>POWER</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.power.toggle</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item>
@@ -137,6 +137,147 @@
         </item>
         <item>
          <widget class="QLabel" name="label">
+          <property name="text">
+           <string>MODE</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="ActionButton" name="actionbutton_27">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>MAN</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.mode.manual</string>
+            </property>
+            <property name="position" stdset="0">
+             <string>first</string>
+            </property>
+            <property name="styleClass" stdset="0">
+             <string>option</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ActionButton" name="actionbutton_28">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>AUTO</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.mode.auto</string>
+            </property>
+            <property name="styleClass" stdset="0">
+             <string>option</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ActionButton" name="actionbutton_29">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>MDI</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.mode.mdi</string>
+            </property>
+            <property name="position" stdset="0">
+             <string>last</string>
+            </property>
+            <property name="styleClass" stdset="0">
+             <string>option</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="home_label">
           <property name="text">
            <string>HOME</string>
           </property>
@@ -174,18 +315,18 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
+            <width>13</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout_5">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
           <property name="spacing">
            <number>10</number>
           </property>
-          <item row="1" column="0">
+          <item>
            <widget class="ActionButton" name="homex_abutton">
             <property name="minimumSize">
              <size>
@@ -207,7 +348,7 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item>
            <widget class="ActionButton" name="homey_abutton">
             <property name="minimumSize">
              <size>
@@ -229,7 +370,7 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
+          <item>
            <widget class="ActionButton" name="homez_abutton">
             <property name="minimumSize">
              <size>
@@ -254,6 +395,48 @@
          </layout>
         </item>
         <item>
+         <spacer name="horizontalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>PART</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DialogButton" name="zero_dbutton">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>ZERO</string>
+          </property>
+          <property name="dialogName" stdset="0">
+           <string>set_work_offsets</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer_8">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -263,15 +446,22 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
+            <width>13</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>PROGRAM</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
            <widget class="ActionButton" name="run_abutton">
             <property name="minimumSize">
              <size>
@@ -293,51 +483,51 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="ActionButton" name="pause_abutton">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>PAUSE</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.pause</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ActionButton" name="stop_abutton">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>STOP</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.abort</string>
+            </property>
+           </widget>
+          </item>
          </layout>
-        </item>
-        <item>
-         <widget class="ActionButton" name="pause_abutton">
-          <property name="minimumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>PAUSE</string>
-          </property>
-          <property name="actionName" stdset="0">
-           <string>program.pause</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="ActionButton" name="stop_abutton">
-          <property name="minimumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>STOP</string>
-          </property>
-          <property name="actionName" stdset="0">
-           <string>program.abort</string>
-          </property>
-         </widget>
         </item>
         <item>
          <spacer name="horizontalSpacer_9">
@@ -349,7 +539,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
+            <width>13</width>
             <height>20</height>
            </size>
           </property>
@@ -401,7 +591,7 @@
                <widget class="StatusLabel" name="x_dro">
                 <property name="font">
                  <font>
-                  <pointsize>13</pointsize>
+                  <pointsize>-1</pointsize>
                  </font>
                 </property>
                 <property name="rules" stdset="0">
@@ -413,7 +603,7 @@
                <widget class="StatusLabel" name="y_dro">
                 <property name="font">
                  <font>
-                  <pointsize>13</pointsize>
+                  <pointsize>-1</pointsize>
                  </font>
                 </property>
                 <property name="rules" stdset="0">
@@ -425,7 +615,7 @@
                <widget class="StatusLabel" name="z_dro">
                 <property name="font">
                  <font>
-                  <pointsize>13</pointsize>
+                  <pointsize>-1</pointsize>
                  </font>
                 </property>
                 <property name="rules" stdset="0">
@@ -435,6 +625,44 @@
               </item>
              </layout>
             </widget>
+            <widget class="QComboBox" name="comboBox">
+             <property name="geometry">
+              <rect>
+               <x>200</x>
+               <y>10</y>
+               <width>79</width>
+               <height>23</height>
+              </rect>
+             </property>
+             <item>
+              <property name="text">
+               <string>p</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>x</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>y</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>z</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>z2</string>
+              </property>
+             </item>
+            </widget>
+            <zorder>verticalLayoutWidget</zorder>
+            <zorder>comboBox</zorder>
+            <zorder></zorder>
            </widget>
           </item>
           <item>
@@ -651,7 +879,7 @@
     {
         &quot;channels&quot;: [
             {
-                &quot;channel&quot;: &quot;status.feedrate&quot;, 
+                &quot;url&quot;: &quot;status:feedrate&quot;,
                 &quot;trigger&quot;: true, 
                 &quot;type&quot;: &quot;float&quot;
             }
@@ -717,6 +945,13 @@
              </spacer>
             </item>
             <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>SPINDLE</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <layout class="QGridLayout" name="gridLayout_3">
               <property name="spacing">
                <number>10</number>
@@ -736,8 +971,7 @@
                  </size>
                 </property>
                 <property name="text">
-                 <string>SPINDLE
-ON</string>
+                 <string>ON</string>
                 </property>
                 <property name="actionName" stdset="0">
                  <string>spindle.forward</string>
@@ -759,8 +993,7 @@ ON</string>
                  </size>
                 </property>
                 <property name="text">
-                 <string>SPINDLE
-OFF</string>
+                 <string>OFF</string>
                 </property>
                 <property name="actionName" stdset="0">
                  <string>spindle.off</string>
@@ -829,7 +1062,7 @@ OFF</string>
      <x>0</x>
      <y>0</y>
      <width>1079</width>
-     <height>20</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuExit">
@@ -1183,6 +1416,11 @@ OFF</string>
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>DialogButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
+  </customwidget>
+  <customwidget>
    <class>ActionSlider</class>
    <extends>QSlider</extends>
    <header>qtpyvcp.widgets.input_widgets.action_slider</header>
@@ -1201,7 +1439,24 @@ OFF</string>
  <resources>
   <include location="../resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>gcodebackplot</receiver>
+   <slot>setView(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>662</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>563</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <designerdata>
   <property name="gridDeltaX">
    <number>10</number>

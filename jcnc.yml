@@ -1,0 +1,24 @@
+qtdesigner:
+  ui_file: "{{ windows['mainwindow']['kwargs']['ui_file'] }}"
+  qss_file: "{{ application['kwargs']['stylesheet'] }}"
+
+vcp:
+  name: Jauria CNC
+  version: v0.0.1
+  author: Jauria Studios
+  description: Just the basic functions I need to run linuxcnc
+
+data_plugins:
+  status:
+    kwargs:
+      cycle_time: 75
+
+windows:
+  mainwindow:
+    provider: jcnc:MainWindow
+    kwargs:
+      ui_file: $YAML_DIR$/ui/jcnc.ui
+
+application:
+  kwargs:
+    stylesheet: $YAML_DIR$/style.qss

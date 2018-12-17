@@ -16,18 +16,14 @@ from qtpyvcp import actions
 import resources
 
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
-UI_FILE = os.path.join(VCP_DIR, 'ui/jcnc.ui')
-STYLESHEET = os.path.join(VCP_DIR, 'style.qss')
 
 
 class MainWindow(VCPMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
 
-        self.loadUi(UI_FILE)
-        self.initUi()
-        self.loadStylesheet(STYLESHEET)
 
+        self.initUi()
         self.setWindowTitle("Jauria CNC")
 
         # ==========================================================================
