@@ -1,6 +1,8 @@
+{% include "default_menubar.yml" %}
+
 qtdesigner:
-  ui_file: "{{ windows['mainwindow']['kwargs']['ui_file'] }}"
-  qss_file: "{{ application['kwargs']['stylesheet'] }}"
+  ui_file: ( windows.mainwindow.kwargs.ui_file )
+  qss_file: ( application.kwargs.stylesheet )
 
 vcp:
   name: Jauria CNC
@@ -17,8 +19,9 @@ windows:
   mainwindow:
     provider: jcnc.jcnc:MainWindow
     kwargs:
-      ui_file: $YAML_DIR$/ui/jcnc.ui
+      menu: ( default_menubar )
+      ui_file: {{ file.dir }}/ui/jcnc.ui
 
 application:
   kwargs:
-    stylesheet: $YAML_DIR$/style.qss
+    stylesheet: {{ file.dir }}/style.qss
