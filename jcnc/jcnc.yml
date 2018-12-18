@@ -15,7 +15,7 @@ data_plugins:
 
 windows:
   mainwindow:
-    provider: jcnc:MainWindow
+    provider: jcnc.jcnc:MainWindow
     kwargs:
       ui_file: $YAML_DIR$/ui/jcnc.ui
 
