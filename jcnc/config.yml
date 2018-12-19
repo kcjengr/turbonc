@@ -17,7 +17,7 @@ data_plugins:
 
 windows:
   mainwindow:
-    provider: jcnc.jcnc:MainWindow
+    provider: jcnc.main:MainWindow
     kwargs:
       menu: ( default_menubar )
       ui_file: {{ file.dir }}/ui/window.ui
