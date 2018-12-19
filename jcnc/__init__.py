@@ -4,7 +4,7 @@ __version__ = '0.0.1'
 import os
 
 VCP_DIR = os.path.realpath(os.path.dirname(__file__))
-VCP_CONFIG_FILE = os.path.join(VCP_DIR, 'jcnc.yml')
+VCP_CONFIG_FILE = os.path.join(VCP_DIR, 'config.yml')
 
 
 def run(opts):

@@ -20,7 +20,7 @@ windows:
     provider: jcnc.jcnc:MainWindow
     kwargs:
       menu: ( default_menubar )
-      ui_file: {{ file.dir }}/ui/jcnc.ui
+      ui_file: {{ file.dir }}/ui/window.ui
 
 application:
   kwargs:
