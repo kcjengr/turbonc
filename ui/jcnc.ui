@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1079</width>
+    <width>1119</width>
     <height>807</height>
    </rect>
   </property>
@@ -1020,35 +1020,68 @@
          </layout>
         </item>
         <item>
-         <widget class="GcodeEditor" name="gcodeeditor">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>330</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>610</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="backgroundcolor" stdset="0">
-           <string>#454545</string>
-          </property>
-          <property name="marginbackgroundcolor" stdset="0">
-           <string>#5c5c5c</string>
-          </property>
-          <property name="thingstyle" stdset="0">
-           <string>#ffffff</string>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="GcodeEditor" name="gcodeeditor">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>330</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>610</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="backgroundcolor" stdset="0">
+             <string>#454545</string>
+            </property>
+            <property name="marginbackgroundcolor" stdset="0">
+             <string>#5c5c5c</string>
+            </property>
+            <property name="thingstyle" stdset="0">
+             <string>#ffffff</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="MDIEntry" name="mdi_entry_box">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Bebas Kai</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="placeholderText">
+             <string>MDI</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -1061,8 +1094,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1079</width>
-     <height>29</height>
+     <width>1119</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuExit">
@@ -1416,6 +1449,11 @@
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>MDIEntry</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
    <class>DialogButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
@@ -1447,8 +1485,8 @@
    <slot>setView(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>662</x>
-     <y>131</y>
+     <x>294</x>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
      <x>563</x>
