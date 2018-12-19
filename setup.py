@@ -17,7 +17,7 @@ setup(
     include_package_data=True,
     entry_points={
         'gui_scripts': [
-            'jcnc=jcnc.__main__',
+            'jcnc=jcnc:main',
         ],
         'qtpyvcp.vcp': [
             'jcnc=jcnc',
