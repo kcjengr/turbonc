@@ -855,7 +855,7 @@ QProgressBar::chunk:disabled {
 
 /* QAbstractButton ------------------------------------------------------------ */
 
-QPushButton {
+QAbstractButton{
     height: 50px;
     width: 50px;
     color: black;
@@ -864,11 +864,11 @@ QPushButton {
     image: url(":/images/Boton_OFF.png");
 }
 
-QPushButton:checked {
+QAbstractButton:checked {
     image: url(":/images/Boton_ON.png");
 }
 
-QPushButton:pressed {
+QAbstractButton:pressed {
     image: url(":/images/Boton_ON.png");
 }
 
@@ -915,6 +915,21 @@ ActionButton:pressed {
 }
 
 #zero_dbutton:checked {
+    image: url(":/images/Boton_ON.png");
+}
+
+#mdi_pbutton {
+    color: black;
+    font: bold;
+    font-size: 12px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+#mdi_pbutton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+#mdi_pbutton:checked {
     image: url(":/images/Boton_ON.png");
 }
 
