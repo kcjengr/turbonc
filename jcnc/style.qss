@@ -855,83 +855,7 @@ QProgressBar::chunk:disabled {
 
 /* QAbstractButton ------------------------------------------------------------ */
 
-QPushButton{
-    height: 50px;
-    width: 50px;
-    color: black;
-    font: bold;
-    font-size: 8px;
-    image: url(":/images/Boton_OFF.png");
-}
 
-QPushButton:checked {
-    image: url(":/images/Boton_ON.png");
-}
-
-QPushButton:pressed {
-    image: url(":/images/Boton_ON.png");
-}
-
-
-ActionButton {
-    color: black;
-    font: bold;
-    font-size: 8px;
-    image: url(":/images/Boton_OFF.png");
-}
-
-ActionButton:checked {
-    image: url(":/images/Boton_ON.png");
-}
-
-ActionButton:pressed {
-    image: url(":/images/Boton_ON.png");
-}
-
-#estop_abutton {
-    color: black;
-    font: bold;
-    font-size: 8px;
-    image: url(":/images/Seta_ON.png");
-}
-
-#estop_abutton:pressed {
-    image: url(":/images/Seta_OFF.png");
-}
-
-#estop_abutton:checked {
-    image: url(":/images/Seta_OFF.png");
-}
-
-#zero_dbutton {
-    color: black;
-    font: bold;
-    font-size: 8px;
-    image: url(":/images/Boton_OFF.png");
-}
-
-#zero_dbutton:pressed {
-    image: url(":/images/Boton_ON.png");
-}
-
-#zero_dbutton:checked {
-    image: url(":/images/Boton_ON.png");
-}
-
-#mdi_pbutton {
-    color: black;
-    font: bold;
-    font-size: 12px;
-    image: url(":/images/Boton_OFF.png");
-}
-
-#mdi_pbutton:pressed {
-    image: url(":/images/Boton_ON.png");
-}
-
-#mdi_pbutton:checked {
-    image: url(":/images/Boton_ON.png");
-}
 
 
 
@@ -1903,4 +1827,82 @@ QGroupBox {
     font-family: Roboto;
     font-style: normal;
     font-size: 12pt;
+}
+
+QPushButton{
+    height: 50px;
+    width: 50px;
+    color: black;
+    font: bold;
+    font-size: 8px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+QPushButton:checked {
+    image: url(":/images/Boton_ON.png");
+}
+
+QPushButton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+
+ActionButton {
+    color: black;
+    font: bold;
+    font-size: 8px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+ActionButton:checked {
+    image: url(":/images/Boton_ON.png");
+}
+
+ActionButton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+#estop_abutton {
+    color: black;
+    font: bold;
+    font-size: 8px;
+    image: url(":/images/Seta_ON.png");
+}
+
+#estop_abutton:pressed {
+    image: url(":/images/Seta_OFF.png");
+}
+
+#estop_abutton:checked {
+    image: url(":/images/Seta_OFF.png");
+}
+
+#zero_dbutton {
+    color: black;
+    font: bold;
+    font-size: 8px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+#zero_dbutton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+#zero_dbutton:checked {
+    image: url(":/images/Boton_ON.png");
+}
+
+#mdi_pbutton {
+    color: black;
+    font: bold;
+    font-size: 12px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+#mdi_pbutton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+#mdi_pbutton:checked {
+    image: url(":/images/Boton_ON.png");
 }

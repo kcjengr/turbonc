@@ -871,7 +871,7 @@
               <item>
                <widget class="StatusLabel" name="feedover_slabel">
                 <property name="text">
-                 <string>Feed Override: 100%</string>
+                 <string>Feed Override: 0%</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -1055,37 +1055,59 @@
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_9">
-            <item>
-             <widget class="MDIEntry" name="mdi_entry_box">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Bebas Kai</family>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::ClickFocus</enum>
-              </property>
-              <property name="placeholderText">
-               <string>MDI</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton">
-              <property name="text">
-               <string>⏎</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <widget class="QGroupBox" name="mdi_gbox">
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="MDIEntry" name="mdi_entry_box">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::ClickFocus</enum>
+               </property>
+               <property name="placeholderText">
+                <string>MDI</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="mdi_pbutton">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <weight>75</weight>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>⏎</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
          </layout>
         </item>
@@ -1492,11 +1514,27 @@
    <hints>
     <hint type="sourcelabel">
      <x>294</x>
-     <y>137</y>
+     <y>169</y>
     </hint>
     <hint type="destinationlabel">
      <x>563</x>
      <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mdi_pbutton</sender>
+   <signal>clicked()</signal>
+   <receiver>mdi_entry_box</receiver>
+   <slot>submit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1863</x>
+     <y>977</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1806</x>
+     <y>970</y>
     </hint>
    </hints>
   </connection>
