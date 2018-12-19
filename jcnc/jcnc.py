@@ -2,7 +2,6 @@
 
 import os
 
-from qtpy import uic
 from qtpy.QtCore import Slot
 from qtpyvcp.widgets.form_widgets.main_window import VCPMainWindow
 

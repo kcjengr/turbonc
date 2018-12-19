@@ -1,0 +1,27 @@
+{% include "default_menubar.yml" %}
+
+qtdesigner:
+  ui_file: ( windows.mainwindow.kwargs.ui_file )
+  qss_file: ( application.kwargs.stylesheet )
+
+vcp:
+  name: Jauria CNC
+  version: v0.0.1
+  author: Jauria Studios
+  description: Just the basic functions I need to run linuxcnc
+
+data_plugins:
+  status:
+    kwargs:
+      cycle_time: 75
+
+windows:
+  mainwindow:
+    provider: jcnc.jcnc:MainWindow
+    kwargs:
+      menu: ( default_menubar )
+      ui_file: {{ file.dir }}/ui/jcnc.ui
+
+application:
+  kwargs:
+    stylesheet: {{ file.dir }}/style.qss

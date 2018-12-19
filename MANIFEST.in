@@ -1,0 +1,2 @@
+recursive-include jcnc *.yml *.yaml *.ui *.qss *qrc
+recursive-include jcnc *.yml *.yaml *.ui *.qss *qrc
