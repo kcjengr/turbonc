@@ -855,7 +855,7 @@ QProgressBar::chunk:disabled {
 
 /* QAbstractButton ------------------------------------------------------------ */
 
-QAbstractButton{
+QPushButton{
     height: 50px;
     width: 50px;
     color: black;
@@ -864,11 +864,11 @@ QAbstractButton{
     image: url(":/images/Boton_OFF.png");
 }
 
-QAbstractButton:checked {
+QPushButton:checked {
     image: url(":/images/Boton_ON.png");
 }
 
-QAbstractButton:pressed {
+QPushButton:pressed {
     image: url(":/images/Boton_ON.png");
 }
 
@@ -1896,10 +1896,10 @@ QAbstractView:selected {
 QGroupBox {
     border-color: black;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 4px;
-    padding: 10px;
+    border-width: 0.2px;
+    border-radius: 3px;
     background-color: black;
+    color black;
     font-family: Roboto;
     font-style: normal;
     font-size: 12pt;
