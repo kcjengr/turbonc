@@ -115,7 +115,7 @@
             <string>POWER</string>
            </property>
            <property name="checkable">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="actionName" stdset="0">
             <string>machine.power.toggle</string>
