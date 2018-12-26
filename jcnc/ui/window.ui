@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1020</height>
+    <width>1106</width>
+    <height>773</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -460,6 +460,24 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
+          <widget class="DialogButton" name="open_dbutton">
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>OPEN</string>
+           </property>
+           <property name="dialogName" stdset="0">
+            <string>open_file</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="ActionButton" name="run_abutton">
            <property name="minimumSize">
             <size>
@@ -871,7 +889,7 @@
               <item>
                <widget class="StatusLabel" name="feedover_slabel">
                 <property name="text">
-                 <string>Feed Override: 0%</string>
+                 <string>Feed Override: 118%</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -1122,7 +1140,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1920</width>
+     <width>1106</width>
      <height>25</height>
     </rect>
    </property>

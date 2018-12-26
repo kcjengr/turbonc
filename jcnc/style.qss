@@ -1906,3 +1906,18 @@ ActionButton:pressed {
 #mdi_pbutton:checked {
     image: url(":/images/Boton_ON.png");
 }
+
+#open_dbutton {
+    color: black;
+    font: bold;
+    font-size: 12px;
+    image: url(":/images/Boton_OFF.png");
+}
+
+#open_dbutton:pressed {
+    image: url(":/images/Boton_ON.png");
+}
+
+#open_dbutton:checked {
+    image: url(":/images/Boton_ON.png");
+}
