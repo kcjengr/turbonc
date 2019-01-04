@@ -461,13 +461,17 @@
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
           <widget class="DialogButton" name="open_dbutton">
-           <property name="font">
-            <font>
-             <pointsize>-1</pointsize>
-             <weight>75</weight>
-             <italic>false</italic>
-             <bold>true</bold>
-            </font>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
            </property>
            <property name="text">
             <string>OPEN</string>
@@ -490,6 +494,14 @@
              <width>50</width>
              <height>50</height>
             </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
            </property>
            <property name="text">
             <string>RUN</string>
@@ -889,7 +901,7 @@
               <item>
                <widget class="StatusLabel" name="feedover_slabel">
                 <property name="text">
-                 <string>Feed Override: 118%</string>
+                 <string>Feed Override: 0%</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -1120,7 +1132,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>⏎</string>
+                <string>⎆</string>
                </property>
               </widget>
              </item>
