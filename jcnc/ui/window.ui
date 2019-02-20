@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1106</width>
-    <height>773</height>
+    <width>1920</width>
+    <height>1051</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -598,104 +598,7 @@
            <number>15</number>
           </property>
           <item>
-           <widget class="GcodeBackplot" name="gcodebackplot">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <widget class="QWidget" name="verticalLayoutWidget">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>191</width>
-               <height>91</height>
-              </rect>
-             </property>
-             <layout class="QVBoxLayout" name="DRO">
-              <item>
-               <widget class="StatusLabel" name="x_dro">
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                 </font>
-                </property>
-                <property name="rules" stdset="0">
-                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;X {: 7.4f}\&quot;.format(ch[0][0]) if ch[1] == 'in' else \&quot;X {: 7.3f}\&quot;.format(ch[0][0])&quot;, &quot;name&quot;: &quot;rel pos&quot;}]</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="StatusLabel" name="y_dro">
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                 </font>
-                </property>
-                <property name="rules" stdset="0">
-                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Y {: 7.4f}\&quot;.format(ch[0][1]) if ch[1] == 'in' else \&quot;Y {: 7.3f}\&quot;.format(ch[0][1])&quot;, &quot;name&quot;: &quot;rel pos&quot;}]</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="StatusLabel" name="z_dro">
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                 </font>
-                </property>
-                <property name="rules" stdset="0">
-                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Z {: 7.4f}\&quot;.format(ch[0][2]) if ch[1] == 'in' else \&quot;Z {: 7.3f}\&quot;.format(ch[0][2])&quot;, &quot;name&quot;: &quot;rel pos&quot;}]</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-            <widget class="QComboBox" name="comboBox">
-             <property name="geometry">
-              <rect>
-               <x>200</x>
-               <y>10</y>
-               <width>79</width>
-               <height>23</height>
-              </rect>
-             </property>
-             <item>
-              <property name="text">
-               <string>p</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>x</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>y</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>z</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>z2</string>
-              </property>
-             </item>
-            </widget>
-            <zorder>verticalLayoutWidget</zorder>
-            <zorder>comboBox</zorder>
-            <zorder></zorder>
-            <zorder></zorder>
-           </widget>
+           <widget class="VTKWidget" name="vtk"/>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -1152,7 +1055,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1106</width>
+     <width>1920</width>
      <height>25</height>
     </rect>
    </property>
@@ -1489,12 +1392,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GcodeBackplot</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.gcode_backplot.gcode_backplot</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
@@ -1505,6 +1402,11 @@
    <extends>QMainWindow</extends>
    <header>qtpyvcp.widgets.form_widgets.main_window</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>VTKWidget</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.vtk_widget</header>
   </customwidget>
   <customwidget>
    <class>DialogButton</class>
@@ -1536,22 +1438,6 @@
   <include location="../resources.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>comboBox</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>gcodebackplot</receiver>
-   <slot>setView(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>294</x>
-     <y>169</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>563</x>
-     <y>180</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>mdi_pbutton</sender>
    <signal>clicked()</signal>
