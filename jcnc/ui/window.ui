@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1051</height>
+    <width>1057</width>
+    <height>858</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -598,7 +598,22 @@
            <number>15</number>
           </property>
           <item>
-           <widget class="VTKWidget" name="vtk"/>
+           <widget class="VTKBackPlot" name="vtk">
+            <property name="backgroundColor" stdset="0">
+             <color>
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </property>
+            <property name="backgroundColor2" stdset="0">
+             <color>
+              <red>45</red>
+              <green>45</green>
+              <blue>45</blue>
+             </color>
+            </property>
+           </widget>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -1055,7 +1070,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1920</width>
+     <width>1057</width>
      <height>25</height>
     </rect>
    </property>
@@ -1404,9 +1419,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VTKWidget</class>
+   <class>VTKBackPlot</class>
    <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.vtk_widget</header>
+   <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
   </customwidget>
   <customwidget>
    <class>DialogButton</class>
