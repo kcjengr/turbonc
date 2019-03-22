@@ -601,16 +601,16 @@
            <widget class="VTKBackPlot" name="vtk">
             <property name="backgroundColor" stdset="0">
              <color>
-              <red>0</red>
-              <green>0</green>
-              <blue>0</blue>
+              <red>45</red>
+              <green>45</green>
+              <blue>45</blue>
              </color>
             </property>
             <property name="backgroundColor2" stdset="0">
              <color>
-              <red>45</red>
-              <green>45</green>
-              <blue>45</blue>
+              <red>85</red>
+              <green>87</green>
+              <blue>83</blue>
              </color>
             </property>
            </widget>
