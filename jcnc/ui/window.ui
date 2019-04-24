@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1057</width>
-    <height>858</height>
+    <width>1920</width>
+    <height>1051</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -987,7 +987,7 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>610</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -1000,6 +1000,7 @@
             <property name="thingstyle" stdset="0">
              <string>#ffffff</string>
             </property>
+            <zorder>mdi_gbox</zorder>
            </widget>
           </item>
           <item>
@@ -1059,6 +1060,22 @@
           </item>
          </layout>
         </item>
+        <item>
+         <widget class="NotificationWidget" name="notificationwidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
      </layout>
@@ -1070,7 +1087,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1057</width>
+     <width>1920</width>
      <height>25</height>
     </rect>
    </property>
@@ -1407,6 +1424,26 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>DialogButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIEntry</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionSlider</class>
+   <extends>QSlider</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>StatusLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.status_label</header>
+  </customwidget>
+  <customwidget>
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
@@ -1424,29 +1461,14 @@
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
   </customwidget>
   <customwidget>
-   <class>DialogButton</class>
-   <extends>QPushButton</extends>
-   <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
-  </customwidget>
-  <customwidget>
-   <class>MDIEntry</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
-  </customwidget>
-  <customwidget>
-   <class>ActionSlider</class>
-   <extends>QSlider</extends>
-   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
-  </customwidget>
-  <customwidget>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
   </customwidget>
   <customwidget>
-   <class>StatusLabel</class>
-   <extends>QLabel</extends>
-   <header>qtpyvcp.widgets.display_widgets.status_label</header>
+   <class>NotificationWidget</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.notification_widget</header>
   </customwidget>
  </customwidgets>
  <resources>
