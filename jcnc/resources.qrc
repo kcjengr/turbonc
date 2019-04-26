@@ -2,6 +2,7 @@
 <qresource prefix="/">
     <file>images/Boton_ON.png</file>
     <file>images/Boton_OFF.png</file>
+    <file>images/Boton_OFF_disabled.png</file>
     <file>images/branch_closed.png</file>
     <file>images/branch_closed-on.png</file>
     <file>images/branch_open.png</file>

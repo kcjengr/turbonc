@@ -1830,63 +1830,88 @@ QGroupBox {
 }
 
 
-.QAbstractButton,
-.QPushButton {
-    height: 50px;
-    width: 50px;
+QPushButton {
+    height: 60px;
+    width: 60px;
     color: black;
     font: bold;
     font-size: 10px;
-    qproperty-iconSize: 50px 50px;
-    border-image: url(":/images/Boton_OFF.png");
+    border-image: url(:/images/Boton_OFF.png);
 }
 
-.QAbstractButton,
-.QPushButton:pressed {
-    border-image: url(":/images/Boton_ON.png");
+QPushButton:pressed {
+    border-image: url(:/images/Boton_ON.png);
 }
 
-.QAbstractButton,
-.QPushButton:checked {
-    border-image: url(":/images/Boton_ON.png");
+QPushButton:checked {
+    border-image: url(:/images/Boton_ON.png);
 }
 
-.DialogButton,
-.ActionButton,
+
+.DialogButton{
+    height: 60px;
+    width: 60px;
+    color: black;
+    font: bold;
+    font-size: 10px;
+    image: url(:/images/Boton_OFF.png);
+
+}
+
+.DialogButton:checked {
+    image: url(:/images/Boton_ON.png);
+}
+
+.DialogButton:pressed {
+    image: url(:/images/Boton_ON.png);
+}
+
+
+.ActionButton{
+    height: 60px;
+    width: 60px;
+    color: black;
+    font: bold;
+    font-size: 10px;
+    image: url(:/images/Boton_OFF.png);
+
+}
+
+.ActionButton:checked {
+    image: url(:/images/Boton_ON.png);
+}
+
+.ActionButton:pressed {
+    image: url(:/images/Boton_ON.png);
+}
+
+
 .MDIButton {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     color: black;
     font: bold;
     font-size: 10px;
-    qproperty-iconSize: 50px 50px;
-    border-image: url(":/images/Boton_OFF.png");
+    image: url(:/images/Boton_OFF.png);
 }
 
-.DialogButton,
-.ActionButton,
-.MDIButton :pressed {
-    border-image: url(":/images/Boton_ON.png");
+.MDIButton:checked {
+    image: url(:/images/Boton_ON.png);
 }
 
-.DialogButton,
-.ActionButton,
-.MDIButton :checked {
-    border-image: url(":/images/Boton_ON.png");
+.MDIButton:pressed {
+    image: url(:/images/Boton_ON.png);
 }
 
 #estop_abutton {
+    height: 60px;
+    width: 60px;
     color: black;
     font: bold;
     font-size: 10px;
-    qproperty-iconSize: 60px 60px;
-    border-image: url(":/images/Seta_OFF.png");
+    image: url(:/images/Seta_OFF.png);
 }
 
-#estop_abutton:pressed {
-    border-image: url(":/images/Seta_ON.png");
-}
-
-#estop_abutton:checked {
-    border-image: url(":/images/Seta_ON.png");
+#estop_abutton:checked{
+    image: url(:/images/Seta_ON.png);
 }
