@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="VCPMainWindow" name="Form">
+ <class>MainWindow</class>
+ <widget class="MainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -73,8 +73,8 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -101,8 +101,8 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -154,8 +154,8 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -194,8 +194,8 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -231,8 +231,8 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -290,8 +290,8 @@
           <widget class="ActionButton" name="homeall_abutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -328,8 +328,8 @@
           <widget class="ActionButton" name="homex_abutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -350,8 +350,8 @@
           <widget class="ActionButton" name="homey_abutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -372,8 +372,8 @@
           <widget class="ActionButton" name="homez_abutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -416,8 +416,8 @@
           <widget class="DialogButton" name="zero_dbutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -463,8 +463,8 @@
           <widget class="DialogButton" name="open_dbutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -485,8 +485,8 @@
           <widget class="ActionButton" name="run_abutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -515,8 +515,8 @@
           <widget class="ActionButton" name="pause_abutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -537,8 +537,8 @@
           <widget class="ActionButton" name="stop_abutton">
            <property name="minimumSize">
             <size>
-             <width>50</width>
-             <height>50</height>
+             <width>54</width>
+             <height>54</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -580,6 +580,177 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QWidget" name="horizontalWidget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <property name="topMargin">
+            <number>5</number>
+           </property>
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="plotClear">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Clear</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotMinus">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>-</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotPlus">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotZ2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Z2</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotZ">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Z</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotY">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Y</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotX">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>X</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="plotP">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>P</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
           <property name="spacing">
@@ -645,8 +816,8 @@
                <widget class="ActionButton" name="jogyplus_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -667,8 +838,8 @@
                <widget class="ActionButton" name="jogxmin_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -689,8 +860,8 @@
                <widget class="ActionButton" name="jogxplus_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -711,8 +882,8 @@
                <widget class="ActionButton" name="jogymin_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -756,8 +927,8 @@
                <widget class="ActionButton" name="jogzmin_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -778,8 +949,8 @@
                <widget class="ActionButton" name="jogzplus_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -858,7 +1029,7 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>300</width>
+                  <width>50</width>
                   <height>50</height>
                  </size>
                 </property>
@@ -910,8 +1081,8 @@
                <widget class="ActionButton" name="spindleon_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -932,8 +1103,8 @@
                <widget class="ActionButton" name="spindleoff_abutton">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>50</height>
+                  <width>54</width>
+                  <height>54</height>
                  </size>
                 </property>
                 <property name="maximumSize">
@@ -1000,7 +1171,6 @@
             <property name="thingstyle" stdset="0">
              <string>#ffffff</string>
             </property>
-            <zorder>mdi_gbox</zorder>
            </widget>
           </item>
           <item>
@@ -1032,8 +1202,8 @@
               <widget class="QPushButton" name="mdi_pbutton">
                <property name="minimumSize">
                 <size>
-                 <width>50</width>
-                 <height>50</height>
+                 <width>54</width>
+                 <height>54</height>
                 </size>
                </property>
                <property name="maximumSize">
@@ -1061,6 +1231,16 @@
          </layout>
         </item>
         <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="G92OffsetHandler" name="g92offsethandler"/>
+          </item>
+          <item>
+           <widget class="G5xOffsetHandler" name="g5xoffsethandler"/>
+          </item>
+         </layout>
+        </item>
+        <item>
          <widget class="NotificationWidget" name="notificationwidget">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1076,88 +1256,14 @@
           </property>
          </widget>
         </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7"/>
+        </item>
        </layout>
       </item>
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1920</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuExit">
-    <property name="title">
-     <string>File</string>
-    </property>
-    <widget class="QMenu" name="menuRecentFiles">
-     <property name="title">
-      <string>Recent &amp;Files</string>
-     </property>
-     <addaction name="actionFile1"/>
-    </widget>
-    <addaction name="actionOpen"/>
-    <addaction name="menuRecentFiles"/>
-    <addaction name="actionReload"/>
-    <addaction name="actionClose"/>
-    <addaction name="actionSave_As"/>
-    <addaction name="separator"/>
-    <addaction name="actionExit"/>
-   </widget>
-   <widget class="QMenu" name="menuMachine">
-    <property name="title">
-     <string>Machine</string>
-    </property>
-    <widget class="QMenu" name="menuHoming">
-     <property name="title">
-      <string>Homing</string>
-     </property>
-     <addaction name="actionHome_All"/>
-     <addaction name="actionHome_X"/>
-     <addaction name="actionHome_Y"/>
-     <addaction name="actionHome_Z"/>
-    </widget>
-    <widget class="QMenu" name="menuCooling">
-     <property name="title">
-      <string>Cooling</string>
-     </property>
-     <addaction name="action_Mist_toggle"/>
-     <addaction name="action_Flood_toggle"/>
-    </widget>
-    <addaction name="action_EmergencyStop_toggle"/>
-    <addaction name="action_MachinePower_toggle"/>
-    <addaction name="separator"/>
-    <addaction name="actionRun_Program"/>
-    <addaction name="actionRun_From_Line"/>
-    <addaction name="actionStep"/>
-    <addaction name="actionPause"/>
-    <addaction name="actionResume"/>
-    <addaction name="actionStop"/>
-    <addaction name="actionPause_at_M1"/>
-    <addaction name="actionSkip_lines_with"/>
-    <addaction name="separator"/>
-    <addaction name="menuHoming"/>
-    <addaction name="menuCooling"/>
-    <addaction name="separator"/>
-    <addaction name="actionOverride_Limits"/>
-   </widget>
-   <widget class="QMenu" name="menuTools">
-    <property name="title">
-     <string>Tools</string>
-    </property>
-    <addaction name="actionHalmeter"/>
-    <addaction name="actionHalshow"/>
-    <addaction name="actionHAL_Scope"/>
-    <addaction name="actionCalibration"/>
-   </widget>
-   <addaction name="menuExit"/>
-   <addaction name="menuMachine"/>
-   <addaction name="menuTools"/>
   </widget>
   <action name="actionExit">
    <property name="text">
@@ -1439,6 +1545,16 @@
    <header>qtpyvcp.widgets.input_widgets.action_slider</header>
   </customwidget>
   <customwidget>
+   <class>G92OffsetHandler</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.utility_widgets.g92_offset.g92_handler</header>
+  </customwidget>
+  <customwidget>
+   <class>G5xOffsetHandler</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.utility_widgets.g5x_offset.g5x_handler</header>
+  </customwidget>
+  <customwidget>
    <class>StatusLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
@@ -1482,12 +1598,140 @@
    <slot>submit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1863</x>
-     <y>977</y>
+     <x>1508</x>
+     <y>997</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1806</x>
-     <y>970</y>
+     <x>1448</x>
+     <y>988</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotClear</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>210</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>541</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotMinus</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>536</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotPlus</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>553</x>
+     <y>402</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotZ2</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewZ2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>84</x>
+     <y>467</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>500</x>
+     <y>498</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotZ</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>572</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>533</x>
+     <y>565</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotY</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>673</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>543</x>
+     <y>669</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotX</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>772</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>470</x>
+     <y>764</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotP</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>268</x>
+     <y>862</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>789</y>
     </hint>
    </hints>
   </connection>
