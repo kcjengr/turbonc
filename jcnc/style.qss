@@ -849,16 +849,6 @@ QProgressBar::chunk:disabled {
 }
 
 
-/* ------------------------------------------------------------------------ */
-/* BUTTONS ---------------------------------------------------------------- */
-/* ------------------------------------------------------------------------ */
-
-/* QAbstractButton ------------------------------------------------------------ */
-
-
-
-
-
 /* QToolButton ------------------------------------------------------------ */
 
 QToolButton {
@@ -1829,25 +1819,44 @@ QGroupBox {
     font-size: 12pt;
 }
 
-
 QPushButton {
-    height: 60px;
-    width: 60px;
     color: black;
-    font: bold;
-    font-size: 10px;
-    border-image: url(:/images/Boton_OFF.png);
-}
-
-QPushButton:pressed {
-    border-image: url(:/images/Boton_ON.png);
+    border-image: url(":/images/Boton_OFF.png");
 }
 
 QPushButton:checked {
-    border-image: url(:/images/Boton_ON.png);
+    border-image: url(":/images/Boton_ON.png");
+}
+
+QPushButton:pressed {
+    border-image: url(":/images/Boton_ON.png");
+}
+
+QPushButton:disabled {
+    color: grey;
+    border-image: url(":/images/Boton_OFF_disabled.png");
+}
+
+#estop_abutton {
+    color: black;
+    image: url(":/images/Seta_OFF.png");
+}
+
+#estop_abutton:checked {
+    image: url(":/images/Seta_ON.png");
+}
+
+#estop_abutton:pressed {
+    image: url(":/images/Seta_ON.png");
+}
+
+#estop_abutton:disabled {
+    color: grey;
+    image: url(":/images/Boton_OFF_disabled.png");
 }
 
 
+/*
 .DialogButton{
     height: 60px;
     width: 60px;
@@ -1915,3 +1924,4 @@ QPushButton:checked {
 #estop_abutton:checked{
     image: url(:/images/Seta_ON.png);
 }
+*/

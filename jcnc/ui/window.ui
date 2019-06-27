@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1456</width>
-    <height>972</height>
+    <width>1920</width>
+    <height>1051</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -497,7 +497,6 @@
            </property>
            <property name="font">
             <font>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <italic>false</italic>
              <bold>true</bold>
@@ -1143,120 +1142,9 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="GcodeEditor" name="gcodeeditor">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>330</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="backgroundcolor" stdset="0">
-             <string>#454545</string>
-            </property>
-            <property name="marginbackgroundcolor" stdset="0">
-             <string>#5c5c5c</string>
-            </property>
-            <property name="thingstyle" stdset="0">
-             <string>#ffffff</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="mdi_gbox">
-            <layout class="QHBoxLayout" name="horizontalLayout_9">
-             <item>
-              <widget class="MDIEntry" name="mdi_entry_box">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>40</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>14</pointsize>
-                </font>
-               </property>
-               <property name="focusPolicy">
-                <enum>Qt::ClickFocus</enum>
-               </property>
-               <property name="placeholderText">
-                <string>MDI</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="mdi_pbutton">
-               <property name="minimumSize">
-                <size>
-                 <width>54</width>
-                 <height>54</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>50</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <italic>false</italic>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>⎆</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+           <widget class="GcodeEditor" name="gcodeeditor"/>
           </item>
          </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_8">
-          <item>
-           <widget class="G92OffsetHandler" name="g92offsethandler"/>
-          </item>
-          <item>
-           <widget class="G5xOffsetHandler" name="g5xoffsethandler"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="NotificationWidget" name="notificationwidget">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>200</width>
-            <height>0</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_7"/>
         </item>
        </layout>
       </item>
@@ -1556,24 +1444,9 @@
    <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
   </customwidget>
   <customwidget>
-   <class>MDIEntry</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
-  </customwidget>
-  <customwidget>
    <class>ActionSlider</class>
    <extends>QSlider</extends>
    <header>qtpyvcp.widgets.input_widgets.action_slider</header>
-  </customwidget>
-  <customwidget>
-   <class>G92OffsetHandler</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.utility_widgets.g92_offset.g92_handler</header>
-  </customwidget>
-  <customwidget>
-   <class>G5xOffsetHandler</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.utility_widgets.g5x_offset.g5x_handler</header>
   </customwidget>
   <customwidget>
    <class>StatusLabel</class>
@@ -1584,7 +1457,6 @@
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>VCPMainWindow</class>
@@ -1602,32 +1474,11 @@
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
   </customwidget>
-  <customwidget>
-   <class>NotificationWidget</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.notification_widget</header>
-  </customwidget>
  </customwidgets>
  <resources>
   <include location="../resources.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>mdi_pbutton</sender>
-   <signal>clicked()</signal>
-   <receiver>mdi_entry_box</receiver>
-   <slot>submit()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1508</x>
-     <y>997</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1448</x>
-     <y>988</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>plotClear</sender>
    <signal>clicked()</signal>

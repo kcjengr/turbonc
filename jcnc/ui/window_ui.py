@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1456, 972)
+        MainWindow.resize(1920, 1020)
         MainWindow.setFocusPolicy(QtCore.Qt.StrongFocus)
         MainWindow.setToolTipDuration(-1)
         MainWindow.setProperty("promptAtExit", False)
@@ -151,7 +151,6 @@ class Ui_MainWindow(object):
         self.run_abutton.setMinimumSize(QtCore.QSize(54, 54))
         self.run_abutton.setMaximumSize(QtCore.QSize(50, 50))
         font = QtGui.QFont()
-        font.setPointSize(-1)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(75)
@@ -359,59 +358,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addLayout(self.verticalLayout_4)
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.gcodeeditor = GcodeEditor(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.gcodeeditor.sizePolicy().hasHeightForWidth())
-        self.gcodeeditor.setSizePolicy(sizePolicy)
-        self.gcodeeditor.setMinimumSize(QtCore.QSize(330, 0))
-        self.gcodeeditor.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.gcodeeditor.setObjectName("gcodeeditor")
-        self.verticalLayout_5.addWidget(self.gcodeeditor)
-        self.mdi_gbox = QtWidgets.QGroupBox(self.centralwidget)
-        self.mdi_gbox.setObjectName("mdi_gbox")
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.mdi_gbox)
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.mdi_entry_box = MDIEntry(self.mdi_gbox)
-        self.mdi_entry_box.setMinimumSize(QtCore.QSize(0, 40))
-        font = QtGui.QFont()
-        font.setFamily("Bebas Kai")
-        font.setPointSize(14)
-        self.mdi_entry_box.setFont(font)
-        self.mdi_entry_box.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.mdi_entry_box.setObjectName("mdi_entry_box")
-        self.horizontalLayout_9.addWidget(self.mdi_entry_box)
-        self.mdi_pbutton = QtWidgets.QPushButton(self.mdi_gbox)
-        self.mdi_pbutton.setMinimumSize(QtCore.QSize(54, 54))
-        self.mdi_pbutton.setMaximumSize(QtCore.QSize(50, 50))
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.mdi_pbutton.setFont(font)
-        self.mdi_pbutton.setObjectName("mdi_pbutton")
-        self.horizontalLayout_9.addWidget(self.mdi_pbutton)
-        self.verticalLayout_5.addWidget(self.mdi_gbox)
         self.horizontalLayout.addLayout(self.verticalLayout_5)
+        self.mdihelperhandler = MdiHelperHandler(self.centralwidget)
+        self.mdihelperhandler.setEnabled(True)
+        self.mdihelperhandler.setObjectName("mdihelperhandler")
+        self.horizontalLayout.addWidget(self.mdihelperhandler)
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.g92offsethandler = G92OffsetHandler(self.centralwidget)
-        self.g92offsethandler.setObjectName("g92offsethandler")
-        self.verticalLayout_8.addWidget(self.g92offsethandler)
-        self.g5xoffsethandler = G5xOffsetHandler(self.centralwidget)
-        self.g5xoffsethandler.setObjectName("g5xoffsethandler")
-        self.verticalLayout_8.addWidget(self.g5xoffsethandler)
         self.horizontalLayout.addLayout(self.verticalLayout_8)
-        self.notificationwidget = NotificationWidget(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.notificationwidget.sizePolicy().hasHeightForWidth())
-        self.notificationwidget.setSizePolicy(sizePolicy)
-        self.notificationwidget.setMinimumSize(QtCore.QSize(200, 0))
-        self.notificationwidget.setObjectName("notificationwidget")
-        self.horizontalLayout.addWidget(self.notificationwidget)
         self.verticalLayout_7 = QtWidgets.QVBoxLayout()
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.horizontalLayout.addLayout(self.verticalLayout_7)
@@ -494,7 +448,6 @@ class Ui_MainWindow(object):
         self.actionSkip_lines_with.setObjectName("actionSkip_lines_with")
 
         self.retranslateUi(MainWindow)
-        self.mdi_pbutton.clicked.connect(self.mdi_entry_box.submit)
         self.plotClear.clicked.connect(self.vtk.clearLivePlot)
         self.plotMinus.clicked.connect(self.vtk.zoomOut)
         self.plotPlus.clicked.connect(self.vtk.zoomIn)
@@ -589,11 +542,6 @@ class Ui_MainWindow(object):
         self.spindleon_abutton.setProperty("actionName", _translate("MainWindow", "spindle.forward"))
         self.spindleoff_abutton.setText(_translate("MainWindow", "OFF"))
         self.spindleoff_abutton.setProperty("actionName", _translate("MainWindow", "spindle.off"))
-        self.gcodeeditor.setProperty("backgroundcolor", _translate("MainWindow", "#454545"))
-        self.gcodeeditor.setProperty("marginbackgroundcolor", _translate("MainWindow", "#5c5c5c"))
-        self.gcodeeditor.setProperty("thingstyle", _translate("MainWindow", "#ffffff"))
-        self.mdi_entry_box.setPlaceholderText(_translate("MainWindow", "MDI"))
-        self.mdi_pbutton.setText(_translate("MainWindow", "⎆"))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
         self.toolBar_2.setWindowTitle(_translate("MainWindow", "toolBar_2"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
@@ -661,13 +609,9 @@ class Ui_MainWindow(object):
 
 from qtpyvcp.widgets.button_widgets.action_button import ActionButton
 from qtpyvcp.widgets.button_widgets.dialog_button import DialogButton
-from qtpyvcp.widgets.display_widgets.notification_widget import NotificationWidget
 from qtpyvcp.widgets.display_widgets.status_label import StatusLabel
 from qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot import VTKBackPlot
 from qtpyvcp.widgets.form_widgets.main_window import VCPMainWindow
 from qtpyvcp.widgets.input_widgets.action_slider import ActionSlider
-from qtpyvcp.widgets.input_widgets.gcode_editor import GcodeEditor
-from qtpyvcp.widgets.input_widgets.mdientry_widget import MDIEntry
-from qtpyvcp.widgets.utility_widgets.g5x_offset.g5x_handler import G5xOffsetHandler
-from qtpyvcp.widgets.utility_widgets.g92_offset.g92_handler import G92OffsetHandler
+from qtpyvcp.widgets.utility_widgets.mdi_helper.mdi_handler import MdiHelperHandler
 import resources_rc
