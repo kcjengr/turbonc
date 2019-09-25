@@ -7,7 +7,7 @@ setup(
     name="jcnc",
     version="0.0.2",
     author="Jauria Studios",
-    author_email="",
+    author_email="j.l.toledano.l@gmail.com",
     description="Jauria CNC - A QtPyVCP based Virtual Control Panel for LinuxCNC",
     long_description=long_description,
     long_description_content_type="text/markdown",
