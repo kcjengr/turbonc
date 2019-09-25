@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="jcnc",
-    version="0.0.1",
+    version="0.0.2",
     author="Jauria Studios",
     author_email="",
     description="Jauria CNC - A QtPyVCP based Virtual Control Panel for LinuxCNC",
@@ -24,10 +24,6 @@ setup(
         ],
     },
     install_requires=[
-       # 'qtpyvcp',
-       # 'docopt',
+       'qtpyvcp',
     ],
-    # dependency_links=[
-    #     'https://github.com/kcjengr/qtpyvcp/tarball/master#egg=qtpyvcp-0.0.1'
-    # ]
 )
