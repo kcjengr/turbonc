@@ -58,5 +58,4 @@ docs/_build/
 target/
 
 \.idea/
-
-jcnc-0.0.2/
+bdist
