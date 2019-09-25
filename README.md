@@ -1,15 +1,54 @@
-JauriaCNC
+# JauriaCNC interface for linuxcnc
 
 ![](images/jcnc.png)
 
-
-# JauriaCNC - QtPyVCP user interface for linuxcnc
-
 JauriaCNC is a QtPyVCP based interface for the LinuxCNC machine control.
 
-## Installation and Usage
+## Quick install
 
-See the [documentation](https://kcjengr.github.io/qtpyvcp/).
+install linuxcnc using the stretch iso
+
+http://www.linuxcnc.org/testing-stretch-rtpreempt/ 
+
+once boot upgrade to linuxcnc version 2.8 or master
+
+* Dependencies
+
+```
+$ sudo apt install python-pyqt5 python-pyqt5.qtquick python-dbus.mainloop.pyqt5 python-pyqt5.qtopengl python-pyqt5.qsci python-pyqt5.qtmultimedia qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins pyqt5-dev-tools python-dev python-setuptools python-pip git
+```
+
+* jauriacnc pip package
+
+```
+$ pip install jcnc
+```
+
+## Customize
+
+clone the jcnc repository
+
+```
+$ git clone https://github.com/TurBoss/jauriacnc.git
+```
+
+install the dev version using pip
+
+```
+$ cd jauriacnc
+$ pip install -e .
+```
+
+now you can run editvcp to edit the interface
+
+```
+$ editvcp jcnc
+```
+
+
+## Documentation
+
+QtPyVCP [documentation](https://kcjengr.github.io/qtpyvcp/).
 
 
 ## Resources
@@ -18,16 +57,17 @@ See the [documentation](https://kcjengr.github.io/qtpyvcp/).
 * [Documentation](https://kcjengr.github.io/qtpyvcp/)
 * [Freenode IRC](http://webchat.freenode.net/?channels=%23hazzy) (#hazzy)
 * [The Matrix](https://riot.im/app/#/room/#qtpyvcp:matrix.org) (#qtpyvcp:matrix.org)
-* [Gitter](https://gitter.im/KurtJacobson/hazzy)
+* [Gitter](https://gitter.im/kcjengr/qtpyvcp)
+* [Discord](https://discord.gg/463hMhd)
 * [Issue Tracker](https://github.com/TurBoss/jauriacnc/issues)
 
 
 ## Dependancies
 
-* LinuxCNC master (2.8~pre)
+* [LinuxCNC](https://linuxcnc.org)
 * Python 2.7
 * PyQt5 or PySide2
-* QtPyVCP
+* [QtPyVCP](https://qtpyvcp.kcjengr.com/)
 
 JauriaCNC is developed and tested using the LinuxCNC Debian 9 (stretch)
 [Live ISO](http://www.linuxcnc.org/testing-stretch-rtpreempt/) and Ubuntu 18.10 SIM. It should run
