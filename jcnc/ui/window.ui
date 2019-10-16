@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
+    <width>1024</width>
     <height>768</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>768</height>
+   </size>
   </property>
   <property name="focusPolicy">
    <enum>Qt::StrongFocus</enum>
@@ -263,72 +269,6 @@
            </property>
            <property name="actionName" stdset="0">
             <string>machine.home.all</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="ActionButton" name="homex_abutton">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>64</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>100</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>X</string>
-           </property>
-           <property name="actionName" stdset="0">
-            <string>machine.home.axis:x</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="ActionButton" name="homey_abutton">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>64</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>100</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Y</string>
-           </property>
-           <property name="actionName" stdset="0">
-            <string>machine.home.axis:y</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="ActionButton" name="homez_abutton">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>64</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>100</width>
-             <height>100</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Z</string>
-           </property>
-           <property name="actionName" stdset="0">
-            <string>machine.home.axis:z</string>
            </property>
           </widget>
          </item>
@@ -676,7 +616,7 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
+         <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0,0">
           <property name="spacing">
            <number>6</number>
           </property>
@@ -692,6 +632,35 @@
           <property name="bottomMargin">
            <number>15</number>
           </property>
+          <item>
+           <widget class="StatusLabel" name="statuslabel_13">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0</string>
+            </property>
+            <property name="rules" stdset="0">
+             <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:gcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Codes&quot;}]</string>
+            </property>
+            <property name="statusItem" stdset="0">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="StatusLabel" name="statuslabel_14">
+            <property name="text">
+             <string>M0 M0 M0 M0 M0 M0 M0 M0 M0</string>
+            </property>
+            <property name="rules" stdset="0">
+             <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:mcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Mcodes&quot;}]</string>
+            </property>
+            <property name="statusItem" stdset="0">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="VTKBackPlot" name="vtk">
             <property name="backgroundColor" stdset="0">
@@ -1073,7 +1042,7 @@
            <widget class="GcodeEditor" name="gcodeeditor">
             <property name="minimumSize">
              <size>
-              <width>400</width>
+              <width>300</width>
               <height>0</height>
              </size>
             </property>
@@ -1089,20 +1058,6 @@
            <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item>
              <widget class="MDIEntry" name="mdientry"/>
-            </item>
-            <item>
-             <widget class="QPushButton" name="mdi_return">
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>64</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>RUN
-MDI</string>
-              </property>
-             </widget>
             </item>
            </layout>
           </item>
@@ -1424,6 +1379,7 @@ MDI</string>
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>VCPMainWindow</class>
