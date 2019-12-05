@@ -282,6 +282,47 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
+          <widget class="MDIButton" name="zero_all_button">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>64</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>ZERO ALL</string>
+           </property>
+           <property name="rules" stdset="0">
+            <string>[
+    {
+        &quot;channels&quot;: [
+            {
+                &quot;url&quot;: &quot;status:g5x_index&quot;,
+                &quot;trigger&quot;: true,
+                &quot;type&quot;: &quot;int&quot;
+            }
+        ],
+        &quot;expression&quot;: &quot;&quot;,
+        &quot;name&quot;: &quot;G5x Index&quot;,
+        &quot;property&quot;: &quot;None&quot;
+    }
+]</string>
+           </property>
+           <property name="MDICommand" stdset="0">
+            <string>G10 L20 P{ch[0]} X0.0 Y0.0 Z0.0 A0.0 B0.0</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="DialogButton" name="zero_dbutton">
            <property name="minimumSize">
             <size>
@@ -1376,6 +1417,11 @@
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
   </customwidget>
   <customwidget>
+   <class>MDIButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
+  </customwidget>
+  <customwidget>
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
@@ -1400,6 +1446,7 @@
  </customwidgets>
  <resources>
   <include location="../resources.qrc"/>
+  <include location="../../../probe_basic/probe_basic/probe_basic.qrc"/>
  </resources>
  <connections>
   <connection>
