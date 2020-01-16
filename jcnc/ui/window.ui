@@ -20,7 +20,11 @@
    <enum>Qt::StrongFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>TurBoLinuxCNC - 3000</string>
+   <string>TurBoNC</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources.qrc">
+    <normaloff>:/images/logo.png</normaloff>:/images/logo.png</iconset>
   </property>
   <property name="toolTipDuration">
    <number>-1</number>
@@ -69,7 +73,7 @@
            </property>
            <property name="maximumSize">
             <size>
-             <width>100</width>
+             <width>64</width>
              <height>100</height>
             </size>
            </property>
@@ -299,7 +303,8 @@
             </size>
            </property>
            <property name="text">
-            <string>ZERO ALL</string>
+            <string>ZERO
+ALL</string>
            </property>
            <property name="rules" stdset="0">
             <string>[
@@ -1080,23 +1085,24 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="GcodeEditor" name="gcodeeditor">
-            <property name="minimumSize">
-             <size>
-              <width>300</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="backgroundcolor" stdset="0">
-             <string>#454545</string>
-            </property>
-            <property name="marginbackgroundcolor" stdset="0">
-             <string>#5c5c5c</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="gCodeEdit" name="gcodeedit">
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="backgroundcolor" stdset="0">
+               <color>
+                <red>92</red>
+                <green>53</green>
+                <blue>102</blue>
+               </color>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="MDIEntry" name="mdientry"/>
             </item>
@@ -1422,12 +1428,6 @@
    <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
   </customwidget>
   <customwidget>
-   <class>GcodeEditor</class>
-   <extends>QFrame</extends>
-   <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>VCPMainWindow</class>
    <extends>QMainWindow</extends>
    <header>qtpyvcp.widgets.form_widgets.main_window</header>
@@ -1443,10 +1443,14 @@
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
   </customwidget>
+  <customwidget>
+   <class>gCodeEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.gcedit</header>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="../resources.qrc"/>
-  <include location="../../../probe_basic/probe_basic/probe_basic.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -1456,8 +1460,8 @@
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>339</x>
-     <y>210</y>
+     <x>79</x>
+     <y>231</y>
     </hint>
     <hint type="destinationlabel">
      <x>541</x>
@@ -1472,8 +1476,8 @@
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>279</x>
-     <y>301</y>
+     <x>79</x>
+     <y>306</y>
     </hint>
     <hint type="destinationlabel">
      <x>536</x>
@@ -1488,8 +1492,8 @@
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>80</x>
-     <y>385</y>
+     <x>79</x>
+     <y>380</y>
     </hint>
     <hint type="destinationlabel">
      <x>553</x>
@@ -1504,8 +1508,8 @@
    <slot>setViewZ2()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>84</x>
-     <y>467</y>
+     <x>79</x>
+     <y>454</y>
     </hint>
     <hint type="destinationlabel">
      <x>500</x>
@@ -1520,8 +1524,8 @@
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>89</x>
-     <y>572</y>
+     <x>79</x>
+     <y>528</y>
     </hint>
     <hint type="destinationlabel">
      <x>533</x>
@@ -1536,12 +1540,12 @@
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>103</x>
-     <y>673</y>
+     <x>79</x>
+     <y>603</y>
     </hint>
     <hint type="destinationlabel">
-     <x>543</x>
-     <y>669</y>
+     <x>583</x>
+     <y>584</y>
     </hint>
    </hints>
   </connection>
@@ -1552,12 +1556,12 @@
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>90</x>
-     <y>772</y>
+     <x>79</x>
+     <y>677</y>
     </hint>
     <hint type="destinationlabel">
-     <x>470</x>
-     <y>764</y>
+     <x>566</x>
+     <y>584</y>
     </hint>
    </hints>
   </connection>
@@ -1568,12 +1572,12 @@
    <slot>setViewP()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>268</x>
-     <y>862</y>
+     <x>79</x>
+     <y>751</y>
     </hint>
     <hint type="destinationlabel">
-     <x>516</x>
-     <y>789</y>
+     <x>583</x>
+     <y>584</y>
     </hint>
    </hints>
   </connection>
