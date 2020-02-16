@@ -10,7 +10,7 @@ Example:
     Assuming the dir this file is located in is on the PATH, you can
     launch Jauria CNC by saying::
 
-        $ jcnc --ini=/path/to/config.ini [options ...]
+        $ tnc --ini=/path/to/config.ini [options ...]
 
     Run with the --help option to print a full list of options.
 
@@ -29,8 +29,8 @@ def main(opts=None):
 
     if opts is None:
         from qtpyvcp.utilities.opt_parser import parse_opts
-        opts = parse_opts(vcp_cmd='jcnc',
-                          vcp_name='Jauria CNC',
+        opts = parse_opts(vcp_cmd='tnc',
+                          vcp_name='TurBoNC',
                           vcp_version=__version__)
 
     qtpyvcp.run_vcp(opts, VCP_CONFIG_FILE)

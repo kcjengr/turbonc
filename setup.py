@@ -4,23 +4,23 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="jcnc",
+    name="tnc",
     version="0.0.2",
-    author="Jauria Studios",
+    author="TurBoss",
     author_email="j.l.toledano.l@gmail.com",
-    description="Jauria CNC - A QtPyVCP based Virtual Control Panel for LinuxCNC",
+    description="TurBo NC - A QtPyVCP based Virtual Control Panel for LinuxCNC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/TurBoss/jauriacnc",
-    download_url="https://github.com/TurBoss/jauriacnc/tarball/master",
+    url="https://github.com/TurBoss/tnc",
+    download_url="https://github.com/TurBoss/tnc/tarball/master",
     packages=find_packages(),
     include_package_data=True,
     entry_points={
         'gui_scripts': [
-            'jcnc=jcnc:main',
+            'tnc=tnc:main',
         ],
         'qtpyvcp.vcp': [
-            'jcnc=jcnc',
+            'tnc=tnc',
         ],
     },
     install_requires=[

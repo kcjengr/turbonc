@@ -5,9 +5,9 @@ qtdesigner:
   qss_file: ( application.kwargs.stylesheet )
 
 vcp:
-  name: Jauria CNC
+  name: TurBoNC
   version: v0.0.1
-  author: Jauria Studios
+  author: TurBoss
   description: Just the basic functions I need to run linuxcnc
 
 data_plugins:
@@ -19,7 +19,7 @@ data_plugins:
 
 windows:
   mainwindow:
-    provider: jcnc.main:MainWindow
+    provider: tnc.main:MainWindow
     kwargs:
       menu: ( default_menubar )
       ui_file: {{ file.dir }}/ui/window.ui
