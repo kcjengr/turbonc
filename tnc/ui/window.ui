@@ -695,19 +695,6 @@ ALL</string>
            </widget>
           </item>
           <item>
-           <widget class="StatusLabel" name="statuslabel_14">
-            <property name="text">
-             <string>M0 M0 M0 M0 M0 M0 M0 M0 M0</string>
-            </property>
-            <property name="rules" stdset="0">
-             <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:mcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Mcodes&quot;}]</string>
-            </property>
-            <property name="statusItem" stdset="0">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="VTKBackPlot" name="vtk">
             <property name="backgroundColor" stdset="0">
              <color>
@@ -725,6 +712,19 @@ ALL</string>
             </property>
             <property name="enableProgramLabels" stdset="0">
              <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="StatusLabel" name="statuslabel_14">
+            <property name="text">
+             <string>M0 M0 M0 M0 M0 M0 M0 M0 M0</string>
+            </property>
+            <property name="rules" stdset="0">
+             <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:mcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Mcodes&quot;}]</string>
+            </property>
+            <property name="statusItem" stdset="0">
+             <string/>
             </property>
            </widget>
           </item>
@@ -748,6 +748,16 @@ ALL</string>
                </size>
               </property>
              </spacer>
+            </item>
+            <item>
+             <widget class="VCPSettingsCheckBox" name="settings_checkbox">
+              <property name="text">
+               <string>VKB enabled</string>
+              </property>
+              <property name="settingName" stdset="0">
+               <string>virtual-keyboard.enable</string>
+              </property>
+             </widget>
             </item>
             <item>
              <layout class="QGridLayout" name="gridLayout">
@@ -1404,6 +1414,11 @@ ALL</string>
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+  </customwidget>
+  <customwidget>
+   <class>VCPSettingsCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
   </customwidget>
   <customwidget>
    <class>ActionButton</class>
