@@ -1082,34 +1082,6 @@ ALL</string>
           </item>
          </layout>
         </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_7">
-            <item>
-             <widget class="gCodeEdit" name="gcodeedit">
-              <property name="minimumSize">
-               <size>
-                <width>300</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="backgroundcolor" stdset="0">
-               <color>
-                <red>92</red>
-                <green>53</green>
-                <blue>102</blue>
-               </color>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="MDIEntry" name="mdientry"/>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
        </layout>
       </item>
      </layout>
@@ -1408,11 +1380,6 @@ ALL</string>
    <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
   </customwidget>
   <customwidget>
-   <class>MDIEntry</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
-  </customwidget>
-  <customwidget>
    <class>ActionSlider</class>
    <extends>QSlider</extends>
    <header>qtpyvcp.widgets.input_widgets.action_slider</header>
@@ -1442,11 +1409,6 @@ ALL</string>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
-  </customwidget>
-  <customwidget>
-   <class>gCodeEdit</class>
-   <extends>QPlainTextEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.gcedit</header>
   </customwidget>
  </customwidgets>
  <resources>
