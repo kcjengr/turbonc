@@ -27,16 +27,3 @@ windows:
 application:
   kwargs:
     stylesheet: {{ file.dir }}/style.qss
-
-virtual_keyboards:
-  engine:
-    provider: qtpyvcp.widgets.virtual_keyboards.vkb_engine:VKBEngine
-    kwargs:
-      enabled: True
-
-
-settings:
-  virtual-keyboard.enable:
-    description: Enable the on screen virtual keyboard.
-    default_value: True
-    persistent: true
