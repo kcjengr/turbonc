@@ -706,7 +706,7 @@ ALL</string>
          </widget>
         </item>
         <item>
-         <widget class="VCPStackedWidget" name="stackedwidget">
+         <widget class="QStackedWidget" name="stackedwidget">
           <property name="currentIndex">
            <number>0</number>
           </property>
@@ -1420,12 +1420,6 @@ ALL</string>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
-  </customwidget>
-  <customwidget>
-   <class>VCPStackedWidget</class>
-   <extends>QStackedWidget</extends>
-   <header>qtpyvcp.widgets.containers.stack</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
