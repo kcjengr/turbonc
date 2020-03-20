@@ -730,11 +730,63 @@ Path</string>
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="ActionComboBox" name="actioncombobox">
+           <property name="actionName" stdset="0">
+            <string>machine.set-work-coord</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>G54</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G55</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G56</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G57</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G58</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G59</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G59.1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G59.2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G59.3</string>
+            </property>
+           </item>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0,0">
+       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0">
         <property name="spacing">
          <number>6</number>
         </property>
@@ -751,33 +803,149 @@ Path</string>
          <number>15</number>
         </property>
         <item>
-         <widget class="StatusLabel" name="statuslabel_13">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="text">
-           <string>G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0</string>
-          </property>
-          <property name="rules" stdset="0">
-           <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:gcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Codes&quot;}]</string>
-          </property>
-          <property name="statusItem" stdset="0">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="StatusLabel" name="statuslabel_14">
-          <property name="text">
-           <string>M0 M0 M0 M0 M0 M0 M0 M0 M0</string>
-          </property>
-          <property name="rules" stdset="0">
-           <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:mcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Mcodes&quot;}]</string>
-          </property>
-          <property name="statusItem" stdset="0">
-           <string/>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="StatusLabel" name="statuslabel_13">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0</string>
+              </property>
+              <property name="rules" stdset="0">
+               <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:gcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Codes&quot;}]</string>
+              </property>
+              <property name="statusItem" stdset="0">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="StatusLabel" name="statuslabel_14">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>M0 M0 M0 M0 M0 M0 M0 M0 M0</string>
+              </property>
+              <property name="rules" stdset="0">
+               <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:mcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Mcodes&quot;}]</string>
+              </property>
+              <property name="statusItem" stdset="0">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,0,0,0">
+            <item>
+             <widget class="QPushButton" name="pushButton_4">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>82</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Edit</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>82</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Find
+Replace</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>82</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Save</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>48</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>82</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Save As</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="QStackedWidget" name="stackedwidget">
@@ -810,9 +978,32 @@ Path</string>
               </property>
              </widget>
             </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="GcodeEditor" name="gcodeeditor"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>MDI</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="MDIEntry" name="mdientry"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="page_2"/>
+          <widget class="QWidget" name="page_2">
+           <layout class="QVBoxLayout" name="verticalLayout_2"/>
+          </widget>
          </widget>
         </item>
         <item>
@@ -821,28 +1012,12 @@ Path</string>
            <number>10</number>
           </property>
           <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <layout class="QGridLayout" name="gridLayout">
             <property name="spacing">
              <number>10</number>
             </property>
-            <item row="0" column="2">
-             <widget class="ActionButton" name="jogyplus_abutton">
+            <item row="0" column="5">
+             <widget class="ActionButton" name="jogzplus_abutton">
               <property name="minimumSize">
                <size>
                 <width>64</width>
@@ -856,10 +1031,10 @@ Path</string>
                </size>
               </property>
               <property name="text">
-               <string>+Y</string>
+               <string>+Z</string>
               </property>
               <property name="actionName" stdset="0">
-               <string>machine.jog.axis:y,pos</string>
+               <string>machine.jog.axis:z,pos</string>
               </property>
              </widget>
             </item>
@@ -885,8 +1060,8 @@ Path</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="3">
-             <widget class="ActionButton" name="jogxplus_abutton">
+            <item row="1" column="5">
+             <widget class="ActionButton" name="jogzmin_abutton">
               <property name="minimumSize">
                <size>
                 <width>64</width>
@@ -900,10 +1075,10 @@ Path</string>
                </size>
               </property>
               <property name="text">
-               <string>+X</string>
+               <string>-Z</string>
               </property>
               <property name="actionName" stdset="0">
-               <string>machine.jog.axis:x,pos</string>
+               <string>machine.jog.axis:z,neg</string>
               </property>
              </widget>
             </item>
@@ -929,31 +1104,8 @@ Path</string>
               </property>
              </widget>
             </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <layout class="QGridLayout" name="gridLayout_2">
-            <property name="spacing">
-             <number>10</number>
-            </property>
-            <item row="1" column="0">
-             <widget class="ActionButton" name="jogzmin_abutton">
+            <item row="0" column="2">
+             <widget class="ActionButton" name="jogyplus_abutton">
               <property name="minimumSize">
                <size>
                 <width>64</width>
@@ -967,15 +1119,15 @@ Path</string>
                </size>
               </property>
               <property name="text">
-               <string>-Z</string>
+               <string>+Y</string>
               </property>
               <property name="actionName" stdset="0">
-               <string>machine.jog.axis:z,neg</string>
+               <string>machine.jog.axis:y,pos</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="0">
-             <widget class="ActionButton" name="jogzplus_abutton">
+            <item row="1" column="3">
+             <widget class="ActionButton" name="jogxplus_abutton">
               <property name="minimumSize">
                <size>
                 <width>64</width>
@@ -989,10 +1141,10 @@ Path</string>
                </size>
               </property>
               <property name="text">
-               <string>+Z</string>
+               <string>+X</string>
               </property>
               <property name="actionName" stdset="0">
-               <string>machine.jog.axis:z,pos</string>
+               <string>machine.jog.axis:x,pos</string>
               </property>
              </widget>
             </item>
@@ -1019,32 +1171,20 @@ Path</string>
             <item>
              <widget class="StatusLabel" name="feedover_slabel">
               <property name="text">
-               <string>Feed Override: 0%</string>
+               <string>Feed Override
+ 0%</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
               <property name="rules" stdset="0">
-               <string>[
-    {
-        &quot;channels&quot;: [
-            {
-                &quot;url&quot;: &quot;status:feedrate&quot;,
-                &quot;trigger&quot;: true, 
-                &quot;type&quot;: &quot;float&quot;
-            }
-        ], 
-        &quot;expression&quot;: &quot;\&quot;Feed Override: {:.0%}\&quot;.format(ch[0])&quot;, 
-        &quot;name&quot;: &quot;New Rule&quot;, 
-        &quot;property&quot;: &quot;Text&quot;
-    }
-]</string>
+               <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Feed Override\\n {:.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;Feed Rate&quot;}]</string>
               </property>
               <property name="format" stdset="0">
-               <string>&lt;b&gt;Feed Override:&lt;/b&gt; {:.0%}</string>
-              </property>
-              <property name="statusItem" stdset="0">
-               <string>feedrate</string>
+               <string>&lt;b&gt;FEED:&lt;/b&gt; {:.0%}</string>
               </property>
              </widget>
             </item>
@@ -1058,7 +1198,7 @@ Path</string>
               </property>
               <property name="minimumSize">
                <size>
-                <width>50</width>
+                <width>120</width>
                 <height>64</height>
                </size>
               </property>
@@ -1095,75 +1235,69 @@ Path</string>
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>SPINDLE</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QGridLayout" name="gridLayout_3">
-            <property name="spacing">
-             <number>10</number>
-            </property>
-            <item row="0" column="0">
-             <widget class="ActionButton" name="spindleon_abutton">
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>64</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_4">
               <property name="text">
-               <string>ON</string>
+               <string>SPINDLE</string>
               </property>
-              <property name="actionName" stdset="0">
-               <string>spindle.forward</string>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="ActionButton" name="spindleoff_abutton">
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>64</height>
-               </size>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <property name="spacing">
+               <number>10</number>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>100</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>OFF</string>
-              </property>
-              <property name="actionName" stdset="0">
-               <string>spindle.off</string>
-              </property>
-             </widget>
+              <item>
+               <widget class="ActionButton" name="spindleoff_abutton">
+                <property name="minimumSize">
+                 <size>
+                  <width>64</width>
+                  <height>64</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>OFF</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>spindle.off</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="ActionButton" name="spindleon_abutton">
+                <property name="minimumSize">
+                 <size>
+                  <width>64</width>
+                  <height>64</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>ON</string>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>spindle.forward</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </item>
@@ -1465,6 +1599,11 @@ Path</string>
    <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
   </customwidget>
   <customwidget>
+   <class>MDIEntry</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
    <class>ActionSlider</class>
    <extends>QSlider</extends>
    <header>qtpyvcp.widgets.input_widgets.action_slider</header>
@@ -1480,6 +1619,12 @@ Path</string>
    <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
   </customwidget>
   <customwidget>
+   <class>GcodeEditor</class>
+   <extends>QFrame</extends>
+   <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>VCPMainWindow</class>
    <extends>QMainWindow</extends>
    <header>qtpyvcp.widgets.form_widgets.main_window</header>
@@ -1489,6 +1634,11 @@ Path</string>
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_combobox</header>
   </customwidget>
   <customwidget>
    <class>ActionButton</class>
@@ -1507,12 +1657,12 @@ Path</string>
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>78</x>
-     <y>225</y>
+     <x>93</x>
+     <y>210</y>
     </hint>
     <hint type="destinationlabel">
-     <x>541</x>
-     <y>258</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1523,12 +1673,12 @@ Path</string>
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>442</y>
+     <x>104</x>
+     <y>427</y>
     </hint>
     <hint type="destinationlabel">
-     <x>536</x>
-     <y>353</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1539,12 +1689,12 @@ Path</string>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>496</y>
+     <x>104</x>
+     <y>481</y>
     </hint>
     <hint type="destinationlabel">
-     <x>553</x>
-     <y>402</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1555,12 +1705,12 @@ Path</string>
    <slot>setViewZ2()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>551</y>
+     <x>104</x>
+     <y>535</y>
     </hint>
     <hint type="destinationlabel">
-     <x>500</x>
-     <y>498</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1571,12 +1721,12 @@ Path</string>
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>605</y>
+     <x>104</x>
+     <y>589</y>
     </hint>
     <hint type="destinationlabel">
-     <x>533</x>
-     <y>565</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1587,12 +1737,12 @@ Path</string>
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>659</y>
+     <x>104</x>
+     <y>644</y>
     </hint>
     <hint type="destinationlabel">
-     <x>678</x>
-     <y>576</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1603,12 +1753,12 @@ Path</string>
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>713</y>
+     <x>104</x>
+     <y>698</y>
     </hint>
     <hint type="destinationlabel">
-     <x>661</x>
-     <y>576</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1619,12 +1769,12 @@ Path</string>
    <slot>setViewP()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>767</y>
+     <x>104</x>
+     <y>752</y>
     </hint>
     <hint type="destinationlabel">
-     <x>678</x>
-     <y>576</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1635,12 +1785,12 @@ Path</string>
    <slot>enable_panning(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>57</x>
-     <y>270</y>
+     <x>72</x>
+     <y>264</y>
     </hint>
     <hint type="destinationlabel">
-     <x>158</x>
-     <y>297</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1655,8 +1805,8 @@ Path</string>
      <y>294</y>
     </hint>
     <hint type="destinationlabel">
-     <x>363</x>
-     <y>396</y>
+     <x>241</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -1671,8 +1821,72 @@ Path</string>
      <y>361</y>
     </hint>
     <hint type="destinationlabel">
-     <x>217</x>
-     <y>452</y>
+     <x>241</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>gcodeeditor</receiver>
+   <slot>setEditable(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>649</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>654</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>gcodeeditor</receiver>
+   <slot>find_replace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>742</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>742</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>gcodeeditor</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>857</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>834</x>
+     <y>295</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeeditor</receiver>
+   <slot>saveAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>943</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>924</x>
+     <y>268</y>
     </hint>
    </hints>
   </connection>
