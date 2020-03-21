@@ -59,3 +59,7 @@ target/
 
 \.idea/
 dist
+
+linuxcnc/configs/sim.qtpyvcp/autosave.halscope
+
+linuxcnc/configs/sim.qtpyvcp/.vcp_persistent_data.pickle
