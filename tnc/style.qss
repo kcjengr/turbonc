@@ -8,8 +8,8 @@ QsciScintilla {
 /* QWidget ---------------------------------------------------------------- */
 
 QWidget {
-    background-color: #000000;
-    border: 0px solid #ff3e00;
+    background-color: #2d2d2d;
+    border: 0px solid #454545;
     padding: 0px;
     color: #F0F0F0;
     selection-background-color: #AA5500;
@@ -21,19 +21,19 @@ QWidget:focus {
 }
 
 QWidget:disabled {
-    background-color: #1d1d1d;
+    background-color: #2d2d2d;
     color: #787878;
     selection-background-color: #AA5500;
     selection-color: #787878;
 }
 
 QWidget:item:selected {
+    background-color: #AA5500;
 }
 
 QWidget:item:hover {
-}
-
-QWidget:item:focus {
+    background-color: #AA6600;
+    color: #454545;
 }
 
 /* QMainWindow ------------------------------------------------------------ */
@@ -1693,6 +1693,12 @@ QToolBox QScrollArea QWidget {
     background-color: #2d2d2d;
 }
 
+QWidget {
+    padding: 0px;
+    background-image: url(:/images/red_iron.png);
+    background-color: rgba( 2,2,2,2);
+}
+
 /* QFrame ----------------------------------------------------------------- */
 
 QFrame {
@@ -1814,13 +1820,8 @@ QGroupBox {
 }
 
 QPushButton {
-    color: #ff3e00;
-    background: #000000;
-    border: 4px solid #ff3e00;
-    border-radius: 4px;
-
-/*    border-image: url(":/images/Boton_OFF.png");
-*/
+    color: black;
+    border-image: url(":/images/Boton_OFF.png");
 }
 
 /*QPushButton:disabled {*/
@@ -1832,34 +1833,24 @@ QPushButton {
 /*}*/
 
 QPushButton:checked {
-    color: #ff3e00;
-    background: #993e00;
-    border: 4px solid #ff3e00;
+    border-image: url(":/images/Boton_ON.png");
 }
 
 QPushButton:pressed {
-    color: #ff3e00;
-    background: #993e00;
-    border: 4px solid #ff3e00;
+    border-image: url(":/images/Boton_ON.png");
 }
 
 #estop_abutton {
-    color: #ff3e00;
-    background: #000000;
-    border: 4px solid #ff3e00;
-    border-radius: 30px;
+    color: black;
+    border-image: url(":/images/Seta_ON.png");
 }
 
 #estop_abutton:checked {
-    color: #ff3e00;
-    background: #993e00;
-    border: 4px solid #ff3e00;
+    border-image: url(":/images/Seta_OFF.png");
 }
 
 #estop_abutton:pressed {
-    color: #ff3e00;
-    background: #993e00;
-    border: 4px solid #ff3e00;
+    border-image: url(":/images/Seta_OFF.png");
 }
 
 
