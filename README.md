@@ -1,16 +1,16 @@
 # JauriaCNC interface for linuxcnc
 
-![](images/jcnc.png)
+![](pics/tnc.png)
 
 JauriaCNC is a QtPyVCP based interface for the LinuxCNC machine control.
 
 ## Quick install
 
-install linuxcnc using the stretch iso
+install linuxcnc using the linuxcnc 2.80 iso
 
-http://www.linuxcnc.org/testing-stretch-rtpreempt/ 
+http://www.linuxcnc.org/
+http://www.linuxcnc.org/downloads/
 
-once boot upgrade to linuxcnc version 2.8 or master
 
 * Dependencies
 
@@ -69,9 +69,9 @@ QtPyVCP [documentation](https://kcjengr.github.io/qtpyvcp/).
 * PyQt5 or PySide2
 * [QtPyVCP](https://qtpyvcp.kcjengr.com/)
 
-JauriaCNC is developed and tested using the LinuxCNC Debian 9 (stretch)
-[Live ISO](http://www.linuxcnc.org/testing-stretch-rtpreempt/) and Ubuntu 18.10 SIM. It should run
-on any system that can have PyQt5 installed, but Debian 9 is the only OS
+JauriaCNC is developed and tested using the LinuxCNC Debian 10 (buster)
+[Live ISO](http://www.linuxcnc.org/download/) It should run
+on any system that can have PyQt5 installed, but Debian 10 is the only OS
 that is officially supported.
 
 
