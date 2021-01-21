@@ -30,6 +30,7 @@ data_plugins:
       # serialization method to use: json or pickle
       serialization_method: pickle
       # persistence_file: .vcp_data.json
+
 windows:
   mainwindow:
     provider: tnc.main:MainWindow
