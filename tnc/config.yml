@@ -11,12 +11,25 @@ vcp:
   description: Just the basic functions I need to run linuxcnc
 
 data_plugins:
+
   status:
     kwargs:
-      cycle_time: 75
+      cycle_time: 25
+
   clock:
     provider: qtpyvcp.plugins.clock:Clock
 
+  tooltable:
+    provider: qtpyvcp.plugins.tool_table:ToolTable
+    kwargs:
+        columns: TXYZDR
+
+  persistent_data_manager:
+    provider: qtpyvcp.plugins.persistent_data_manager:PersistentDataManager
+    kwargs:
+      # serialization method to use: json or pickle
+      serialization_method: pickle
+      # persistence_file: .vcp_data.json
 windows:
   mainwindow:
     provider: tnc.main:MainWindow
