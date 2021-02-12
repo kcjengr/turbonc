@@ -12,6 +12,8 @@ LOG = logger.getLogger('QtPyVCP.' + __name__)
 
 from qtpyvcp import actions
 
+from tnc.dialogs.zero_xy import ZeroXY
+
 import resources
 
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -22,3 +24,8 @@ class MainWindow(VCPMainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
 
         self.initUi()
+        
+        self.zero__xy_dialog = ZeroXY()
+
+    def on_zero_xy_button_clicked(self):
+        self.zero__xy_dialog.open()

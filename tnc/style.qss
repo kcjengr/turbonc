@@ -667,6 +667,7 @@ QToolButton#qt_toolbar_ext_button {
 /* QAbstractSpinBox ------------------------------------------------------- */
 
 QAbstractSpinBox {
+    height: 48;
     background-color: #2d2d2d;
     border: 1px solid #454545;
     color: #F0F0F0;
@@ -943,6 +944,7 @@ QCommandLinkButton:disabled {
 /* QCombobox -------------------------------------------------------------- */
 
 QComboBox {
+    height: 48;
     border: 1px solid #454545;
     border-radius: 4px;
     selection-background-color: #AA5500;
@@ -1820,7 +1822,10 @@ QGroupBox {
 }
 
 QPushButton {
+    width: 56;
+    height: 48px;
     color: black;
+    
     border-image: url(":/images/Boton_OFF.png");
 }
 
