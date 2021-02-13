@@ -421,7 +421,7 @@
                    </size>
                   </property>
                   <property name="text">
-                   <string>G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0</string>
+                   <string>G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0</string>
                   </property>
                   <property name="rules" stdset="0">
                    <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;type&quot;: &quot;str&quot;, &quot;url&quot;: &quot;status:gcodes?text&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Active Codes&quot;}]</string>
@@ -1236,14 +1236,11 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="MDIButton" name="zero_all_button">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
+          <widget class="QPushButton" name="zero_xy_button">
            <property name="minimumSize">
             <size>
-             <width>60</width>
-             <height>64</height>
+             <width>64</width>
+             <height>60</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -1255,25 +1252,6 @@
            <property name="text">
             <string>ZERO
 X Y</string>
-           </property>
-           <property name="rules" stdset="0">
-            <string>[
-    {
-        &quot;channels&quot;: [
-            {
-                &quot;url&quot;: &quot;status:g5x_index&quot;,
-                &quot;trigger&quot;: true,
-                &quot;type&quot;: &quot;int&quot;
-            }
-        ],
-        &quot;expression&quot;: &quot;&quot;,
-        &quot;name&quot;: &quot;G5x Index&quot;,
-        &quot;property&quot;: &quot;None&quot;
-    }
-]</string>
-           </property>
-           <property name="MDICommand" stdset="0">
-            <string>G10 L20 P{ch[0]} X0.0 Y0.0</string>
            </property>
           </widget>
          </item>
@@ -1683,11 +1661,6 @@ X Y</string>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
   </customwidget>
   <customwidget>
-   <class>MDIButton</class>
-   <extends>QPushButton</extends>
-   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
-  </customwidget>
-  <customwidget>
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
@@ -1703,6 +1676,7 @@ X Y</string>
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>ActionComboBox</class>
