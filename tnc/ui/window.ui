@@ -1199,7 +1199,7 @@
           <number>10</number>
          </property>
          <item>
-          <widget class="ActionButton" name="homeall_abutton">
+          <widget class="DialogButton" name="zero_dbutton_3">
            <property name="minimumSize">
             <size>
              <width>60</width>
@@ -1215,8 +1215,8 @@
            <property name="text">
             <string>ALL</string>
            </property>
-           <property name="actionName" stdset="0">
-            <string>machine.home.all</string>
+           <property name="dialogName" stdset="0">
+            <string>home_all</string>
            </property>
           </widget>
          </item>
@@ -1236,11 +1236,11 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QPushButton" name="zero_xy_button">
+          <widget class="DialogButton" name="zero_dbutton_2">
            <property name="minimumSize">
             <size>
-             <width>64</width>
-             <height>60</height>
+             <width>60</width>
+             <height>64</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -1252,6 +1252,9 @@
            <property name="text">
             <string>ZERO
 X Y</string>
+           </property>
+           <property name="dialogName" stdset="0">
+            <string>zero_xy</string>
            </property>
           </widget>
          </item>

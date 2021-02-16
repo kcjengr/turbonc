@@ -48,14 +48,13 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Do you want to set X and Y to ZERO?
- WCS G53 P0</string>
+          <string>Do you want to reference the machine?</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
          <property name="rules" stdset="0">
-          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Do you want to set X and Y to ZERO?\\n WCS G5{} P{}\&quot;.format(3+ch[0], ch[0])&quot;, &quot;name&quot;: &quot;Active WCS&quot;}]</string>
+          <string>[]</string>
          </property>
         </widget>
        </item>
@@ -84,9 +83,9 @@
           </widget>
          </item>
          <item>
-          <widget class="MDIButton" name="zero_xy_button">
+          <widget class="ActionButton" name="homeall_abutton">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="maximumSize">
             <size>
@@ -98,23 +97,10 @@
             <string>OK</string>
            </property>
            <property name="rules" stdset="0">
-            <string>[
-    {
-        &quot;channels&quot;: [
-            {
-                &quot;url&quot;: &quot;status:g5x_index&quot;,
-                &quot;trigger&quot;: true,
-                &quot;type&quot;: &quot;int&quot;
-            }
-        ],
-        &quot;expression&quot;: &quot;&quot;,
-        &quot;name&quot;: &quot;G5x Index&quot;,
-        &quot;property&quot;: &quot;None&quot;
-    }
-]</string>
+            <string>[]</string>
            </property>
-           <property name="MDICommand" stdset="0">
-            <string>G10 L20 P{ch[0]} X0.0 Y0.0</string>
+           <property name="actionName" stdset="0">
+            <string>machine.home.all</string>
            </property>
           </widget>
          </item>
@@ -133,9 +119,9 @@
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
   </customwidget>
   <customwidget>
-   <class>MDIButton</class>
+   <class>ActionButton</class>
    <extends>QPushButton</extends>
-   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
+   <header>qtpyvcp.widgets.button_widgets.action_button</header>
   </customwidget>
  </customwidgets>
  <resources/>

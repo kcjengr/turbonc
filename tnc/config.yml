@@ -13,8 +13,9 @@ vcp:
 data_plugins:
 
   status:
+    provider: qtpyvcp.plugins.status:Status
     kwargs:
-      cycle_time: 25
+      cycle_time: 10
 
   clock:
     provider: qtpyvcp.plugins.clock:Clock
@@ -41,3 +42,14 @@ windows:
 application:
   kwargs:
     stylesheet: {{ file.dir }}/style.qss
+
+dialogs:
+  zero_xy:
+    provider: tnc.dialogs.zero_xy:ZeroXY
+    kwargs:
+      ui_file: {{ file.dir }}/dialogs/zero_xy.ui
+
+  home_all:
+    provider: tnc.dialogs.home_all:HomeAll
+    kwargs:
+      ui_file: {{ file.dir }}/dialogs/home_all.ui

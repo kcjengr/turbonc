@@ -24,8 +24,3 @@ class MainWindow(VCPMainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
 
         self.initUi()
-        
-        self.zero__xy_dialog = ZeroXY()
-
-    def on_zero_xy_button_clicked(self):
-        self.zero__xy_dialog.open()
