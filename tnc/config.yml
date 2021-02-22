@@ -11,7 +11,6 @@ vcp:
   description: Just the basic functions I need to run linuxcnc
 
 data_plugins:
-
   status:
     provider: qtpyvcp.plugins.status:Status
     kwargs:
