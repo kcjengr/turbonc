@@ -6,22 +6,21 @@ JauriaCNC is a QtPyVCP based interface for the LinuxCNC machine control.
 
 ## Quick install
 
-Install linuxcnc using the linuxcnc 2.80 iso
+Install linuxcnc using linuxcnc 2.90~pre
 
 http://www.linuxcnc.org/
-http://www.linuxcnc.org/downloads/
 
 
 * Dependencies
 
 ```
-$ sudo apt install python-pyqt5 python-pyqt5.qtquick python-dbus.mainloop.pyqt5 python-pyqt5.qtopengl python-pyqt5.qsci python-pyqt5.qtmultimedia qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins pyqt5-dev-tools python-dev python-setuptools python-pip git
+$ sudo apt install python3-pyqt5 python3-pyqt5.qtquick python3-dbus.mainloop.pyqt5 python3-pyqt5.qtopengl python3-pyqt5.qsci python3-pyqt5.qtmultimedia qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins pyqt5-dev-tools python3-dev python3-setuptools python3-pip git
 ```
 
 * jauriacnc pip package
 
 ```
-$ pip install jcnc
+$ python3 -m pip install jcnc
 ```
 
 ## Custom Install (Optional)
@@ -36,7 +35,7 @@ Install JauriaCNC using pip
 
 ```
 $ cd jauriacnc
-$ pip install -e .
+$ python3 -m pip install -e .
 ```
 
 Now you can run editvcp to edit the interface
@@ -54,20 +53,19 @@ QtPyVCP [documentation](https://kcjengr.github.io/qtpyvcp/).
 ## Resources
 
 * [Development](https://github.com/TurBoss/jauriacnc/)
-* [Issue Tracker](https://github.com/TurBoss/jauriacnc/issues)
-* [Documentation](https://kcjengr.github.io/qtpyvcp/)
-* [Freenode IRC](http://webchat.freenode.net/?channels=%23hazzy) (#hazzy)
+* [Documentation](https://qtpyvcp.com/)
+* [Libera Chat](http://web.libera.chat/) (#qtpyvcp)
 * [The Matrix](https://riot.im/app/#/room/#qtpyvcp:matrix.org) (#qtpyvcp:matrix.org)
 
 
 ## Dependencies
 
 * [LinuxCNC](https://linuxcnc.org)
-* [QtPyVCP](https://qtpyvcp.kcjengr.com/)
-* Python 2.7
+* [QtPyVCP](https://qtpyvcp.com/)
+* Python 3
 * PyQt5 or PySide2
 
-JauriaCNC is developed and tested using the LinuxCNC Debian 10 (buster)
+JauriaCNC is developed and tested using the LinuxCNC Debian 10 (buster) and 11 (bullseye)
 [Live ISO](http://www.linuxcnc.org/download/) It should run
 on any system that can have PyQt5 installed, but Debian 10 is the only OS
 that is officially supported.
