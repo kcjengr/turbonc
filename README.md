@@ -36,6 +36,7 @@ Install JauriaCNC using pip
 ```
 $ cd jauriacnc
 $ python3 -m pip install -e .
+$ qcompile -e .
 ```
 
 Now you can run editvcp to edit the interface

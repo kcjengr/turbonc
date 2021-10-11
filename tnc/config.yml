@@ -31,6 +31,9 @@ data_plugins:
       serialization_method: pickle
       # persistence_file: .vcp_data.json
 
+  qtpyvcp_hal:
+    provider: qtpyvcp.plugins.exported_hal:ExportedHal
+
 windows:
   mainwindow:
     provider: tnc.main:MainWindow

@@ -138,21 +138,12 @@ QComboBox:drop-down {
 
 /*Needs fix*/
 QScrollBar{
+  height: 40px;
+  width: 40px;
   background:#3e3e42;
   border-style:none;
 }
 
-QScrollbar::horizontal{
-     height: 15px;
-     margin: 0px 20px 0 20px;
-}
-
-QScrollBar:handle {
-  border-style:none;
-  background:#9d9d9d;
-  margin: inherited;
-
-}
 QPushButton {
   border-style:none;
   border-bottom:3px solid #8FB346;

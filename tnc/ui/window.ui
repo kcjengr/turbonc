@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>768</height>
+    <height>889</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -43,7 +43,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -1704,14 +1704,14 @@ QHeaderView {
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLineEdit" name="search_entry_2">
+           <widget class="QLineEdit" name="search_entry">
             <property name="placeholderText">
              <string>Search</string>
             </property>
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLineEdit" name="replace_entry_2">
+           <widget class="QLineEdit" name="replace_entry">
             <property name="placeholderText">
              <string>Replace</string>
             </property>
@@ -1735,6 +1735,73 @@ QHeaderView {
            </widget>
           </item>
          </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Tools</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_13">
+        <item>
+         <widget class="ToolTable" name="tooltable">
+          <property name="gridStyle">
+           <enum>Qt::DashLine</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
+          <item>
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="text">
+             <string>DELETE</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_18">
+            <property name="text">
+             <string>ADD TOOL</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_15">
+            <property name="text">
+             <string>SAVE TABLE</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_12">
+            <property name="text">
+             <string>RELOAD TABLE</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Stats</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <item>
+         <widget class="StatusLabel" name="statuslabel">
+          <property name="rules" stdset="0">
+           <string>[{&quot;name&quot;: &quot;file_name&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_name&quot;, &quot;trigger&quot;: true}]}]</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="StatusLabel" name="statuslabel_3">
+          <property name="rules" stdset="0">
+           <string>[{&quot;name&quot;: &quot;file_size&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]} bytes\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_size&quot;, &quot;trigger&quot;: true}]}]</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -2908,6 +2975,11 @@ X Y</string>
    <header>qtpyvcp.widgets.input_widgets.recent_file_combobox</header>
   </customwidget>
   <customwidget>
+   <class>ToolTable</class>
+   <extends>QTableView</extends>
+   <header>qtpyvcp.widgets.input_widgets.tool_table</header>
+  </customwidget>
+  <customwidget>
    <class>FileSystemTable</class>
    <extends>QTableView</extends>
    <header>qtpyvcp.widgets.input_widgets.file_system</header>
@@ -2929,114 +3001,18 @@ X Y</string>
  </resources>
  <connections>
   <connection>
-   <sender>device_folder_up_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>viewParentDirectory()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>129</x>
-     <y>104</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>125</x>
-     <y>210</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear_5</sender>
-   <signal>clicked()</signal>
+   <sender>plotClear_2</sender>
+   <signal>toggled(bool)</signal>
    <receiver>vtk</receiver>
-   <slot>setViewPath()</slot>
+   <slot>enable_panning(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>75</x>
-     <y>287</y>
+     <x>65</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_new_folder_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>newFolder()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>404</x>
-     <y>712</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>328</x>
-     <y>555</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotP</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>setViewP()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>708</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotZ</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>setViewZ()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>527</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotMinus</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>zoomOut()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>347</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_eject_usb_button</sender>
-   <signal>clicked()</signal>
-   <receiver>removabledevicecombobox</receiver>
-   <slot>ejectDevice()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>518</x>
-     <y>104</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>381</x>
-     <y>103</y>
+     <x>223</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
@@ -3047,188 +3023,12 @@ X Y</string>
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>145</x>
-     <y>712</y>
+     <x>107</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>122</x>
-     <y>571</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_new_file_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>newFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1614</x>
-     <y>712</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1874</x>
-     <y>643</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_load_gcode_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>loadSelectedFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1870</x>
-     <y>104</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1874</x>
-     <y>306</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_delete_item_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>deleteItem()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1497</x>
-     <y>712</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1874</x>
-     <y>660</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>clearLivePlot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>106</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_rename_item_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>rename()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1863</x>
-     <y>712</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1874</x>
-     <y>654</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>vtk</receiver>
-   <slot>enable_panning(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>166</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_rename_item_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>rename()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>511</x>
-     <y>712</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>455</x>
-     <y>550</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>device_new_file_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable_2</receiver>
-   <slot>newFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>262</x>
-     <y>712</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>187</x>
-     <y>587</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_new_folder_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>newFolder()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1756</x>
-     <y>712</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1874</x>
-     <y>614</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>main_folder_up_button</sender>
-   <signal>clicked()</signal>
-   <receiver>filesystemtable</receiver>
-   <slot>viewParentDirectory()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1510</x>
-     <y>104</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1874</x>
-     <y>288</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotY</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>setViewY()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>588</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
+     <x>117</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -3239,28 +3039,12 @@ X Y</string>
    <slot>setRootPath(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>408</x>
-     <y>104</y>
+     <x>84</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>236</x>
-     <y>178</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotPlus</sender>
-   <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>zoomIn()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>75</x>
-     <y>407</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
+     <x>117</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -3271,28 +3055,44 @@ X Y</string>
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>75</x>
-     <y>648</y>
+     <x>65</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
+     <x>223</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>plotClear_3</sender>
+   <sender>device_new_file_button</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
-   <slot>setViewMachine()</slot>
+   <receiver>filesystemtable_2</receiver>
+   <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>75</x>
-     <y>227</y>
+     <x>117</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
+     <x>117</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_rename_item_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>rename()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -3303,12 +3103,124 @@ X Y</string>
    <slot>setViewZ2()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>75</x>
-     <y>467</y>
+     <x>65</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>232</x>
-     <y>346</y>
+     <x>223</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_new_file_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>newFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>442</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>findAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>993</x>
+     <y>514</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>findWords(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>882</x>
+     <y>585</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>replace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>882</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_new_folder_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>newFolder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
@@ -3323,8 +3235,8 @@ X Y</string>
      <y>64</y>
     </hint>
     <hint type="destinationlabel">
-     <x>71</x>
-     <y>145</y>
+     <x>80</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
@@ -3335,28 +3247,44 @@ X Y</string>
    <slot>saveFileAs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>146</x>
-     <y>58</y>
+     <x>117</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>115</y>
+     <x>99</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_3</sender>
+   <sender>plotClear</sender>
    <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>undo()</slot>
+   <receiver>vtk</receiver>
+   <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>242</x>
-     <y>64</y>
+     <x>65</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>230</x>
-     <y>132</y>
+     <x>223</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotPlus</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>223</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
@@ -3367,12 +3295,28 @@ X Y</string>
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>313</x>
-     <y>63</y>
+     <x>356</x>
+     <y>73</y>
     </hint>
     <hint type="destinationlabel">
-     <x>310</x>
-     <y>122</y>
+     <x>99</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device_new_folder_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>newFolder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -3383,44 +3327,92 @@ X Y</string>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>481</x>
-     <y>64</y>
+     <x>528</x>
+     <y>73</y>
     </hint>
     <hint type="destinationlabel">
-     <x>406</x>
-     <y>117</y>
+     <x>99</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_13</sender>
+   <sender>plotZ</sender>
    <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>zoomOut()</slot>
+   <receiver>vtk</receiver>
+   <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>577</x>
-     <y>67</y>
+     <x>65</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>507</x>
-     <y>126</y>
+     <x>223</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_14</sender>
+   <sender>main_load_gcode_button</sender>
    <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>selectAll()</slot>
+   <receiver>filesystemtable</receiver>
+   <slot>loadSelectedFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>403</x>
-     <y>51</y>
+     <x>117</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>579</x>
-     <y>139</y>
+     <x>117</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>main_delete_item_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable</receiver>
+   <slot>deleteItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotClear_3</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewMachine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>223</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device_folder_up_button</sender>
+   <signal>clicked()</signal>
+   <receiver>filesystemtable_2</receiver>
+   <slot>viewParentDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -3431,44 +3423,140 @@ X Y</string>
    <slot>findForward()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1727</x>
-     <y>651</y>
+     <x>882</x>
+     <y>514</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1246</x>
-     <y>498</y>
+     <x>99</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_8</sender>
+   <sender>device_rename_item_button</sender>
    <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>findAll()</slot>
+   <receiver>filesystemtable_2</receiver>
+   <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1816</x>
-     <y>652</y>
+     <x>107</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1806</x>
-     <y>594</y>
+     <x>117</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_10</sender>
+   <sender>main_folder_up_button</sender>
    <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>replace()</slot>
+   <receiver>filesystemtable</receiver>
+   <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1755</x>
-     <y>688</y>
+     <x>127</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1500</x>
-     <y>536</y>
+     <x>117</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotMinus</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>223</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>device_eject_usb_button</sender>
+   <signal>clicked()</signal>
+   <receiver>removabledevicecombobox</receiver>
+   <slot>ejectDevice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotClear_5</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewPath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>223</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotP</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>223</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>614</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotY</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>223</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
@@ -3479,28 +3567,12 @@ X Y</string>
    <slot>replaceAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1832</x>
-     <y>677</y>
+     <x>993</x>
+     <y>551</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1819</x>
-     <y>593</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_4</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>findWords(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1732</x>
-     <y>729</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1573</x>
-     <y>546</y>
+     <x>99</x>
+     <y>82</y>
     </hint>
    </hints>
   </connection>
@@ -3511,12 +3583,140 @@ X Y</string>
    <slot>findCase(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1842</x>
-     <y>717</y>
+     <x>993</x>
+     <y>585</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1715</x>
-     <y>592</y>
+     <x>99</x>
+     <y>82</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_17</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>deleteSelectedTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_18</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>addTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_15</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>saveToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_12</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>loadToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>gcodetextedit</receiver>
+   <slot>EditorReadOnly(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>739</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodetextedit</receiver>
+   <slot>saveFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>883</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_entry</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>set_search_term(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>507</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>448</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>replace_entry</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>gcodetextedit_2</receiver>
+   <slot>set_replace_term(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>287</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>414</y>
     </hint>
    </hints>
   </connection>
