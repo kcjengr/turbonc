@@ -65,3 +65,13 @@ linuxcnc/configs/sim.qtpyvcp/autosave.halscope
 linuxcnc/configs/sim.qtpyvcp/.vcp_persistent_data.pickle
 .pydevproject
 .project
+
+tnc/dialogs/home_all_ui.py
+
+tnc/dialogs/zero_xy_ui.py
+
+tnc/resources_rc.py
+
+tnc/ui/window_ui.py
+
+linuxcnc/configs/sim.qtpyvcp/hal-widgets_ui.py
