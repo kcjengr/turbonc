@@ -38,12 +38,12 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="Camera">
       <property name="tabPosition">
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -440,7 +440,7 @@
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
+           <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0">
             <property name="spacing">
              <number>6</number>
             </property>
@@ -603,6 +603,52 @@
              </layout>
             </item>
             <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_18">
+              <item>
+               <widget class="VTKBackPlot" name="vtk" native="true">
+                <property name="backgroundColor" stdset="0">
+                 <color>
+                  <red>0</red>
+                  <green>0</green>
+                  <blue>0</blue>
+                 </color>
+                </property>
+                <property name="backgroundColor2" stdset="0">
+                 <color>
+                  <red>46</red>
+                  <green>52</green>
+                  <blue>54</blue>
+                 </color>
+                </property>
+                <property name="traverseColor" stdset="0">
+                 <color>
+                  <red>252</red>
+                  <green>175</green>
+                  <blue>62</blue>
+                 </color>
+                </property>
+                <property name="arcfeedColor" stdset="0">
+                 <color>
+                  <red>138</red>
+                  <green>226</green>
+                  <blue>52</blue>
+                 </color>
+                </property>
+                <property name="feedColor" stdset="0">
+                 <color>
+                  <red>245</red>
+                  <green>121</green>
+                  <blue>0</blue>
+                 </color>
+                </property>
+                <property name="enableProgramLabels" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
              <widget class="QStackedWidget" name="stackedwidget">
               <property name="currentIndex">
                <number>0</number>
@@ -613,58 +659,20 @@
               <widget class="QWidget" name="page">
                <layout class="QHBoxLayout" name="horizontalLayout_9">
                 <item>
-                 <widget class="VTKBackPlot" name="vtk">
-                  <property name="backgroundColor" stdset="0">
-                   <color>
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                   </color>
-                  </property>
-                  <property name="backgroundColor2" stdset="0">
-                   <color>
-                    <red>46</red>
-                    <green>52</green>
-                    <blue>54</blue>
-                   </color>
-                  </property>
-                  <property name="traverseColor" stdset="0">
-                   <color>
-                    <red>252</red>
-                    <green>175</green>
-                    <blue>62</blue>
-                   </color>
-                  </property>
-                  <property name="arcfeedColor" stdset="0">
-                   <color>
-                    <red>138</red>
-                    <green>226</green>
-                    <blue>52</blue>
-                   </color>
-                  </property>
-                  <property name="feedColor" stdset="0">
-                   <color>
-                    <red>245</red>
-                    <green>121</green>
-                    <blue>0</blue>
-                   </color>
-                  </property>
-                  <property name="enableProgramLabels" stdset="0">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item>
                  <layout class="QVBoxLayout" name="verticalLayout_8">
-                  <item>
-                   <widget class="GcodeTextEdit" name="gcodetextedit"/>
-                  </item>
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_13">
                     <item>
                      <widget class="QLabel" name="label">
                       <property name="text">
                        <string>MDI</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="LEDWidget" name="ledWidget">
+                      <property name="state" stdset="0">
+                       <bool>true</bool>
                       </property>
                      </widget>
                     </item>
@@ -1812,148 +1820,17 @@ QHeaderView {
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_15">
         <item>
-         <layout class="QFormLayout" name="formLayout">
-          <item row="0" column="1">
-           <widget class="StatusLabel" name="statuslabel">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;file_name&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_name&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Size</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="StatusLabel" name="statuslabel_3">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;file_size&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]/1024:.2f} kB\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_size&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_5">
-            <property name="text">
-             <string>Lines</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="StatusLabel" name="statuslabel_4">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;file lines&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_lines&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_6">
-            <property name="text">
-             <string>Tool calls</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="StatusLabel" name="statuslabel_5">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;tool_calls&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:tool_calls_num&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_7">
-            <property name="text">
-             <string>Distance in rapid</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="StatusLabel" name="statuslabel_6">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;path_rapids&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]:.2f}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_rapid_distance&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="label_8">
-            <property name="text">
-             <string>Distance in feed</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="StatusLabel" name="statuslabel_7">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;path_feed&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]:.2f}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_feed_distance&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="label_9">
-            <property name="text">
-             <string>Distance total</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1">
-           <widget class="StatusLabel" name="statuslabel_8">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;path_feed&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0] + ch[1]:.2f}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_feed_distance&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;gcode_properties:file_rapid_distance&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="label_10">
-            <property name="text">
-             <string>Work planes</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="1">
-           <widget class="StatusLabel" name="statuslabel_18">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;work_planes&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_work_planes&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="0">
-           <widget class="QLabel" name="label_11">
-            <property name="text">
-             <string>Rigid taps</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="1">
-           <widget class="StatusLabel" name="statuslabel_19">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;rigid_taps&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_rigid_taps&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="0">
-           <widget class="QLabel" name="label_12">
-            <property name="text">
-             <string>Offsets</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="1">
-           <widget class="StatusLabel" name="statuslabel_20">
-            <property name="rules" stdset="0">
-             <string>[{&quot;name&quot;: &quot;offset_changes&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]}\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_offsets&quot;, &quot;trigger&quot;: true}]}]</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Name</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="GCodeProperties" name="gcodeproperties" native="true"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="cam_tab">
+       <attribute name="title">
+        <string>Camera</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_16">
+        <item>
+         <widget class="Camera" name="camera" native="true"/>
         </item>
        </layout>
       </widget>
@@ -2151,7 +2028,7 @@ QHeaderView {
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
           </property>
           <property name="rules" stdset="0">
-           <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Feed Override {:.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;Feed Rate&quot;}]</string>
+           <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;Feed Override {ch[0]:.0%}\&quot;&quot;, &quot;name&quot;: &quot;Feed Rate&quot;}]</string>
           </property>
           <property name="format" stdset="0">
            <string>&lt;b&gt;FEED:&lt;/b&gt; {:.0%}</string>
@@ -2221,7 +2098,7 @@ QHeaderView {
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
             <property name="rules" stdset="0">
-             <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.1f' % (ch[0] * 60)&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
+             <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0] * 60:.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
             </property>
             <property name="format" stdset="0">
              <string>{:.1f}</string>
@@ -2295,7 +2172,7 @@ QHeaderView {
        </layout>
       </item>
       <item>
-       <spacer name="horizontalSpacer_6">
+       <spacer name="horizontalSpacer_7">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -2334,7 +2211,7 @@ QHeaderView {
          <set>Qt::AlignCenter</set>
         </property>
         <property name="rules" stdset="0">
-         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;clock:time&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Date Time\\n{}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;Hour&quot;}]</string>
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;clock:time&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;Date: {ch[0]:%d:%m:%Y}\\nTime: {ch[0]:%I:%M:%S}\&quot;&quot;, &quot;name&quot;: &quot;Hour&quot;}]</string>
         </property>
        </widget>
       </item>
@@ -3085,6 +2962,11 @@ X Y</string>
  </widget>
  <customwidgets>
   <customwidget>
+   <class>LEDWidget</class>
+   <extends>QWidget</extends>
+   <header>ledwidget</header>
+  </customwidget>
+  <customwidget>
    <class>VCPMainWindow</class>
    <extends>QMainWindow</extends>
    <header>qtpyvcp.widgets.form_widgets.main_window</header>
@@ -3106,10 +2988,21 @@ X Y</string>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
   </customwidget>
   <customwidget>
+   <class>Camera</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.camera.camera</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GCodeProperties</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.gcode_properties</header>
   </customwidget>
   <customwidget>
    <class>MDIEntry</class>
@@ -3805,38 +3698,6 @@ X Y</string>
     <hint type="destinationlabel">
      <x>99</x>
      <y>45</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_4</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>gcodetextedit</receiver>
-   <slot>EditorReadOnly(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>117</x>
-     <y>90</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>739</x>
-     <y>196</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit</receiver>
-   <slot>saveFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>117</x>
-     <y>90</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>883</x>
-     <y>174</y>
     </hint>
    </hints>
   </connection>

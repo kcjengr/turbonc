@@ -16,14 +16,14 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     entry_points={
-        'gui_scripts': [
-            'tnc=tnc:main',
+        "gui_scripts": [
+            "tnc=tnc:main",
         ],
-        'qtpyvcp.vcp': [
-            'tnc=tnc',
+        "qtpyvcp.vcp": [
+            "tnc=tnc",
         ],
     },
     install_requires=[
-       'qtpyvcp',
+        "qtpyvcp",
     ],
 )

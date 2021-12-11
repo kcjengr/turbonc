@@ -8,7 +8,7 @@ from qtpyvcp.widgets.form_widgets.main_window import VCPMainWindow
 # Setup logging
 from qtpyvcp.utilities import logger
 
-LOG = logger.getLogger('QtPyVCP.' + __name__)
+LOG = logger.getLogger("QtPyVCP." + __name__)
 
 from qtpyvcp import actions
 

@@ -16,7 +16,6 @@ LOG = getLogger("opcua")
 
 
 class OpcUA(QMainWindow):
-
     def __init__(self, parent=None):
         super(OpcUA, self).__init__(parent)
 
@@ -83,7 +82,7 @@ class OpcUA(QMainWindow):
         self.url = "opc.tcp://0.0.0.0:4840"
 
         self.server.set_endpoint(self.url)
-        self.server.set_server_name("Tnx Remote")
+        self.server.set_server_name("Tnx Server")
 
         uri = "http://examples.freeopcua.github.io"
         idx = self.server.register_namespace(uri)
@@ -95,81 +94,105 @@ class OpcUA(QMainWindow):
         # Data event types
 
         self.postione_etype = self.server.create_custom_event_type(
-            idx, 'Position', ua.ObjectIds.BaseEventType,
-            [('x', ua.VariantType.Float),
-             ('y', ua.VariantType.Float),
-             ('z', ua.VariantType.Float)]
+            idx,
+            "Position",
+            ua.ObjectIds.BaseEventType,
+            [
+                ("x", ua.VariantType.Float),
+                ("y", ua.VariantType.Float),
+                ("z", ua.VariantType.Float),
+            ],
         )
 
         self.velocity_etype = self.server.create_custom_event_type(
-            idx, 'Velocity', ua.ObjectIds.BaseEventType,
-            [('x', ua.VariantType.Float),
-             ('y', ua.VariantType.Float),
-             ('z', ua.VariantType.Float)]
+            idx,
+            "Velocity",
+            ua.ObjectIds.BaseEventType,
+            [
+                ("x", ua.VariantType.Float),
+                ("y", ua.VariantType.Float),
+                ("z", ua.VariantType.Float),
+            ],
         )
 
         self.command_etype = self.server.create_custom_event_type(
-            idx, 'Command', ua.ObjectIds.BaseEventType,
-            [('cmd', ua.VariantType.String)]
+            idx, "Command", ua.ObjectIds.BaseEventType, [("cmd", ua.VariantType.String)]
         )
 
         self.file_etype = self.server.create_custom_event_type(
-            idx, 'File', ua.ObjectIds.BaseEventType,
-            [('file', ua.VariantType.String)]
+            idx, "File", ua.ObjectIds.BaseEventType, [("file", ua.VariantType.String)]
         )
 
         self.estop_etype = self.server.create_custom_event_type(
-            idx, 'ESTOP', ua.ObjectIds.BaseEventType,
-            [('enabled', ua.VariantType.Boolean)]
+            idx,
+            "ESTOP",
+            ua.ObjectIds.BaseEventType,
+            [("enabled", ua.VariantType.Boolean)],
         )
 
         self.joint_enabled_etype = self.server.create_custom_event_type(
-            idx, 'Joints Enabled', ua.ObjectIds.BaseEventType,
-            [('x', ua.VariantType.Boolean),
-             ('y', ua.VariantType.Boolean),
-             ('z', ua.VariantType.Boolean)]
+            idx,
+            "Joints Enabled",
+            ua.ObjectIds.BaseEventType,
+            [
+                ("x", ua.VariantType.Boolean),
+                ("y", ua.VariantType.Boolean),
+                ("z", ua.VariantType.Boolean),
+            ],
         )
 
         self.joint_homed_etype = self.server.create_custom_event_type(
-            idx, 'Joints Homed', ua.ObjectIds.BaseEventType,
-            [('x', ua.VariantType.Boolean),
-             ('y', ua.VariantType.Boolean),
-             ('z', ua.VariantType.Boolean)]
+            idx,
+            "Joints Homed",
+            ua.ObjectIds.BaseEventType,
+            [
+                ("x", ua.VariantType.Boolean),
+                ("y", ua.VariantType.Boolean),
+                ("z", ua.VariantType.Boolean),
+            ],
         )
 
         self.task_mode_etype = self.server.create_custom_event_type(
-            idx, 'Task Mode', ua.ObjectIds.BaseEventType,
-            [('mode', ua.VariantType.Int16)]
+            idx,
+            "Task Mode",
+            ua.ObjectIds.BaseEventType,
+            [("mode", ua.VariantType.Int16)],
         )
 
         # Data event
 
         self.position_event = self.server.get_event_generator(
-                                self.postione_etype, self.pendant)
+            self.postione_etype, self.pendant
+        )
 
         self.velocity_event = self.server.get_event_generator(
-                                self.velocity_etype, self.pendant)
+            self.velocity_etype, self.pendant
+        )
 
         self.command_event = self.server.get_event_generator(
-                                self.command_etype, self.pendant)
+            self.command_etype, self.pendant
+        )
 
-        self.file_event = self.server.get_event_generator(
-                                self.file_etype, self.pendant)
+        self.file_event = self.server.get_event_generator(self.file_etype, self.pendant)
 
         self.estop_event = self.server.get_event_generator(
-                                self.estop_etype, self.pendant)
+            self.estop_etype, self.pendant
+        )
 
         self.joint_enabled_event = self.server.get_event_generator(
-                                self.joint_enabled_etype, self.pendant)
+            self.joint_enabled_etype, self.pendant
+        )
 
         self.joint_homed_event = self.server.get_event_generator(
-                                self.joint_homed_etype, self.pendant)
+            self.joint_homed_etype, self.pendant
+        )
 
         self.task_mode_event = self.server.get_event_generator(
-                                self.task_mode_etype, self.pendant)
+            self.task_mode_etype, self.pendant
+        )
 
         self.mpg = self.pendant.add_variable(idx, "mpg", 0)
-        self.mpg.set_writable()    # Set MyVariable to be writable by clients
+        self.mpg.set_writable()  # Set MyVariable to be writable by clients
 
         # Init the server
 
@@ -194,9 +217,11 @@ class OpcUA(QMainWindow):
             self.feed_y = self.stat.joint[1].get("velocity")
             self.feed_z = self.stat.joint[2].get("velocity")
 
-            if self.feed_x != self.prev_feed_x \
-                or self.feed_y != self.prev_feed_y \
-                    or self.feed_z != self.prev_feed_z:
+            if (
+                self.feed_x != self.prev_feed_x
+                or self.feed_y != self.prev_feed_y
+                or self.feed_z != self.prev_feed_z
+            ):
 
                 self.velocity_event.event.Message = ua.LocalizedText("Axis Velocity")
                 self.velocity_event.event.Severity = 300
@@ -215,9 +240,11 @@ class OpcUA(QMainWindow):
             self.position_y = self.stat.position[1]
             self.position_z = self.stat.position[2]
 
-            if self.position_x != self.prev_position_x \
-                or self.position_y != self.prev_position_y \
-                    or self.position_z != self.prev_position_z:
+            if (
+                self.position_x != self.prev_position_x
+                or self.position_y != self.prev_position_y
+                or self.position_z != self.prev_position_z
+            ):
 
                 self.position_event.event.Message = ua.LocalizedText("Axis Position")
                 self.position_event.event.Severity = 300
@@ -275,11 +302,15 @@ class OpcUA(QMainWindow):
             self.joint_1_enable = self.stat.joint[1].get("enabled")
             self.joint_2_enable = self.stat.joint[2].get("enabled")
 
-            if self.joint_0_enable != self.prev_joint_0_enable \
-                or self.joint_1_enable != self.prev_joint_1_enable \
-                    or self.joint_2_enable != self.prev_joint_2_enable:
+            if (
+                self.joint_0_enable != self.prev_joint_0_enable
+                or self.joint_1_enable != self.prev_joint_1_enable
+                or self.joint_2_enable != self.prev_joint_2_enable
+            ):
 
-                self.joint_enabled_event.event.Message = ua.LocalizedText("Joints Enabled")
+                self.joint_enabled_event.event.Message = ua.LocalizedText(
+                    "Joints Enabled"
+                )
                 self.joint_enabled_event.event.Severity = 300
                 self.joint_enabled_event.event.x = self.joint_0_enable
                 self.joint_enabled_event.event.y = self.joint_1_enable
@@ -296,9 +327,11 @@ class OpcUA(QMainWindow):
             self.joint_1_homed = self.stat.joint[1].get("homed")
             self.joint_2_homed = self.stat.joint[2].get("homed")
 
-            if self.joint_0_homed != self.prev_joint_0_homed \
-                or self.joint_1_homed != self.prev_joint_1_homed \
-                    or self.joint_2_homed != self.prev_joint_2_homed:
+            if (
+                self.joint_0_homed != self.prev_joint_0_homed
+                or self.joint_1_homed != self.prev_joint_1_homed
+                or self.joint_2_homed != self.prev_joint_2_homed
+            ):
 
                 self.joint_homed_event.event.Message = ua.LocalizedText("Joints Homed")
                 self.joint_homed_event.event.Severity = 300

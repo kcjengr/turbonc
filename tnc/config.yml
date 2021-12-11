@@ -34,6 +34,9 @@ data_plugins:
   qtpyvcp_hal:
     provider: qtpyvcp.plugins.exported_hal:ExportedHal
 
+  gcode_properties:
+    provider: qtpyvcp.plugins.gcode_properties:GCodeProperties
+
 windows:
   mainwindow:
     provider: tnc.main:MainWindow
