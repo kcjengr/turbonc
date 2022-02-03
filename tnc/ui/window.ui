@@ -605,7 +605,7 @@
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_18">
               <item>
-               <widget class="VTKBackPlot" name="vtk" native="true">
+               <widget class="VTKBackPlot" name="vtk">
                 <property name="backgroundColor" stdset="0">
                  <color>
                   <red>0</red>
@@ -666,13 +666,6 @@
                      <widget class="QLabel" name="label">
                       <property name="text">
                        <string>MDI</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="LEDWidget" name="ledWidget">
-                      <property name="state" stdset="0">
-                       <bool>true</bool>
                       </property>
                      </widget>
                     </item>
@@ -795,7 +788,7 @@
                     <string>  FOLDER UP</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/folder_up.png</normaloff>:/images/folder_up.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -933,7 +926,7 @@ QHeaderView {
                     <string> DELETE</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/delete.png</normaloff>:/images/delete.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -976,7 +969,7 @@ QHeaderView {
                     <string> NEW FILE</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/new_file.png</normaloff>:/images/new_file.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -1019,7 +1012,7 @@ QHeaderView {
                     <string> NEW FOLDER</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/new_folder.png</normaloff>:/images/new_folder.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -1213,7 +1206,7 @@ USB</string>
                     <string>  FOLDER UP</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/folder_up.png</normaloff>:/images/folder_up.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -1351,7 +1344,7 @@ QHeaderView {
                     <string> DELETE</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/delete.png</normaloff>:/images/delete.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -1394,7 +1387,7 @@ QHeaderView {
                     <string> NEW FILE</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/new_file.png</normaloff>:/images/new_file.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -1437,7 +1430,7 @@ QHeaderView {
                     <string> NEW FOLDER</string>
                    </property>
                    <property name="icon">
-                    <iconset resource="../../../probe_basic/probe_basic/probe_basic.qrc">
+                    <iconset>
                      <normaloff>:/images/new_folder.png</normaloff>:/images/new_folder.png</iconset>
                    </property>
                    <property name="iconSize">
@@ -1820,7 +1813,7 @@ QHeaderView {
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_15">
         <item>
-         <widget class="GCodeProperties" name="gcodeproperties" native="true"/>
+         <widget class="GCodeProperties" name="gcodeproperties"/>
         </item>
        </layout>
       </widget>
@@ -1830,7 +1823,7 @@ QHeaderView {
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_16">
         <item>
-         <widget class="Camera" name="camera" native="true"/>
+         <widget class="Camera" name="camera"/>
         </item>
        </layout>
       </widget>
@@ -2962,11 +2955,6 @@ X Y</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>LEDWidget</class>
-   <extends>QWidget</extends>
-   <header>ledwidget</header>
-  </customwidget>
-  <customwidget>
    <class>VCPMainWindow</class>
    <extends>QMainWindow</extends>
    <header>qtpyvcp.widgets.form_widgets.main_window</header>
@@ -3042,7 +3030,7 @@ X Y</string>
  </customwidgets>
  <resources>
   <include location="../resources.qrc"/>
-  <include location="../../../probe_basic/probe_basic/probe_basic.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections>
   <connection>
