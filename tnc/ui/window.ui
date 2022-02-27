@@ -649,39 +649,18 @@
              </layout>
             </item>
             <item>
-             <widget class="QStackedWidget" name="stackedwidget">
-              <property name="currentIndex">
-               <number>0</number>
-              </property>
-              <property name="rules" stdset="0">
-               <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joints&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;currentIndex&quot;, &quot;expression&quot;: &quot;0 if ch[0] == 5 else 1&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
-              </property>
-              <widget class="QWidget" name="page">
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_8">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_13">
-                    <item>
-                     <widget class="QLabel" name="label">
-                      <property name="text">
-                       <string>MDI</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="MDIEntry" name="mdientry"/>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QWidget" name="page_2">
-               <layout class="QVBoxLayout" name="verticalLayout_2"/>
-              </widget>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>MDI</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="MDIEntry" name="mdientry"/>
+              </item>
+             </layout>
             </item>
            </layout>
           </item>
@@ -737,9 +716,7 @@
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">.QFrame{
-    background-color: rgb(51, 57, 59);
-}</string>
+               <string notr="true"/>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -1155,9 +1132,7 @@ USB</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">.QFrame{
-    background-color: rgb(51, 57, 59);
-}</string>
+               <string notr="true"/>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -1814,16 +1789,6 @@ QHeaderView {
        <layout class="QVBoxLayout" name="verticalLayout_15">
         <item>
          <widget class="GCodeProperties" name="gcodeproperties"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="cam_tab">
-       <attribute name="title">
-        <string>Camera</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_16">
-        <item>
-         <widget class="Camera" name="camera"/>
         </item>
        </layout>
       </widget>
@@ -2974,12 +2939,6 @@ X Y</string>
    <class>StatusLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
-  </customwidget>
-  <customwidget>
-   <class>Camera</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.camera.camera</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>VTKBackPlot</class>
