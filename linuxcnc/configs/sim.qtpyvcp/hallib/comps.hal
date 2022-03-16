@@ -1,1 +1,1 @@
-loadusr -W /home/turboss/Projects/tnc/linuxcnc/configs/sim.qtpyvcp/comp/api_server.py
+loadusr -W comp/api_server.py
