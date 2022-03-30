@@ -14,7 +14,7 @@ from qtpyvcp import actions
 
 from tnc.dialogs.zero_xy import ZeroXY
 
-import resources
+import resources_rc
 
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
 

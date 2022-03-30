@@ -75,3 +75,5 @@ tnc/resources_rc.py
 tnc/ui/window_ui.py
 
 linuxcnc/configs/sim.qtpyvcp/hal-widgets_ui.py
+
+.settings/

@@ -1,0 +1,11 @@
+LINUXCNC - 2.9.0~pre0
+Machine configuration directory is '/home/turboss/Projects/tnc/linuxcnc/configs/sim.qtpyvcp'
+Machine configuration file is 'xyz.ini'
+Starting LinuxCNC...
+linuxcnc TPMOD=tpmod HOMEMOD=homemod EMCMOT=motmod
+Found file(REL): ./hallib/core_sim_3.hal
+Found file(REL): ./hallib/spindle_sim.hal
+Found file(REL): ./hallib/simulated_home.hal
+emc/iotask/ioControl.cc 769: can't load tool table.
+task: 2007 cycles, min=0.000006, max=0.010092, avg=0.009956, 0 latency excursions (> 10x expected cycle time of 0.010000s)
+Shutting down and cleaning up LinuxCNC...

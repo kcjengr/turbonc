@@ -236,9 +236,9 @@ class OpcUA(QMainWindow):
 
             # Postionion
 
-            self.position_x = self.stat.position[0]
-            self.position_y = self.stat.position[1]
-            self.position_z = self.stat.position[2]
+            self.position_x = self.stat.position[0] - self.stat.g5x_offset[0]
+            self.position_y = self.stat.position[1] - self.stat.g5x_offset[1]
+            self.position_z = self.stat.position[2] - self.stat.g5x_offset[2]
 
             if (
                 self.position_x != self.prev_position_x
