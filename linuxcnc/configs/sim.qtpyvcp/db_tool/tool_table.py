@@ -20,6 +20,7 @@ class Tool(Base):
     id = Column(Integer, primary_key=True)
     remark = Column(Text)
     tool_no = Column(Integer)
+    in_use = Column(Integer)
     pocket = Column(Integer)
     x_offset = Column(Float)
     y_offset = Column(Float)

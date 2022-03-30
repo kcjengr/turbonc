@@ -20,6 +20,7 @@ def excepthook(exc_type, exc_msg, exc_tb):
 
 sys.excepthook = excepthook
 
+
 class DataBaseManager():
     def __init__(self):
         super(DataBaseManager, self).__init__()
@@ -103,7 +104,7 @@ class DataBaseManager():
                 f"V{tool.v_offset}",
                 f"W{tool.w_offset}"]
 
-        return "\t".join(data)
+        return " ".join(data)
 
 
     def user_put_tool(self, toolno, params):
@@ -111,41 +112,41 @@ class DataBaseManager():
         # tno = int(toolno)
         # update_tool(tno,params.upper() )
         # save_tools_to_file(db_savefile)
-        tooltable = self.tool_table.getToolTable()
-        pprint(tooltable)
-
-        tools = list()
-
-        for k, tool in tooltable.items():
-
-            tools.append(Tool(
-                remark=tool.get("R"),
-                tool_no=k,
-                pocket=tool.get("P"),
-                x_offset=tool.get("X"),
-                y_offset=tool.get("Y"),
-                z_offset=tool.get("Z"),
-                a_offset=tool.get("A"),
-                b_offset=tool.get("B"),
-                c_offset=tool.get("C"),
-                u_offset=tool.get("U"),
-                v_offset=tool.get("V"),
-                w_offset=tool.get("W"),
-                diameter=tool.get("D"),
-                model_stl=tool.get("tool_holder")
-            ))
-
-        tool_table = ToolTable(name="Test Tool Table")
-
-        tool_table.tools = tools
-
-        # 9 - persists data
-        self.session.add(tool_table)
-        for tool in tools:
-            self.session.add(tool)
-
-        # 10 - commit and close session
-        self.session.commit()
+        # tooltable = self.tool_table.getToolTable()
+        # pprint(tooltable)
+        #
+        # tools = list()
+        #
+        # for k, tool in tooltable.items():
+        #
+        #     tools.append(Tool(
+        #         remark=tool.get("R"),
+        #         tool_no=k,
+        #         pocket=tool.get("P"),
+        #         x_offset=tool.get("X"),
+        #         y_offset=tool.get("Y"),
+        #         z_offset=tool.get("Z"),
+        #         a_offset=tool.get("A"),
+        #         b_offset=tool.get("B"),
+        #         c_offset=tool.get("C"),
+        #         u_offset=tool.get("U"),
+        #         v_offset=tool.get("V"),
+        #         w_offset=tool.get("W"),
+        #         diameter=tool.get("D"),
+        #         model_stl=tool.get("tool_holder")
+        #     ))
+        #
+        # tool_table = ToolTable(name="Test Tool Table")
+        #
+        # tool_table.tools = tools
+        #
+        # # 9 - persists data
+        # self.session.add(tool_table)
+        # for tool in tools:
+        #     self.session.add(tool)
+        #
+        # # 10 - commit and close session
+        # self.session.commit()
 
     # examples cmds received for load_spindle and unload_spindle
     # NONRAN example:
