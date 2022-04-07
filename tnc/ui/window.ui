@@ -10132,7 +10132,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>136</y>
+     <y>124</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10147,12 +10147,12 @@ X Y</string>
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>655</x>
-     <y>587</y>
+     <x>168</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>673</x>
-     <y>151</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10163,12 +10163,12 @@ X Y</string>
    <slot>setRootPath(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>760</x>
-     <y>79</y>
+     <x>157</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>673</x>
-     <y>151</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10180,7 +10180,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>513</y>
+     <y>435</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10195,12 +10195,12 @@ X Y</string>
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>762</x>
-     <y>587</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>673</x>
-     <y>151</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10211,12 +10211,12 @@ X Y</string>
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>457</x>
-     <y>587</y>
+     <x>109</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>151</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10228,7 +10228,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>372</y>
+     <y>318</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10243,12 +10243,12 @@ X Y</string>
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>228</x>
-     <y>587</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>151</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10259,12 +10259,12 @@ X Y</string>
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>530</x>
-     <y>66</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10275,12 +10275,12 @@ X Y</string>
    <slot>findAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>993</x>
-     <y>514</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10291,12 +10291,12 @@ X Y</string>
    <slot>findWords(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>882</x>
-     <y>585</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10307,12 +10307,12 @@ X Y</string>
    <slot>replace()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>882</x>
-     <y>551</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10323,12 +10323,12 @@ X Y</string>
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>360</x>
-     <y>587</y>
+     <x>144</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>151</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10339,12 +10339,12 @@ X Y</string>
    <slot>undo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>358</x>
-     <y>66</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10355,12 +10355,12 @@ X Y</string>
    <slot>saveFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>147</x>
-     <y>64</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>80</x>
-     <y>82</y>
+     <x>91</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10371,12 +10371,12 @@ X Y</string>
    <slot>saveFileAs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>272</x>
-     <y>66</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10404,7 +10404,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>325</y>
+     <y>279</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10419,12 +10419,12 @@ X Y</string>
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>444</x>
-     <y>66</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10435,12 +10435,12 @@ X Y</string>
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>894</x>
-     <y>587</y>
+     <x>203</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>673</x>
-     <y>151</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10451,12 +10451,12 @@ X Y</string>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>616</x>
-     <y>66</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10468,7 +10468,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>419</y>
+     <y>357</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10483,12 +10483,12 @@ X Y</string>
    <slot>loadSelectedFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>454</x>
-     <y>79</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>151</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10499,12 +10499,12 @@ X Y</string>
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>121</x>
-     <y>587</y>
+     <x>109</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>151</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10516,7 +10516,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>183</y>
+     <y>163</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10531,12 +10531,12 @@ X Y</string>
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>645</x>
-     <y>51</y>
+     <x>188</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>673</x>
-     <y>151</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10547,12 +10547,12 @@ X Y</string>
    <slot>findForward()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>882</x>
-     <y>514</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10563,12 +10563,12 @@ X Y</string>
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>991</x>
-     <y>587</y>
+     <x>168</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>673</x>
-     <y>151</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10579,12 +10579,12 @@ X Y</string>
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
-     <y>79</y>
+     <x>129</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>151</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10596,7 +10596,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>277</y>
+     <y>241</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10611,12 +10611,12 @@ X Y</string>
    <slot>ejectDevice()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>988</x>
-     <y>79</y>
+     <x>178</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>760</x>
-     <y>79</y>
+     <x>157</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -10628,7 +10628,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>230</y>
+     <y>202</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10644,7 +10644,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>560</y>
+     <y>474</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10659,12 +10659,12 @@ X Y</string>
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>702</x>
-     <y>66</y>
+     <x>119</x>
+     <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10676,7 +10676,7 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>77</x>
-     <y>466</y>
+     <y>396</y>
     </hint>
     <hint type="destinationlabel">
      <x>223</x>
@@ -10691,12 +10691,12 @@ X Y</string>
    <slot>replaceAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>993</x>
-     <y>551</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10707,12 +10707,12 @@ X Y</string>
    <slot>findCase(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>993</x>
-     <y>585</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>82</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10723,8 +10723,8 @@ X Y</string>
    <slot>deleteSelectedTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>129</x>
-     <y>597</y>
+     <x>141</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -10739,8 +10739,8 @@ X Y</string>
    <slot>addTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>376</x>
-     <y>597</y>
+     <x>508</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -10755,8 +10755,8 @@ X Y</string>
    <slot>saveToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>623</x>
-     <y>597</y>
+     <x>755</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -10771,8 +10771,8 @@ X Y</string>
    <slot>loadToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>870</x>
-     <y>597</y>
+     <x>1002</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -10787,12 +10787,12 @@ X Y</string>
    <slot>set_search_term(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>333</x>
-     <y>507</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>341</x>
-     <y>448</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -10803,12 +10803,12 @@ X Y</string>
    <slot>set_replace_term(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>299</x>
-     <y>561</y>
+     <x>119</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>245</x>
-     <y>414</y>
+     <x>101</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>

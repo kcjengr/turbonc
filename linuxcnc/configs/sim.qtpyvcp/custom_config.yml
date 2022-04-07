@@ -29,6 +29,8 @@ data_plugins:
 
   tooltable:
     provider: qtpyvcp.plugins.db_tool_table:ToolTable
+    kwargs:
+        columns: TXYZDR
 
   offsettable:
     provider: qtpyvcp.plugins.offset_table:OffsetTable
