@@ -28,7 +28,7 @@ data_plugins:
       use_program_units: True
 
   tooltable:
-    provider: qtpyvcp.plugins.db_tool_table:ToolTable
+    provider: qtpyvcp.plugins.db_tool_table:DBToolTable
     kwargs:
         columns: TXYZDR
 

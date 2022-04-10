@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>768</height>
+    <width>1920</width>
+    <height>1056</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -477,6 +477,13 @@
                     <height>0</height>
                    </size>
                   </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
                   <property name="text">
                    <string>G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0 G0</string>
                   </property>
@@ -501,6 +508,13 @@
                     <width>800</width>
                     <height>0</height>
                    </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>12</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
                   </property>
                   <property name="text">
                    <string>M0 M0 M0 M0 M0 M0 M0 M0 M0</string>
@@ -551,6 +565,595 @@
             </item>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_18">
+              <item>
+               <widget class="QTabWidget" name="tabWidget">
+                <property name="maximumSize">
+                 <size>
+                  <width>550</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Noto Sans</family>
+                  <pointsize>14</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="tabPosition">
+                 <enum>QTabWidget::North</enum>
+                </property>
+                <property name="tabShape">
+                 <enum>QTabWidget::Rounded</enum>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <property name="elideMode">
+                 <enum>Qt::ElideNone</enum>
+                </property>
+                <property name="tabsClosable">
+                 <bool>false</bool>
+                </property>
+                <widget class="QWidget" name="tab_7">
+                 <attribute name="title">
+                  <string>Absolute</string>
+                 </attribute>
+                 <layout class="QVBoxLayout" name="verticalLayout_20">
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_26">
+                      <item>
+                       <widget class="QLabel" name="label_7">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>X</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="DROLabel" name="drolabel_7">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                          <underline>false</underline>
+                         </font>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::WinPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                         <number>3</number>
+                        </property>
+                        <property name="midLineWidth">
+                         <number>0</number>
+                        </property>
+                        <property name="text">
+                         <string>     0.000</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="referenceType" stdset="0">
+                         <number>0</number>
+                        </property>
+                        <property name="axisNumber" stdset="0">
+                         <number>0</number>
+                        </property>
+                        <property name="inchFormat" stdset="0">
+                         <string>%9.4f</string>
+                        </property>
+                        <property name="millimeterFormat" stdset="0">
+                         <string>%10.3f</string>
+                        </property>
+                        <property name="degreeFormat" stdset="0">
+                         <string>%10.2f</string>
+                        </property>
+                        <property name="latheMode" stdset="0">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_27">
+                      <item>
+                       <widget class="QLabel" name="label_8">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Y</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="DROLabel" name="drolabel_8">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                          <underline>false</underline>
+                         </font>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::WinPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                         <number>3</number>
+                        </property>
+                        <property name="midLineWidth">
+                         <number>0</number>
+                        </property>
+                        <property name="text">
+                         <string>     0.000</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="referenceType" stdset="0">
+                         <number>0</number>
+                        </property>
+                        <property name="axisNumber" stdset="0">
+                         <number>1</number>
+                        </property>
+                        <property name="inchFormat" stdset="0">
+                         <string>%9.4f</string>
+                        </property>
+                        <property name="millimeterFormat" stdset="0">
+                         <string>%10.3f</string>
+                        </property>
+                        <property name="degreeFormat" stdset="0">
+                         <string>%10.2f</string>
+                        </property>
+                        <property name="latheMode" stdset="0">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_29">
+                      <item>
+                       <widget class="QLabel" name="label_9">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Z</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="DROLabel" name="drolabel_9">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                          <underline>false</underline>
+                         </font>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::WinPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                         <number>3</number>
+                        </property>
+                        <property name="midLineWidth">
+                         <number>0</number>
+                        </property>
+                        <property name="text">
+                         <string>     0.000</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="referenceType" stdset="0">
+                         <number>0</number>
+                        </property>
+                        <property name="axisNumber" stdset="0">
+                         <number>2</number>
+                        </property>
+                        <property name="inchFormat" stdset="0">
+                         <string>%9.4f</string>
+                        </property>
+                        <property name="millimeterFormat" stdset="0">
+                         <string>%10.3f</string>
+                        </property>
+                        <property name="degreeFormat" stdset="0">
+                         <string>%10.2f</string>
+                        </property>
+                        <property name="latheMode" stdset="0">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="tab_8">
+                 <attribute name="title">
+                  <string>Relative</string>
+                 </attribute>
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_22">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_23">
+                      <item>
+                       <widget class="QLabel" name="label_3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>X</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="DROLabel" name="drolabel_10">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                          <underline>false</underline>
+                         </font>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::WinPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                         <number>3</number>
+                        </property>
+                        <property name="midLineWidth">
+                         <number>0</number>
+                        </property>
+                        <property name="text">
+                         <string>     0.000</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="referenceType" stdset="0">
+                         <number>1</number>
+                        </property>
+                        <property name="axisNumber" stdset="0">
+                         <number>0</number>
+                        </property>
+                        <property name="inchFormat" stdset="0">
+                         <string>%9.4f</string>
+                        </property>
+                        <property name="millimeterFormat" stdset="0">
+                         <string>%10.3f</string>
+                        </property>
+                        <property name="degreeFormat" stdset="0">
+                         <string>%10.2f</string>
+                        </property>
+                        <property name="latheMode" stdset="0">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_24">
+                      <item>
+                       <widget class="QLabel" name="label_5">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Y</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="DROLabel" name="drolabel_15">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                          <underline>false</underline>
+                         </font>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::WinPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                         <number>3</number>
+                        </property>
+                        <property name="midLineWidth">
+                         <number>0</number>
+                        </property>
+                        <property name="text">
+                         <string>     0.000</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="referenceType" stdset="0">
+                         <number>1</number>
+                        </property>
+                        <property name="axisNumber" stdset="0">
+                         <number>1</number>
+                        </property>
+                        <property name="inchFormat" stdset="0">
+                         <string>%9.4f</string>
+                        </property>
+                        <property name="millimeterFormat" stdset="0">
+                         <string>%10.3f</string>
+                        </property>
+                        <property name="degreeFormat" stdset="0">
+                         <string>%10.2f</string>
+                        </property>
+                        <property name="latheMode" stdset="0">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_25">
+                      <item>
+                       <widget class="QLabel" name="label_6">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Z</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="DROLabel" name="drolabel_16">
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Noto Sans</family>
+                          <pointsize>74</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                          <underline>false</underline>
+                         </font>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::WinPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Sunken</enum>
+                        </property>
+                        <property name="lineWidth">
+                         <number>3</number>
+                        </property>
+                        <property name="midLineWidth">
+                         <number>0</number>
+                        </property>
+                        <property name="text">
+                         <string>     0.000</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                        <property name="referenceType" stdset="0">
+                         <number>1</number>
+                        </property>
+                        <property name="axisNumber" stdset="0">
+                         <number>2</number>
+                        </property>
+                        <property name="inchFormat" stdset="0">
+                         <string>%9.4f</string>
+                        </property>
+                        <property name="millimeterFormat" stdset="0">
+                         <string>%10.3f</string>
+                        </property>
+                        <property name="degreeFormat" stdset="0">
+                         <string>%10.2f</string>
+                        </property>
+                        <property name="latheMode" stdset="0">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
               <item>
                <widget class="VTKBackPlot" name="vtk">
                 <property name="enabled">
@@ -1662,15 +2265,85 @@ QHeaderView {
        <attribute name="title">
         <string>Tools</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_13">
+       <layout class="QVBoxLayout" name="verticalLayout_11">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_17">
           <item>
            <widget class="ToolTable" name="tooltable">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="gridStyle">
              <enum>Qt::DashLine</enum>
             </property>
            </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Noto Sans</family>
+                <pointsize>14</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Tool Properties</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="ToolModel" name="toolmodel">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Save Tool Things</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -8921,6 +9594,22 @@ background: transparent;
        <number>0</number>
       </property>
       <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <layout class="QGridLayout" name="gridLayout">
         <property name="horizontalSpacing">
          <number>20</number>
@@ -8928,73 +9617,7 @@ background: transparent;
         <property name="verticalSpacing">
          <number>8</number>
         </property>
-        <item row="1" column="1">
-         <widget class="ActionButton" name="jogxmin_abutton">
-          <property name="minimumSize">
-           <size>
-            <width>38</width>
-            <height>38</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>48</width>
-            <height>48</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>-X</string>
-          </property>
-          <property name="actionName" stdset="0">
-           <string>machine.jog.axis:x,neg</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="ActionButton" name="jogyplus_abutton">
-          <property name="minimumSize">
-           <size>
-            <width>38</width>
-            <height>38</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>48</width>
-            <height>48</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>+Y</string>
-          </property>
-          <property name="actionName" stdset="0">
-           <string>machine.jog.axis:y,pos</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="5">
-         <widget class="ActionButton" name="jogzplus_abutton">
-          <property name="minimumSize">
-           <size>
-            <width>38</width>
-            <height>38</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>48</width>
-            <height>48</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>+Z</string>
-          </property>
-          <property name="actionName" stdset="0">
-           <string>machine.jog.axis:z,pos</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="3">
+        <item row="1" column="5">
          <widget class="ActionButton" name="jogxplus_abutton">
           <property name="minimumSize">
            <size>
@@ -9016,7 +9639,73 @@ background: transparent;
           </property>
          </widget>
         </item>
-        <item row="1" column="5">
+        <item row="1" column="3">
+         <widget class="ActionButton" name="jogxmin_abutton">
+          <property name="minimumSize">
+           <size>
+            <width>38</width>
+            <height>38</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>-X</string>
+          </property>
+          <property name="actionName" stdset="0">
+           <string>machine.jog.axis:x,neg</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="ActionButton" name="jogyplus_abutton">
+          <property name="minimumSize">
+           <size>
+            <width>38</width>
+            <height>38</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>+Y</string>
+          </property>
+          <property name="actionName" stdset="0">
+           <string>machine.jog.axis:y,pos</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="7">
+         <widget class="ActionButton" name="jogzplus_abutton">
+          <property name="minimumSize">
+           <size>
+            <width>38</width>
+            <height>38</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>+Z</string>
+          </property>
+          <property name="actionName" stdset="0">
+           <string>machine.jog.axis:z,pos</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="7">
          <widget class="ActionButton" name="jogzmin_abutton">
           <property name="minimumSize">
            <size>
@@ -9038,7 +9727,7 @@ background: transparent;
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
+        <item row="1" column="4">
          <widget class="ActionButton" name="jogymin_abutton">
           <property name="minimumSize">
            <size>
@@ -9358,6 +10047,22 @@ background: transparent;
          </layout>
         </item>
        </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>
@@ -10051,6 +10756,11 @@ X Y</string>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
   </customwidget>
   <customwidget>
+   <class>DROLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_label</header>
+  </customwidget>
+  <customwidget>
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
@@ -10115,6 +10825,11 @@ X Y</string>
    <class>HalButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.hal_widgets.hal_button</header>
+  </customwidget>
+  <customwidget>
+   <class>ToolModel</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.db_widgets.tool_model</header>
   </customwidget>
  </customwidgets>
  <resources>
