@@ -43,7 +43,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -80,15 +80,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>Clear</string>
@@ -105,15 +111,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>Pan</string>
@@ -122,7 +134,7 @@
                 <bool>true</bool>
                </property>
                <property name="checked">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
               </widget>
              </item>
@@ -136,15 +148,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>Machine</string>
@@ -161,15 +179,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>Path</string>
@@ -186,15 +210,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>-</string>
@@ -211,15 +241,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>+</string>
@@ -236,15 +272,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>Z2</string>
@@ -267,15 +309,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>Z</string>
@@ -301,15 +349,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>Y</string>
@@ -332,15 +386,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>X</string>
@@ -363,15 +423,21 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>32</width>
+                 <width>64</width>
                  <height>32</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>48</width>
+                 <width>64</width>
                  <height>16777215</height>
                 </size>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="text">
                 <string>P</string>
@@ -530,36 +596,32 @@
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0">
-                <item>
-                 <widget class="DialogButton" name="open_dbutton">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>90</width>
-                    <height>38</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>120</width>
-                    <height>52</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Open</string>
-                  </property>
-                  <property name="dialogName" stdset="0">
-                   <string>open_file</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+               <widget class="DialogButton" name="open_dbutton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>90</width>
+                  <height>38</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>120</width>
+                  <height>52</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Open</string>
+                </property>
+                <property name="dialogName" stdset="0">
+                 <string>open_file</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
@@ -611,6 +673,12 @@
                          <size>
                           <width>80</width>
                           <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>80</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="font">
@@ -668,7 +736,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>0</number>
@@ -700,6 +768,12 @@
                          <size>
                           <width>80</width>
                           <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>80</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="font">
@@ -757,7 +831,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>0</number>
@@ -789,6 +863,12 @@
                          <size>
                           <width>80</width>
                           <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>80</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="font">
@@ -846,7 +926,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>0</number>
@@ -889,6 +969,12 @@
                          <size>
                           <width>80</width>
                           <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>80</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="font">
@@ -946,7 +1032,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>1</number>
@@ -978,6 +1064,12 @@
                          <size>
                           <width>80</width>
                           <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>80</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="font">
@@ -1035,7 +1127,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>1</number>
@@ -1067,6 +1159,12 @@
                          <size>
                           <width>80</width>
                           <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>80</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="font">
@@ -1124,7 +1222,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>1</number>
@@ -2270,6 +2368,12 @@ QHeaderView {
          <layout class="QHBoxLayout" name="horizontalLayout_17">
           <item>
            <widget class="ToolTable" name="tooltable">
+            <property name="minimumSize">
+             <size>
+              <width>800</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -2300,7 +2404,7 @@ QHeaderView {
                </font>
               </property>
               <property name="text">
-               <string>Tool Properties</string>
+               <string>Tool Extra Properties</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -2308,7 +2412,7 @@ QHeaderView {
              </widget>
             </item>
             <item>
-             <widget class="ToolModel" name="toolmodel">
+             <widget class="ToolSTLField" name="toolmodel">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -9583,6 +9687,11 @@ background: transparent;
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_9">
+       <attribute name="title">
+        <string>Página</string>
+       </attribute>
+      </widget>
      </widget>
     </item>
     <item>
@@ -10085,6 +10194,12 @@ background: transparent;
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="title">
          <string>MAIN</string>
         </property>
@@ -10156,12 +10271,18 @@ background: transparent;
       </item>
       <item>
        <widget class="QGroupBox" name="mode_gbox">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="title">
          <string>MODE</string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
-          <widget class="ActionButton" name="actionbutton_27">
+          <widget class="ActionButton" name="mode_man_button">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
@@ -10198,10 +10319,13 @@ background: transparent;
            <property name="styleClass" stdset="0">
             <string>option</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">mode_group_button</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="ActionButton" name="actionbutton_28">
+          <widget class="ActionButton" name="mod_auto_button">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
@@ -10235,10 +10359,13 @@ background: transparent;
            <property name="styleClass" stdset="0">
             <string>option</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">mode_group_button</string>
+           </attribute>
           </widget>
          </item>
          <item>
-          <widget class="ActionButton" name="actionbutton_29">
+          <widget class="ActionButton" name="mode_mdi_button">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
              <horstretch>0</horstretch>
@@ -10275,6 +10402,9 @@ background: transparent;
            <property name="styleClass" stdset="0">
             <string>option</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">mode_group_button</string>
+           </attribute>
           </widget>
          </item>
         </layout>
@@ -10287,6 +10417,12 @@ background: transparent;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="title">
          <string>HOME</string>
@@ -10333,6 +10469,12 @@ background: transparent;
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
         </property>
         <property name="title">
          <string>PART</string>
@@ -10388,6 +10530,12 @@ X Y</string>
       </item>
       <item>
        <widget class="QGroupBox" name="program_gbox">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="title">
          <string>PROGRAM</string>
         </property>
@@ -10827,7 +10975,7 @@ X Y</string>
    <header>qtpyvcp.widgets.hal_widgets.hal_button</header>
   </customwidget>
   <customwidget>
-   <class>ToolModel</class>
+   <class>ToolSTLField</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.db_widgets.tool_model</header>
   </customwidget>
@@ -10846,11 +10994,11 @@ X Y</string>
    <slot>enable_panning(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>124</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -10894,11 +11042,11 @@ X Y</string>
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>435</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -10942,11 +11090,11 @@ X Y</string>
    <slot>setViewZ2()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>318</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11074,7 +11222,7 @@ X Y</string>
      <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>91</x>
+     <x>101</x>
      <y>48</y>
     </hint>
    </hints>
@@ -11106,7 +11254,7 @@ X Y</string>
      <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11118,11 +11266,11 @@ X Y</string>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>279</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11182,11 +11330,11 @@ X Y</string>
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>357</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11230,11 +11378,11 @@ X Y</string>
    <slot>setViewMachine()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>163</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11310,11 +11458,11 @@ X Y</string>
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>241</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11342,11 +11490,11 @@ X Y</string>
    <slot>setViewPath()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>202</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11358,11 +11506,11 @@ X Y</string>
    <slot>setViewP()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>474</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11390,11 +11538,11 @@ X Y</string>
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>77</x>
-     <y>396</y>
+     <x>83</x>
+     <y>74</y>
     </hint>
     <hint type="destinationlabel">
-     <x>223</x>
+     <x>310</x>
      <y>333</y>
     </hint>
    </hints>
@@ -11438,8 +11586,8 @@ X Y</string>
    <slot>deleteSelectedTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>141</x>
-     <y>515</y>
+     <x>119</x>
+     <y>81</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -11454,8 +11602,8 @@ X Y</string>
    <slot>addTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>508</x>
-     <y>515</y>
+     <x>119</x>
+     <y>81</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -11470,8 +11618,8 @@ X Y</string>
    <slot>saveToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>755</x>
-     <y>515</y>
+     <x>119</x>
+     <y>81</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -11486,8 +11634,8 @@ X Y</string>
    <slot>loadToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1002</x>
-     <y>515</y>
+     <x>119</x>
+     <y>81</y>
     </hint>
     <hint type="destinationlabel">
      <x>99</x>
@@ -11527,6 +11675,38 @@ X Y</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>tooltable</sender>
+   <signal>toolSelected(int)</signal>
+   <receiver>toolmodel</receiver>
+   <slot>toolSelected(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>819</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>toolmodel</receiver>
+   <slot>saveField()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <designerdata>
   <property name="gridDeltaX">
@@ -11545,4 +11725,7 @@ X Y</string>
    <bool>true</bool>
   </property>
  </designerdata>
+ <buttongroups>
+  <buttongroup name="mode_group_button"/>
+ </buttongroups>
 </ui>

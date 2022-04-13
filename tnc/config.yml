@@ -1,4 +1,4 @@
-{% include "default_menubar.yml" %}
+{% include "menubar.yml" %}
 
 qtdesigner:
   ui_file: ( windows.mainwindow.kwargs.ui_file )
@@ -6,7 +6,7 @@ qtdesigner:
 
 vcp:
   name: TurBoNC
-  version: v0.0.1
+  version: v0.0.2
   author: TurBoss
   description: Just the basic functions I need to run linuxcnc
 
@@ -14,7 +14,7 @@ data_plugins:
   status:
     provider: qtpyvcp.plugins.status:Status
     kwargs:
-      cycle_time: 10
+      cycle_time: 30
 
   clock:
     provider: qtpyvcp.plugins.clock:Clock
@@ -200,4 +200,66 @@ settings:
     persistent: true
     min_value: -1000
     max_value: 1000
+  touch-probe.diameter-offset:
+    default_value: .123123
+    persistent: true
+    min_value: 0
+    max_value: 1
 
+  dro.display-units:
+    default_value: 0
+    options: [Auto, Inch, Metric]
+
+  dro.lathe-radius-mode:
+    default_value: 0
+    options: [Auto, Radius, Diameter]
+
+  dro.inch-format:
+    default_value: '%9.4f'
+    value_type: str
+
+  dro.millimeter-format:
+    default_value: '%9.3f'
+    value_type: str
+
+  dro.degree-format:
+    default_value: '%9.2f'
+
+  # VTK backplot view settings
+
+  backplot.show-grid:
+    default_value: false
+
+  backplot.show-program-bounds:
+    default_value: false
+
+  backplot.show-program-labels:
+    default_value: false
+
+  backplot.show-program-ticks:
+    default_value: false
+
+  backplot.show-spindle:
+    default_value: false
+    
+  backplot.show-tools:
+    default_value: false
+        
+  backplot.show-machine-bounds:
+    default_value: false
+
+  backplot.show-machine-labels:
+    default_value: false
+
+  backplot.show-machine-ticks:
+    default_value: false
+
+  backplot.perspective-view:
+    default_value: True
+
+  backplot.view:
+    default_value: 0
+    options: ["X: Front View", "XZ: Lathe View", "XZ2: Lathe View", "Y: Front View", "Z: Top View", "Z2: Bottom View", "P: Isometric"]
+
+  backplot.multitool-colors:
+    default_value: True

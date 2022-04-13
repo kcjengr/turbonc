@@ -63,7 +63,11 @@ QPushButton::pressed {
 QPushButton::disabled {
   border-bottom: 3px solid #C0C0C0;
   background:#3e3e42;
+}
 
+QPushButton::checked {
+  border-bottom: 3px solid #21c512;
+  background:#3e3e42;
 }
 
 
@@ -73,7 +77,7 @@ QPushButton::disabled {
 /*===========================================================================*/
 
 QHeaderView {
-    font: 14pt "Bebas Kai";
+    font: 14pt;
     background-color: rgb(220, 220, 220);
     color: black;
     border: none;
