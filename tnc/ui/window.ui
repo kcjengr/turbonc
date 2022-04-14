@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1056</height>
+    <height>1029</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -43,7 +43,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -92,6 +92,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -123,6 +125,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -160,6 +164,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -191,6 +197,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -222,6 +230,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -253,6 +263,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -284,6 +296,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -321,6 +335,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -361,6 +377,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -398,6 +416,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -435,6 +455,8 @@
                </property>
                <property name="font">
                 <font>
+                 <family>Bebas Kai</family>
+                 <pointsize>15</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -5506,6 +5528,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>0</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
               <item>
@@ -5556,6 +5581,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>1</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
               <item>
@@ -5606,6 +5634,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>2</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
               <item>
@@ -5656,6 +5687,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>3</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
               <item>
@@ -5706,6 +5740,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>4</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
               <item>
@@ -5756,6 +5793,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>5</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
               <item>
@@ -5806,6 +5846,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>6</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
               <item>
@@ -5856,6 +5899,9 @@ QPushButton:checked {
                 <property name="page" stdset="0">
                  <number>7</number>
                 </property>
+                <attribute name="buttonGroup">
+                 <string notr="true">probeTabGroup</string>
+                </attribute>
                </widget>
               </item>
              </layout>
@@ -10196,6 +10242,7 @@ background: transparent;
         </property>
         <property name="font">
          <font>
+          <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -10273,6 +10320,7 @@ background: transparent;
        <widget class="QGroupBox" name="mode_gbox">
         <property name="font">
          <font>
+          <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -10320,7 +10368,7 @@ background: transparent;
             <string>option</string>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">mode_group_button</string>
+            <string notr="true">modeGroup</string>
            </attribute>
           </widget>
          </item>
@@ -10360,7 +10408,7 @@ background: transparent;
             <string>option</string>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">mode_group_button</string>
+            <string notr="true">modeGroup</string>
            </attribute>
           </widget>
          </item>
@@ -10403,7 +10451,7 @@ background: transparent;
             <string>option</string>
            </property>
            <attribute name="buttonGroup">
-            <string notr="true">mode_group_button</string>
+            <string notr="true">modeGroup</string>
            </attribute>
           </widget>
          </item>
@@ -10420,6 +10468,7 @@ background: transparent;
         </property>
         <property name="font">
          <font>
+          <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -10472,6 +10521,7 @@ background: transparent;
         </property>
         <property name="font">
          <font>
+          <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -10532,6 +10582,7 @@ X Y</string>
        <widget class="QGroupBox" name="program_gbox">
         <property name="font">
          <font>
+          <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -11726,6 +11777,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="mode_group_button"/>
+  <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>
