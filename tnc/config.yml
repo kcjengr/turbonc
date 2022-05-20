@@ -233,12 +233,6 @@ settings:
   backplot.show-program-bounds:
     default_value: false
 
-  backplot.show-program-labels:
-    default_value: false
-
-  backplot.show-program-ticks:
-    default_value: false
-
   backplot.show-spindle:
     default_value: false
     

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>1029</height>
+    <height>1056</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -43,7 +43,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -1519,29 +1519,33 @@
          </layout>
         </item>
         <item>
-         <widget class="GcodeTextEdit" name="gcodetextedit_2">
-          <property name="currentLineBackground" stdset="0">
-           <color>
-            <red>143</red>
-            <green>179</green>
-            <blue>70</blue>
-           </color>
-          </property>
-          <property name="marginBackground" stdset="0">
-           <color>
-            <red>143</red>
-            <green>179</green>
-            <blue>70</blue>
-           </color>
-          </property>
-          <property name="marginCurrentLineBackground" stdset="0">
-           <color>
-            <red>143</red>
-            <green>179</green>
-            <blue>70</blue>
-           </color>
-          </property>
-         </widget>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="GcodeTextEdit" name="gcodetextedit_2">
+            <property name="currentLineBackground" stdset="0">
+             <color>
+              <red>143</red>
+              <green>179</green>
+              <blue>70</blue>
+             </color>
+            </property>
+            <property name="marginBackground" stdset="0">
+             <color>
+              <red>143</red>
+              <green>179</green>
+              <blue>70</blue>
+             </color>
+            </property>
+            <property name="marginCurrentLineBackground" stdset="0">
+             <color>
+              <red>143</red>
+              <green>179</green>
+              <blue>70</blue>
+             </color>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <layout class="QGridLayout" name="gridLayout_3">
@@ -11173,12 +11177,12 @@ X Y</string>
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>530</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11189,12 +11193,12 @@ X Y</string>
    <slot>findAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>1894</x>
+     <y>684</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11205,12 +11209,12 @@ X Y</string>
    <slot>findWords(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>1777</x>
+     <y>756</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11221,12 +11225,12 @@ X Y</string>
    <slot>replace()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>1777</x>
+     <y>722</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11253,12 +11257,12 @@ X Y</string>
    <slot>undo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>358</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11273,8 +11277,8 @@ X Y</string>
      <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11285,12 +11289,12 @@ X Y</string>
    <slot>saveFileAs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>272</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11333,12 +11337,12 @@ X Y</string>
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>444</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11365,12 +11369,12 @@ X Y</string>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>616</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11461,12 +11465,12 @@ X Y</string>
    <slot>findForward()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>1777</x>
+     <y>684</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11573,12 +11577,12 @@ X Y</string>
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>702</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11605,12 +11609,12 @@ X Y</string>
    <slot>replaceAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>1894</x>
+     <y>722</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11621,12 +11625,12 @@ X Y</string>
    <slot>findCase(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>1894</x>
+     <y>756</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11701,12 +11705,12 @@ X Y</string>
    <slot>set_search_term(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>131</x>
+     <y>681</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11717,12 +11721,12 @@ X Y</string>
    <slot>set_replace_term(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>84</y>
+     <x>131</x>
+     <y>719</y>
     </hint>
     <hint type="destinationlabel">
-     <x>101</x>
-     <y>48</y>
+     <x>112</x>
+     <y>401</y>
     </hint>
    </hints>
   </connection>
@@ -11777,7 +11781,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
+  <buttongroup name="probeTabGroup"/>
  </buttongroups>
 </ui>
