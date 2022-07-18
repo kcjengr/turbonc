@@ -193,5 +193,8 @@
         <file>images/z_plus_jog_button.png</file>
         <file>images/z_top.png</file>
         <file>images/z_top_r.png</file>
+        <file>images/forward.png</file>
+        <file>images/pause.png</file>
+        <file>images/stop.png</file>
     </qresource>
 </RCC>
