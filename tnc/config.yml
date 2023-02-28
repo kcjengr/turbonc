@@ -31,12 +31,13 @@ data_plugins:
       serialization_method: pickle
       # persistence_file: .vcp_data.json
 
-  qtpyvcp_hal:
-    provider: qtpyvcp.plugins.exported_hal:ExportedHal
 
   gcode_properties:
     provider: qtpyvcp.plugins.gcode_properties:GCodeProperties
 
+#  widgets:
+#    provider: qtpyvcp.plugins.widgets:Widgets
+  
 windows:
   mainwindow:
     provider: tnc.main:MainWindow
@@ -147,7 +148,6 @@ settings:
 
   tool-change-position.y-tool-change-position:
     description: y axis tool change position.
-    default_value: 0.0
     persistent: true
     min_value: -1000
     max_value: 1000

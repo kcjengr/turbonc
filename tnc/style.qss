@@ -45,10 +45,14 @@ border-bottom:3px solid #00ff00;
   padding:5px;
 }
 
+#home_dbutton:checked{
+  border-bottom:3px solid #00FF00;
+  background:#3e3e42;
+}
 
 QPushButton {
   border-style:none;
-  border-bottom:3px solid #8FB346;
+  border-bottom:3px solid #ff7300;
   color:#f1f1f1;
   background:#3e3e42;
   padding:5px;

@@ -1138,7 +1138,7 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="vtk">
+               <widget class="VTKBackPlot" name="plot">
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
@@ -9604,7 +9604,18 @@ background: transparent;
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_15">
         <item>
-         <widget class="GCodeProperties" name="gcodeproperties"/>
+         <widget class="StatusLabel" name="statuslabel">
+          <property name="rules" stdset="0">
+           <string>[{&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;The program has {ch[0]} lines of code\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_lines&quot;, &quot;trigger&quot;: true}]}]</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="HalButton" name="halbutton_2">
+          <property name="pinBaseName" stdset="0">
+           <string>halbutton_test</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -10268,7 +10279,7 @@ background: transparent;
             <string>%</string>
            </property>
            <property name="format" stdset="0">
-            <string>.3f</string>
+            <string>.2f</string>
            </property>
            <property name="valueAt100Percent" stdset="0">
             <double>100.000000000000000</double>
@@ -10803,10 +10814,10 @@ background: transparent;
             <string>ALL</string>
            </property>
            <property name="checkable">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;name&quot;: &quot;All Homed&quot;, &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'green_checked'&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}]}]</string>
+            <string>[{&quot;name&quot;: &quot;All Homed&quot;, &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}]}]</string>
            </property>
            <property name="dialogName" stdset="0">
             <string>home_all</string>
@@ -11330,11 +11341,6 @@ X Y</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>GCodeProperties</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.gcode_properties</header>
-  </customwidget>
-  <customwidget>
    <class>VCPLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.line_edit</header>
@@ -11415,7 +11421,7 @@ X Y</string>
   <connection>
    <sender>plotClear_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>enable_panning(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11463,7 +11469,7 @@ X Y</string>
   <connection>
    <sender>plotX</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11511,7 +11517,7 @@ X Y</string>
   <connection>
    <sender>plotZ2</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>setViewZ2()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11671,7 +11677,7 @@ X Y</string>
   <connection>
    <sender>plotClear</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11687,7 +11693,7 @@ X Y</string>
   <connection>
    <sender>plotPlus</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11751,7 +11757,7 @@ X Y</string>
   <connection>
    <sender>plotZ</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11799,7 +11805,7 @@ X Y</string>
   <connection>
    <sender>plotClear_3</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>setViewMachine()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11879,7 +11885,7 @@ X Y</string>
   <connection>
    <sender>plotMinus</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11911,7 +11917,7 @@ X Y</string>
   <connection>
    <sender>plotClear_5</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>setViewPath()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11927,7 +11933,7 @@ X Y</string>
   <connection>
    <sender>plotP</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>setViewP()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -11959,7 +11965,7 @@ X Y</string>
   <connection>
    <sender>plotY</sender>
    <signal>clicked()</signal>
-   <receiver>vtk</receiver>
+   <receiver>plot</receiver>
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">

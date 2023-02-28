@@ -27,6 +27,9 @@ class MainWindow(VCPMainWindow):
 
         self.initUi()
 
+        self.plot.camera.Zoom(0.002)
+        self.plot.setViewMachine()
+
     @Slot(QAbstractButton)
     def on_probeTabGroup_buttonClicked(self, button):
         self.probe_tab_widget.setCurrentIndex(button.property('page'))
