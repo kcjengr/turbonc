@@ -1,2 +1,0 @@
-recursive-include tnc *.yml *.yaml *.ui *.qss *qrc
-recursive-include tnc *.yml *.yaml *.ui *.qss *qrc

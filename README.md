@@ -1,8 +1,8 @@
-# JauriaCNC interface for linuxcnc
+# TurBo NC interface for linuxcnc
 
 ![](pics/tnc.png)
 
-JauriaCNC is a QtPyVCP based interface for the LinuxCNC machine control.
+TurBo NC is a QtPyVCP based interface for the LinuxCNC machine control.
 
 ## Quick install
 
@@ -14,18 +14,12 @@ http://www.linuxcnc.org/
 * Dependencies
 
 ```
-$ sudo apt install python3-pyqt5 python3-pyqt5.qtquick python3-dbus.mainloop.pyqt5 python3-pyqt5.qtopengl python3-pyqt5.qsci python3-pyqt5.qtmultimedia qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins pyqt5-dev-tools python3-dev python3-setuptools python3-pip git
-```
-
-* jauriacnc pip package
-
-```
-$ python3 -m pip install jcnc
+$ sudo apt install python3-pyqt5 python3-pyqt5.qtquick python3-venv python3-dbus.mainloop.pyqt5 python3-pyqt5.qtopengl python3-pyqt5.qsci python3-pyqt5.qtmultimedia qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins pyqt5-dev-tools python3-dev python3-setuptools python3-pip git
 ```
 
 ## Custom Install (Optional)
 
-Clone the jcnc repository
+Clone the tnc repository
 
 ```
 $ git clone https://github.com/TurBoss/jauriacnc.git
@@ -34,7 +28,9 @@ $ git clone https://github.com/TurBoss/jauriacnc.git
 Install JauriaCNC using pip
 
 ```
-$ cd jauriacnc
+$ cd tnc
+$ python3 -m venv venv
+$ source venv/bin/activate
 $ python3 -m pip install -e .
 $ qcompile -e .
 ```
@@ -48,7 +44,7 @@ $ editvcp tcnc
 
 ## Documentation
 
-QtPyVCP [documentation](https://kcjengr.github.io/qtpyvcp/).
+QtPyVCP [documentation](https://qtpyvcp.com)
 
 
 ## Resources
@@ -63,13 +59,10 @@ QtPyVCP [documentation](https://kcjengr.github.io/qtpyvcp/).
 
 * [LinuxCNC](https://linuxcnc.org)
 * [QtPyVCP](https://qtpyvcp.com/)
-* Python 3
+* Python 3.11
 * PyQt5 or PySide2
 
-JauriaCNC is developed and tested using the LinuxCNC Debian 10 (buster) and 11 (bullseye)
-[Live ISO](http://www.linuxcnc.org/download/) It should run
-on any system that can have PyQt5 installed, but Debian 10 is the only OS
-that is officially supported.
+JauriaCNC is developed and tested using the LinuxCNC Debian 12 (bookworm)
 
 
 ## DISCLAIMER

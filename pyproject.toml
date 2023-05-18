@@ -1,0 +1,30 @@
+[build-system]
+requires = ["poetry-core", "versioneer[toml]"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "tnc"
+authors = [
+  "TurBoss <j.l.toledano.l@gmail.com>"
+]
+description = "TurBo NC - A QtPyVCP based Virtual Control Panel for LinuxCNC"
+readme = "README.md"
+version = "0.0"
+
+packages = [
+    { include = "tnc", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.scripts]
+tnc = "tnc:main"
+
+[tool.poetry.plugins]
+
+[tool.poetry.plugins."qtpyvcp.vcp"]
+tnc = "tnc"
+
+[tool.poetry.plugins."qtpyvcp.widgets"]
