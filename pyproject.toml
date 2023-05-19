@@ -3,7 +3,7 @@ requires = ["poetry-core", "versioneer[toml]"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "tnc"
+name = "turbonc"
 authors = [
   "TurBoss <j.l.toledano.l@gmail.com>"
 ]
