@@ -7,4 +7,4 @@ override_dh_auto_test:
 
 override_dh_install:
 	dh_install
-	qcompile debian/python3-tnc
+	qcompile debian/python3-turboonc
