@@ -14,8 +14,6 @@ LOG = logger.getLogger("QtPyVCP." + __name__)
 
 from qtpyvcp import actions
 
-from tnc.dialogs.zero_xy import ZeroXY
-
 import resources_rc
 
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
