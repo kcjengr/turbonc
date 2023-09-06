@@ -22,17 +22,17 @@ $ sudo apt install python3-pyqt5 python3-pyqt5.qtquick python3-venv python3-dbus
 Clone the tnc repository
 
 ```
-$ git clone https://github.com/TurBoss/jauriacnc.git
+$ git clone https://github.com/KCJengr/turbonc.git
 ```
 
-Install JauriaCNC using pip
+Install TurBoNC using pip
 
 ```
 $ cd tnc
 $ python3 -m venv venv
 $ source venv/bin/activate
 $ python3 -m pip install -e .
-$ qcompile -e .
+$ qcompile .
 ```
 
 Now you can run editvcp to edit the interface
@@ -62,7 +62,7 @@ QtPyVCP [documentation](https://qtpyvcp.com)
 * Python 3.11
 * PyQt5 or PySide2
 
-JauriaCNC is developed and tested using the LinuxCNC Debian 12 (bookworm)
+TurBoNC is developed and tested using the LinuxCNC Debian 12 (bookworm)
 
 
 ## DISCLAIMER

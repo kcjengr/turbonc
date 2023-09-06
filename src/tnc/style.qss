@@ -20,7 +20,7 @@ QWidget{
 
 
 #estop_abutton:checked{
-border-bottom:3px solid #00ff00;
+  border-bottom:3px solid #00ff00;
   background:#3e3e42;
 }
 
