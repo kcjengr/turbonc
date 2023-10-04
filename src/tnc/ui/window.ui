@@ -250,6 +250,12 @@
             </item>
             <item>
              <widget class="ActionComboBox" name="actioncombobox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="font">
                <font>
                 <weight>75</weight>
@@ -620,7 +626,7 @@
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_18">
+             <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,1,1">
               <item>
                <widget class="QTabWidget" name="tabWidget">
                 <property name="sizePolicy">
@@ -1232,7 +1238,7 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="plot">
+               <widget class="VTKBackPlot" name="plot_2">
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
@@ -1241,6 +1247,9 @@
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="plotMachine" stdset="0">
+                 <bool>true</bool>
                 </property>
                 <property name="backgroundColor" stdset="0">
                  <color>
@@ -1277,8 +1286,56 @@
                   <blue>0</blue>
                  </color>
                 </property>
-                <property name="enableProgramLabels" stdset="0">
+               </widget>
+              </item>
+              <item>
+               <widget class="VTKBackPlot" name="plot">
+                <property name="enabled">
                  <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="plotMachine" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="backgroundColor" stdset="0">
+                 <color>
+                  <red>0</red>
+                  <green>0</green>
+                  <blue>0</blue>
+                 </color>
+                </property>
+                <property name="backgroundColor2" stdset="0">
+                 <color>
+                  <red>46</red>
+                  <green>52</green>
+                  <blue>54</blue>
+                 </color>
+                </property>
+                <property name="traverseColor" stdset="0">
+                 <color>
+                  <red>252</red>
+                  <green>175</green>
+                  <blue>62</blue>
+                 </color>
+                </property>
+                <property name="arcfeedColor" stdset="0">
+                 <color>
+                  <red>138</red>
+                  <green>226</green>
+                  <blue>52</blue>
+                 </color>
+                </property>
+                <property name="feedColor" stdset="0">
+                 <color>
+                  <red>245</red>
+                  <green>121</green>
+                  <blue>0</blue>
+                 </color>
                 </property>
                </widget>
               </item>
@@ -1331,89 +1388,6 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_17">
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <property name="spacing">
-             <number>6</number>
-            </property>
-            <item>
-             <widget class="QPushButton" name="pushButton_12">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>RELOAD TABLE</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_15">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>SAVE TABLE</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_18">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>ADD TOOL</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_17">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>DELETE</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
            <widget class="ToolTable" name="tooltable">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1424,7 +1398,7 @@
             <property name="minimumSize">
              <size>
               <width>600</width>
-              <height>0</height>
+              <height>2400</height>
              </size>
             </property>
             <property name="maximumSize">
@@ -1435,6 +1409,89 @@
             </property>
             <property name="gridStyle">
              <enum>Qt::DashLine</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>DELETE</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_18">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>ADD TOOL</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_15">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>SAVE TABLE</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_12">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>RELOAD TABLE</string>
             </property>
            </widget>
           </item>
@@ -1490,14 +1547,14 @@
          <item>
           <widget class="ActionButton" name="estop_abutton">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -1530,9 +1587,15 @@
            <property name="enabled">
             <bool>false</bool>
            </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -1756,9 +1819,15 @@
          </property>
          <item>
           <widget class="DialogButton" name="home_dbutton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -1813,9 +1882,15 @@
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="DialogButton" name="zero_dbutton_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -1843,9 +1918,15 @@ X Y</string>
          </item>
          <item>
           <widget class="DialogButton" name="zero_dbutton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -1894,9 +1975,15 @@ X Y</string>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
           <widget class="ActionButton" name="run_abutton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -1933,9 +2020,15 @@ X Y</string>
          </item>
          <item>
           <widget class="ActionButton" name="pause_abutton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -1972,9 +2065,15 @@ X Y</string>
          </item>
          <item>
           <widget class="ActionButton" name="stop_abutton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
-             <width>68</width>
+             <width>50</width>
              <height>32</height>
             </size>
            </property>
@@ -2594,7 +2693,6 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>
