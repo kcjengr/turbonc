@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>480</height>
+    <height>482</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -66,7 +66,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -75,480 +75,6 @@
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
-            <item>
-             <widget class="QPushButton" name="plotClear_3">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Machine</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotClear_5">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Path</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotClear_2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Pan</string>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotPlus">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>+</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotMinus">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>-</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="ActionComboBox" name="actioncombobox">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="actionName" stdset="0">
-               <string>machine.set-work-coord</string>
-              </property>
-              <item>
-               <property name="text">
-                <string>G54</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G55</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G56</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G57</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G58</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G59</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G59.1</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G59.2</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>G59.3</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <widget class="QPushButton" name="plotClear">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Clear</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotX">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>X</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-              <property name="autoExclusive">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotY">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Y</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-              <property name="autoExclusive">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotZ">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Z</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
-              </property>
-              <property name="autoExclusive">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotP">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>P</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-              <property name="autoExclusive">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="plotZ2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>64</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>64</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Noto Sans</family>
-                <pointsize>10</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>Z2</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-              <property name="autoExclusive">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0">
             <property name="spacing">
@@ -626,7 +152,7 @@
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,1,1">
+             <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,0">
               <item>
                <widget class="QTabWidget" name="tabWidget">
                 <property name="sizePolicy">
@@ -656,7 +182,7 @@
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <property name="elideMode">
                  <enum>Qt::ElideNone</enum>
@@ -1238,111 +764,76 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="plot_2">
-                <property name="enabled">
-                 <bool>true</bool>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="plotMachine" stdset="0">
-                 <bool>true</bool>
-                </property>
-                <property name="backgroundColor" stdset="0">
-                 <color>
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </property>
-                <property name="backgroundColor2" stdset="0">
-                 <color>
-                  <red>46</red>
-                  <green>52</green>
-                  <blue>54</blue>
-                 </color>
-                </property>
-                <property name="traverseColor" stdset="0">
-                 <color>
-                  <red>252</red>
-                  <green>175</green>
-                  <blue>62</blue>
-                 </color>
-                </property>
-                <property name="arcfeedColor" stdset="0">
-                 <color>
-                  <red>138</red>
-                  <green>226</green>
-                  <blue>52</blue>
-                 </color>
-                </property>
-                <property name="feedColor" stdset="0">
-                 <color>
-                  <red>245</red>
-                  <green>121</green>
-                  <blue>0</blue>
-                 </color>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="VTKBackPlot" name="plot">
-                <property name="enabled">
-                 <bool>true</bool>
-                </property>
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="plotMachine" stdset="0">
-                 <bool>false</bool>
-                </property>
-                <property name="backgroundColor" stdset="0">
-                 <color>
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </property>
-                <property name="backgroundColor2" stdset="0">
-                 <color>
-                  <red>46</red>
-                  <green>52</green>
-                  <blue>54</blue>
-                 </color>
-                </property>
-                <property name="traverseColor" stdset="0">
-                 <color>
-                  <red>252</red>
-                  <green>175</green>
-                  <blue>62</blue>
-                 </color>
-                </property>
-                <property name="arcfeedColor" stdset="0">
-                 <color>
-                  <red>138</red>
-                  <green>226</green>
-                  <blue>52</blue>
-                 </color>
-                </property>
-                <property name="feedColor" stdset="0">
-                 <color>
-                  <red>245</red>
-                  <green>121</green>
-                  <blue>0</blue>
-                 </color>
-                </property>
-               </widget>
+               <widget class="GcodeTextEdit" name="gcodetextedit"/>
               </item>
              </layout>
             </item>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <item>
+               <widget class="ActionComboBox" name="actioncombobox">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="actionName" stdset="0">
+                 <string>machine.set-work-coord</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>G54</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G55</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G56</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G57</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G58</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G59</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G59.1</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G59.2</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>G59.3</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
               <item>
                <widget class="QLabel" name="label">
                 <property name="sizePolicy">
@@ -1365,7 +856,7 @@
               <item>
                <widget class="MDIEntry" name="mdientry">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -2406,15 +1897,14 @@ X Y</string>
    <header>qtpyvcp.widgets.display_widgets.dro_label</header>
   </customwidget>
   <customwidget>
-   <class>VTKBackPlot</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>MDIEntry</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>GcodeTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.gcode_text_edit</header>
   </customwidget>
   <customwidget>
    <class>ToolTable</class>
@@ -2434,182 +1924,6 @@ X Y</string>
   <include location="../resources.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>plotClear_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>plot</receiver>
-   <slot>enable_panning(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotX</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewX()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotZ2</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewZ2()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>clearLivePlot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>65</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotPlus</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>zoomIn()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotZ</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewZ()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear_3</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewMachine()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotMinus</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>zoomOut()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear_5</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewPath()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotP</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewP()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotY</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewY()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>pushButton_17</sender>
    <signal>clicked()</signal>
