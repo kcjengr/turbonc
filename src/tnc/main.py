@@ -25,30 +25,3 @@ class MainWindow(VCPMainWindow):
 
         self.initUi()
 
-        self.plot.camera.Zoom(0.002)
-        self.plot.setViewMachine()
-
-    @Slot(QAbstractButton)
-    def on_probeTabGroup_buttonClicked(self, button):
-        self.probe_tab_widget.setCurrentIndex(button.property('page'))
-
-    @Slot(QAbstractButton)
-    def on_sidebarTabGroup_buttonClicked(self, button):
-        self.sidebar_widget.setCurrentIndex(button.property('page'))
-
-    # Fwd/Back buttons off the stacked widget
-    def on_probe_help_next_released(self):
-        lastPage = 5
-        currentIndex = self.probe_help_widget.currentIndex()
-        if currentIndex == lastPage:
-            self.probe_help_widget.setCurrentIndex(0)
-        else:
-            self.probe_help_widget.setCurrentIndex(currentIndex + 1)
-
-    def on_probe_help_prev_released(self):
-        lastPage = 5
-        currentIndex = self.probe_help_widget.currentIndex()
-        if currentIndex == 0:
-            self.probe_help_widget.setCurrentIndex(lastPage)
-        else:
-            self.probe_help_widget.setCurrentIndex(currentIndex - 1)
