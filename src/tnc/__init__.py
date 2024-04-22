@@ -15,8 +15,7 @@ Example:
     Run with the --help option to print a full list of options.
 
 """
-
-__version__ = "0.0.1"
+__version__ = "0.0.0"
 
 import os
 import qtpyvcp
@@ -38,5 +37,3 @@ def main(opts=None):
 if __name__ == "__main__":
     main()
 
-from . import _version
-__version__ = _version.get_versions()['version']
