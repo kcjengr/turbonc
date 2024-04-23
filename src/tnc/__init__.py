@@ -15,7 +15,6 @@ Example:
     Run with the --help option to print a full list of options.
 
 """
-__version__ = "0.0.0"
 
 import os
 import qtpyvcp
