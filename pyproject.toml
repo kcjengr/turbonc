@@ -1,10 +1,10 @@
 [build-system]
-requires = ["poetry-core", "versioneer[toml]"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry]
 name = "turbonc"
-version = "0.0"
+version = "0.0.0"
 authors = [
   "TurBoss <j.l.toledano.l@gmail.com>"
 ]
