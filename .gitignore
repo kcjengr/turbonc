@@ -84,3 +84,14 @@ linuxcnc/configs/sim.qtpyvcp/hal-widgets_ui.py
 src/tnc/resources_rc.py
 src/tnc/rc_resources.py
 src/tnc/resources.py
+.pybuild/cpython3_3.11/scripts/tnc
+.pybuild/cpython3_3.11/turbonc-0.4.post2.dev0+a42095a-py3-none-any.whl
+.pybuild/
+debian/.debhelper
+debian/changelog
+debian/debhelper-build-stamp
+debian/files
+debian/python3-turbonc/
+debian/python3-turbonc.postinst.debhelper
+debian/python3-turbonc.prerm.debhelper
+debian/python3-turbonc.substvars
