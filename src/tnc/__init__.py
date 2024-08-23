@@ -18,6 +18,7 @@ Example:
 
 import os
 import qtpyvcp
+
 from tnc._version import __version__
 
 VCP_DIR = os.path.realpath(os.path.dirname(__file__))
