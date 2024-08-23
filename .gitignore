@@ -95,3 +95,4 @@ debian/python3-turbonc/
 debian/python3-turbonc.postinst.debhelper
 debian/python3-turbonc.prerm.debhelper
 debian/python3-turbonc.substvars
+poetry.lock
