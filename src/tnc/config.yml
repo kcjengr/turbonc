@@ -19,10 +19,7 @@ data_plugins:
   clock:
     provider: qtpyvcp.plugins.clock:Clock
 
-  tooltable:
-    provider: qtpyvcp.plugins.tool_table:ToolTable
-    kwargs:
-        columns: TXYZDR
+
 
   persistent_data_manager:
     provider: qtpyvcp.plugins.persistent_data_manager:PersistentDataManager

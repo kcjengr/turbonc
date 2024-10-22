@@ -49,7 +49,7 @@
        <enum>QTabWidget::South</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -2333,7 +2333,7 @@ QHeaderView {
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_2">
+             <widget class="QPushButton" name="save_tool_properties">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -12126,7 +12126,7 @@ X Y</string>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>save_tool_properties</sender>
    <signal>clicked()</signal>
    <receiver>toolmodel</receiver>
    <slot>saveField()</slot>

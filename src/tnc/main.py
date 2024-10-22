@@ -52,3 +52,4 @@ class MainWindow(VCPMainWindow):
             self.probe_help_widget.setCurrentIndex(lastPage)
         else:
             self.probe_help_widget.setCurrentIndex(currentIndex - 1)
+            
