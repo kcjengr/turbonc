@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="focusPolicy">
-   <enum>Qt::StrongFocus</enum>
+   <enum>Qt::FocusPolicy::StrongFocus</enum>
   </property>
   <property name="windowTitle">
    <string>TurBoNC</string>
@@ -41,12 +41,11 @@
      <widget class="QTabWidget" name="Tabs">
       <property name="font">
        <font>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="tabPosition">
-       <enum>QTabWidget::South</enum>
+       <enum>QTabWidget::TabPosition::South</enum>
       </property>
       <property name="currentIndex">
        <number>3</number>
@@ -73,7 +72,7 @@
              </size>
             </property>
             <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
+             <enum>Qt::LayoutDirection::LeftToRight</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
@@ -100,7 +99,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -133,7 +131,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -172,7 +169,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -205,7 +201,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -238,7 +233,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -271,7 +265,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -304,7 +297,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -343,7 +335,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -385,7 +376,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -424,7 +414,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -463,7 +452,6 @@
                 <font>
                  <family>Bebas Kai</family>
                  <pointsize>15</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -482,7 +470,6 @@
               <widget class="ActionComboBox" name="actioncombobox">
                <property name="font">
                 <font>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -566,7 +553,6 @@
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
-                  <weight>75</weight>
                   <bold>true</bold>
                  </font>
                 </property>
@@ -586,7 +572,6 @@
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
-                  <weight>75</weight>
                   <bold>true</bold>
                  </font>
                 </property>
@@ -617,21 +602,20 @@
                  <font>
                   <family>Noto Sans</family>
                   <pointsize>14</pointsize>
-                  <weight>75</weight>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="tabPosition">
-                 <enum>QTabWidget::North</enum>
+                 <enum>QTabWidget::TabPosition::North</enum>
                 </property>
                 <property name="tabShape">
-                 <enum>QTabWidget::Rounded</enum>
+                 <enum>QTabWidget::TabShape::Rounded</enum>
                 </property>
                 <property name="currentIndex">
                  <number>0</number>
                 </property>
                 <property name="elideMode">
-                 <enum>Qt::ElideNone</enum>
+                 <enum>Qt::TextElideMode::ElideNone</enum>
                 </property>
                 <property name="tabsClosable">
                  <bool>false</bool>
@@ -651,15 +635,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -668,7 +651,7 @@
                          <string>X</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
                         </property>
                        </widget>
                       </item>
@@ -678,15 +661,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -698,7 +680,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>1</number>
@@ -730,15 +712,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -747,7 +728,7 @@
                          <string>Y</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
                         </property>
                        </widget>
                       </item>
@@ -757,15 +738,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -777,7 +757,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>1</number>
@@ -809,15 +789,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -826,7 +805,7 @@
                          <string>Z</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
                         </property>
                        </widget>
                       </item>
@@ -836,15 +815,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -856,7 +834,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>1</number>
@@ -899,15 +877,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -916,7 +893,7 @@
                          <string>X</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
                         </property>
                        </widget>
                       </item>
@@ -926,16 +903,15 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                           <underline>false</underline>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -947,7 +923,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>0</number>
@@ -979,15 +955,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -996,7 +971,7 @@
                          <string>Y</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
                         </property>
                        </widget>
                       </item>
@@ -1006,16 +981,15 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                           <underline>false</underline>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -1027,7 +1001,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>0</number>
@@ -1059,15 +1033,14 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -1076,7 +1049,7 @@
                          <string>Z</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignCenter</set>
+                         <set>Qt::AlignmentFlag::AlignCenter</set>
                         </property>
                        </widget>
                       </item>
@@ -1086,16 +1059,15 @@
                          <font>
                           <family>Noto Sans</family>
                           <pointsize>32</pointsize>
-                          <weight>75</weight>
                           <bold>true</bold>
                           <underline>false</underline>
                          </font>
                         </property>
                         <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
+                         <enum>QFrame::Shape::StyledPanel</enum>
                         </property>
                         <property name="frameShadow">
-                         <enum>QFrame::Sunken</enum>
+                         <enum>QFrame::Shadow::Sunken</enum>
                         </property>
                         <property name="lineWidth">
                          <number>3</number>
@@ -1107,7 +1079,7 @@
                          <string>     0.000</string>
                         </property>
                         <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                         </property>
                         <property name="referenceType" stdset="0">
                          <number>0</number>
@@ -1138,7 +1110,7 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="plot">
+               <widget class="VTKBackPlot" name="plot" native="true">
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
@@ -1190,7 +1162,6 @@
                <widget class="QLabel" name="label">
                 <property name="font">
                  <font>
-                  <weight>75</weight>
                   <bold>true</bold>
                  </font>
                 </property>
@@ -1375,7 +1346,7 @@
           <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1544,10 +1515,10 @@
            <string notr="true"/>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Shape::StyledPanel</enum>
           </property>
           <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
+           <enum>QFrame::Shadow::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_35">
            <item>
@@ -1579,7 +1550,7 @@
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -1642,7 +1613,7 @@
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -1659,7 +1630,7 @@
              <item>
               <widget class="FileSystemTable" name="filesystemtable">
                <property name="focusPolicy">
-                <enum>Qt::WheelFocus</enum>
+                <enum>Qt::FocusPolicy::WheelFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true">FileSystemTable {
@@ -1681,7 +1652,7 @@ QHeaderView {
 }</string>
                </property>
                <property name="selectionMode">
-                <enum>QAbstractItemView::SingleSelection</enum>
+                <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
                </property>
                <property name="showGrid">
                 <bool>false</bool>
@@ -1713,7 +1684,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -1754,7 +1725,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -1795,7 +1766,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -1836,7 +1807,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -1874,10 +1845,10 @@ QHeaderView {
              </size>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
+             <enum>Qt::FocusPolicy::NoFocus</enum>
             </property>
             <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
+             <enum>Qt::LayoutDirection::RightToLeft</enum>
             </property>
             <property name="styleSheet">
              <string notr="true"/>
@@ -1913,7 +1884,7 @@ FROM
              </size>
             </property>
             <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
+             <enum>Qt::FocusPolicy::NoFocus</enum>
             </property>
             <property name="text">
              <string>COPY
@@ -1948,10 +1919,10 @@ USB</string>
            <string notr="true"/>
           </property>
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Shape::StyledPanel</enum>
           </property>
           <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
+           <enum>QFrame::Shadow::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_37">
            <item>
@@ -1983,7 +1954,7 @@ USB</string>
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -2046,7 +2017,7 @@ USB</string>
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -2063,7 +2034,7 @@ USB</string>
              <item>
               <widget class="FileSystemTable" name="filesystemtable_2">
                <property name="focusPolicy">
-                <enum>Qt::WheelFocus</enum>
+                <enum>Qt::FocusPolicy::WheelFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true">FileSystemTable {
@@ -2085,7 +2056,7 @@ QHeaderView {
 }</string>
                </property>
                <property name="selectionMode">
-                <enum>QAbstractItemView::SingleSelection</enum>
+                <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
                </property>
                <property name="showGrid">
                 <bool>false</bool>
@@ -2117,7 +2088,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -2158,7 +2129,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -2199,7 +2170,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -2240,7 +2211,7 @@ QHeaderView {
                 </size>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
+                <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true"/>
@@ -2279,7 +2250,7 @@ QHeaderView {
              </size>
             </property>
             <property name="gridStyle">
-             <enum>Qt::DashLine</enum>
+             <enum>Qt::PenStyle::DashLine</enum>
             </property>
            </widget>
           </item>
@@ -2297,7 +2268,6 @@ QHeaderView {
                <font>
                 <family>Noto Sans</family>
                 <pointsize>14</pointsize>
-                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -2305,12 +2275,12 @@ QHeaderView {
                <string>Tool Extra Properties</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="ToolSTLField" name="toolmodel">
+             <widget class="ToolSTLField" name="toolmodel" native="true">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -2322,7 +2292,7 @@ QHeaderView {
             <item>
              <spacer name="verticalSpacer">
               <property name="orientation">
-               <enum>Qt::Vertical</enum>
+               <enum>Qt::Orientation::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -2455,7 +2425,7 @@ QHeaderView {
               <string> WORK OFFSETS</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -2540,7 +2510,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2577,7 +2547,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2614,7 +2584,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2651,7 +2621,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2688,7 +2658,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2725,7 +2695,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2795,7 +2765,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2832,7 +2802,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2869,7 +2839,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2906,7 +2876,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -2949,7 +2919,7 @@ QHeaderView {
                     </size>
                    </property>
                    <property name="focusPolicy">
-                    <enum>Qt::NoFocus</enum>
+                    <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
                    <property name="styleSheet">
                     <string notr="true"/>
@@ -3040,7 +3010,7 @@ QHeaderView {
                   <string/>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -3074,7 +3044,7 @@ QHeaderView {
                   <string>Probe Tool #:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3102,10 +3072,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0</string>
@@ -3154,7 +3124,7 @@ QHeaderView {
                   <string>Step Off Width:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3182,13 +3152,13 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0000</string>
@@ -3226,7 +3196,7 @@ QHeaderView {
                   <string/>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -3260,7 +3230,7 @@ QHeaderView {
                   <string>PROBE FAST FDRATE:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3288,10 +3258,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0</string>
@@ -3340,7 +3310,7 @@ QHeaderView {
                   <string>PROBE SLOW FDRATE:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3368,10 +3338,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0</string>
@@ -3409,7 +3379,7 @@ QHeaderView {
                   <string/>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -3443,7 +3413,7 @@ QHeaderView {
                   <string>Max X/Y Distance:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3471,10 +3441,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0000</string>
@@ -3523,7 +3493,7 @@ QHeaderView {
                   <string>X/Y Clearance:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3551,10 +3521,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0000</string>
@@ -3595,7 +3565,7 @@ QHeaderView {
                   <string/>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -3629,7 +3599,7 @@ QHeaderView {
                   <string>Max Z Distance:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3657,10 +3627,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0000</string>
@@ -3709,7 +3679,7 @@ QHeaderView {
                   <string>Z Clearance:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3737,10 +3707,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0000</string>
@@ -3784,7 +3754,7 @@ QHeaderView {
                   <string/>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -3818,7 +3788,7 @@ QHeaderView {
                   <string>Extra Probe Depth:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3846,10 +3816,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0000</string>
@@ -3898,7 +3868,7 @@ QHeaderView {
                   <string>EDGE WIDTH:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -3926,10 +3896,10 @@ QHeaderView {
                   </size>
                  </property>
                  <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
+                  <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="placeholderText">
                   <string>0.0000</string>
@@ -4041,7 +4011,7 @@ QHeaderView {
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">.SubCallButton{
@@ -4102,7 +4072,7 @@ QHeaderView {
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">.SubCallButton{
@@ -4163,7 +4133,7 @@ QHeaderView {
                  </size>
                 </property>
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">SubCallButton{
@@ -4258,7 +4228,7 @@ QHeaderView {
                   <string notr="true"/>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
+                  <enum>QFrame::Shape::NoFrame</enum>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -4267,7 +4237,7 @@ QHeaderView {
                   <string>X- PROBED:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4308,7 +4278,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -4342,7 +4312,7 @@ QHeaderView {
                   <string notr="true"/>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
+                  <enum>QFrame::Shape::NoFrame</enum>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -4351,7 +4321,7 @@ QHeaderView {
                   <string>X+ PROBED:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4392,7 +4362,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -4432,7 +4402,7 @@ QHeaderView {
                   <string>X WIDTH:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4473,7 +4443,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -4529,7 +4499,7 @@ QHeaderView {
                   <string>Y- PROBED:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4570,7 +4540,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -4610,7 +4580,7 @@ QHeaderView {
                   <string>Y+ PROBED:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4651,7 +4621,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -4691,7 +4661,7 @@ QHeaderView {
                   <string>Y WIDTH:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4732,7 +4702,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -4788,7 +4758,7 @@ QHeaderView {
                   <string>Z- PROBED:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4829,7 +4799,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="margin">
                   <number>2</number>
@@ -4872,7 +4842,7 @@ QHeaderView {
                   <string>DIAM:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4913,7 +4883,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -4953,7 +4923,7 @@ QHeaderView {
                   <string>X CENTER:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -4994,7 +4964,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="margin">
                   <number>2</number>
@@ -5053,7 +5023,7 @@ QHeaderView {
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;EDGE DELTA:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -5094,7 +5064,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -5134,7 +5104,7 @@ QHeaderView {
                   <string>EDGE ANGLE:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -5178,10 +5148,10 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="textFormat">
-                  <enum>Qt::RichText</enum>
+                  <enum>Qt::TextFormat::RichText</enum>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
                   <string>[]</string>
@@ -5225,7 +5195,7 @@ QHeaderView {
                   <string>Y CENTER:</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="indent">
                   <number>0</number>
@@ -5266,7 +5236,7 @@ QHeaderView {
                   <string>0.0000</string>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
                  <property name="margin">
                   <number>2</number>
@@ -5301,13 +5271,12 @@ QHeaderView {
               <font>
                <family>Bebas Kai</family>
                <pointsize>15</pointsize>
-               <weight>50</weight>
                <italic>false</italic>
                <bold>false</bold>
               </font>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::ClickFocus</enum>
+              <enum>Qt::FocusPolicy::ClickFocus</enum>
              </property>
              <property name="placeholderText">
               <string>MDI</string>
@@ -5356,7 +5325,7 @@ QHeaderView {
               <item>
                <widget class="QPushButton" name="outside_corners">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5412,7 +5381,7 @@ QPushButton:checked {
               <item>
                <widget class="QPushButton" name="inside_corners">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5465,7 +5434,7 @@ QPushButton:checked {
               <item>
                <widget class="QPushButton" name="boss_and_pocket">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5518,7 +5487,7 @@ QPushButton:checked {
               <item>
                <widget class="QPushButton" name="ridge_and_valley">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5571,7 +5540,7 @@ QPushButton:checked {
               <item>
                <widget class="QPushButton" name="rotation_angle">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5624,7 +5593,7 @@ QPushButton:checked {
               <item>
                <widget class="QPushButton" name="rotary_axis_2">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5677,7 +5646,7 @@ QPushButton:checked {
               <item>
                <widget class="QPushButton" name="calibrate">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5730,7 +5699,7 @@ QPushButton:checked {
               <item>
                <widget class="QPushButton" name="probe_help">
                 <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+                 <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
@@ -5825,7 +5794,7 @@ QPushButton:checked {
                   <bool>true</bool>
                  </property>
                 </widget>
-                <widget class="HalLedIndicator" name="probe_led">
+                <widget class="HalLedIndicator" name="probe_led" native="true">
                  <property name="geometry">
                   <rect>
                    <x>213</x>
@@ -5840,17 +5809,17 @@ QPushButton:checked {
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="diameter">
+                 <property name="diameter" stdset="0">
                   <number>20</number>
                  </property>
-                 <property name="color">
+                 <property name="color" stdset="0">
                   <color>
                    <red>44</red>
                    <green>41</green>
                    <blue>255</blue>
                   </color>
                  </property>
-                 <property name="state">
+                 <property name="state" stdset="0">
                   <bool>false</bool>
                  </property>
                  <property name="pinBaseName" stdset="0">
@@ -5919,7 +5888,6 @@ border: none;
                    <font>
                     <family>Bebas Kai</family>
                     <pointsize>13</pointsize>
-                    <weight>75</weight>
                     <bold>true</bold>
                    </font>
                   </property>
@@ -5970,7 +5938,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="icon">
                           <iconset resource="../resources.qrc">
@@ -6008,7 +5976,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6052,7 +6020,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6097,7 +6065,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6141,7 +6109,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6185,7 +6153,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6229,7 +6197,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6273,7 +6241,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6317,7 +6285,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="styleSheet">
                           <string notr="true"/>
@@ -6394,7 +6362,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6435,7 +6403,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6476,7 +6444,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6517,7 +6485,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6558,7 +6526,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6599,7 +6567,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6640,7 +6608,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6681,7 +6649,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6722,7 +6690,7 @@ border: none;
                           </size>
                          </property>
                          <property name="focusPolicy">
-                          <enum>Qt::NoFocus</enum>
+                          <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -6802,7 +6770,7 @@ border: none;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -6840,7 +6808,7 @@ border: none;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -6878,7 +6846,7 @@ border: none;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -6916,7 +6884,7 @@ border: none;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -7009,7 +6977,7 @@ border: none;
                              <string>HINT</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignCenter</set>
+                             <set>Qt::AlignmentFlag::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -7038,7 +7006,7 @@ padding-left: 5px;
                              <string>DIAM:</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="indent">
                              <number>0</number>
@@ -7066,10 +7034,10 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::ClickFocus</enum>
+                             <enum>Qt::FocusPolicy::ClickFocus</enum>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="placeholderText">
                              <string>0.0000</string>
@@ -7101,7 +7069,7 @@ padding-left: 5px;
                              <string>X :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="indent">
                              <number>0</number>
@@ -7129,10 +7097,10 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::ClickFocus</enum>
+                             <enum>Qt::FocusPolicy::ClickFocus</enum>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="placeholderText">
                              <string>0.0000</string>
@@ -7164,7 +7132,7 @@ padding-left: 5px;
                              <string>Y :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="indent">
                              <number>0</number>
@@ -7192,10 +7160,10 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::ClickFocus</enum>
+                             <enum>Qt::FocusPolicy::ClickFocus</enum>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="placeholderText">
                              <string>0.0000</string>
@@ -7263,7 +7231,7 @@ padding-left: 5px;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -7301,7 +7269,7 @@ padding-left: 5px;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -7339,7 +7307,7 @@ padding-left: 5px;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -7377,7 +7345,7 @@ padding-left: 5px;
                            </size>
                           </property>
                           <property name="focusPolicy">
-                           <enum>Qt::NoFocus</enum>
+                           <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
                           <property name="styleSheet">
                            <string notr="true"/>
@@ -7470,7 +7438,7 @@ padding-left: 5px;
                              <string>HINT</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignCenter</set>
+                             <set>Qt::AlignmentFlag::AlignCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -7499,7 +7467,7 @@ padding-left: 5px;
                              <string>X :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="indent">
                              <number>0</number>
@@ -7527,10 +7495,10 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::ClickFocus</enum>
+                             <enum>Qt::FocusPolicy::ClickFocus</enum>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="placeholderText">
                              <string>0.0000</string>
@@ -7562,7 +7530,7 @@ padding-left: 5px;
                              <string>Y :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="indent">
                              <number>0</number>
@@ -7590,10 +7558,10 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::ClickFocus</enum>
+                             <enum>Qt::FocusPolicy::ClickFocus</enum>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="placeholderText">
                              <string>0.0000</string>
@@ -7679,7 +7647,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -7723,7 +7691,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -7761,7 +7729,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="icon">
                              <iconset resource="../resources.qrc">
@@ -7799,7 +7767,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -7843,7 +7811,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -7887,7 +7855,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -7931,7 +7899,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -7975,7 +7943,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -8019,7 +7987,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -8102,7 +8070,7 @@ padding-left: 5px;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -8229,7 +8197,7 @@ color: rgb(255, 255, 255);
                             <string>PROBE CALIBRATION OFFSET:</string>
                            </property>
                            <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                            </property>
                            <property name="indent">
                             <number>0</number>
@@ -8257,13 +8225,13 @@ color: rgb(255, 255, 255);
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::ClickFocus</enum>
+                            <enum>Qt::FocusPolicy::ClickFocus</enum>
                            </property>
                            <property name="styleSheet">
                             <string notr="true"/>
                            </property>
                            <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                            </property>
                            <property name="readOnly">
                             <bool>false</bool>
@@ -8306,7 +8274,7 @@ color: rgb(255, 255, 255);
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="styleSheet">
                             <string notr="true">SubCallButton{
@@ -8374,7 +8342,7 @@ color: rgb(255, 255, 255);
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="statusTip">
                             <string/>
@@ -8415,7 +8383,7 @@ color: rgb(255, 255, 255);
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="statusTip">
                             <string/>
@@ -8471,20 +8439,20 @@ color: rgb(255, 255, 255);
                             </size>
                            </property>
                            <property name="layoutDirection">
-                            <enum>Qt::LeftToRight</enum>
+                            <enum>Qt::LayoutDirection::LeftToRight</enum>
                            </property>
                            <layout class="QFormLayout" name="formLayout_2">
                             <property name="fieldGrowthPolicy">
-                             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+                             <enum>QFormLayout::FieldGrowthPolicy::AllNonFixedFieldsGrow</enum>
                             </property>
                             <property name="rowWrapPolicy">
-                             <enum>QFormLayout::DontWrapRows</enum>
+                             <enum>QFormLayout::RowWrapPolicy::DontWrapRows</enum>
                             </property>
                             <property name="labelAlignment">
-                             <set>Qt::AlignCenter</set>
+                             <set>Qt::AlignmentFlag::AlignCenter</set>
                             </property>
                             <property name="formAlignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                             <property name="horizontalSpacing">
                              <number>0</number>
@@ -8533,10 +8501,10 @@ color: rgb(255, 255, 255);
                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;CALIBRATION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;DIAMETER&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
                               <property name="textFormat">
-                               <enum>Qt::RichText</enum>
+                               <enum>Qt::TextFormat::RichText</enum>
                               </property>
                               <property name="alignment">
-                               <set>Qt::AlignCenter</set>
+                               <set>Qt::AlignmentFlag::AlignCenter</set>
                               </property>
                               <property name="wordWrap">
                                <bool>true</bool>
@@ -8564,14 +8532,14 @@ color: rgb(255, 255, 255);
                                </size>
                               </property>
                               <property name="focusPolicy">
-                               <enum>Qt::ClickFocus</enum>
+                               <enum>Qt::FocusPolicy::ClickFocus</enum>
                               </property>
                               <property name="styleSheet">
                                <string notr="true">margin-right: 14px;
 margin-left: 14px;</string>
                               </property>
                               <property name="alignment">
-                               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                               </property>
                               <property name="placeholderText">
                                <string>0.0000</string>
@@ -8621,7 +8589,7 @@ margin-left: 14px;</string>
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="styleSheet">
                             <string notr="true"/>
@@ -8664,7 +8632,7 @@ margin-left: 14px;</string>
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="text">
                             <string>CAL ON X ERROR</string>
@@ -8704,7 +8672,7 @@ margin-left: 14px;</string>
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="styleSheet">
                             <string notr="true"/>
@@ -8754,7 +8722,7 @@ margin-left: 14px;</string>
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="statusTip">
                             <string/>
@@ -8795,7 +8763,7 @@ margin-left: 14px;</string>
                             </size>
                            </property>
                            <property name="focusPolicy">
-                            <enum>Qt::NoFocus</enum>
+                            <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
                            <property name="statusTip">
                             <string/>
@@ -8843,10 +8811,10 @@ margin-left: 14px;</string>
                            </property>
                            <layout class="QFormLayout" name="formLayout">
                             <property name="labelAlignment">
-                             <set>Qt::AlignCenter</set>
+                             <set>Qt::AlignmentFlag::AlignCenter</set>
                             </property>
                             <property name="formAlignment">
-                             <set>Qt::AlignCenter</set>
+                             <set>Qt::AlignmentFlag::AlignCenter</set>
                             </property>
                             <property name="verticalSpacing">
                              <number>15</number>
@@ -8892,7 +8860,7 @@ margin-left: 14px;</string>
                                <string>CALIBRATION WIDTH</string>
                               </property>
                               <property name="alignment">
-                               <set>Qt::AlignCenter</set>
+                               <set>Qt::AlignmentFlag::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -8928,7 +8896,7 @@ color: white;
                                <string>X :</string>
                               </property>
                               <property name="alignment">
-                               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                               </property>
                               <property name="indent">
                                <number>0</number>
@@ -8967,7 +8935,7 @@ color: white;
                                <string>Y :</string>
                               </property>
                               <property name="alignment">
-                               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                               </property>
                               <property name="indent">
                                <number>0</number>
@@ -8995,10 +8963,10 @@ color: white;
                                </size>
                               </property>
                               <property name="focusPolicy">
-                               <enum>Qt::ClickFocus</enum>
+                               <enum>Qt::FocusPolicy::ClickFocus</enum>
                               </property>
                               <property name="alignment">
-                               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                               </property>
                               <property name="placeholderText">
                                <string>0.0000</string>
@@ -9026,10 +8994,10 @@ color: white;
                                </size>
                               </property>
                               <property name="focusPolicy">
-                               <enum>Qt::ClickFocus</enum>
+                               <enum>Qt::FocusPolicy::ClickFocus</enum>
                               </property>
                               <property name="alignment">
-                               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                               </property>
                               <property name="placeholderText">
                                <string>0.0000</string>
@@ -9092,7 +9060,7 @@ color: white;
                        <property name="bottomMargin">
                         <number>12</number>
                        </property>
-                       <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+                       <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop">
                         <widget class="QStackedWidget" name="probe_help_widget">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -9125,7 +9093,7 @@ background: transparent;
 }</string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <property name="lineWidth">
                           <number>0</number>
@@ -9217,7 +9185,7 @@ background: transparent;
                               <bool>true</bool>
                              </property>
                              <property name="alignment">
-                              <set>Qt::AlignCenter</set>
+                              <set>Qt::AlignmentFlag::AlignCenter</set>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -9269,7 +9237,7 @@ background: transparent;
                               <bool>true</bool>
                              </property>
                              <property name="alignment">
-                              <set>Qt::AlignCenter</set>
+                              <set>Qt::AlignmentFlag::AlignCenter</set>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -9321,7 +9289,7 @@ background: transparent;
                               <bool>true</bool>
                              </property>
                              <property name="alignment">
-                              <set>Qt::AlignCenter</set>
+                              <set>Qt::AlignmentFlag::AlignCenter</set>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -9373,7 +9341,7 @@ background: transparent;
                               <bool>true</bool>
                              </property>
                              <property name="alignment">
-                              <set>Qt::AlignCenter</set>
+                              <set>Qt::AlignmentFlag::AlignCenter</set>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -9425,7 +9393,7 @@ background: transparent;
                               <bool>true</bool>
                              </property>
                              <property name="alignment">
-                              <set>Qt::AlignCenter</set>
+                              <set>Qt::AlignmentFlag::AlignCenter</set>
                              </property>
                              <property name="wordWrap">
                               <bool>true</bool>
@@ -9496,7 +9464,7 @@ background: transparent;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true">QPushButton{
@@ -9549,10 +9517,10 @@ background: transparent;
                              </size>
                             </property>
                             <property name="focusPolicy">
-                             <enum>Qt::NoFocus</enum>
+                             <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
                             <property name="layoutDirection">
-                             <enum>Qt::RightToLeft</enum>
+                             <enum>Qt::LayoutDirection::RightToLeft</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true">QPushButton{
@@ -9640,10 +9608,10 @@ background: transparent;
       <item>
        <spacer name="horizontalSpacer_6">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Policy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -9657,7 +9625,6 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox">
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -9689,7 +9656,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -9727,7 +9693,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -9765,7 +9730,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -9803,7 +9767,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -9841,7 +9804,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -9879,7 +9841,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -9909,10 +9870,10 @@ background: transparent;
       <item>
        <spacer name="horizontalSpacer_5">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Policy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -9926,7 +9887,6 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox_2">
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -9957,7 +9917,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>12</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -9965,10 +9924,10 @@ background: transparent;
             <string>Feed Override 0%</string>
            </property>
            <property name="textFormat">
-            <enum>Qt::AutoText</enum>
+            <enum>Qt::TextFormat::AutoText</enum>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
            <property name="rules" stdset="0">
             <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;Feed Override {ch[0]:.0%}\&quot;&quot;, &quot;name&quot;: &quot;Feed Rate&quot;}]</string>
@@ -10006,7 +9965,6 @@ background: transparent;
              <property name="font">
               <font>
                <pointsize>12</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -10017,7 +9975,7 @@ background: transparent;
               <string>Feed Rate</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
              <property name="wordWrap">
               <bool>false</bool>
@@ -10050,7 +10008,6 @@ background: transparent;
              <property name="font">
               <font>
                <pointsize>12</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -10061,7 +10018,7 @@ background: transparent;
               <string>0.0</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
              <property name="rules" stdset="0">
               <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0] * 60:.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
@@ -10088,7 +10045,6 @@ background: transparent;
              <property name="font">
               <font>
                <pointsize>12</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -10099,7 +10055,7 @@ background: transparent;
               <string>N/A/m</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
              <property name="indent">
               <number>0</number>
@@ -10120,10 +10076,10 @@ background: transparent;
       <item>
        <spacer name="horizontalSpacer_7">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Policy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -10137,7 +10093,6 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox_3">
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -10168,12 +10123,11 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>12</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
             <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;clock:time&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]:%I:%M:%S}\&quot;&quot;, &quot;name&quot;: &quot;time&quot;}]</string>
@@ -10203,12 +10157,11 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>12</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
             <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;clock:time&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0]:%d/%m/%Y}\&quot;&quot;, &quot;name&quot;: &quot;date&quot;}]</string>
@@ -10221,10 +10174,10 @@ background: transparent;
       <item>
        <spacer name="horizontalSpacer_4">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Policy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -10238,7 +10191,6 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox_4">
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -10247,7 +10199,7 @@ background: transparent;
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_24">
          <item>
-          <widget class="HalBarIndicator" name="spindle_load_indicator">
+          <widget class="HalBarIndicator" name="spindle_load_indicator" native="true">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -10262,7 +10214,6 @@ background: transparent;
            </property>
            <property name="font">
             <font>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10343,7 +10294,7 @@ background: transparent;
               <number>100</number>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="actionName" stdset="0">
               <string>spindle.override</string>
@@ -10372,12 +10323,11 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
              <property name="margin">
               <number>-6</number>
@@ -10406,12 +10356,11 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::NoFocus</enum>
+              <enum>Qt::FocusPolicy::NoFocus</enum>
              </property>
              <property name="styleSheet">
               <string notr="true"/>
@@ -10447,7 +10396,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -10475,7 +10423,6 @@ background: transparent;
              </property>
              <property name="font">
               <font>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -10495,10 +10442,10 @@ background: transparent;
       <item>
        <spacer name="horizontalSpacer_8">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
+         <enum>QSizePolicy::Policy::Expanding</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -10513,7 +10460,7 @@ background: transparent;
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="sizeConstraint">
-       <enum>QLayout::SetDefaultConstraint</enum>
+       <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
       </property>
       <property name="topMargin">
        <number>5</number>
@@ -10526,7 +10473,6 @@ background: transparent;
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -10560,7 +10506,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10595,7 +10540,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10618,7 +10562,6 @@ background: transparent;
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -10649,7 +10592,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10699,7 +10641,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10746,7 +10687,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10781,7 +10721,6 @@ background: transparent;
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -10809,7 +10748,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10835,7 +10773,6 @@ background: transparent;
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -10860,7 +10797,6 @@ background: transparent;
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10890,7 +10826,6 @@ X Y</string>
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10910,7 +10845,6 @@ X Y</string>
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -10935,7 +10869,6 @@ X Y</string>
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -10974,7 +10907,6 @@ X Y</string>
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -11013,7 +10945,6 @@ X Y</string>
            <property name="font">
             <font>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -12160,7 +12091,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="modeGroup"/>
   <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>

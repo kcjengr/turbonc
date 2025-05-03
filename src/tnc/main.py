@@ -2,8 +2,8 @@
 
 import os
 
-from qtpy.QtCore import Slot
-from qtpy.QtWidgets import QAbstractButton
+from PySide6.QtCore import Slot
+from PySide6.QtWidgets import QAbstractButton
 
 from qtpyvcp.widgets.form_widgets.main_window import VCPMainWindow
 
@@ -25,8 +25,8 @@ class MainWindow(VCPMainWindow):
 
         self.initUi()
 
-        self.plot.camera.Zoom(0.002)
-        self.plot.setViewMachine()
+        # self.plot.camera.Zoom(0.002)
+        # self.plot.setViewMachine()
 
     @Slot(QAbstractButton)
     def on_probeTabGroup_buttonClicked(self, button):

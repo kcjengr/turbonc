@@ -6,9 +6,9 @@ import hal
 
 from opcua import ua, Server
 
-from qtpy.QtCore import QTimer
-from qtpy.QtWidgets import QApplication
-from qtpy.QtWidgets import QMainWindow
+from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QMainWindow
 
 from qtpyvcp.utilities.logger import getLogger
 
