@@ -7,4 +7,4 @@ override_dh_auto_test:
 
 override_dh_install:
 	dh_install
-	qcompile debian/python3-turbonc
+	/home/buildbot/pyside6_venv/bin/qcompile debian/python3-turbonc
