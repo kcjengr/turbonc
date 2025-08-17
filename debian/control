@@ -13,4 +13,4 @@ Rules-Requires-Root: no
 Package: python3-turbonc
 Architecture: amd64 arm64
 Description: TurBo NC is a QtPyVCP based interface for the LinuxCNC machine control
-Depends: ${python3:Depends}, ${misc:Depends}, python3-setuptools, python3-yaml, python3-pyside6, python3-dbus, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval
+Depends: ${python3:Depends}, ${misc:Depends}, python3-setuptools, python3-yaml, libpyside6-py3-6.8, python3-dbus, python3-serial, python3-docopt, python3-psutil, python3-pyudev, python3-vtk9, python3-deepdiff, python3-sqlalchemy, python3-pyqtgraph, python3-simpleeval
