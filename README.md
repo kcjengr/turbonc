@@ -7,16 +7,10 @@ TurBo NC is a QtPyVCP based interface for the LinuxCNC machine control.
 
 ## Quick install
 
-Install linuxcnc using linuxcnc 2.90~pre
-
+Install linuxcnc using linuxcnc 2.9.4
 http://www.linuxcnc.org/
 
 
-* Dependencies
-
-```
-$ sudo apt install python3-pyqt5 python3-pyqt5.qtquick python3-venv python3-dbus.mainloop.pyqt5 python3-pyqt5.qtopengl python3-pyqt5.qsci python3-pyqt5.qtmultimedia qml-module-qtquick-controls gstreamer1.0-plugins-bad libqt5multimedia5-plugins pyqt5-dev-tools python3-dev python3-setuptools python3-pip git
-```
 
 ## Custom Install (Optional)
 
@@ -58,12 +52,13 @@ QtPyVCP [documentation](https://qtpyvcp.com)
 
 ## Dependencies
 
-* [LinuxCNC](https://linuxcnc.org)
+* [Debian](https://debian.org) 13
+* [LinuxCNC](https://linuxcnc.org) 2.9.4^
 * [QtPyVCP](https://qtpyvcp.com/)
-* Python 3.11
-* PyQt5 or PySide2
+* Python 3.13**
+* PySide6
 
-TurBoNC is developed and tested using the LinuxCNC Debian 12 (bookworm)
+TurBoNC is developed and tested using the LinuxCNC Debian 13 (trixie)
 
 
 ## DISCLAIMER
