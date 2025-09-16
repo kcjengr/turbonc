@@ -29,7 +29,3 @@ tnc = "tnc"
 
 [tool.poetry.plugins."qtpyvcp.widgets"]
 
-
-folders = [
-  { path = "src/tnc/" }
-]
