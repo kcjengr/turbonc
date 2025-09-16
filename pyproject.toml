@@ -1,6 +1,6 @@
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core", "versioneer[toml]"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "turbonc"
@@ -29,26 +29,7 @@ tnc = "tnc"
 
 [tool.poetry.plugins."qtpyvcp.widgets"]
 
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-pattern  = "^(?P<base>\\d+\\.\\d+\\.\\d+)?"
 
-
-[tool.poetry-dynamic-versioning.files."src/tnc/_version.py"]
-persistent-substitution = true
-initial-content = """
-  # These version placeholders will be replaced later during substitution.
-  __version__ = "0.0.0"
-  __version_tuple__ = (0, 0, 0)
-"""
-
-[tool.poetry-dynamic-versioning.substitution]
-files = ["_version.py"]
-patterns = [
-    '''(^__version__\s*(?::.*?)?=\s*['"])[^'"]*(['"])''',
-    { value = '''(^__version_tuple__\s*(?::.*?)?=\s*\()[^)]*(\))''', mode = "tuple" },
-]
 folders = [
   { path = "src/tnc/" }
 ]
