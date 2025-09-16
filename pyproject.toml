@@ -43,6 +43,7 @@ initial-content = """
   __version_tuple__ = (0, 0, 0)
 """
 
+
 [tool.poetry-dynamic-versioning.substitution]
 files = ["_version.py"]
 patterns = [
