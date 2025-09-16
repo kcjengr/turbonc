@@ -6,7 +6,7 @@ qtdesigner:
 
 vcp:
   name: TurBoNC
-  version: v0.0.2
+  version: v0.0.3
   author: TurBoss
   description: Just the basic functions I need to run linuxcnc
 
