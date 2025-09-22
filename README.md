@@ -7,7 +7,7 @@ TurBo NC is a QtPyVCP based interface for the LinuxCNC machine control.
 
 ## Quick install
 
-Install linuxcnc using linuxcnc 2.9.4
+Install linuxcnc 2.9.4^
 http://www.linuxcnc.org/
 
 
