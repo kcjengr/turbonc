@@ -16,10 +16,8 @@ packages = [
     { include = "tnc", from = "src" },
 ]
 
-
 [tool.poetry.dependencies]
 python = "^3.11"
-
 
 [tool.poetry.scripts]
 tnc = "tnc:main"
