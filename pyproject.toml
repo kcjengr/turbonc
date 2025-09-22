@@ -8,10 +8,8 @@ version = "0.0.0"
 authors = [
   "TurBoss <j.l.toledano.l@gmail.com>"
 ]
-
 description = "TurBo NC - A QtPyVCP based Virtual Control Panel for LinuxCNC"
 readme = "README.md"
-
 packages = [
     { include = "tnc", from = "src" },
 ]
