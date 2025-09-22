@@ -61,7 +61,7 @@ QtPyVCP [documentation](https://qtpyvcp.com)
 * [LinuxCNC](https://linuxcnc.org)
 * [QtPyVCP](https://qtpyvcp.com/)
 * Python 3.11
-* PyQt5 or PySide2
+* PyQt5
 
 TurBoNC is developed and tested using the LinuxCNC Debian 12 (bookworm)
 
