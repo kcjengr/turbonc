@@ -10,7 +10,6 @@ authors = [
 ]
 description = "TurBo NC - A QtPyVCP based Virtual Control Panel for LinuxCNC"
 readme = "README.md"
-
 packages = [
     { include = "tnc", from = "src" },
 ]
