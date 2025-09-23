@@ -10,9 +10,32 @@ TurBo NC is a QtPyVCP based interface for the LinuxCNC machine control.
 Install linuxcnc 2.9.4^
 http://www.linuxcnc.org/
 
+## APT install
 
 
-## Custom Install (Optional)
+```commandline
+sudo apt update
+
+sudo apt upgrade
+
+sudo apt install curl
+
+echo 'deb [arch=amd64] https://repository.qtpyvcp.com/apt stable main' | sudo tee /etc/apt/sources.list.d/kcjengr.list
+
+curl -sS https://repository.qtpyvcp.com/repo/kcjengr.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/kcjengr.gpg
+
+gpg --keyserver keys.openpgp.org --recv-key 2DEC041F290DF85A
+
+sudo apt update
+
+sudo apt install python3-qtpyvcp
+
+sudo apt install python3-turbonc
+```
+
+
+
+## Manual install steps (Optional)
 
 Clone the tnc repository
 
