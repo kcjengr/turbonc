@@ -2,7 +2,7 @@
 
 qtdesigner:
   ui_file: ( windows.mainwindow.kwargs.ui_file )
-  qss_file: ( application.kwargs.stylesheet )
+  qss_file: ( windows.mainwindow.kwargs.stylesheet )
 
 vcp:
   name: TurBoNC
@@ -19,8 +19,6 @@ data_plugins:
   clock:
     provider: qtpyvcp.plugins.clock:Clock
 
-
-
   persistent_data_manager:
     provider: qtpyvcp.plugins.persistent_data_manager:PersistentDataManager
     kwargs:
@@ -32,6 +30,25 @@ data_plugins:
   gcode_properties:
     provider: qtpyvcp.plugins.gcode_properties:GCodeProperties
 
+  notifications:
+    provider: qtpyvcp.plugins.notifications:Notifications
+    kwargs:
+      # show notification popups
+      enabled: True
+      # "native" or "dbus"
+      mode: native
+      # max number of notifications to show
+      max_messages: 5
+      # whether to save messages on exit
+      persistent: True
+  position:
+    provider: qtpyvcp.plugins.positions:Position
+    kwargs:
+      report_actual_pos: True
+      use_program_units: True
+
+  offsettable:
+    provider: qtpyvcp.plugins.offset_table:OffsetTable
 #  widgets:
 #    provider: qtpyvcp.plugins.widgets:Widgets
   
@@ -41,10 +58,11 @@ windows:
     kwargs:
       menu: ( default_menubar )
       ui_file: {{ file.dir }}/ui/window.ui
+      stylesheet: {{ file.dir }}/ui/style.qss
 
-application:
-  kwargs:
-    stylesheet: {{ file.dir }}/style.qss
+# application:
+#   kwargs:
+#    stylesheet: {{ file.dir }}/style.qss
 
 dialogs:
   zero_xy:
