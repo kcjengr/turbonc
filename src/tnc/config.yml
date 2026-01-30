@@ -49,7 +49,7 @@ application:
 dialogs:
   about_turbonc:
     provider: tnc.dialogs.about_turbonc:AboutTurboNCDialog
-
+    
   zero_xy:
     provider: tnc.dialogs.zero_xy:ZeroXY
     kwargs:
@@ -68,8 +68,6 @@ settings:
     persistent: true
     min_value: 0
     max_value: 1
-about_turbonc:
-    provider: tnc.dialogs.about_turbonc:AboutTurboNCDialog
 
   
   probe-parameters.probe-tool-number:
