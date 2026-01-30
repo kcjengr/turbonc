@@ -71,7 +71,7 @@ class AboutTurboNCDialog(BaseDialog):
                 <center>
                 TurboNC is a QtPyVCP based interface for LinuxCNC.<br />
                 Version: {__version__}<br />
-                Copyright (c) 2024 TurBoss<br />
+                Copyright (c) 2018 - 2026 TurBoss<br />
                 <a href="https://github.com/TurBoss/turbonc">https://github.com/TurBoss/turbonc</a>
                 </center>
                 """
