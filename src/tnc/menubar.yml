@@ -162,6 +162,9 @@ default_menubar:
 
   - title: About
     items:
+      - title: About TurboNC
+        action: win.showDialog
+        args: [about_turbonc]
       - title: About QtPyVCP
         action: win.showDialog
         args: [about_qtpyvcp]
