@@ -1,6 +1,6 @@
 [build-system]
-requires = ["poetry-core", "versioneer[toml]"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry]
 name = "turbonc"
@@ -27,3 +27,15 @@ tnc = "tnc"
 
 [tool.poetry.plugins."qtpyvcp.widgets"]
 
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+pattern = "^(?P<base>\\d+\\.\\d+\\.\\d+)"
+format-jinja = """
+    {%- if distance == 0 -%}
+        {{ base }}
+    {%- else -%}
+        {{ base }}+{{ distance }}.g{{ commit }}
+    {%- endif -%}
+"""
