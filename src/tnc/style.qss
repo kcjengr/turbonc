@@ -24,6 +24,7 @@ QWidget{
   background:#3e3e42;
 }
 
+
 #power_abutton{
   border-style:none;
   border-bottom:3px solid #007acc;
@@ -32,10 +33,12 @@ QWidget{
   padding:5px;
 }
 
+
 #power_abutton:checked{
   border-bottom:3px solid #00FF00;
   background:#3e3e42;
 }
+
 
 #home_dbutton{
   border-style:none;
