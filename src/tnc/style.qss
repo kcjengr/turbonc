@@ -9,6 +9,7 @@ QWidget{
   color:#f1f1f1;
 }
 
+
 #estop_abutton{
   border-style:none;
   border-bottom:3px solid #FF0000;
