@@ -58,7 +58,7 @@ windows:
     kwargs:
       menu: ( default_menubar )
       ui_file: {{ file.dir }}/ui/window.ui
-      stylesheet: {{ file.dir }}/ui/style.qss
+      stylesheet: {{ file.dir }}/style.qss
 
 # application:
 #   kwargs:
