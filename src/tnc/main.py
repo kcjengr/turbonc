@@ -2,6 +2,9 @@
 
 import os
 
+# Force qtpy to use PySide6
+os.environ['QT_API'] = 'pyside6'
+
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QAbstractButton
 

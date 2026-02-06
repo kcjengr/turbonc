@@ -60,9 +60,9 @@ windows:
       ui_file: {{ file.dir }}/ui/window.ui
       stylesheet: {{ file.dir }}/style.qss
 
-# application:
-#   kwargs:
-#    stylesheet: {{ file.dir }}/style.qss
+application:
+  kwargs:
+   stylesheet: {{ file.dir }}/style.qss
 
 dialogs:
   zero_xy:
