@@ -41,6 +41,7 @@
      <widget class="QTabWidget" name="Tabs">
       <property name="font">
        <font>
+        <family>3270 Semi-Condensed</family>
         <bold>true</bold>
        </font>
       </property>
@@ -48,7 +49,7 @@
        <enum>QTabWidget::TabPosition::South</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -70,6 +71,12 @@
               <width>0</width>
               <height>0</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>3270 Semi-Condensed</family>
+              <bold>false</bold>
+             </font>
             </property>
             <property name="layoutDirection">
              <enum>Qt::LayoutDirection::LeftToRight</enum>
@@ -97,8 +104,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -129,8 +136,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -167,8 +174,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -199,8 +206,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -231,8 +238,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -263,8 +270,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -295,8 +302,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -333,8 +340,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -374,8 +381,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -412,8 +419,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -450,8 +457,8 @@
                </property>
                <property name="font">
                 <font>
-                 <family>Bebas Kai</family>
-                 <pointsize>15</pointsize>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -470,6 +477,7 @@
               <widget class="ActionComboBox" name="actioncombobox">
                <property name="font">
                 <font>
+                 <family>3270 Semi-Condensed</family>
                  <bold>true</bold>
                 </font>
                </property>
@@ -552,6 +560,7 @@
                 </property>
                 <property name="font">
                  <font>
+                  <family>3270 Semi-Condensed</family>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
@@ -571,6 +580,7 @@
                <widget class="StatusLabel" name="statuslabel_14">
                 <property name="font">
                  <font>
+                  <family>3270 Semi-Condensed</family>
                   <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
@@ -600,8 +610,8 @@
                 </property>
                 <property name="font">
                  <font>
-                  <family>Noto Sans</family>
-                  <pointsize>14</pointsize>
+                  <family>3270 Semi-Condensed</family>
+                  <pointsize>12</pointsize>
                   <bold>true</bold>
                  </font>
                 </property>
@@ -633,7 +643,7 @@
                        <widget class="QLabel" name="label_3">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
+                          <family>3270 Semi-Condensed</family>
                           <pointsize>32</pointsize>
                           <bold>true</bold>
                          </font>
@@ -659,7 +669,7 @@
                        <widget class="DROLabel" name="drolabel_10">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
+                          <family>3270 Semi-Condensed</family>
                           <pointsize>32</pointsize>
                           <bold>true</bold>
                          </font>
@@ -710,7 +720,7 @@
                        <widget class="QLabel" name="label_5">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
+                          <family>3270 Semi-Condensed</family>
                           <pointsize>32</pointsize>
                           <bold>true</bold>
                          </font>
@@ -736,7 +746,7 @@
                        <widget class="DROLabel" name="drolabel_15">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
+                          <family>3270 Semi-Condensed</family>
                           <pointsize>32</pointsize>
                           <bold>true</bold>
                          </font>
@@ -787,7 +797,7 @@
                        <widget class="QLabel" name="label_6">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
+                          <family>3270 Semi-Condensed</family>
                           <pointsize>32</pointsize>
                           <bold>true</bold>
                          </font>
@@ -813,7 +823,7 @@
                        <widget class="DROLabel" name="drolabel_16">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
+                          <family>3270 Semi-Condensed</family>
                           <pointsize>32</pointsize>
                           <bold>true</bold>
                          </font>
@@ -1114,6 +1124,12 @@
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
+                <property name="font">
+                 <font>
+                  <family>3270 Semi-Condensed</family>
+                  <bold>false</bold>
+                 </font>
+                </property>
                 <property name="backgroundColor" stdset="0">
                  <color>
                   <red>0</red>
@@ -1162,6 +1178,7 @@
                <widget class="QLabel" name="label">
                 <property name="font">
                  <font>
+                  <family>3270 Semi-Condensed</family>
                   <bold>true</bold>
                  </font>
                 </property>
@@ -1171,7 +1188,14 @@
                </widget>
               </item>
               <item>
-               <widget class="MDIEntry" name="mdientry"/>
+               <widget class="MDIEntry" name="mdientry">
+                <property name="font">
+                 <font>
+                  <family>3270 Semi-Condensed</family>
+                  <bold>false</bold>
+                 </font>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
@@ -2280,7 +2304,7 @@ QHeaderView {
              </widget>
             </item>
             <item>
-             <widget class="ToolSTLField" name="toolmodel" native="true">
+             <widget class="ToolSTLField" name="toolmodel">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -3080,11 +3104,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.probe-tool-number</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.probe-tool-number</string>
                  </property>
                 </widget>
                </item>
@@ -3163,11 +3187,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.step-off-width</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.step-off-width</string>
                  </property>
                 </widget>
                </item>
@@ -3266,11 +3290,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.probe-fast-fr</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.probe-fast-fr</string>
                  </property>
                 </widget>
                </item>
@@ -3346,11 +3370,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.probe-slow-fr</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.probe-slow-fr</string>
                  </property>
                 </widget>
                </item>
@@ -3449,11 +3473,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.max-xy-distance</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.max-xy-distance</string>
                  </property>
                 </widget>
                </item>
@@ -3529,11 +3553,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.xy-clearance</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.xy-clearance</string>
                  </property>
                 </widget>
                </item>
@@ -3635,11 +3659,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.max-z-distance</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.max-z-distance</string>
                  </property>
                 </widget>
                </item>
@@ -3715,11 +3739,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.z-clearance</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.z-clearance</string>
                  </property>
                 </widget>
                </item>
@@ -3824,11 +3848,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.extra-probe-depth</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.extra-probe-depth</string>
                  </property>
                 </widget>
                </item>
@@ -3904,11 +3928,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="settingName" stdset="0">
-                  <string>probe-parameters.edge-width</string>
-                 </property>
                  <property name="textFormat" stdset="0">
                   <string>{:4f}</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>probe-parameters.edge-width</string>
                  </property>
                 </widget>
                </item>
@@ -4280,11 +4304,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4364,11 +4388,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4445,11 +4469,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4542,11 +4566,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4623,11 +4647,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4704,11 +4728,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4804,11 +4828,11 @@ QHeaderView {
                  <property name="margin">
                   <number>2</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4885,11 +4909,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -4969,11 +4993,11 @@ QHeaderView {
                  <property name="margin">
                   <number>2</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -5066,11 +5090,11 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -5153,14 +5177,14 @@ QHeaderView {
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
                  </property>
                  <property name="expression" stdset="0">
                   <string>val</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -5241,11 +5265,11 @@ QHeaderView {
                  <property name="margin">
                   <number>2</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[]</string>
-                 </property>
                  <property name="format" stdset="0">
                   <string>{:.4f}</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[]</string>
                  </property>
                 </widget>
                </item>
@@ -5794,7 +5818,7 @@ QPushButton:checked {
                   <bool>true</bool>
                  </property>
                 </widget>
-                <widget class="HalLedIndicator" name="probe_led" native="true">
+                <widget class="HalLedIndicator" name="probe_led">
                  <property name="geometry">
                   <rect>
                    <x>213</x>
@@ -8242,14 +8266,14 @@ color: rgb(255, 255, 255);
                            <property name="clearButtonEnabled">
                             <bool>false</bool>
                            </property>
-                           <property name="rules" stdset="0">
-                            <string>[]</string>
+                           <property name="textFormat" stdset="0">
+                            <string>{:4f}</string>
                            </property>
                            <property name="settingName" stdset="0">
                             <string>touch-probe.calibration-offset</string>
                            </property>
-                           <property name="textFormat" stdset="0">
-                            <string>{:4f}</string>
+                           <property name="rules" stdset="0">
+                            <string>[]</string>
                            </property>
                           </widget>
                          </item>
@@ -9607,6 +9631,11 @@ background: transparent;
       </property>
       <item>
        <spacer name="horizontalSpacer_6">
+        <property name="font">
+         <font>
+          <family>3270 Semi-Condensed</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -9625,6 +9654,7 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <bold>true</bold>
          </font>
         </property>
@@ -9656,6 +9686,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -9693,6 +9724,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -9730,6 +9762,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -9767,6 +9800,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -9804,6 +9838,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -9841,6 +9876,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -9869,6 +9905,11 @@ background: transparent;
       </item>
       <item>
        <spacer name="horizontalSpacer_5">
+        <property name="font">
+         <font>
+          <family>3270 Semi-Condensed</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -9887,6 +9928,7 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox_2">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <bold>true</bold>
          </font>
         </property>
@@ -9916,6 +9958,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>12</pointsize>
              <bold>true</bold>
             </font>
@@ -9929,11 +9972,11 @@ background: transparent;
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
-           <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;Feed Override {ch[0]:.0%}\&quot;&quot;, &quot;name&quot;: &quot;Feed Rate&quot;}]</string>
-           </property>
            <property name="format" stdset="0">
             <string>&lt;b&gt;FEED:&lt;/b&gt; {:.0%}</string>
+           </property>
+           <property name="rules" stdset="0">
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;Feed Override {ch[0]:.0%}\&quot;&quot;, &quot;name&quot;: &quot;Feed Rate&quot;}]</string>
            </property>
           </widget>
          </item>
@@ -9964,6 +10007,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <pointsize>12</pointsize>
                <bold>true</bold>
               </font>
@@ -10007,6 +10051,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <pointsize>12</pointsize>
                <bold>true</bold>
               </font>
@@ -10020,11 +10065,11 @@ background: transparent;
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
-             <property name="rules" stdset="0">
-              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0] * 60:.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
-             </property>
              <property name="format" stdset="0">
               <string>{:.1f}</string>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{ch[0] * 60:.1f}\&quot;&quot;, &quot;name&quot;: &quot;cur vel&quot;}]</string>
              </property>
             </widget>
            </item>
@@ -10044,6 +10089,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <pointsize>12</pointsize>
                <bold>true</bold>
               </font>
@@ -10075,6 +10121,11 @@ background: transparent;
       </item>
       <item>
        <spacer name="horizontalSpacer_7">
+        <property name="font">
+         <font>
+          <family>3270 Semi-Condensed</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -10093,6 +10144,7 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox_3">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <bold>true</bold>
          </font>
         </property>
@@ -10122,6 +10174,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>12</pointsize>
              <bold>true</bold>
             </font>
@@ -10156,6 +10209,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>12</pointsize>
              <bold>true</bold>
             </font>
@@ -10173,6 +10227,11 @@ background: transparent;
       </item>
       <item>
        <spacer name="horizontalSpacer_4">
+        <property name="font">
+         <font>
+          <family>3270 Semi-Condensed</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -10191,6 +10250,7 @@ background: transparent;
        <widget class="QGroupBox" name="groupBox_4">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <bold>true</bold>
          </font>
         </property>
@@ -10199,7 +10259,7 @@ background: transparent;
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_24">
          <item>
-          <widget class="HalBarIndicator" name="spindle_load_indicator" native="true">
+          <widget class="HalBarIndicator" name="spindle_load_indicator">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -10214,6 +10274,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <bold>true</bold>
             </font>
            </property>
@@ -10284,6 +10345,12 @@ background: transparent;
                <height>0</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>3270 Semi-Condensed</family>
+               <bold>false</bold>
+              </font>
+             </property>
              <property name="minimum">
               <number>10</number>
              </property>
@@ -10323,6 +10390,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -10356,6 +10424,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -10396,6 +10465,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -10423,6 +10493,7 @@ background: transparent;
              </property>
              <property name="font">
               <font>
+               <family>3270 Semi-Condensed</family>
                <bold>true</bold>
               </font>
              </property>
@@ -10441,6 +10512,11 @@ background: transparent;
       </item>
       <item>
        <spacer name="horizontalSpacer_8">
+        <property name="font">
+         <font>
+          <family>3270 Semi-Condensed</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -10472,6 +10548,7 @@ background: transparent;
        <widget class="QGroupBox" name="main_gbox">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
@@ -10505,6 +10582,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10539,6 +10617,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10561,6 +10640,7 @@ background: transparent;
        <widget class="QGroupBox" name="mode_gbox">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
@@ -10591,6 +10671,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10604,14 +10685,14 @@ background: transparent;
            <property name="autoExclusive">
             <bool>true</bool>
            </property>
+           <property name="styleClass" stdset="0">
+            <string>option</string>
+           </property>
            <property name="actionName" stdset="0">
             <string>machine.mode.manual</string>
            </property>
            <property name="position" stdset="0">
             <string>first</string>
-           </property>
-           <property name="styleClass" stdset="0">
-            <string>option</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">modeGroup</string>
@@ -10640,6 +10721,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10653,11 +10735,11 @@ background: transparent;
            <property name="autoExclusive">
             <bool>true</bool>
            </property>
-           <property name="actionName" stdset="0">
-            <string>machine.mode.auto</string>
-           </property>
            <property name="styleClass" stdset="0">
             <string>option</string>
+           </property>
+           <property name="actionName" stdset="0">
+            <string>machine.mode.auto</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">modeGroup</string>
@@ -10686,6 +10768,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10699,14 +10782,14 @@ background: transparent;
            <property name="autoExclusive">
             <bool>true</bool>
            </property>
+           <property name="styleClass" stdset="0">
+            <string>option</string>
+           </property>
            <property name="actionName" stdset="0">
             <string>machine.mode.mdi</string>
            </property>
            <property name="position" stdset="0">
             <string>last</string>
-           </property>
-           <property name="styleClass" stdset="0">
-            <string>option</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">modeGroup</string>
@@ -10720,6 +10803,7 @@ background: transparent;
        <widget class="QGroupBox" name="home_gbox">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
@@ -10747,6 +10831,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10772,6 +10857,7 @@ background: transparent;
        <widget class="QGroupBox" name="part_gbox">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
@@ -10796,6 +10882,7 @@ background: transparent;
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10825,6 +10912,7 @@ X Y</string>
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10844,6 +10932,7 @@ X Y</string>
        <widget class="QGroupBox" name="program_gbox">
         <property name="font">
          <font>
+          <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
           <bold>true</bold>
          </font>
@@ -10868,6 +10957,7 @@ X Y</string>
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10906,6 +10996,7 @@ X Y</string>
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -10944,6 +11035,7 @@ X Y</string>
            </property>
            <property name="font">
             <font>
+             <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
              <bold>true</bold>
             </font>
@@ -11238,12 +11330,6 @@ X Y</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>VCPMainWindow</class>
-   <extends>QMainWindow</extends>
-   <header>qtpyvcp.widgets.form_widgets.main_window</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
@@ -11259,6 +11345,11 @@ X Y</string>
    <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
   </customwidget>
   <customwidget>
+   <class>ToolSTLField</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.db_widgets.tool_model</header>
+  </customwidget>
+  <customwidget>
    <class>StatusLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
@@ -11269,35 +11360,29 @@ X Y</string>
    <header>qtpyvcp.widgets.display_widgets.dro_label</header>
   </customwidget>
   <customwidget>
-   <class>VTKBackPlot</class>
+   <class>HalBarIndicator</class>
    <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
-   <container>1</container>
+   <header>qtpyvcp.widgets.hal_widgets.hal_bar_indicator</header>
   </customwidget>
   <customwidget>
-   <class>VCPLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.line_edit</header>
+   <class>HalButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.hal_widgets.hal_button</header>
   </customwidget>
   <customwidget>
-   <class>MDIEntry</class>
-   <extends>QLineEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+   <class>HalLedIndicator</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.hal_widgets.hal_led</header>
   </customwidget>
   <customwidget>
-   <class>GcodeTextEdit</class>
-   <extends>QPlainTextEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.gcode_text_edit</header>
-  </customwidget>
-  <customwidget>
-   <class>RecentFileComboBox</class>
+   <class>ActionComboBox</class>
    <extends>QComboBox</extends>
-   <header>qtpyvcp.widgets.input_widgets.recent_file_combobox</header>
+   <header>qtpyvcp.widgets.input_widgets.action_combobox</header>
   </customwidget>
   <customwidget>
-   <class>ToolTable</class>
-   <extends>QTableView</extends>
-   <header>qtpyvcp.widgets.input_widgets.tool_table</header>
+   <class>ActionSlider</class>
+   <extends>QSlider</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
   </customwidget>
   <customwidget>
    <class>FileSystemTable</class>
@@ -11310,14 +11395,24 @@ X Y</string>
    <header>qtpyvcp.widgets.input_widgets.file_system</header>
   </customwidget>
   <customwidget>
-   <class>ActionSlider</class>
-   <extends>QSlider</extends>
-   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
+   <class>GcodeTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.gcode_text_edit</header>
   </customwidget>
   <customwidget>
-   <class>ActionComboBox</class>
+   <class>VCPLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIEntry</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>RecentFileComboBox</class>
    <extends>QComboBox</extends>
-   <header>qtpyvcp.widgets.input_widgets.action_combobox</header>
+   <header>qtpyvcp.widgets.input_widgets.recent_file_combobox</header>
   </customwidget>
   <customwidget>
    <class>VCPSettingsLineEdit</class>
@@ -11325,24 +11420,21 @@ X Y</string>
    <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
   </customwidget>
   <customwidget>
-   <class>HalLedIndicator</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.hal_widgets.hal_led</header>
+   <class>VCPMainWindow</class>
+   <extends>QMainWindow</extends>
+   <header>qtpyvcp.widgets.form_widgets.main_window</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
-   <class>HalButton</class>
-   <extends>QPushButton</extends>
-   <header>qtpyvcp.widgets.hal_widgets.hal_button</header>
+   <class>VTKBackPlot</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
-   <class>HalBarIndicator</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.hal_widgets.hal_bar_indicator</header>
-  </customwidget>
-  <customwidget>
-   <class>ToolSTLField</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.db_widgets.tool_model</header>
+   <class>ToolTable</class>
+   <extends>QTableView</extends>
+   <header>qtpyvcp.widgets.input_widgets.tool_table</header>
   </customwidget>
  </customwidgets>
  <resources>
