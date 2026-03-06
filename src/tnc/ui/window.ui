@@ -644,8 +644,8 @@
                         <property name="font">
                          <font>
                           <family>3270 Semi-Condensed</family>
-                          <pointsize>32</pointsize>
-                          <bold>true</bold>
+                          <pointsize>38</pointsize>
+                          <bold>false</bold>
                          </font>
                         </property>
                         <property name="frameShape">
@@ -670,7 +670,7 @@
                         <property name="font">
                          <font>
                           <family>3270 Semi-Condensed</family>
-                          <pointsize>32</pointsize>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                          </font>
                         </property>
@@ -721,8 +721,8 @@
                         <property name="font">
                          <font>
                           <family>3270 Semi-Condensed</family>
-                          <pointsize>32</pointsize>
-                          <bold>true</bold>
+                          <pointsize>38</pointsize>
+                          <bold>false</bold>
                          </font>
                         </property>
                         <property name="frameShape">
@@ -747,7 +747,7 @@
                         <property name="font">
                          <font>
                           <family>3270 Semi-Condensed</family>
-                          <pointsize>32</pointsize>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                          </font>
                         </property>
@@ -798,8 +798,8 @@
                         <property name="font">
                          <font>
                           <family>3270 Semi-Condensed</family>
-                          <pointsize>32</pointsize>
-                          <bold>true</bold>
+                          <pointsize>38</pointsize>
+                          <bold>false</bold>
                          </font>
                         </property>
                         <property name="frameShape">
@@ -824,7 +824,7 @@
                         <property name="font">
                          <font>
                           <family>3270 Semi-Condensed</family>
-                          <pointsize>32</pointsize>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                          </font>
                         </property>
