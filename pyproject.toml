@@ -2,10 +2,14 @@
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
 build-backend = "poetry_dynamic_versioning.backend"
 
+[project]
+name = "TurboNC"
+
 [tool.poetry]
 name = "turbonc"
 version = "0.0.0"
 authors = [
+  "Tron",
   "TurBoss <j.l.toledano.l@gmail.com>"
 ]
 description = "TurBo NC - A QtPyVCP based Virtual Control Panel for LinuxCNC"
@@ -16,6 +20,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
+
+
+[tool.pyside6-project]
+files = [
+	"src/tnc/resources.qrc",
+	"src/tnc/main.py",
+	"src/tnc/ui/window.ui"]
 
 
 [tool.poetry.scripts]
