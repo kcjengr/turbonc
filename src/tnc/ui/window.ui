@@ -83,7 +83,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
-              <widget class="QPushButton" name="plotClear">
+              <widget class="QPushButton" name="clear_view">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -115,7 +115,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="plotClear_2">
+              <widget class="QPushButton" name="pan_view">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -153,7 +153,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="plotClear_3">
+              <widget class="QPushButton" name="machine_view">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -180,12 +180,50 @@
                 </font>
                </property>
                <property name="text">
-                <string>Machine</string>
+                <string>Mach</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="plotClear_5">
+              <widget class="QPushButton" name="program_view">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>64</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>64</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>3270 Semi-Condensed</family>
+                 <pointsize>12</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Prgm</string>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="autoExclusive">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="path_view">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -217,7 +255,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="plotMinus">
+              <widget class="QPushButton" name="zoom_out">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -249,7 +287,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="plotPlus">
+              <widget class="QPushButton" name="zoom_in">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -281,7 +319,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="plotZ2">
+              <widget class="QPushButton" name="plotX">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -308,50 +346,9 @@
                 </font>
                </property>
                <property name="text">
-                <string>Z2</string>
+                <string>X</string>
                </property>
                <property name="checkable">
-                <bool>false</bool>
-               </property>
-               <property name="autoExclusive">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="plotZ">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>64</width>
-                 <height>32</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>64</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>3270 Semi-Condensed</family>
-                 <pointsize>12</pointsize>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>Z</string>
-               </property>
-               <property name="checkable">
-                <bool>false</bool>
-               </property>
-               <property name="checked">
                 <bool>false</bool>
                </property>
                <property name="autoExclusive">
@@ -398,7 +395,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="plotX">
+              <widget class="QPushButton" name="plotZ">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -425,9 +422,12 @@
                 </font>
                </property>
                <property name="text">
-                <string>X</string>
+                <string>Z</string>
                </property>
                <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="checked">
                 <bool>false</bool>
                </property>
                <property name="autoExclusive">
@@ -1120,55 +1120,7 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="plot" native="true">
-                <property name="enabled">
-                 <bool>true</bool>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>3270 Semi-Condensed</family>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="backgroundColor" stdset="0">
-                 <color>
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
-                 </color>
-                </property>
-                <property name="backgroundColor2" stdset="0">
-                 <color>
-                  <red>46</red>
-                  <green>52</green>
-                  <blue>54</blue>
-                 </color>
-                </property>
-                <property name="traverseColor" stdset="0">
-                 <color>
-                  <red>252</red>
-                  <green>175</green>
-                  <blue>62</blue>
-                 </color>
-                </property>
-                <property name="arcfeedColor" stdset="0">
-                 <color>
-                  <red>138</red>
-                  <green>226</green>
-                  <blue>52</blue>
-                 </color>
-                </property>
-                <property name="feedColor" stdset="0">
-                 <color>
-                  <red>245</red>
-                  <green>121</green>
-                  <blue>0</blue>
-                 </color>
-                </property>
-                <property name="enableProgramLabels" stdset="0">
-                 <bool>true</bool>
-                </property>
-               </widget>
+               <widget class="VTKBackPlot" name="vtk"/>
               </item>
              </layout>
             </item>
@@ -1385,128 +1337,19 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_12">
           <item>
-           <widget class="GcodeTextEdit" name="gcodetextedit_2">
-            <property name="syntaxHighlighting" stdset="0">
-             <bool>true</bool>
-            </property>
-            <property name="currentLineBackground" stdset="0">
-             <color>
-              <red>143</red>
-              <green>179</green>
-              <blue>70</blue>
-             </color>
-            </property>
-            <property name="marginBackground" stdset="0">
-             <color>
-              <red>143</red>
-              <green>179</green>
-              <blue>70</blue>
-             </color>
-            </property>
-            <property name="marginCurrentLineBackground" stdset="0">
-             <color>
-              <red>143</red>
-              <green>179</green>
-              <blue>70</blue>
-             </color>
-            </property>
-           </widget>
+           <widget class="GCodeEditor" name="gcodeEditor"/>
           </item>
          </layout>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout_3">
-          <item row="1" column="1">
-           <widget class="QPushButton" name="pushButton_9">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Find</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1">
-           <widget class="QCheckBox" name="checkBox_4">
-            <property name="text">
-             <string>Whole words</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="3">
-           <widget class="QPushButton" name="pushButton_11">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Replace all</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QPushButton" name="pushButton_8">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Find all</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QPushButton" name="pushButton_10">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Replace</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLineEdit" name="search_entry">
-            <property name="placeholderText">
-             <string>Search</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLineEdit" name="replace_entry">
-            <property name="placeholderText">
-             <string>Replace</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="3">
-           <widget class="QCheckBox" name="checkBox_3">
-            <property name="text">
-             <string>Case sensitive</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="DialogButton" name="dialogbutton">
-            <property name="text">
-             <string>Find Dialog</string>
-            </property>
-            <property name="dialogName" stdset="0">
-             <string>find_dialog</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="QPushButton" name="find_dialog">
+          <property name="text">
+           <string>Find/Replace</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_3"/>
         </item>
        </layout>
       </widget>
@@ -11330,6 +11173,11 @@ X Y</string>
  </widget>
  <customwidgets>
   <customwidget>
+   <class>GCodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>gcodeeditor.h</header>
+  </customwidget>
+  <customwidget>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
@@ -11358,6 +11206,12 @@ X Y</string>
    <class>DROLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.display_widgets.dro_label</header>
+  </customwidget>
+  <customwidget>
+   <class>VTKBackPlot</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>HalBarIndicator</class>
@@ -11395,11 +11249,6 @@ X Y</string>
    <header>qtpyvcp.widgets.input_widgets.file_system</header>
   </customwidget>
   <customwidget>
-   <class>GcodeTextEdit</class>
-   <extends>QTextEdit</extends>
-   <header>qtpyvcp.widgets.input_widgets.gcode_text_edit</header>
-  </customwidget>
-  <customwidget>
    <class>VCPLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.line_edit</header>
@@ -11426,12 +11275,6 @@ X Y</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VTKBackPlot</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ToolTable</class>
    <extends>QTableView</extends>
    <header>qtpyvcp.widgets.input_widgets.tool_table</header>
@@ -11445,34 +11288,18 @@ X Y</string>
  </resources>
  <connections>
   <connection>
-   <sender>plotClear_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>plot</receiver>
-   <slot>enable_panning(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>device_delete_item_button</sender>
    <signal>clicked()</signal>
    <receiver>filesystemtable_2</receiver>
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>168</x>
-     <y>72</y>
+     <x>949</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>178</x>
-     <y>72</y>
+     <x>969</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11483,28 +11310,12 @@ X Y</string>
    <slot>setRootPath(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>157</x>
-     <y>72</y>
+     <x>1102</x>
+     <y>60</y>
     </hint>
     <hint type="destinationlabel">
-     <x>178</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotX</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewX()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
+     <x>969</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11515,12 +11326,12 @@ X Y</string>
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>178</x>
-     <y>72</y>
+     <x>1056</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>178</x>
-     <y>72</y>
+     <x>969</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11531,28 +11342,12 @@ X Y</string>
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>72</y>
+     <x>457</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotZ2</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewZ2()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
+     <x>141</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11563,76 +11358,12 @@ X Y</string>
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>228</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_14</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>530</x>
-     <y>76</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_8</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>findAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1894</x>
-     <y>684</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_4</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>findWords(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1777</x>
-     <y>756</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_10</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>replace()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1777</x>
-     <y>722</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
+     <x>141</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11643,108 +11374,12 @@ X Y</string>
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
-     <y>72</y>
+     <x>360</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_3</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>undo()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>358</x>
-     <y>76</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>saveFile()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_5</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>saveFileAs()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>272</x>
-     <y>76</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>clearLivePlot()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>65</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotPlus</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>zoomIn()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_6</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>redo()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>444</x>
-     <y>76</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
+     <x>141</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11755,44 +11390,12 @@ X Y</string>
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>203</x>
-     <y>72</y>
+     <x>1188</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>178</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_7</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>zoomIn()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>616</x>
-     <y>76</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotZ</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewZ()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
+     <x>969</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11803,12 +11406,12 @@ X Y</string>
    <slot>loadSelectedFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>454</x>
+     <y>60</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>72</y>
+     <x>141</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11819,28 +11422,12 @@ X Y</string>
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>72</y>
+     <x>121</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear_3</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewMachine()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
+     <x>141</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11851,28 +11438,12 @@ X Y</string>
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>188</x>
-     <y>72</y>
+     <x>972</x>
+     <y>60</y>
     </hint>
     <hint type="destinationlabel">
-     <x>178</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_9</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>findForward()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1777</x>
-     <y>684</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
+     <x>969</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11883,12 +11454,12 @@ X Y</string>
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>168</x>
-     <y>72</y>
+     <x>1285</x>
+     <y>525</y>
     </hint>
     <hint type="destinationlabel">
-     <x>178</x>
-     <y>72</y>
+     <x>969</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11900,27 +11471,11 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>129</x>
-     <y>72</y>
+     <y>49</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotMinus</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>zoomOut()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
+     <x>141</x>
+     <y>102</y>
     </hint>
    </hints>
   </connection>
@@ -11931,108 +11486,12 @@ X Y</string>
    <slot>ejectDevice()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>178</x>
-     <y>72</y>
+     <x>1282</x>
+     <y>60</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>72</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotClear_5</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewPath()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotP</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewP()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_13</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>zoomOut()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>702</x>
-     <y>76</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotY</sender>
-   <signal>clicked()</signal>
-   <receiver>plot</receiver>
-   <slot>setViewY()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>83</x>
-     <y>74</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>310</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_11</sender>
-   <signal>clicked()</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>replaceAll()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1894</x>
-     <y>722</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_3</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>findCase(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1894</x>
-     <y>756</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
+     <x>1102</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -12043,12 +11502,12 @@ X Y</string>
    <slot>deleteSelectedTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>81</y>
+     <x>48</x>
+     <y>519</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>45</y>
+     <x>111</x>
+     <y>21</y>
     </hint>
    </hints>
   </connection>
@@ -12059,12 +11518,12 @@ X Y</string>
    <slot>addTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>81</y>
+     <x>390</x>
+     <y>519</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>45</y>
+     <x>111</x>
+     <y>21</y>
     </hint>
    </hints>
   </connection>
@@ -12075,12 +11534,12 @@ X Y</string>
    <slot>saveToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>81</y>
+     <x>732</x>
+     <y>519</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>45</y>
+     <x>111</x>
+     <y>21</y>
     </hint>
    </hints>
   </connection>
@@ -12091,44 +11550,12 @@ X Y</string>
    <slot>loadToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>81</y>
+     <x>1074</x>
+     <y>519</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>45</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>search_entry</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>set_search_term(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>131</x>
-     <y>681</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>replace_entry</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>gcodetextedit_2</receiver>
-   <slot>set_replace_term(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>131</x>
-     <y>719</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>112</x>
-     <y>401</y>
+     <x>111</x>
+     <y>21</y>
     </hint>
    </hints>
   </connection>
@@ -12140,11 +11567,11 @@ X Y</string>
    <hints>
     <hint type="sourcelabel">
      <x>819</x>
-     <y>72</y>
+     <y>32</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>72</y>
+     <x>918</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -12155,12 +11582,316 @@ X Y</string>
    <slot>saveField()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>72</y>
+     <x>918</x>
+     <y>488</y>
     </hint>
     <hint type="destinationlabel">
+     <x>918</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>find_dialog</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>findDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>510</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>saveFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
      <x>119</x>
-     <y>72</y>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>saveFileAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>358</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>444</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>530</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>616</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>gcodeEditor</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>702</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clear_view</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>67</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pan_view</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>vtk</receiver>
+   <slot>enable_panning(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>machine_view</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewMachine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>51</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>550</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_view</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewPath()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>555</x>
+     <y>188</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom_out</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>84</x>
+     <y>281</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>585</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom_in</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>93</x>
+     <y>324</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>561</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotY</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>624</x>
+     <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotX</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>624</x>
+     <y>434</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotP</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>632</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>plotZ</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>429</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>520</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>program_view</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>setViewProgram()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>64</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>174</y>
     </hint>
    </hints>
   </connection>
@@ -12183,7 +11914,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
+  <buttongroup name="probeTabGroup"/>
  </buttongroups>
 </ui>

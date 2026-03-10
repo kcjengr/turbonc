@@ -2,7 +2,7 @@
 
 qtdesigner:
   ui_file: ( windows.mainwindow.kwargs.ui_file )
-  qss_file: ( windows.mainwindow.kwargs.stylesheet )
+  qss_file: {{ file.dir }}/style.qss
 
 vcp:
   name: TurBoNC
@@ -58,11 +58,9 @@ windows:
     kwargs:
       menu: ( default_menubar )
       ui_file: {{ file.dir }}/ui/window.ui
-      stylesheet: {{ file.dir }}/style.qss
 
 application:
-  kwargs:
-   stylesheet: {{ file.dir }}/style.qss
+  kwargs: {}
 
 dialogs:
   zero_xy:
