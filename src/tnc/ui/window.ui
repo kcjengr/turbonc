@@ -1120,7 +1120,7 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="vtk"/>
+               <widget class="VTKBackPlot" name="vtk" native="true"/>
               </item>
              </layout>
             </item>
@@ -9824,6 +9824,118 @@ background: transparent;
           </widget>
          </item>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_37">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="ActionSlider" name="feed_slider">
+             <property name="minimumSize">
+              <size>
+               <width>120</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>3270 Semi-Condensed</family>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="minimum">
+              <number>10</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="actionName" stdset="0">
+              <string>machine.feed-override.set</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="StatusLabel" name="statuslabel_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>55</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>3270 Semi-Condensed</family>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+             <property name="margin">
+              <number>-6</number>
+             </property>
+             <property name="indent">
+              <number>0</number>
+             </property>
+             <property name="rules" stdset="0">
+              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle.0.override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{(ch[0]):.0%}\&quot;&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="ActionButton" name="actionbutton_30">
+             <property name="minimumSize">
+              <size>
+               <width>60</width>
+               <height>42</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>3270 Semi-Condensed</family>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::FocusPolicy::NoFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>F 100%</string>
+             </property>
+             <property name="actionName" stdset="0">
+              <string>spindle.override.reset</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_14">
            <property name="spacing">
             <number>0</number>
@@ -10207,7 +10319,7 @@ background: transparent;
               <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="actionName" stdset="0">
-              <string>spindle.override</string>
+              <string>spindle.override.set</string>
              </property>
             </widget>
            </item>
@@ -11208,12 +11320,6 @@ X Y</string>
    <header>qtpyvcp.widgets.display_widgets.dro_label</header>
   </customwidget>
   <customwidget>
-   <class>VTKBackPlot</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>HalBarIndicator</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.hal_widgets.hal_bar_indicator</header>
@@ -11267,6 +11373,12 @@ X Y</string>
    <class>VCPSettingsLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>VTKBackPlot</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>VCPMainWindow</class>
@@ -11914,7 +12026,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="modeGroup"/>
   <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>
