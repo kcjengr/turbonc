@@ -1120,7 +1120,7 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="vtk" native="true"/>
+               <widget class="VTKBackPlot" name="vtk"/>
               </item>
              </layout>
             </item>
@@ -10319,7 +10319,7 @@ background: transparent;
               <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="actionName" stdset="0">
-              <string>spindle.override.set</string>
+              <string>spindle.override</string>
              </property>
             </widget>
            </item>
@@ -11320,6 +11320,12 @@ X Y</string>
    <header>qtpyvcp.widgets.display_widgets.dro_label</header>
   </customwidget>
   <customwidget>
+   <class>VTKBackPlot</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>HalBarIndicator</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.hal_widgets.hal_bar_indicator</header>
@@ -11373,12 +11379,6 @@ X Y</string>
    <class>VCPSettingsLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
-  </customwidget>
-  <customwidget>
-   <class>VTKBackPlot</class>
-   <extends>QWidget</extends>
-   <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>VCPMainWindow</class>
@@ -12026,7 +12026,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
+  <buttongroup name="probeTabGroup"/>
  </buttongroups>
 </ui>
