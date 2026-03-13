@@ -12026,7 +12026,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="modeGroup"/>
   <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>

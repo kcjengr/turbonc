@@ -7,11 +7,16 @@ class HomeAll(BaseDialog):
     def __init__(self, ui_file):
         super(HomeAll, self).__init__(stay_on_top=True, ui_file=ui_file)
 
+        self.ui.homeall_abutton.clicked.connect(self.set_method)
+        self.ui.close_button.clicked.connect(self.close_method)
+
     def open(self):
         super(HomeAll, self).open()
 
-    def on_close_button_clicked(self):
-        super(HomeAll, self).close()
+    def close_method(self):
+        self.reject()
+        self.close()
 
-    def on_homeall_abutton_clicked(self):
-        super(HomeAll, self).close()
+    def set_method(self):
+        self.accept()
+        self.close()
