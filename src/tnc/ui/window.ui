@@ -1337,7 +1337,44 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_12">
           <item>
-           <widget class="GCodeEditor" name="gcodeEditor"/>
+           <widget class="GCodeEditor" name="gcodeEditor">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="font">
+             <font>
+              <family>FreeMono</family>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Shape::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Shadow::Plain</enum>
+            </property>
+            <property name="gCodeHighlightEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="mCodeHighlightEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="parameterHighlightEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="numberHighlightEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="commentHighlightEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="stringHighlightEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="currentLineHighlightEnabled">
+             <bool>false</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -2947,11 +2984,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.probe-tool-number</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3030,11 +3067,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.step-off-width</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3133,11 +3170,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.probe-fast-fr</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3213,11 +3250,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.probe-slow-fr</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3316,11 +3353,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.max-xy-distance</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3396,11 +3433,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.xy-clearance</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3502,11 +3539,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.max-z-distance</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3582,11 +3619,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.z-clearance</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3691,11 +3728,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.extra-probe-depth</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -3771,11 +3808,11 @@ QHeaderView {
                  <property name="placeholderText">
                   <string>0.0000</string>
                  </property>
-                 <property name="textFormat" stdset="0">
-                  <string>{:4f}</string>
-                 </property>
                  <property name="settingName" stdset="0">
                   <string>probe-parameters.edge-width</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:4f}</string>
                  </property>
                 </widget>
                </item>
@@ -8109,14 +8146,14 @@ color: rgb(255, 255, 255);
                            <property name="clearButtonEnabled">
                             <bool>false</bool>
                            </property>
-                           <property name="textFormat" stdset="0">
-                            <string>{:4f}</string>
-                           </property>
                            <property name="settingName" stdset="0">
                             <string>touch-probe.calibration-offset</string>
                            </property>
                            <property name="rules" stdset="0">
                             <string>[]</string>
+                           </property>
+                           <property name="textFormat" stdset="0">
+                            <string>{:4f}</string>
                            </property>
                           </widget>
                          </item>
@@ -11285,11 +11322,6 @@ X Y</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GCodeEditor</class>
-   <extends>QPlainTextEdit</extends>
-   <header>gcodeeditor.h</header>
-  </customwidget>
-  <customwidget>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
@@ -11354,6 +11386,11 @@ X Y</string>
    <class>FileSystemTable</class>
    <extends>QTableView</extends>
    <header>qtpyvcp.widgets.input_widgets.file_system</header>
+  </customwidget>
+  <customwidget>
+   <class>GCodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>gcodeeditor.h</header>
   </customwidget>
   <customwidget>
    <class>RemovableDeviceComboBox</class>
