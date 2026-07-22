@@ -7,8 +7,16 @@ on:
 
 jobs:
   build:
-    name: Release .deb (Debian 13)
-    runs-on: ubuntu-latest
+    name: Release .deb (${{ matrix.arch }})
+    strategy:
+      matrix:
+        arch: [amd64, arm64]
+        include:
+          - arch: amd64
+            runs-on: ubuntu-latest
+          - arch: arm64
+            runs-on: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runs-on }}
     container:
       image: debian:trixie-slim
 
@@ -49,7 +57,7 @@ jobs:
           /opt/build-venv/bin/pip install poetry-dynamic-versioning
           git clone --depth 1 --branch pyside6 https://github.com/kcjengr/qtpyvcp.git /tmp/qtpyvcp
           /opt/build-venv/bin/pip install /tmp/qtpyvcp
-          /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK" || echo "qcompile not found" || echo "qcompile not found"
+          /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK" || echo "qcompile not found"
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -59,6 +67,7 @@ jobs:
 
       - name: Set release version
         run: |
+          cd "$GITHUB_WORKSPACE"
           TAG_VERSION="${GITHUB_REF#refs/tags/}"
           TAG_VERSION="${TAG_VERSION#v}"
           DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com" \
@@ -67,6 +76,7 @@ jobs:
 
       - name: Build .deb package
         run: |
+          cd "$GITHUB_WORKSPACE"
           export PATH="/opt/build-venv/bin:$PATH"
           export PYTHON="/opt/build-venv/bin/python3"
           dpkg-buildpackage -b -us -uc -d
@@ -81,5 +91,5 @@ jobs:
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
         with:
-          name: turbonc-release-deb
+          name: turbonc-release-${{ matrix.arch }}
           path: /tmp/debs/*.deb

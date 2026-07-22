@@ -9,8 +9,16 @@ on:
 
 jobs:
   build:
-    name: Develop .deb (Debian 13)
-    runs-on: ubuntu-latest
+    name: Develop .deb (${{ matrix.arch }})
+    strategy:
+      matrix:
+        arch: [amd64, arm64]
+        include:
+          - arch: amd64
+            runs-on: ubuntu-latest
+          - arch: arm64
+            runs-on: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runs-on }}
     container:
       image: debian:trixie-slim
 
@@ -61,6 +69,7 @@ jobs:
 
       - name: Set develop version
         run: |
+          cd "$GITHUB_WORKSPACE"
           UPSTREAM=$(dpkg-parsechangelog -S Version | sed 's/-[0-9]*$//')
           SHORT_HASH=$(git rev-parse --short=7 HEAD)
           DEV_DATE=$(date +%Y%m%d)
@@ -71,6 +80,7 @@ jobs:
 
       - name: Build .deb package
         run: |
+          cd "$GITHUB_WORKSPACE"
           export PATH="/opt/build-venv/bin:$PATH"
           export PYTHON="/opt/build-venv/bin/python3"
           dpkg-buildpackage -b -us -uc -d
@@ -85,6 +95,6 @@ jobs:
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
         with:
-          name: turbonc-develop-deb
+          name: turbonc-develop-${{ matrix.arch }}
           path: /tmp/debs/*.deb
           retention-days: 7
