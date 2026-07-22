@@ -9,4 +9,10 @@ override_dh_auto_test:
 
 override_dh_install:
 	dh_install
-	qcompile debian/python3-turbonc
+	if command -v qcompile >/dev/null 2>&1; then \
+		qcompile debian/python3-turbonc; \
+	elif python3 -c "import qtpyvcp.tools.qcompile" 2>/dev/null; then \
+		python3 -m qtpyvcp.tools.qcompile debian/python3-turbonc; \
+	else \
+		echo "qcompile not found, skipping Qt resource compilation"; \
+	fi
