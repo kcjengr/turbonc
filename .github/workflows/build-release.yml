@@ -79,10 +79,10 @@ jobs:
           TAG_VERSION="${GITHUB_REF#refs/tags/}"
           TAG_VERSION="${TAG_VERSION#v}"
           if [ ! -f debian/changelog ]; then
-            dch --create --package turbonc -v "${TAG_VERSION}-1" --distribution unstable \
+            dch --create --package turbonc -v "${TAG_VERSION}" --distribution unstable \
               "Release ${TAG_VERSION}"
           else
-            dch --newversion "${TAG_VERSION}-1" --distribution unstable \
+            dch --newversion "${TAG_VERSION}" --distribution unstable \
               "Release ${TAG_VERSION}"
           fi
 
@@ -136,4 +136,4 @@ jobs:
           DEB_NAME=$(basename debs/*.deb)
           cat debs/"$DEB_NAME" | ssh -p 422 -o StrictHostKeyChecking=accept-new \
             ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
-            "cat > /home/buildbot/debian/apt/incoming/$DEB_NAME && reprepro -b /home/buildbot/debian/apt includedeb trixie-dev /home/buildbot/debian/apt/incoming/$DEB_NAME && rm /home/buildbot/debian/apt/incoming/$DEB_NAME"
+            "cat > /home/buildbot/debian/apt/incoming/$DEB_NAME && aptly repo add trixie-dev /home/buildbot/debian/apt/incoming/$DEB_NAME && aptly publish update trixie-dev && rm /home/buildbot/debian/apt/incoming/$DEB_NAME"

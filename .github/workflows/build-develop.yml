@@ -78,18 +78,14 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE"
           export DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com"
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
+          COMMITS_SINCE=$(git rev-list --count "${LAST_TAG}..HEAD")
+          DEV_VERSION="${LAST_TAG}-${COMMITS_SINCE}.dev"
           if [ ! -f debian/changelog ]; then
-            dch --create --package turbonc -v "0.0.1-1" --distribution unstable "Initial packaging"
+            dch --create --package turbonc -v "${DEV_VERSION}" --distribution unstable "Development build"
+          else
+            dch --newversion "${DEV_VERSION}" --distribution unstable "Development build"
           fi
-          CURRENT=$(dpkg-parsechangelog -S Version)
-          BASE_VERSION=$(echo "$CURRENT" | sed 's/-[0-9]*$//')
-          DEB_REV=$(echo "$CURRENT" | sed 's/.*-//')
-          NEXT_REV=$((DEB_REV + 1))
-          SHORT_HASH=$(git rev-parse --short=7 HEAD)
-          DEV_DATE=$(date +%Y%m%d)
-          DEV_VERSION="${BASE_VERSION}-${NEXT_REV}.dev${DEV_DATE}.${SHORT_HASH}"
-          dch --newversion "${DEV_VERSION}" --distribution unstable \
-            "Development build (${SHORT_HASH})"
 
       - name: Build .deb package
         run: |
@@ -120,4 +116,4 @@ jobs:
           DEB_NAME=$(basename /tmp/debs/*.deb)
           cat /tmp/debs/"$DEB_NAME" | ssh -p 422 -o StrictHostKeyChecking=accept-new \
             ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
-            "cat > /home/buildbot/debian/apt/incoming/$DEB_NAME && reprepro -b /home/buildbot/debian/apt includedeb trixie-dev /home/buildbot/debian/apt/incoming/$DEB_NAME && rm /home/buildbot/debian/apt/incoming/$DEB_NAME"
+            "cat > /home/buildbot/debian/apt/incoming/$DEB_NAME && aptly repo add trixie-dev /home/buildbot/debian/apt/incoming/$DEB_NAME && aptly publish update trixie-dev && rm /home/buildbot/debian/apt/incoming/$DEB_NAME"
