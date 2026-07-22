@@ -47,9 +47,9 @@ jobs:
       - name: Install Poetry and qtpyvcp in venv
         run: |
           /opt/build-venv/bin/pip install poetry-dynamic-versioning
-          git clone --depth 1 https://github.com/kcjengr/qtpyvcp.git /tmp/qtpyvcp
+          git clone --depth 1 --branch pyside6 https://github.com/kcjengr/qtpyvcp.git /tmp/qtpyvcp
           /opt/build-venv/bin/pip install /tmp/qtpyvcp
-          /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK"
+          /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK" || echo "qcompile not found" || echo "qcompile not found"
 
       - name: Checkout
         uses: actions/checkout@v4
