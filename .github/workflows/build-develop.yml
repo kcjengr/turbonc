@@ -86,8 +86,15 @@ jobs:
             COMMITS_SINCE=$(git rev-list --count HEAD)
             DEV_VERSION="0.0.0-${COMMITS_SINCE}.dev"
           else
-            COMMITS_SINCE=$(git rev-list --count "${LAST_TAG}..HEAD")
-            DEV_VERSION="${LAST_TAG}-${COMMITS_SINCE}.dev"
+            # Verify tag exists before using it
+            if git rev-parse "${LAST_TAG}" >/dev/null 2>&1; then
+              COMMITS_SINCE=$(git rev-list --count "${LAST_TAG}..HEAD")
+              DEV_VERSION="${LAST_TAG}-${COMMITS_SINCE}.dev"
+            else
+              # Fallback if tag doesn't exist
+              COMMITS_SINCE=$(git rev-list --count HEAD)
+              DEV_VERSION="0.0.0-${COMMITS_SINCE}.dev"
+            fi
           fi
           if [ ! -f debian/changelog ]; then
             dch --create --package turbonc -v "${DEV_VERSION}" --distribution unstable "Development build"
