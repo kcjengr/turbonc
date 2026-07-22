@@ -112,7 +112,7 @@ jobs:
 
       - name: Publish to apt server (develop)
         run: |
-          python3 -c "import os; f=open(os.path.expanduser('~/.ssh/apt_key'),'w'); f.write(os.environ['KEY']); f.close()"
+          python3 -c "import os; os.makedirs(os.path.expanduser('~/.ssh'), exist_ok=True); f=open(os.path.expanduser('~/.ssh/apt_key'),'w'); f.write(os.environ['KEY']); f.close()"
           chmod 600 ~/.ssh/apt_key
           scp -P 33322 -o StrictHostKeyChecking=accept-new -i ~/.ssh/apt_key \
             /tmp/debs/*.deb ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }}:/home/buildbot/debian/apt/incoming/
