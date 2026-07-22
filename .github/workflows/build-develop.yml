@@ -109,3 +109,15 @@ jobs:
           name: turbonc-develop-${{ matrix.arch }}
           path: /tmp/debs/*.deb
           retention-days: 7
+
+      - name: Publish to apt server (develop)
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.APT_SSH_KEY }}" > ~/.ssh/apt_key
+          chmod 600 ~/.ssh/apt_key
+          scp -o StrictHostKeyChecking=accept-new -i ~/.ssh/apt_key \
+            /tmp/debs/*.deb ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }}:/home/buildbot/debian/apt/incoming/
+          ssh -i ~/.ssh/apt_key ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
+            "reprepro -b /home/buildbot/debian/apt includedeb trixie-dev /home/buildbot/debian/apt/incoming/*.deb"
+          ssh -i ~/.ssh/apt_key ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
+            "rm /home/buildbot/debian/apt/incoming/*.deb"
