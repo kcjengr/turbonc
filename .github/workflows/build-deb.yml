@@ -64,14 +64,10 @@ jobs:
       - name: Set version from git tag
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          TAG_VERSION=${GITHUB_REF#refs/tags/v}
-          cat > debian/changelog << EOF
-        turbonc (${TAG_VERSION}-1) unstable; urgency=medium
-
-          * Release ${TAG_VERSION}
-
-         -- TurBoss <j.l.toledano.l@gmail.com>  $(date -R)
-        EOF
+          TAG_VERSION="${GITHUB_REF#refs/tags/v}"
+          DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com" \
+            dch --newversion "${TAG_VERSION}-1" --distribution unstable \
+            "Release ${TAG_VERSION}"
 
       - name: Build .deb package
         run: |
