@@ -78,9 +78,14 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE"
           export DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com"
-          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
-          COMMITS_SINCE=$(git rev-list --count "${LAST_TAG}..HEAD")
-          DEV_VERSION="${LAST_TAG}-${COMMITS_SINCE}.dev"
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -z "$LAST_TAG" ]; then
+            COMMITS_SINCE=$(git rev-list --count HEAD)
+            DEV_VERSION="0.0.0-${COMMITS_SINCE}.dev"
+          else
+            COMMITS_SINCE=$(git rev-list --count "${LAST_TAG}..HEAD")
+            DEV_VERSION="${LAST_TAG}-${COMMITS_SINCE}.dev"
+          fi
           if [ ! -f debian/changelog ]; then
             dch --create --package turbonc -v "${DEV_VERSION}" --distribution unstable "Development build"
           else
