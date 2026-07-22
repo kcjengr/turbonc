@@ -130,11 +130,11 @@ jobs:
         run: |
           python3 -c "import os; f=open(os.path.expanduser('~/.ssh/apt_key'),'w'); f.write(os.environ['KEY']); f.close()"
           chmod 600 ~/.ssh/apt_key
-          scp -o StrictHostKeyChecking=accept-new -i ~/.ssh/apt_key \
+          scp -P 33322 -o StrictHostKeyChecking=accept-new -i ~/.ssh/apt_key \
             debs/*.deb ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }}:/home/buildbot/debian/apt/incoming/
-          ssh -i ~/.ssh/apt_key ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
+          ssh -p 33322 -i ~/.ssh/apt_key ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
             "reprepro -b /home/buildbot/debian/apt includedeb trixie-dev /home/buildbot/debian/apt/incoming/*.deb"
-          ssh -i ~/.ssh/apt_key ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
+          ssh -p 33322 -i ~/.ssh/apt_key ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
             "rm /home/buildbot/debian/apt/incoming/*.deb"
         env:
           KEY: ${{ secrets.APT_SSH_KEY }}
