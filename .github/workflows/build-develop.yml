@@ -124,4 +124,4 @@ jobs:
           DEB_NAME=$(basename /tmp/debs/*.deb)
           cat /tmp/debs/"$DEB_NAME" | ssh -p 422 -o StrictHostKeyChecking=accept-new \
             ${{ secrets.APT_USER }}@${{ secrets.APT_HOST }} \
-            "cat > /tmp/$$.deb && aptly repo add -config=/home/buildbot/.aptly.conf trixie-dev /tmp/$$.deb && aptly publish update -config=/home/buildbot/.aptly.conf trixie-dev && rm /tmp/$$.deb"
+            "cat > /tmp/$$.deb && aptly repo add -force-replace -config=/home/buildbot/.aptly.conf trixie-dev /tmp/$$.deb && aptly publish update -config=/home/buildbot/.aptly.conf trixie-dev && rm /tmp/$$.deb"
