@@ -23,13 +23,13 @@ jobs:
       image: debian:trixie-slim
 
     steps:
-      - name: Install system build tools and Qt/pyside dependencies
+      - name: Install system dependencies
         run: |
           apt-get update
           apt-get install -y --no-install-recommends \
-            build-essential devscripts git ca-certificates \
-            python3-pip python3-venv python3-setuptools \
+            build-essential devscripts git ca-certificates curl gnupg \
             dh-python pybuild-plugin-pyproject debhelper \
+            python3-pip python3-setuptools \
             python3-yaml python3-dbus python3-psutil \
             python3-docopt python3-pyudev python3-six \
             python3-markupsafe python3-jinja2 python3-simpleeval \
@@ -49,17 +49,19 @@ jobs:
           apt-get install -y --no-install-recommends python3-vtk9 || \
           apt-get install -y --no-install-recommends python3-vtk7 || true
 
-      - name: Create venv with system site-packages
+      - name: Add qtpyvcp apt repository
         run: |
-          python3 -m venv --system-site-packages /opt/build-venv
-          /opt/build-venv/bin/pip install --upgrade pip
+          echo "deb [arch=${{ matrix.arch }}] https://repository.qtpyvcp.com/apt trixie-dev main" \
+            > /etc/apt/sources.list.d/kcjengr.list
+          curl -sS https://repository.qtpyvcp.com/repo/kcjengr.key | \
+            gpg --dearmor > /etc/apt/trusted.gpg.d/kcjengr.gpg
+          apt-get update
 
-      - name: Install Poetry and qtpyvcp in venv
+      - name: Install qtpyvcp and build tools
         run: |
-          /opt/build-venv/bin/pip install poetry-dynamic-versioning
-          git clone --depth 1 --branch pyside6 https://github.com/kcjengr/qtpyvcp.git /tmp/qtpyvcp
-          /opt/build-venv/bin/pip install /tmp/qtpyvcp
-          /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK" || echo "qcompile not found"
+          apt-get install -y --no-install-recommends python3-qtpyvcp \
+            python3-poetry-dynamic-versioning || \
+            pip3 install --break-system-packages poetry-dynamic-versioning
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -87,8 +89,6 @@ jobs:
       - name: Build .deb package
         run: |
           cd "$GITHUB_WORKSPACE"
-          export PATH="/opt/build-venv/bin:$PATH"
-          export PYTHON="/opt/build-venv/bin/python3"
           dpkg-buildpackage -b -us -uc -d
           mkdir -p /tmp/debs
           mv ../*.deb /tmp/debs/
