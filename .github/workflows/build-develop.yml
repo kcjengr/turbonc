@@ -63,7 +63,7 @@ jobs:
 
       - name: Install poetry-dynamic-versioning
         run: |
-          pip3 install --break-system-packages "poetry-dynamic-versioning>=1.10"
+          pip3 install --break-system-packages "poetry-core>=1.0" "poetry-dynamic-versioning>=1.10"
           python3 -c "import poetry_dynamic_versioning.backend; print('OK')"
 
       - name: Checkout
