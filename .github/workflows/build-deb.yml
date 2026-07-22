@@ -50,7 +50,7 @@ jobs:
       - name: Install Poetry and qtpyvcp in venv
         run: |
           /opt/build-venv/bin/pip install poetry-dynamic-versioning
-          git clone --depth 1 https://github.com/qtpyvcp/qtpyvcp.git /tmp/qtpyvcp
+          git clone --depth 1 https://github.com/kcjengr/qtpyvcp.git /tmp/qtpyvcp
           /opt/build-venv/bin/pip install /tmp/qtpyvcp
           # qcompile is needed by debian/rules
           /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK"
