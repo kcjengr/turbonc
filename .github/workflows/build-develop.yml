@@ -1,16 +1,15 @@
-name: Build Debian Package
+name: Build Develop .deb
 
 on:
   push:
     branches: [main, master]
-    tags: ['*']
   pull_request:
     branches: [main, master]
   workflow_dispatch:
 
 jobs:
-  build-deb:
-    name: Build .deb (Debian 13 Trixie)
+  build:
+    name: Develop .deb (Debian 13)
     runs-on: ubuntu-latest
     container:
       image: debian:trixie-slim
@@ -52,7 +51,6 @@ jobs:
           /opt/build-venv/bin/pip install poetry-dynamic-versioning
           git clone --depth 1 https://github.com/kcjengr/qtpyvcp.git /tmp/qtpyvcp
           /opt/build-venv/bin/pip install /tmp/qtpyvcp
-          # qcompile is needed by debian/rules
           /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK"
 
       - name: Checkout
@@ -61,31 +59,20 @@ jobs:
       - name: Mark repo as safe for git
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-      - name: Set version from git
+      - name: Set develop version
         run: |
-          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
-            TAG_VERSION="${GITHUB_REF#refs/tags/}"
-            TAG_VERSION="${TAG_VERSION#v}"
-            DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com" \
-              dch --newversion "${TAG_VERSION}-1" --distribution unstable \
-              "Release ${TAG_VERSION}"
-          else
-            # Dev build: 0.0.3~git20250722.abc1234
-            UPSTREAM=$(dpkg-parsechangelog -S Version | sed 's/-[0-9]*$//')
-            SHORT_HASH=$(git rev-parse --short=7 HEAD)
-            DEV_DATE=$(date +%Y%m%d)
-            DEV_VERSION="${UPSTREAM}~git${DEV_DATE}.${SHORT_HASH}"
-            DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com" \
-              dch --newversion "${DEV_VERSION}-1" --distribution unstable \
-              "Development build (${SHORT_HASH})"
-          fi
+          UPSTREAM=$(dpkg-parsechangelog -S Version | sed 's/-[0-9]*$//')
+          SHORT_HASH=$(git rev-parse --short=7 HEAD)
+          DEV_DATE=$(date +%Y%m%d)
+          DEV_VERSION="${UPSTREAM}~git${DEV_DATE}.${SHORT_HASH}"
+          DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com" \
+            dch --newversion "${DEV_VERSION}-1" --distribution unstable \
+            "Development build (${SHORT_HASH})"
 
       - name: Build .deb package
         run: |
-          # Use venv Python so pybuild finds qtpyvcp, poetry-dynamic-versioning, etc.
           export PATH="/opt/build-venv/bin:$PATH"
           export PYTHON="/opt/build-venv/bin/python3"
-          # Skip build-dep check (-d) since qtpyvcp comes from pip, not apt
           dpkg-buildpackage -b -us -uc -d
           mkdir -p /tmp/debs
           mv ../*.deb /tmp/debs/
@@ -98,6 +85,6 @@ jobs:
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
         with:
-          name: turbonc-debian13-deb
+          name: turbonc-develop-deb
           path: /tmp/debs/*.deb
-          retention-days: 30
+          retention-days: 7

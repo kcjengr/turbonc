@@ -1,0 +1,85 @@
+name: Build Release .deb
+
+on:
+  push:
+    tags: ['*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Release .deb (Debian 13)
+    runs-on: ubuntu-latest
+    container:
+      image: debian:trixie-slim
+
+    steps:
+      - name: Install system build tools and Qt/pyside dependencies
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            build-essential devscripts git ca-certificates \
+            python3-pip python3-venv python3-setuptools \
+            dh-python pybuild-plugin-pyproject debhelper \
+            python3-yaml python3-dbus python3-psutil \
+            python3-docopt python3-pyudev python3-six \
+            python3-markupsafe python3-jinja2 python3-simpleeval \
+            python3-deepdiff python3-serial python3-distro \
+            python3-sqlalchemy python3-pyqtgraph python3-opengl \
+            python3-pyside6.qtcore python3-pyside6.qtdbus \
+            python3-pyside6.qtgui python3-pyside6.qtwidgets \
+            python3-pyside6.qtopengl python3-pyside6.qtmultimedia \
+            python3-pyside6.qtquick python3-pyside6.qtsvg \
+            python3-pyside6.qtsql python3-pyside6.qtnetwork \
+            pyside6-tools python3-qtpy \
+            qml-module-qtquick-controls \
+            gstreamer1.0-plugins-bad || true
+
+      - name: Install VTK
+        run: |
+          apt-get install -y --no-install-recommends python3-vtk9 || \
+          apt-get install -y --no-install-recommends python3-vtk7 || true
+
+      - name: Create venv with system site-packages
+        run: |
+          python3 -m venv --system-site-packages /opt/build-venv
+          /opt/build-venv/bin/pip install --upgrade pip
+
+      - name: Install Poetry and qtpyvcp in venv
+        run: |
+          /opt/build-venv/bin/pip install poetry-dynamic-versioning
+          git clone --depth 1 https://github.com/kcjengr/qtpyvcp.git /tmp/qtpyvcp
+          /opt/build-venv/bin/pip install /tmp/qtpyvcp
+          /opt/build-venv/bin/qcompile --help > /dev/null 2>&1 && echo "qcompile OK"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Mark repo as safe for git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Set release version
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/}"
+          TAG_VERSION="${TAG_VERSION#v}"
+          DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com" \
+            dch --newversion "${TAG_VERSION}-1" --distribution unstable \
+            "Release ${TAG_VERSION}"
+
+      - name: Build .deb package
+        run: |
+          export PATH="/opt/build-venv/bin:$PATH"
+          export PYTHON="/opt/build-venv/bin/python3"
+          dpkg-buildpackage -b -us -uc -d
+          mkdir -p /tmp/debs
+          mv ../*.deb /tmp/debs/
+
+      - name: Show built packages
+        run: |
+          ls -la /tmp/debs/
+          dpkg --info /tmp/debs/*.deb
+
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: turbonc-release-deb
+          path: /tmp/debs/*.deb
