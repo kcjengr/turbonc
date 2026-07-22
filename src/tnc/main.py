@@ -52,6 +52,65 @@ class MainWindow(VCPMainWindow):
         base_lightness = palette.color(QPalette.Base).lightness()
         return ((window_lightness + base_lightness) / 2) < 128
 
+    def _diagnose_gcode_highlighting(self):
+        """Ensure GCodeEditor syntax highlighting is properly configured.
+
+        The framework applies YAML config via _apply_gcode_editor_yaml_config,
+        but a timing issue can leave properties reset to their .ui file defaults
+        on some editors. This runs late as a safety net, reading the same YAML
+        config that the framework already loaded into qtpyvcp.CONFIG.
+        """
+        from PySide6.QtCore import QObject
+        from PySide6.QtGui import QColor
+        import qtpyvcp
+
+        all_objs = self.findChildren(QObject)
+        gcode_editors = [o for o in all_objs
+                         if o.metaObject().className() in ('GCodeEditor', 'GcodeEditor')]
+
+        if not gcode_editors:
+            LOG.warning("No GCodeEditor widgets found")
+            return
+
+        # Read token→color map from YAML (same source as the framework uses)
+        syntax_config = qtpyvcp.CONFIG.get('gcode_syntax_profile', {})
+        token_color_map = {}
+        for style in syntax_config.get('syntax_styles', []):
+            color = style.get('color')
+            if not color:
+                continue
+            qcolor = QColor(color)
+            if not qcolor.isValid():
+                continue
+            for token in style.get('tokens', []):
+                token_color_map[token] = qcolor
+
+        # Read current-line style from YAML
+        style_defaults = qtpyvcp.CONFIG.get('gcode_editor_style_defaults', {})
+        cl_enabled = style_defaults.get('current_line_highlight_enabled', True)
+        cl_bg = style_defaults.get('current_line_background', '#3a3a5a')
+        cl_fg = style_defaults.get('current_line_color', '#d4d4d4')
+
+        for editor in gcode_editors:
+            name = editor.objectName()
+
+            if token_color_map and hasattr(editor, 'setTokenColorMap'):
+                se_enabled = editor.property('syntaxHighlightingEnabled')
+                if not se_enabled:
+                    LOG.warning("Editor '%s': syntaxHighlightingEnabled was False, forcing to True", name)
+                editor.setTokenColorMap(token_color_map)
+                editor.setProperty('syntaxHighlightingEnabled', True)
+                LOG.info("Editor '%s': highlighting applied (%d token types)",
+                         name, len(token_color_map))
+
+            # Force-enable current-line highlight (same timing issue as above)
+            cur_enabled = editor.property('currentLineHighlightEnabled')
+            if not cur_enabled:
+                LOG.warning("Editor '%s': currentLineHighlightEnabled was False, forcing to True", name)
+            editor.setProperty('currentLineHighlightEnabled', bool(cl_enabled))
+            editor.setProperty('currentLineBackground', QColor(cl_bg))
+            editor.setProperty('currentLineColor', QColor(cl_fg))
+
     def _connect_theme_tracking(self):
         app = QApplication.instance()
         if app is None:
@@ -104,6 +163,11 @@ class MainWindow(VCPMainWindow):
                 self._qss_watcher.addPath(self._watched_stylesheet_path)
         self._apply_theme_stylesheet()
 
+
+    def initUi(self):
+        super().initUi()
+        # Diagnostic: verify GCodeEditor YAML config was applied
+        QTimer.singleShot(1000, self._diagnose_gcode_highlighting)
 
     @Slot(QAbstractButton)
     def on_probeTabGroup_buttonClicked(self, button):

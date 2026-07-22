@@ -2,11 +2,11 @@
 
 qtdesigner:
   ui_file: ( windows.mainwindow.kwargs.ui_file )
-  qss_file: {{ file.dir }}/style.qss
+  qss_file: {{ file.dir }}/dark.qss
 
 vcp:
   name: TurBoNC
-  version: v0.0.2
+  version: v0.0.3
   author: TurBoss
   description: Just the basic functions I need to run linuxcnc
 
@@ -51,7 +51,7 @@ data_plugins:
     provider: qtpyvcp.plugins.offset_table:OffsetTable
 #  widgets:
 #    provider: qtpyvcp.plugins.widgets:Widgets
-  
+
 windows:
   mainwindow:
     provider: tnc.main:MainWindow
@@ -60,7 +60,58 @@ windows:
       ui_file: {{ file.dir }}/ui/window.ui
 
 application:
-  kwargs: {}
+  kwargs:
+   stylesheet: {{ file.dir }}/dark.qss
+
+# GCodeEditor visual styling (applied by VCPMainWindow via apply_yaml_config_to_editor)
+gcode_editor_style_defaults:
+  background_color: "#2d2d30"
+  text_color: "#d4d4d4"
+  padding: 2
+  border_radius: 4
+  font_family: "Probe Basic Bebas Mono"
+  font_point_size: 13
+  font_weight: 400
+  font_style: normal
+  line_number_area_background: "#3a3a3a"
+  line_number_area_color: "#888888"
+  line_number_font_family: "Probe Basic Bebas Mono"
+  line_number_font_point_size: 11
+  line_number_font_weight: 400
+  line_number_font_italic: false
+  current_line_highlight_enabled: true
+  current_line_background: "#3a3a5a"
+  current_line_color: "#d4d4d4"
+  find_highlight_background: "#2848b9"
+  find_highlight_text: "#d4d4d4"
+  find_error_background: "#8b0000"
+  find_error_text: "#d4d4d4"
+  find_status_background: "#3a3a3a"
+  find_status_text: "#d4d4d4"
+  find_status_border: "#555555"
+
+# GCode syntax highlighting token→color map (applied via editor.setTokenColorMap)
+# Token names match GCodeHighlighter::buildPatternForToken()
+gcode_syntax_profile:
+  syntax_styles:
+    - id: g_codes
+      color: "#5082c8"
+      tokens: ["G"]
+    - id: m_codes
+      color: "#c864a0"
+      tokens: ["M"]
+    - id: parameters
+      color: "#5aa05a"
+      tokens: ["X", "Y", "Z", "A", "B", "C", "U", "V", "W", "I", "J", "K", "R", "Q", "P", "F", "T", "H", "S", "D", "E", "L", "N", "O"]
+    - id: numbers
+      color: "#b46464"
+      tokens: ["number"]
+    - id: comments
+      color: "#6e966e"
+      tokens: ["comment"]
+    - id: strings
+      color: "#5aa0a0"
+      tokens: ["string"]
 
 dialogs:
   zero_xy:
@@ -73,7 +124,7 @@ dialogs:
     kwargs:
       ui_file: {{ file.dir }}/dialogs/home_all.ui
 
- 
+
 settings:
   touch-probe.calibration-offset:
     description: Probe trigger point offset.
@@ -248,10 +299,10 @@ settings:
 
   backplot.show-spindle:
     default_value: false
-    
+
   backplot.show-tools:
     default_value: false
-        
+
   backplot.show-machine-bounds:
     default_value: false
 
