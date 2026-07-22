@@ -70,12 +70,15 @@ jobs:
       - name: Set develop version
         run: |
           cd "$GITHUB_WORKSPACE"
+          export DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com"
+          if [ ! -f debian/changelog ]; then
+            dch --create --package turbonc -v "0.0.1-1" --distribution unstable "Initial packaging"
+          fi
           UPSTREAM=$(dpkg-parsechangelog -S Version | sed 's/-[0-9]*$//')
           SHORT_HASH=$(git rev-parse --short=7 HEAD)
           DEV_DATE=$(date +%Y%m%d)
           DEV_VERSION="${UPSTREAM}~git${DEV_DATE}.${SHORT_HASH}"
-          DEBFULLNAME="TurBoss" DEBEMAIL="j.l.toledano.l@gmail.com" \
-            dch --newversion "${DEV_VERSION}-1" --distribution unstable \
+          dch --newversion "${DEV_VERSION}-1" --distribution unstable \
             "Development build (${SHORT_HASH})"
 
       - name: Build .deb package
