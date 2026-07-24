@@ -1143,6 +1143,9 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
              </layout>
@@ -12089,7 +12092,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="modeGroup"/>
   <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>
