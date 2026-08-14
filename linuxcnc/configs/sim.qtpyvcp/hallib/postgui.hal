@@ -1,2 +1,6 @@
 net probe-in  =>  qtpyvcp.probe-in.out
 net probe-in  <=  qtpyvcp.probe-led.on
+
+net tool-change-request     =>  qtpyvcp_manualtoolchange.change
+net tool-change-confirmed   <=  qtpyvcp_manualtoolchange.changed
+net tool-number             =>  qtpyvcp_manualtoolchange.number

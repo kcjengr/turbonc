@@ -29,8 +29,8 @@ data_plugins:
       use_program_units: True
 
   tooltable:
-    provider: qtpyvcp.plugins.tool_table:ToolTable
-    # provider: qtpyvcp.plugins.db_tool_table:DBToolTable
+    # provider: qtpyvcp.plugins.tool_table:ToolTable
+    provider: qtpyvcp.plugins.db_tool_table:DBToolTable
     kwargs:
         columns: TXYZDR
 
@@ -67,3 +67,25 @@ data_plugins:
   virtual_input:
     provider: qtpyvcp.plugins.virtual_input_manager:VirtualInputManager
 
+
+dialogs:
+  zero_xy:
+    provider: tnc.dialogs.zero_xy:ZeroXY
+    # kwargs:
+    #  ui_file: {{ file.dir }}/dialogs/zero_xy.ui
+
+  home_all:
+    provider: tnc.dialogs.home_all:HomeAll
+    #kwargs:
+    #  ui_file: {{ file.dir }}/dialogs/home_all.ui
+  toolchange:
+    provider: qtpyvcp.widgets.dialogs.toolchange_dialog:ToolChangeDialog
+
+  rdro_info:
+    provider: rdro_server.qtpyvcp.rdro_dialog:RdroInfoDialog
+
+settings:
+  rdro.start-server-on-launch:
+    description: Start the RDRO server when the screen opens.
+    default_value: false
+    persistent: true

@@ -1126,7 +1126,7 @@
                </widget>
               </item>
               <item>
-               <widget class="VTKBackPlot" name="vtk" native="true">
+               <widget class="VTKBackPlot" name="vtk">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                   <horstretch>0</horstretch>
@@ -1145,6 +1145,15 @@
                 </property>
                 <property name="readOnly">
                  <bool>true</bool>
+                </property>
+                <property name="backgroundVisible">
+                 <bool>true</bool>
+                </property>
+                <property name="centerOnScroll">
+                 <bool>true</bool>
+                </property>
+                <property name="lineNumberFontItalic">
+                 <bool>false</bool>
                 </property>
                </widget>
               </item>
@@ -1369,8 +1378,10 @@
             </property>
             <property name="font">
              <font>
-              <family>FreeMono</family>
-              <bold>true</bold>
+              <family>Probe Basic Bebas Mono</family>
+              <pointsize>13</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
              </font>
             </property>
             <property name="frameShape">
@@ -1383,25 +1394,7 @@
              <bool>true</bool>
             </property>
             <property name="currentLineHighlightEnabled">
-             <bool>false</bool>
-            </property>
-            <property name="gCodeHighlightEnabled" stdset="0">
-             <bool>false</bool>
-            </property>
-            <property name="mCodeHighlightEnabled" stdset="0">
-             <bool>false</bool>
-            </property>
-            <property name="parameterHighlightEnabled" stdset="0">
-             <bool>false</bool>
-            </property>
-            <property name="numberHighlightEnabled" stdset="0">
-             <bool>false</bool>
-            </property>
-            <property name="commentHighlightEnabled" stdset="0">
-             <bool>false</bool>
-            </property>
-            <property name="stringHighlightEnabled" stdset="0">
-             <bool>false</bool>
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -2213,7 +2206,7 @@ QHeaderView {
              </widget>
             </item>
             <item>
-             <widget class="ToolSTLField" name="toolmodel" native="true">
+             <widget class="ToolSTLField" name="toolmodel">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -5727,7 +5720,7 @@ QPushButton:checked {
                   <bool>true</bool>
                  </property>
                 </widget>
-                <widget class="HalLedIndicator" name="probe_led" native="true">
+                <widget class="HalLedIndicator" name="probe_led">
                  <property name="geometry">
                   <rect>
                    <x>213</x>
@@ -10280,7 +10273,7 @@ background: transparent;
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_24">
          <item>
-          <widget class="HalBarIndicator" name="spindle_load_indicator" native="true">
+          <widget class="HalBarIndicator" name="spindle_load_indicator">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -10712,9 +10705,6 @@ background: transparent;
            <property name="actionName" stdset="0">
             <string>machine.mode.manual</string>
            </property>
-           <property name="position" stdset="0">
-            <string>first</string>
-           </property>
            <attribute name="buttonGroup">
             <string notr="true">modeGroup</string>
            </attribute>
@@ -10808,9 +10798,6 @@ background: transparent;
            </property>
            <property name="actionName" stdset="0">
             <string>machine.mode.mdi</string>
-           </property>
-           <property name="position" stdset="0">
-            <string>last</string>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">modeGroup</string>
@@ -11351,11 +11338,6 @@ X Y</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GCodeEditor</class>
-   <extends>QPlainTextEdit</extends>
-   <header>gcodeeditor.h</header>
-  </customwidget>
-  <customwidget>
    <class>ActionButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.action_button</header>
@@ -11420,6 +11402,11 @@ X Y</string>
    <class>FileSystemTable</class>
    <extends>QTableView</extends>
    <header>qtpyvcp.widgets.input_widgets.file_system</header>
+  </customwidget>
+  <customwidget>
+   <class>GCodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>gcodeeditor.h</header>
   </customwidget>
   <customwidget>
    <class>RemovableDeviceComboBox</class>
@@ -12092,7 +12079,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
+  <buttongroup name="probeTabGroup"/>
  </buttongroups>
 </ui>
