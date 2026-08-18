@@ -8,7 +8,6 @@ through the menu bar:
 - DRO display units / lathe radius mode
 - backplot toggles and default view
 - on-screen keyboard
-- RDRO server auto-start
 - confirm-before-exit behavior
 
 Every control is a qtpyvcp settings widget (``VCPSettingsComboBox`` /
@@ -225,15 +224,6 @@ class TncSettingsDialog(QDialog):
                                                 "Show On-screen Keyboard",
                                                 input_group))
         groups.addWidget(input_group)
-
-        # -- RDRO ----------------------------------------------------------
-        rdro_group = QGroupBox("RDRO SERVER", content)
-        rdro_layout = QVBoxLayout(rdro_group)
-        rdro_layout.setSpacing(6)
-        rdro_layout.addWidget(self._make_check("rdro.start-server-on-launch",
-                                               "Start Server on Launch",
-                                               rdro_group))
-        groups.addWidget(rdro_group)
 
         # -- Behavior ------------------------------------------------------
         behavior_group = QGroupBox("BEHAVIOR", content)

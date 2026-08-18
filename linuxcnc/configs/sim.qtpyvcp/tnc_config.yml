@@ -80,6 +80,3 @@ dialogs:
     #  ui_file: {{ file.dir }}/dialogs/home_all.ui
   toolchange:
     provider: qtpyvcp.widgets.dialogs.toolchange_dialog:ToolChangeDialog
-
-  rdro_info:
-    provider: rdro_server.qtpyvcp.rdro_dialog:RdroInfoDialog

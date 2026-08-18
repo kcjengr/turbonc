@@ -177,11 +177,6 @@ settings:
     default_value: false
     persistent: true
 
-  rdro.start-server-on-launch:
-    description: Start the RDRO server when the screen opens.
-    default_value: false
-    persistent: true
-
   touch-probe.calibration-offset:
     description: Probe trigger point offset.
     default_value: 0.0

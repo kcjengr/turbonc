@@ -27,20 +27,6 @@ default_menubar:
 
     - separator
 
-    - title: "Start RDRO Server"
-      action: win.startRdroServer
-
-    - title: "Stop RDRO Server"
-      action: win.stopRdroServer
-
-    - title: "RDRO Server Info…"
-      action: win.showRdroInfo
-
-    - title: "Start RDRO Server on Launch"
-      action: settings.rdro.start-server-on-launch
-
-    - separator
-
     - title: Exit
       action: app.exit # or win.close
       shortcut: ctrl+q
