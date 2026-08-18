@@ -670,6 +670,7 @@
                 <property name="font">
                  <font>
                   <family>3270 Semi-Condensed</family>
+                  <pointsize>12</pointsize>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -693,7 +694,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -725,7 +726,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -763,7 +764,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -795,7 +796,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -833,7 +834,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -865,7 +866,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -897,7 +898,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -929,7 +930,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -967,7 +968,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -1005,7 +1006,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -1046,7 +1047,7 @@
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
@@ -1072,13 +1073,14 @@
                   <widget class="ActionComboBox" name="actioncombobox">
                    <property name="maximumSize">
                     <size>
-                     <width>64</width>
+                     <width>80</width>
                      <height>16777215</height>
                     </size>
                    </property>
                    <property name="font">
                     <font>
                      <family>3270 Semi-Condensed</family>
+                     <pointsize>12</pointsize>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -8945,6 +8947,7 @@ USB</string>
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
+               <pointsize>16</pointsize>
                <fontweight>DemiBold</fontweight>
               </font>
              </property>
@@ -9394,6 +9397,7 @@ USB</string>
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
+               <pointsize>16</pointsize>
                <fontweight>DemiBold</fontweight>
               </font>
              </property>
@@ -9432,6 +9436,7 @@ USB</string>
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
+               <pointsize>16</pointsize>
                <fontweight>DemiBold</fontweight>
               </font>
              </property>
@@ -9460,6 +9465,7 @@ USB</string>
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
+               <pointsize>16</pointsize>
                <fontweight>DemiBold</fontweight>
               </font>
              </property>
@@ -9549,7 +9555,7 @@ USB</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9584,7 +9590,7 @@ USB</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9638,7 +9644,7 @@ USB</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9685,7 +9691,7 @@ USB</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9732,7 +9738,7 @@ USB</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9792,7 +9798,7 @@ USB</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9843,7 +9849,7 @@ USB</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9873,7 +9879,7 @@ X Y</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9918,7 +9924,7 @@ X Y</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9957,7 +9963,7 @@ X Y</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -9996,7 +10002,7 @@ X Y</string>
            <property name="font">
             <font>
              <family>3270 Semi-Condensed</family>
-             <pointsize>10</pointsize>
+             <pointsize>16</pointsize>
              <fontweight>DemiBold</fontweight>
             </font>
            </property>
@@ -11036,7 +11042,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
+  <buttongroup name="probeTabGroup"/>
  </buttongroups>
 </ui>
