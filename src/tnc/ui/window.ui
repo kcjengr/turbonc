@@ -42,11 +42,15 @@
       <property name="font">
        <font>
         <family>3270 Semi-Condensed</family>
-        <bold>true</bold>
+        <pointsize>14</pointsize>
+        <bold>false</bold>
        </font>
       </property>
       <property name="tabPosition">
-       <enum>QTabWidget::TabPosition::South</enum>
+       <enum>QTabWidget::TabPosition::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -59,7 +63,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0">
+           <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
             <property name="spacing">
              <number>6</number>
             </property>
@@ -409,8 +413,8 @@
                        <widget class="QLabel" name="label_7">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
-                          <pointsize>32</pointsize>
+                          <family>3270 Semi-Condensed</family>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                          </font>
                         </property>
@@ -435,8 +439,8 @@
                        <widget class="DROLabel" name="drolabel_7">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
-                          <pointsize>32</pointsize>
+                          <family>3270 Semi-Condensed</family>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                           <underline>false</underline>
                          </font>
@@ -487,8 +491,8 @@
                        <widget class="QLabel" name="label_8">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
-                          <pointsize>32</pointsize>
+                          <family>3270 Semi-Condensed</family>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                          </font>
                         </property>
@@ -513,8 +517,8 @@
                        <widget class="DROLabel" name="drolabel_8">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
-                          <pointsize>32</pointsize>
+                          <family>3270 Semi-Condensed</family>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                           <underline>false</underline>
                          </font>
@@ -565,8 +569,8 @@
                        <widget class="QLabel" name="label_9">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
-                          <pointsize>32</pointsize>
+                          <family>3270 Semi-Condensed</family>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                          </font>
                         </property>
@@ -591,8 +595,8 @@
                        <widget class="DROLabel" name="drolabel_9">
                         <property name="font">
                          <font>
-                          <family>Noto Sans</family>
-                          <pointsize>32</pointsize>
+                          <family>3270 Semi-Condensed</family>
+                          <pointsize>38</pointsize>
                           <bold>true</bold>
                           <underline>false</underline>
                          </font>
@@ -697,7 +701,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -729,7 +733,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -767,7 +771,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -799,7 +803,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -837,7 +841,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -869,7 +873,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -901,7 +905,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -933,7 +937,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -971,7 +975,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -1009,7 +1013,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -1050,7 +1054,7 @@
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <pointsize>12</pointsize>
-                     <bold>true</bold>
+                     <fontweight>DemiBold</fontweight>
                     </font>
                    </property>
                    <property name="text">
@@ -1066,11 +1070,23 @@
                  </item>
                  <item>
                   <widget class="ActionComboBox" name="actioncombobox">
+                   <property name="maximumSize">
+                    <size>
+                     <width>64</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="font">
                     <font>
                      <family>3270 Semi-Condensed</family>
                      <bold>true</bold>
                     </font>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
+                   </property>
+                   <property name="maxVisibleItems">
+                    <number>10</number>
                    </property>
                    <property name="actionName" stdset="0">
                     <string>machine.set-work-coord</string>
@@ -1154,33 +1170,6 @@
                 </property>
                 <property name="lineNumberFontItalic">
                  <bool>false</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_13">
-              <item>
-               <widget class="QLabel" name="label">
-                <property name="font">
-                 <font>
-                  <family>3270 Semi-Condensed</family>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>MDI</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="MDIEntry" name="mdientry">
-                <property name="font">
-                 <font>
-                  <family>3270 Semi-Condensed</family>
-                  <bold>false</bold>
-                 </font>
                 </property>
                </widget>
               </item>
@@ -1437,9 +1426,6 @@
             <height>16777215</height>
            </size>
           </property>
-          <property name="styleSheet">
-           <string notr="true"/>
-          </property>
           <property name="frameShape">
            <enum>QFrame::Shape::StyledPanel</enum>
           </property>
@@ -1477,9 +1463,6 @@
                </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
                </property>
                <property name="text">
                 <string>  FOLDER UP</string>
@@ -1541,9 +1524,6 @@
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>LOAD G-CODE</string>
                </property>
@@ -1557,25 +1537,6 @@
               <widget class="FileSystemTable" name="filesystemtable">
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::WheelFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">FileSystemTable {
-	color: black;
-   	border: 4px;
-	border-color: rgb(120, 120, 120);
-	border-style: solid;
-	background-color: rgb(238, 238, 236);
-    font: 12pt &quot;Bebas Kai&quot;;
-}
-
-QHeaderView {
-    background-color: rgb(220, 220, 220);
-	color: black;
-    border: none;
-	border-radius:none;
-	border-style: none;
-	font: 13pt &quot;Bebas Kai&quot;;
-}</string>
                </property>
                <property name="selectionMode">
                 <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
@@ -1611,9 +1572,6 @@ QHeaderView {
                </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
                </property>
                <property name="text">
                 <string> DELETE</string>
@@ -1653,9 +1611,6 @@ QHeaderView {
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string> NEW FILE</string>
                </property>
@@ -1693,9 +1648,6 @@ QHeaderView {
                </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
                </property>
                <property name="text">
                 <string> NEW FOLDER</string>
@@ -1735,9 +1687,6 @@ QHeaderView {
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>RENAME</string>
                </property>
@@ -1775,9 +1724,6 @@ QHeaderView {
             </property>
             <property name="layoutDirection">
              <enum>Qt::LayoutDirection::RightToLeft</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
             </property>
             <property name="text">
              <string>COPY
@@ -1841,9 +1787,6 @@ USB</string>
             <height>16777215</height>
            </size>
           </property>
-          <property name="styleSheet">
-           <string notr="true"/>
-          </property>
           <property name="frameShape">
            <enum>QFrame::Shape::StyledPanel</enum>
           </property>
@@ -1881,9 +1824,6 @@ USB</string>
                </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
                </property>
                <property name="text">
                 <string>  FOLDER UP</string>
@@ -1945,9 +1885,6 @@ USB</string>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string>EJECT USB</string>
                </property>
@@ -1961,25 +1898,6 @@ USB</string>
               <widget class="FileSystemTable" name="filesystemtable_2">
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::WheelFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">FileSystemTable {
-	color: black;
-   	border: 4px;
-	border-color: rgb(120, 120, 120);
-	border-style: solid;
-	background-color: rgb(238, 238, 236);
-    font: 12pt &quot;Bebas Kai&quot;;
-}
-
-QHeaderView {
-    background-color: rgb(220, 220, 220);
-	color: black;
-    border: none;
-	border-radius:none;
-	border-style: none;
-	font: 13pt &quot;Bebas Kai&quot;;
-}</string>
                </property>
                <property name="selectionMode">
                 <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
@@ -2015,9 +1933,6 @@ QHeaderView {
                </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
                </property>
                <property name="text">
                 <string> DELETE</string>
@@ -2057,9 +1972,6 @@ QHeaderView {
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string> NEW FILE</string>
                </property>
@@ -2098,9 +2010,6 @@ QHeaderView {
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
                </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
                <property name="text">
                 <string> NEW FOLDER</string>
                </property>
@@ -2138,9 +2047,6 @@ QHeaderView {
                </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::NoFocus</enum>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
                </property>
                <property name="text">
                 <string>RENAME</string>
@@ -2304,9 +2210,6 @@ QHeaderView {
             <height>16777215</height>
            </size>
           </property>
-          <property name="styleSheet">
-           <string notr="true"/>
-          </property>
           <layout class="QVBoxLayout" name="verticalLayout_43">
            <property name="topMargin">
             <number>6</number>
@@ -2336,16 +2239,6 @@ QHeaderView {
                <width>16777215</width>
                <height>27</height>
               </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-    border-radius: 5px;
-    color: rgb(238, 238, 236);
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}</string>
              </property>
              <property name="text">
               <string> WORK OFFSETS</string>
@@ -2438,9 +2331,6 @@ QHeaderView {
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
                    <property name="text">
                     <string>G54</string>
                    </property>
@@ -2474,9 +2364,6 @@ QHeaderView {
                    </property>
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>G55</string>
@@ -2512,9 +2399,6 @@ QHeaderView {
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
                    <property name="text">
                     <string>G56</string>
                    </property>
@@ -2548,9 +2432,6 @@ QHeaderView {
                    </property>
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>G57</string>
@@ -2586,9 +2467,6 @@ QHeaderView {
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
                    <property name="text">
                     <string>G58</string>
                    </property>
@@ -2622,9 +2500,6 @@ QHeaderView {
                    </property>
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>G59</string>
@@ -2693,9 +2568,6 @@ QHeaderView {
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
                    <property name="text">
                     <string>G59.1</string>
                    </property>
@@ -2729,9 +2601,6 @@ QHeaderView {
                    </property>
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>G59.2</string>
@@ -2767,9 +2636,6 @@ QHeaderView {
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
                    <property name="text">
                     <string>G59.3</string>
                    </property>
@@ -2803,9 +2669,6 @@ QHeaderView {
                    </property>
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>PROBE WCO</string>
@@ -2847,9 +2710,6 @@ QHeaderView {
                    <property name="focusPolicy">
                     <enum>Qt::FocusPolicy::NoFocus</enum>
                    </property>
-                   <property name="styleSheet">
-                    <string notr="true"/>
-                   </property>
                    <property name="text">
                     <string>PROBE POS'N</string>
                    </property>
@@ -2887,16 +2747,6 @@ QHeaderView {
                <height>27</height>
               </size>
              </property>
-             <property name="styleSheet">
-              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-    border-radius: 5px;
-    color: rgb(238, 238, 236);
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}</string>
-             </property>
              <property name="text">
               <string> Probing Parameters</string>
              </property>
@@ -2929,9 +2779,6 @@ QHeaderView {
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -2959,9 +2806,6 @@ QHeaderView {
                    <width>150</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -3040,9 +2884,6 @@ QHeaderView {
                    <height>30</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -3080,9 +2921,6 @@ QHeaderView {
                  <property name="focusPolicy">
                   <enum>Qt::FocusPolicy::ClickFocus</enum>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
@@ -3115,9 +2953,6 @@ QHeaderView {
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -3145,9 +2980,6 @@ QHeaderView {
                    <width>150</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -3226,9 +3058,6 @@ QHeaderView {
                    <height>30</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -3298,9 +3127,6 @@ QHeaderView {
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -3328,9 +3154,6 @@ QHeaderView {
                    <width>150</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -3409,9 +3232,6 @@ QHeaderView {
                    <height>30</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -3484,9 +3304,6 @@ QHeaderView {
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -3514,9 +3331,6 @@ QHeaderView {
                    <width>150</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -3595,9 +3409,6 @@ QHeaderView {
                    <height>30</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -3673,9 +3484,6 @@ QHeaderView {
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -3703,9 +3511,6 @@ QHeaderView {
                    <width>150</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -3783,9 +3588,6 @@ QHeaderView {
                    <width>140</width>
                    <height>30</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -3898,19 +3700,6 @@ QHeaderView {
                   <height>27</height>
                  </size>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">QLabel{
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    color: rgb(238, 238, 236);
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}</string>
-                </property>
                 <property name="text">
                  <string> Probe Results</string>
                 </property>
@@ -3938,36 +3727,6 @@ QHeaderView {
                 </property>
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">.SubCallButton{
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}
-
-.SubCallButton:disabled {
-    border-color: gray;
-}
-
-.SubCallButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-.SubCallButton:pressed {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked[option=&quot;true&quot;] {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}</string>
                 </property>
                 <property name="text">
                  <string>RESET ALL DATA</string>
@@ -4000,36 +3759,6 @@ QHeaderView {
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">.SubCallButton{
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}
-
-.SubCallButton:disabled {
-    border-color: gray;
-}
-
-.SubCallButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-.SubCallButton:pressed {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked[option=&quot;true&quot;] {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}</string>
-                </property>
                 <property name="text">
                  <string>X DATA RESET</string>
                 </property>
@@ -4060,36 +3789,6 @@ QHeaderView {
                 </property>
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">SubCallButton{
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}
-
-.SubCallButton:disabled {
-    border-color: gray;
-}
-
-.SubCallButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-.SubCallButton:pressed {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked[option=&quot;true&quot;] {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}</string>
                 </property>
                 <property name="text">
                  <string>Y DATA RESET</string>
@@ -4150,9 +3849,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Shape::NoFrame</enum>
                  </property>
@@ -4190,16 +3886,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
-                 </property>
                  <property name="text">
                   <string>0.0000</string>
                  </property>
@@ -4233,9 +3919,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Shape::NoFrame</enum>
@@ -4274,16 +3957,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
-                 </property>
                  <property name="text">
                   <string>0.0000</string>
                  </property>
@@ -4318,9 +3991,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4354,16 +4024,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -4415,9 +4075,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4451,16 +4108,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -4496,9 +4143,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4532,16 +4176,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -4577,9 +4211,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4613,16 +4244,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -4674,9 +4295,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4710,16 +4328,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -4758,9 +4366,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4794,16 +4399,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -4839,9 +4434,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4875,16 +4467,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -4939,9 +4521,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -4976,16 +4555,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
-                 </property>
                  <property name="text">
                   <string>0.0000</string>
                  </property>
@@ -5019,9 +4588,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
                  </property>
                  <property name="lineWidth">
                   <number>0</number>
@@ -5059,16 +4625,6 @@ QHeaderView {
                  </property>
                  <property name="mouseTracking">
                   <bool>true</bool>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -5110,10 +4666,6 @@ QHeaderView {
                    <height>31</height>
                   </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-}</string>
-                 </property>
                  <property name="lineWidth">
                   <number>0</number>
                  </property>
@@ -5147,16 +4699,6 @@ QHeaderView {
                    <width>80</width>
                    <height>31</height>
                   </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel {
-    border-style: transparent;
-    border-color: rgb(134, 136, 138);
-    border-width: 2px;
-    border-radius: 5px;
-    color: black;
-    background: white;
-}</string>
                  </property>
                  <property name="text">
                   <string>0.0000</string>
@@ -5229,9 +4771,6 @@ QHeaderView {
            </property>
            <item>
             <widget class="QWidget" name="probe_group_select" native="true">
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
              <layout class="QHBoxLayout" name="horizontalLayout_31">
               <property name="spacing">
                <number>0</number>
@@ -5252,37 +4791,6 @@ QHeaderView {
                <widget class="QPushButton" name="outside_corners">
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 1px;
-    border-left-width: 2px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 0px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
                 </property>
                 <property name="text">
                  <string>OUTSIDE CORNERS</string>
@@ -5309,37 +4817,6 @@ QPushButton:checked {
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
-                </property>
                 <property name="text">
                  <string>INSIDE CORNERS</string>
                 </property>
@@ -5361,37 +4838,6 @@ QPushButton:checked {
                <widget class="QPushButton" name="boss_and_pocket">
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
                 </property>
                 <property name="text">
                  <string>BOSS AND POCKET</string>
@@ -5415,37 +4861,6 @@ QPushButton:checked {
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
-                </property>
                 <property name="text">
                  <string>RIDGE AND VALLEY</string>
                 </property>
@@ -5467,37 +4882,6 @@ QPushButton:checked {
                <widget class="QPushButton" name="rotation_angle">
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
                 </property>
                 <property name="text">
                  <string>EDGE ANGLE</string>
@@ -5521,37 +4905,6 @@ QPushButton:checked {
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
-                </property>
                 <property name="text">
                  <string>ROTARY AXIS</string>
                 </property>
@@ -5574,37 +4927,6 @@ QPushButton:checked {
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
                 </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
-                </property>
                 <property name="text">
                  <string>CALIBRATE</string>
                 </property>
@@ -5626,37 +4948,6 @@ QPushButton:checked {
                <widget class="QPushButton" name="probe_help">
                 <property name="focusPolicy">
                  <enum>Qt::FocusPolicy::NoFocus</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    color: white;
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #4e4e4e, stop: 1.0 #3a3a3a);
-    border-style: solid;
-    border-color: black;
-    border-top-width: 2px;
-    border-bottom-width: 2px;
-    border-right-width: 2px;
-    border-left-width: 1px;
-    min-width: 10ex;
-    min-height: 25;
-    padding: 2px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 4px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 4px;
-}
-
-QPushButton:pressed, QPushButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-QPushButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(112, 112, 238, 255), stop:0.121053 rgba(123, 123, 232, 255), stop:0.3 rgba(85, 85, 238, 255), stop:0.694737 rgba(85, 85, 238, 255), stop:0.915789 rgba(123, 123, 232, 255), stop:1 rgba(112, 112, 238, 255))
-}</string>
                 </property>
                 <property name="text">
                  <string>PROBE HELP</string>
@@ -5767,12 +5058,6 @@ QPushButton:checked {
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">.HalButton{
-background: transparent;
-border: none;
-}</string>
-                 </property>
                  <property name="text">
                   <string/>
                  </property>
@@ -5817,9 +5102,6 @@ border: none;
                     <bold>true</bold>
                    </font>
                   </property>
-                  <property name="styleSheet">
-                   <string notr="true"/>
-                  </property>
                   <property name="currentIndex">
                    <number>0</number>
                   </property>
@@ -5844,9 +5126,6 @@ border: none;
                         <width>465</width>
                         <height>465</height>
                        </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_7">
                        <item row="0" column="0">
@@ -5904,9 +5183,6 @@ border: none;
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -5947,9 +5223,6 @@ border: none;
                          </property>
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
                          </property>
                          <property name="text">
                           <string/>
@@ -5993,9 +5266,6 @@ border: none;
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -6036,9 +5306,6 @@ border: none;
                          </property>
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
                          </property>
                          <property name="text">
                           <string/>
@@ -6081,9 +5348,6 @@ border: none;
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -6124,9 +5388,6 @@ border: none;
                          </property>
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
                          </property>
                          <property name="text">
                           <string/>
@@ -6169,9 +5430,6 @@ border: none;
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
                          <property name="text">
                           <string/>
                          </property>
@@ -6212,9 +5470,6 @@ border: none;
                          </property>
                          <property name="focusPolicy">
                           <enum>Qt::FocusPolicy::NoFocus</enum>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
                          </property>
                          <property name="text">
                           <string/>
@@ -6260,11 +5515,6 @@ border: none;
                         <width>465</width>
                         <height>465</height>
                        </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QFrame {
-    border: none;
-}</string>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_16">
                        <item row="3" column="4">
@@ -6663,11 +5913,6 @@ border: none;
                         <height>461</height>
                        </size>
                       </property>
-                      <property name="styleSheet">
-                       <string notr="true">QFrame {
-    border: none;
-}</string>
-                      </property>
                       <widget class="QWidget" name="gridWidget_8" native="true">
                        <property name="geometry">
                         <rect>
@@ -6697,9 +5942,6 @@ border: none;
                           </property>
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
                           </property>
                           <property name="text">
                            <string/>
@@ -6736,9 +5978,6 @@ border: none;
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
-                          </property>
                           <property name="text">
                            <string/>
                           </property>
@@ -6774,9 +6013,6 @@ border: none;
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
-                          </property>
                           <property name="text">
                            <string/>
                           </property>
@@ -6811,9 +6047,6 @@ border: none;
                           </property>
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
                           </property>
                           <property name="text">
                            <string/>
@@ -6862,14 +6095,6 @@ border: none;
                          <height>65</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true">.QFrame{
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}</string>
-                       </property>
                        <layout class="QHBoxLayout" name="horizontalLayout_49">
                         <item>
                          <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -6889,15 +6114,6 @@ border: none;
                               <width>60</width>
                               <height>40</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(191, 191, 191);
-    border-width: 1px;
-    border-radius: 5px;
-    color: rgb(238, 238, 236);
-}</string>
                             </property>
                             <property name="text">
                              <string>HINT</string>
@@ -6920,13 +6136,6 @@ border: none;
                               <width>50</width>
                               <height>16777215</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QLabel{
-color: rgb(255, 255, 255);
-padding-right: 1px;
-padding-left: 5px;
-}</string>
                             </property>
                             <property name="text">
                              <string>DIAM:</string>
@@ -6984,13 +6193,6 @@ padding-left: 5px;
                               <height>16777215</height>
                              </size>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true">QLabel{
-color: rgb(255, 255, 255);
-padding-right: 1px;
-padding-left: 5px;
-}</string>
-                            </property>
                             <property name="text">
                              <string>X :</string>
                             </property>
@@ -7046,13 +6248,6 @@ padding-left: 5px;
                               <width>30</width>
                               <height>16777215</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QLabel{
-color: rgb(255, 255, 255);
-padding-right: 1px;
-padding-left: 5px;
-}</string>
                             </property>
                             <property name="text">
                              <string>Y :</string>
@@ -7126,9 +6321,6 @@ padding-left: 5px;
                         <height>461</height>
                        </size>
                       </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
-                      </property>
                       <widget class="QWidget" name="gridWidget_9" native="true">
                        <property name="geometry">
                         <rect>
@@ -7158,9 +6350,6 @@ padding-left: 5px;
                           </property>
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
                           </property>
                           <property name="text">
                            <string/>
@@ -7197,9 +6386,6 @@ padding-left: 5px;
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
-                          </property>
                           <property name="text">
                            <string/>
                           </property>
@@ -7235,9 +6421,6 @@ padding-left: 5px;
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
                           </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
-                          </property>
                           <property name="text">
                            <string/>
                           </property>
@@ -7272,9 +6455,6 @@ padding-left: 5px;
                           </property>
                           <property name="focusPolicy">
                            <enum>Qt::FocusPolicy::NoFocus</enum>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true"/>
                           </property>
                           <property name="text">
                            <string/>
@@ -7323,14 +6503,6 @@ padding-left: 5px;
                          <height>65</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true">.QFrame{
-    border-style: solid;
-    border-color: black;
-	border-width: 2px;
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}</string>
-                       </property>
                        <layout class="QHBoxLayout" name="horizontalLayout_143">
                         <item>
                          <layout class="QHBoxLayout" name="horizontalLayout_28">
@@ -7350,15 +6522,6 @@ padding-left: 5px;
                               <width>115</width>
                               <height>40</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(191, 191, 191);
-    border-width: 1px;
-    border-radius: 5px;
-    color: rgb(238, 238, 236);
-}</string>
                             </property>
                             <property name="text">
                              <string>HINT</string>
@@ -7381,13 +6544,6 @@ padding-left: 5px;
                               <width>50</width>
                               <height>16777215</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QLabel{
-    color: rgb(255, 255, 255);
-    padding-right: 1px;
-    padding-left: 5px;
-}</string>
                             </property>
                             <property name="text">
                              <string>X :</string>
@@ -7444,13 +6600,6 @@ padding-left: 5px;
                               <width>50</width>
                               <height>16777215</height>
                              </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QLabel{
-    color: rgb(255, 255, 255);
-    padding-right: 1px;
-    padding-left: 5px;
-}</string>
                             </property>
                             <property name="text">
                              <string>Y :</string>
@@ -7548,9 +6697,6 @@ padding-left: 5px;
                            <height>465</height>
                           </size>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
                          <layout class="QGridLayout" name="gridLayout_8">
                           <item row="2" column="0">
                            <widget class="SubCallButton" name="probe_top_left_edge_angle">
@@ -7574,9 +6720,6 @@ padding-left: 5px;
                             </property>
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
                             </property>
                             <property name="text">
                              <string/>
@@ -7618,9 +6761,6 @@ padding-left: 5px;
                             </property>
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
                             </property>
                             <property name="text">
                              <string/>
@@ -7695,9 +6835,6 @@ padding-left: 5px;
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
                             <property name="text">
                              <string/>
                             </property>
@@ -7738,9 +6875,6 @@ padding-left: 5px;
                             </property>
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
                             </property>
                             <property name="text">
                              <string/>
@@ -7783,9 +6917,6 @@ padding-left: 5px;
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
                             <property name="text">
                              <string/>
                             </property>
@@ -7826,9 +6957,6 @@ padding-left: 5px;
                             </property>
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
                             </property>
                             <property name="text">
                              <string/>
@@ -7871,9 +6999,6 @@ padding-left: 5px;
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
                             <property name="text">
                              <string/>
                             </property>
@@ -7914,9 +7039,6 @@ padding-left: 5px;
                             </property>
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
                             </property>
                             <property name="text">
                              <string/>
@@ -7998,9 +7120,6 @@ padding-left: 5px;
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true"/>
-                            </property>
                             <property name="text">
                              <string>SET WCO ROTATION FOR ANGLE PROBE OPERATIONS</string>
                             </property>
@@ -8042,15 +7161,6 @@ padding-left: 5px;
                         <width>520</width>
                         <height>520</height>
                        </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">.QFrame{
-    border-style: solid;
-    border-color: rgb(206, 209, 202);
-    background-color: rgb(57, 63, 65);
-    border-radius: 8px;
-}
-</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_46">
                        <property name="spacing">
@@ -8111,11 +7221,6 @@ padding-left: 5px;
                              <height>30</height>
                             </size>
                            </property>
-                           <property name="styleSheet">
-                            <string notr="true">QLabel{
-color: rgb(255, 255, 255);
-}</string>
-                           </property>
                            <property name="lineWidth">
                             <number>0</number>
                            </property>
@@ -8152,9 +7257,6 @@ color: rgb(255, 255, 255);
                            </property>
                            <property name="focusPolicy">
                             <enum>Qt::FocusPolicy::ClickFocus</enum>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -8202,33 +7304,6 @@ color: rgb(255, 255, 255);
                            <property name="focusPolicy">
                             <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
-                           <property name="styleSheet">
-                            <string notr="true">SubCallButton{
-    border-radius: 5px;  
-  	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(81, 86, 85), stop:0.489795 rgb(99, 102, 102), stop:0.699799 rgb(85, 88, 94), stop:0.90444 rgb(77, 84, 86), stop:0.160246 rgb(83, 84, 91), stop:1 rgb(109, 115, 118));
-}
-
-.SubCallButton:disabled {
-    border-color: black;
-}
-
-.SubCallButton:hover {
-    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
-}
-
-.SubCallButton:pressed {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked[option=&quot;true&quot;] {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}
-
-.SubCallButton:checked {
-    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
-}</string>
-                           </property>
                            <property name="text">
                             <string>PROBE CAL RESET</string>
                            </property>
@@ -8273,9 +7348,6 @@ color: rgb(255, 255, 255);
                            <property name="statusTip">
                             <string/>
                            </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
                            <property name="text">
                             <string/>
                            </property>
@@ -8313,9 +7385,6 @@ color: rgb(255, 255, 255);
                            </property>
                            <property name="statusTip">
                             <string/>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
                            </property>
                            <property name="text">
                             <string/>
@@ -8418,11 +7487,6 @@ color: rgb(255, 255, 255);
                                 <height>58</height>
                                </size>
                               </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel{
-    color: rgb(238, 238, 236);
-}</string>
-                              </property>
                               <property name="text">
                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;CALIBRATION&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;DIAMETER&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
@@ -8459,10 +7523,6 @@ color: rgb(255, 255, 255);
                               </property>
                               <property name="focusPolicy">
                                <enum>Qt::FocusPolicy::ClickFocus</enum>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">margin-right: 14px;
-margin-left: 14px;</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -8516,9 +7576,6 @@ margin-left: 14px;</string>
                            </property>
                            <property name="focusPolicy">
                             <enum>Qt::FocusPolicy::NoFocus</enum>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
                            </property>
                            <property name="text">
                             <string>CAL ON AVG XY ERROR</string>
@@ -8600,9 +7657,6 @@ margin-left: 14px;</string>
                            <property name="focusPolicy">
                             <enum>Qt::FocusPolicy::NoFocus</enum>
                            </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
                            <property name="text">
                             <string>CAL ON Y ERROR</string>
                            </property>
@@ -8653,9 +7707,6 @@ margin-left: 14px;</string>
                            <property name="statusTip">
                             <string/>
                            </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
                            <property name="text">
                             <string/>
                            </property>
@@ -8693,9 +7744,6 @@ margin-left: 14px;</string>
                            </property>
                            <property name="statusTip">
                             <string/>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
                            </property>
                            <property name="text">
                             <string/>
@@ -8777,11 +7825,6 @@ margin-left: 14px;</string>
                                 <height>0</height>
                                </size>
                               </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel{
-    color: rgb(238, 238, 236);
-}</string>
-                              </property>
                               <property name="text">
                                <string>CALIBRATION WIDTH</string>
                               </property>
@@ -8809,11 +7852,6 @@ margin-left: 14px;</string>
                                 <width>23</width>
                                 <height>31</height>
                                </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel{
-color: white;
-}</string>
                               </property>
                               <property name="lineWidth">
                                <number>0</number>
@@ -8848,11 +7886,6 @@ color: white;
                                 <width>23</width>
                                 <height>31</height>
                                </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel{
-color: white;
-}</string>
                               </property>
                               <property name="lineWidth">
                                <number>0</number>
@@ -8962,14 +7995,6 @@ color: white;
                         <height>480</height>
                        </size>
                       </property>
-                      <property name="styleSheet">
-                       <string notr="true">.QFrame{
-    border-style: solid;
-    border-color: rgb(206, 209, 202);
-    background-color: rgb(51, 57, 59);
-    border-radius: 8px;
-}</string>
-                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout_21">
                        <property name="spacing">
                         <number>6</number>
@@ -9010,13 +8035,8 @@ color: white;
                           <font>
                            <family>Bebas Kai</family>
                            <pointsize>13</pointsize>
+                           <bold>false</bold>
                           </font>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">QStackedWidget{
-border: none;
-background: transparent;
-}</string>
                          </property>
                          <property name="frameShape">
                           <enum>QFrame::Shape::NoFrame</enum>
@@ -9049,18 +8069,11 @@ background: transparent;
                                <height>400</height>
                               </size>
                              </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(46, 54, 56);
-    border-width: 3px;
-    border-radius: 10px;
-    background: rgb(245, 240, 255);
-	image: url(:/images/step_off_width.png);
-}</string>
-                             </property>
                              <property name="text">
                               <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap resource="../resources.qrc">:/images/step_off_width.png</pixmap>
                              </property>
                              <property name="scaledContents">
                               <bool>true</bool>
@@ -9094,18 +8107,11 @@ background: transparent;
                                <height>400</height>
                               </size>
                              </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(46, 54, 56);
-    border-width: 3px;
-    border-radius: 10px;
-    background: rgb(245, 240, 255);
-	image: url(:/images/extra_probe_depth.png);
-}</string>
-                             </property>
                              <property name="text">
                               <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap resource="../resources.qrc">:/images/extra_probe_depth.png</pixmap>
                              </property>
                              <property name="scaledContents">
                               <bool>true</bool>
@@ -9145,19 +8151,11 @@ background: transparent;
                                <height>400</height>
                               </size>
                              </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(46, 54, 56);
-    border-width: 3px;
-    border-radius: 10px;
-    padding: 10px;
-    background: rgb(245, 240, 255);
-	image: url(:/images/max_z_distance.png);
-}</string>
-                             </property>
                              <property name="text">
                               <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap resource="../resources.qrc">:/images/max_z_distance.png</pixmap>
                              </property>
                              <property name="scaledContents">
                               <bool>true</bool>
@@ -9197,19 +8195,11 @@ background: transparent;
                                <height>400</height>
                               </size>
                              </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(46, 54, 56);
-    border-width: 3px;
-    border-radius: 10px;
-    padding: 10px;
-    background: rgb(245, 240, 255);
-	image: url(:/images/max_xy_distance.png);
-}</string>
-                             </property>
                              <property name="text">
                               <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap resource="../resources.qrc">:/images/max_xy_distance.png</pixmap>
                              </property>
                              <property name="scaledContents">
                               <bool>true</bool>
@@ -9249,19 +8239,11 @@ background: transparent;
                                <height>400</height>
                               </size>
                              </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(46, 54, 56);
-    border-width: 3px;
-    border-radius: 10px;
-    padding: 10px;
-    background: rgb(245, 240, 255);
-	image: url(:/images/z_clearance.png);
-}</string>
-                             </property>
                              <property name="text">
                               <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap resource="../resources.qrc">:/images/z_clearance.png</pixmap>
                              </property>
                              <property name="scaledContents">
                               <bool>true</bool>
@@ -9301,19 +8283,11 @@ background: transparent;
                                <height>400</height>
                               </size>
                              </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLabel{
-    border-style: solid;
-    border-color: rgb(46, 54, 56);
-    border-width: 3px;
-    border-radius: 10px;
-    padding: 10px;
-    background: rgb(245, 240, 255);
-	image: url(:/images/xy_clearance.png);
-}</string>
-                             </property>
                              <property name="text">
                               <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap resource="../resources.qrc">:/images/xy_clearance.png</pixmap>
                              </property>
                              <property name="scaledContents">
                               <bool>true</bool>
@@ -9353,9 +8327,6 @@ background: transparent;
                            <height>40</height>
                           </size>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true"/>
-                         </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_44">
                           <property name="leftMargin">
                            <number>70</number>
@@ -9391,12 +8362,6 @@ background: transparent;
                             </property>
                             <property name="focusPolicy">
                              <enum>Qt::FocusPolicy::NoFocus</enum>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QPushButton{
-    padding-left: 0px;
-    padding-right: 0px;
-}</string>
                             </property>
                             <property name="text">
                              <string>     PREV PAGE  </string>
@@ -9448,12 +8413,6 @@ background: transparent;
                             <property name="layoutDirection">
                              <enum>Qt::LayoutDirection::RightToLeft</enum>
                             </property>
-                            <property name="styleSheet">
-                             <string notr="true">QPushButton{
-    padding-left: 0px;
-    padding-right: 0px;
-}</string>
-                            </property>
                             <property name="text">
                              <string> NEXT PAGE     </string>
                             </property>
@@ -9501,27 +8460,38 @@ background: transparent;
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_15">
         <item>
-         <widget class="StatusLabel" name="statuslabel">
-          <property name="rules" stdset="0">
-           <string>[{&quot;name&quot;: &quot;New Rule&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;The program has {ch[0]} lines of code\&quot;&quot;, &quot;channels&quot;: [{&quot;url&quot;: &quot;gcode_properties:file_lines&quot;, &quot;trigger&quot;: true}]}]</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="HalButton" name="halbutton_2">
-          <property name="pinBaseName" stdset="0">
-           <string>halbutton_test</string>
-          </property>
-         </widget>
+         <widget class="NotificationWidget" name="notificationwidget"/>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_9">
-       <attribute name="title">
-        <string>Página</string>
-       </attribute>
-      </widget>
      </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>3270 Semi-Condensed</family>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>MDI</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="MDIEntry" name="mdientry">
+        <property name="font">
+         <font>
+          <family>3270 Semi-Condensed</family>
+          <bold>false</bold>
+         </font>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -9557,7 +8527,7 @@ background: transparent;
         <property name="font">
          <font>
           <family>3270 Semi-Condensed</family>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -9589,7 +8559,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -9627,7 +8597,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -9665,7 +8635,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -9703,7 +8673,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -9741,7 +8711,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -9779,7 +8749,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -9831,7 +8801,7 @@ background: transparent;
         <property name="font">
          <font>
           <family>3270 Semi-Condensed</family>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -9975,14 +8945,11 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="focusPolicy">
               <enum>Qt::FocusPolicy::NoFocus</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
              </property>
              <property name="text">
               <string>F 100%</string>
@@ -10026,9 +8993,6 @@ background: transparent;
                <bold>true</bold>
               </font>
              </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
              <property name="text">
               <string>Feed Rate</string>
              </property>
@@ -10070,9 +9034,6 @@ background: transparent;
                <bold>true</bold>
               </font>
              </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
              <property name="text">
               <string>0.0</string>
              </property>
@@ -10107,9 +9068,6 @@ background: transparent;
                <pointsize>12</pointsize>
                <bold>true</bold>
               </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
              </property>
              <property name="text">
               <string>N/A/m</string>
@@ -10159,7 +9117,7 @@ background: transparent;
         <property name="font">
          <font>
           <family>3270 Semi-Condensed</family>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -10265,7 +9223,7 @@ background: transparent;
         <property name="font">
          <font>
           <family>3270 Semi-Condensed</family>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -10291,9 +9249,6 @@ background: transparent;
              <family>3270 Semi-Condensed</family>
              <bold>true</bold>
             </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
            </property>
            <property name="value" stdset="0">
             <double>96.500000000000000</double>
@@ -10439,14 +9394,11 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="focusPolicy">
               <enum>Qt::FocusPolicy::NoFocus</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
              </property>
              <property name="text">
               <string>S 100%</string>
@@ -10480,7 +9432,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -10508,7 +9460,7 @@ background: transparent;
              <property name="font">
               <font>
                <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
+               <fontweight>DemiBold</fontweight>
               </font>
              </property>
              <property name="text">
@@ -10564,7 +9516,7 @@ background: transparent;
          <font>
           <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -10598,7 +9550,7 @@ background: transparent;
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10633,7 +9585,7 @@ background: transparent;
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10656,7 +9608,7 @@ background: transparent;
          <font>
           <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -10687,7 +9639,7 @@ background: transparent;
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10734,7 +9686,7 @@ background: transparent;
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10781,7 +9733,7 @@ background: transparent;
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10813,7 +9765,7 @@ background: transparent;
          <font>
           <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -10841,7 +9793,7 @@ background: transparent;
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10867,7 +9819,7 @@ background: transparent;
          <font>
           <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -10892,7 +9844,7 @@ background: transparent;
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10922,7 +9874,7 @@ X Y</string>
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -10942,7 +9894,7 @@ X Y</string>
          <font>
           <family>3270 Semi-Condensed</family>
           <pointsize>10</pointsize>
-          <bold>true</bold>
+          <fontweight>DemiBold</fontweight>
          </font>
         </property>
         <property name="title">
@@ -10967,7 +9919,7 @@ X Y</string>
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -11006,7 +9958,7 @@ X Y</string>
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -11045,7 +9997,7 @@ X Y</string>
             <font>
              <family>3270 Semi-Condensed</family>
              <pointsize>10</pointsize>
-             <bold>true</bold>
+             <fontweight>DemiBold</fontweight>
             </font>
            </property>
            <property name="text">
@@ -11372,6 +10324,11 @@ X Y</string>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NotificationWidget</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.notification_widget</header>
   </customwidget>
   <customwidget>
    <class>HalBarIndicator</class>
@@ -12079,7 +11036,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="modeGroup"/>
   <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>

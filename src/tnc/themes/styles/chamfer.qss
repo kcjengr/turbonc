@@ -1,0 +1,157 @@
+/*===========================================================================*/
+/*  TurBoNC view style — CHAMFER                                            */
+/*  Diagonal corner cuts (top-left + bottom-right) on buttons and bordered   */
+/*  panels, like the frosted dialog glass. The cut corners are genuinely     */
+/*  transparent, showing what is behind the widget.                          */
+/*                                                                           */
+/*  Each element is drawn entirely by a 9-slice SVG border image (@cut@ is   */
+/*  substituted at apply time with the accent/base/state ring path): the     */
+/*  SVG carries the fill + chamfered ring, with transparent cut corners.     */
+/*  The status buttons (estop/power/home) use dedicated ring variants whose  */
+/*  bottom edge keeps the safety color (red / accent / green when armed).    */
+/*  The ring needs a 6px border box, so paddings below compensate.           */
+/*===========================================================================*/
+
+QPushButton, QToolButton {
+    border-width: 6px;
+    border-image: url(@cut@) 6 6 6 6 stretch stretch;
+    color: @text@;
+    padding: 1px 5px;
+    font-weight: 600;
+}
+
+QPushButton:hover, QToolButton:hover {
+    border-image: url(@cut-hover@) 6 6 6 6 stretch stretch;
+    color: @text_bright@;
+}
+
+QPushButton:pressed, QToolButton:pressed {
+    border-image: url(@cut-pressed@) 6 6 6 6 stretch stretch;
+    color: @text_bright@;
+    padding: 2px 5px 0px 5px;
+}
+
+QPushButton:checked, QToolButton:checked {
+    border-image: url(@cut-checked@) 6 6 6 6 stretch stretch;
+    color: @on_accent@;
+    font-weight: 700;
+}
+
+QPushButton:disabled, QToolButton:disabled {
+    border-image: url(@cut-disabled@) 6 6 6 6 stretch stretch;
+    color: @border_disabled@;
+}
+
+/* Status toggles: chamfered like every other button, with their safety
+   bottom accent baked into the ring (red for estop, accent for power/home,
+   green when armed). */
+#estop_abutton {
+    border-width: 6px;
+    border-image: url(@cut-estop@) 6 6 6 6 stretch stretch;
+    color: #ffd9d9;
+    padding: 1px 5px;
+    font-weight: 700;
+}
+
+#estop_abutton:hover {
+    border-image: url(@cut-estop-hover@) 6 6 6 6 stretch stretch;
+    color: #ffffff;
+}
+
+#estop_abutton:pressed {
+    border-image: url(@cut-estop-pressed@) 6 6 6 6 stretch stretch;
+}
+
+#estop_abutton:checked {
+    border-image: url(@cut-estop-checked@) 6 6 6 6 stretch stretch;
+    color: #c9ffe9;
+}
+
+#estop_abutton:disabled {
+    border-image: url(@cut-estop-disabled@) 6 6 6 6 stretch stretch;
+    color: #4a5a6e;
+}
+
+#power_abutton, #home_dbutton {
+    border-width: 6px;
+    border-image: url(@cut-power@) 6 6 6 6 stretch stretch;
+    color: @text@;
+    padding: 1px 5px;
+    font-weight: 700;
+}
+
+#power_abutton:hover, #home_dbutton:hover {
+    border-image: url(@cut-power-hover@) 6 6 6 6 stretch stretch;
+    color: @text_bright@;
+}
+
+#power_abutton:pressed, #home_dbutton:pressed {
+    border-image: url(@cut-power-pressed@) 6 6 6 6 stretch stretch;
+}
+
+#power_abutton:checked, #home_dbutton:checked {
+    border-image: url(@cut-power-checked@) 6 6 6 6 stretch stretch;
+    color: #c9ffe9;
+}
+
+#power_abutton:disabled, #home_dbutton:disabled {
+    border-image: url(@cut-power-disabled@) 6 6 6 6 stretch stretch;
+    color: @border_disabled@;
+}
+
+QLineEdit, QSpinBox, QDoubleSpinBox {
+    border-width: 6px;
+    border-image: url(@cut@) 6 6 6 6 stretch stretch;
+    padding: 0px 2px;
+    color: @text@;
+    selection-background-color: @main@;
+    selection-color: @on_accent@;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus {
+    border-image: url(@cut-focus@) 6 6 6 6 stretch stretch;
+}
+
+QComboBox {
+    border-width: 6px;
+    border-image: url(@cut@) 6 6 6 6 stretch stretch;
+    padding: 0px 4px;
+    color: @text@;
+}
+
+QComboBox:hover {
+    border-image: url(@cut-hover@) 6 6 6 6 stretch stretch;
+}
+
+QComboBox:disabled {
+    border-image: url(@cut-disabled@) 6 6 6 6 stretch stretch;
+    color: @border_disabled@;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 22px;
+}
+
+QComboBox QAbstractItemView {
+    background: rgba(@bevel_bottom_rgb@, 245);
+    color: @text@;
+    border: 1px solid @main@;
+    selection-background-color: rgba(@main_rgb@, 60);
+    selection-color: @text_bright@;
+    outline: none;
+}
+
+QGroupBox {
+    border-width: 6px;
+    border-image: url(@cut@) 6 6 6 6 stretch stretch;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    color: @main@;
+    font-weight: 700;
+}

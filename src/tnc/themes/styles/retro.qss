@@ -1,0 +1,350 @@
+/*===========================================================================*/
+/*  TurBoNC view style — RETRO (old monocolor PLC HMI)                      */
+/*  Flat near-black panels, thick square borders and single-color text: the  */
+/*  only color is the theme accent (amber / green / cyan read like classic   */
+/*  phosphor displays). Pair with Dark Amber, Dark Green or Dark Cyan.       */
+/*===========================================================================*/
+
+QWidget {
+    color: @main@;
+}
+
+QMainWindow {
+    background-color: #050505;
+}
+
+QPlainTextEdit {
+    color: @main@;
+}
+
+QPushButton, QToolButton {
+    border: 2px solid @main@;
+    border-radius: 0px;
+    background: #0a0a0a;
+    color: @main@;
+    padding: 5px 10px;
+    font-weight: 700;
+}
+
+QPushButton:hover, QToolButton:hover {
+    background: rgba(@main_rgb@, 45);
+    color: @main@;
+}
+
+QPushButton:pressed, QToolButton:pressed {
+    background: @main@;
+    color: #000000;
+    padding-top: 6px;
+    padding-bottom: 4px;
+}
+
+QPushButton:checked, QToolButton:checked {
+    background: @main@;
+    color: #000000;
+    font-weight: 800;
+}
+
+QPushButton:disabled, QToolButton:disabled {
+    border-color: rgba(@main_rgb@, 90);
+    background: #060606;
+    color: rgba(@main_rgb@, 70);
+}
+
+/* Status toggles: monochrome panels, but the bottom safety line stays the
+   classic lamp color (red estop, green when armed) like a real PLC lamp. */
+#estop_abutton {
+    border: 2px solid @main@;
+    border-bottom: 3px solid #ff1744;
+    border-radius: 0px;
+    background: #0a0a0a;
+    color: #ff1744;
+    padding: 4px;
+    font-weight: 800;
+}
+
+#estop_abutton:checked {
+    border-bottom: 3px solid #00ff9d;
+    color: #00ff9d;
+}
+
+#power_abutton, #home_dbutton {
+    border: 2px solid @main@;
+    border-bottom: 3px solid @main@;
+    border-radius: 0px;
+    background: #0a0a0a;
+    color: @main@;
+    padding: 4px;
+    font-weight: 800;
+}
+
+#power_abutton:checked, #home_dbutton:checked {
+    border-bottom: 3px solid #00ff9d;
+    color: #00ff9d;
+}
+
+QLineEdit, QSpinBox, QDoubleSpinBox {
+    border: 2px solid @main@;
+    border-radius: 0px;
+    background: #030303;
+    padding: 2px 4px;
+    color: @main@;
+    selection-background-color: @main@;
+    selection-color: #000000;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus {
+    background: rgba(@main_rgb@, 40);
+}
+
+QComboBox {
+    border: 2px solid @main@;
+    border-radius: 0px;
+    background: #0a0a0a;
+    padding: 2px 6px;
+    color: @main@;
+}
+
+QComboBox:hover {
+    background: rgba(@main_rgb@, 45);
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 22px;
+}
+
+QComboBox QAbstractItemView {
+    background: #050505;
+    color: @main@;
+    border: 2px solid @main@;
+    selection-background-color: @main@;
+    selection-color: #000000;
+    outline: none;
+}
+
+QCheckBox, QRadioButton {
+    spacing: 6px;
+    color: @main@;
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    background: #030303;
+    border: 2px solid @main@;
+    border-radius: 0px;
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background: @main@;
+}
+
+QSlider::groove:horizontal {
+    height: 4px;
+    background: #050505;
+    border: 1px solid @main@;
+    border-radius: 0px;
+}
+
+QSlider::handle:horizontal {
+    width: 18px;
+    margin: -6px 0;
+    border-radius: 0px;
+    border: 2px solid @main@;
+    background: @main@;
+}
+
+QSlider::groove:vertical {
+    width: 4px;
+    background: #050505;
+    border: 1px solid @main@;
+    border-radius: 0px;
+}
+
+QSlider::handle:vertical {
+    height: 18px;
+    margin: 0 -6px;
+    border-radius: 0px;
+    border: 2px solid @main@;
+    background: @main@;
+}
+
+QFrame {
+    background: transparent;
+}
+
+QGroupBox {
+    border: 2px solid @main@;
+    border-radius: 0px;
+    margin-top: 12px;
+    background: #070707;
+    font-weight: 700;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    color: @main@;
+    font-weight: 800;
+    background: #070707;
+}
+
+DROLabel {
+    background: #020202;
+    border: 1px solid @main@;
+    border-radius: 0px;
+    padding: 2px 8px;
+    color: @main@;
+}
+
+QTabWidget::pane {
+    border: 2px solid @main@;
+    border-radius: 0px;
+    background: #050505;
+}
+
+QTabBar::tab {
+    background: #0a0a0a;
+    border: 2px solid @main@;
+    border-bottom: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 6px 16px;
+    color: @main@;
+    font-weight: 700;
+}
+
+QTabBar::tab:hover:!selected {
+    background: rgba(@main_rgb@, 45);
+    border: 2px solid @main@;
+    border-bottom: none;
+    color: @main@;
+}
+
+QTabBar::tab:selected {
+    background: @main@;
+    border: 2px solid @main@;
+    border-bottom: none;
+    color: #000000;
+    font-weight: 800;
+}
+
+QHeaderView::section {
+    background: #0a0a0a;
+    color: @main@;
+    border: 1px solid @main@;
+    padding: 4px 8px;
+    font-weight: 700;
+}
+
+ToolTable {
+    border: 2px solid @main@;
+    border-radius: 0px;
+    background-color: #050505;
+    gridline-color: @main@;
+    alternate-background-color: rgba(@main_rgb@, 18);
+    color: @main@;
+}
+
+FileSystemTable {
+    background-color: #050505;
+    alternate-background-color: rgba(@main_rgb@, 18);
+    color: @main@;
+    border: 2px solid @main@;
+    border-radius: 0px;
+    gridline-color: @main@;
+    selection-background-color: @main@;
+    selection-color: #000000;
+}
+
+QMenuBar {
+    background: #050505;
+    color: @main@;
+    border-bottom: 2px solid @main@;
+}
+
+QMenuBar::item {
+    padding: 4px 10px;
+    background: transparent;
+}
+
+QMenuBar::item:selected {
+    background: @main@;
+    color: #000000;
+}
+
+QMenu {
+    background: #050505;
+    color: @main@;
+    border: 2px solid @main@;
+}
+
+QMenu::item {
+    padding: 4px 24px;
+    background: transparent;
+}
+
+QMenu::item:selected {
+    background: @main@;
+    color: #000000;
+}
+
+QMenu::separator {
+    height: 1px;
+    background: @main@;
+    margin: 4px 8px;
+}
+
+QMessageBox {
+    background: #050505;
+}
+
+QStatusBar {
+    background: #050505;
+    color: @main@;
+    border-top: 2px solid @main@;
+}
+
+QStatusBar::item {
+    border: none;
+}
+
+QToolTip {
+    background: #050505;
+    color: @main@;
+    border: 2px solid @main@;
+    padding: 4px;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: @main@;
+    min-height: 24px;
+    margin: 2px;
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 12px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background: @main@;
+    min-width: 24px;
+    margin: 2px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    width: 0;
+    height: 0;
+}
+
+QScrollBar::add-page, QScrollBar::sub-page {
+    background: transparent;
+}

@@ -1,0 +1,355 @@
+/*===========================================================================*/
+/*  TurBoNC view style — FLAT                                               */
+/*  Flat 1px borders, solid fills, no bevels and no glow.                   */
+/*                                                                           */
+/*  Tokens are replaced at apply time with the active theme's accent         */
+/*  palette (see tnc.view_styles.render_view_style), so this style works     */
+/*  with every dark/light x accent combination.                              */
+/*===========================================================================*/
+
+QPushButton, QToolButton {
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+    background: rgba(@bevel_top_rgb@, 235);
+    color: @text@;
+    padding: 6px 12px;
+    font-weight: 600;
+}
+
+QPushButton:hover, QToolButton:hover {
+    border: 1px solid @main@;
+    background: rgba(@main_rgb@, 40);
+    color: @text_bright@;
+}
+
+QPushButton:pressed, QToolButton:pressed {
+    border: 1px solid @pressed@;
+    background: rgba(@pressed_rgb@, 55);
+    color: @text_bright@;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+
+QPushButton:checked, QToolButton:checked {
+    border: 1px solid @main@;
+    background: @main@;
+    color: @on_accent@;
+    font-weight: 700;
+}
+
+QPushButton:disabled, QToolButton:disabled {
+    border: 1px solid @border_disabled@;
+    background: rgba(@bevel_bottom_rgb@, 200);
+    color: @border_disabled@;
+}
+
+/* Status toggles keep their safety accents over the flat chips */
+#estop_abutton {
+    border: 1px solid @border_line@;
+    border-bottom: 3px solid #ff1744;
+    border-radius: 2px;
+    background: rgba(@bevel_top_rgb@, 235);
+    color: #ffd9d9;
+    padding: 5px;
+}
+
+#estop_abutton:checked {
+    border-bottom: 3px solid #00ff9d;
+    color: #c9ffe9;
+}
+
+#power_abutton, #home_dbutton {
+    border: 1px solid @border_line@;
+    border-bottom: 3px solid @power@;
+    border-radius: 2px;
+    background: rgba(@bevel_top_rgb@, 235);
+    color: @text@;
+    padding: 5px;
+}
+
+#power_abutton:checked, #home_dbutton:checked {
+    border-bottom: 3px solid #00ff9d;
+    color: #c9ffe9;
+}
+
+QLineEdit, QSpinBox, QDoubleSpinBox {
+    border: 1px solid @border@;
+    border-radius: 2px;
+    background: rgba(@bevel_bottom_rgb@, 240);
+    padding: 3px 6px;
+    color: @text@;
+    selection-background-color: @main@;
+    selection-color: @on_accent@;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid @main@;
+}
+
+QComboBox {
+    border: 1px solid @border@;
+    border-radius: 2px;
+    background: rgba(@bevel_top_rgb@, 235);
+    padding: 3px 8px;
+    color: @text@;
+}
+
+QComboBox:hover {
+    border: 1px solid @main@;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 22px;
+}
+
+QComboBox QAbstractItemView {
+    background: rgba(@bevel_bottom_rgb@, 245);
+    color: @text@;
+    border: 1px solid @main@;
+    selection-background-color: rgba(@main_rgb@, 60);
+    selection-color: @text_bright@;
+    outline: none;
+}
+
+QCheckBox, QRadioButton {
+    spacing: 6px;
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    background: rgba(@bevel_bottom_rgb@, 240);
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background: @main@;
+    border-color: @main@;
+}
+
+QRadioButton::indicator {
+    border-radius: 8px;
+}
+
+QSlider::groove:horizontal {
+    height: 6px;
+    background: rgba(@bevel_bottom_rgb@, 240);
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+}
+
+QSlider::handle:horizontal {
+    width: 20px;
+    margin: -6px 0;
+    border-radius: 2px;
+    border: 1px solid @main@;
+    background: @main@;
+}
+
+QSlider::groove:vertical {
+    width: 6px;
+    background: rgba(@bevel_bottom_rgb@, 240);
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+}
+
+QSlider::handle:vertical {
+    height: 20px;
+    margin: 0 -6px;
+    border-radius: 2px;
+    border: 1px solid @main@;
+    background: @main@;
+}
+
+QFrame {
+    background: transparent;
+}
+
+QGroupBox {
+    border: 1px solid @border_line@;
+    border-radius: 3px;
+    margin-top: 12px;
+    background: rgba(@bevel_top_rgb@, 210);
+    font-weight: 600;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    color: @main@;
+    font-weight: 700;
+    background: rgba(@bevel_top_rgb@, 210);
+}
+
+DROLabel {
+    background: rgba(@bevel_bottom_rgb@, 245);
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+    padding: 2px 8px;
+}
+
+QTabWidget::pane {
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+    background: rgba(@bevel_bottom_rgb@, 240);
+}
+
+QTabBar::tab {
+    background: rgba(@bevel_top_rgb@, 220);
+    border: 1px solid @border@;
+    border-bottom: none;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    padding: 6px 16px;
+    color: @text_tint@;
+    font-weight: 600;
+}
+
+QTabBar::tab:hover:!selected {
+    border: 1px solid @main@;
+    border-bottom: none;
+    color: @text_bright@;
+}
+
+QTabBar::tab:selected {
+    background: @main@;
+    border: 1px solid @main@;
+    border-bottom: none;
+    color: @on_accent@;
+    font-weight: 700;
+}
+
+QHeaderView::section {
+    background: rgba(@bevel_top_rgb@, 240);
+    color: @text@;
+    border: 1px solid @border@;
+    border-top-color: @bevel_top@;
+    border-right-color: @border_line@;
+    border-bottom-color: @border_line@;
+    padding: 4px 8px;
+    font-weight: 600;
+}
+
+ToolTable {
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+    background-color: rgba(@bevel_bottom_rgb@, 248);
+    gridline-color: @border_line@;
+    alternate-background-color: rgba(@bevel_top_rgb@, 230);
+    color: @text@;
+}
+
+FileSystemTable {
+    background-color: rgba(@bevel_bottom_rgb@, 245);
+    alternate-background-color: rgba(@bevel_top_rgb@, 235);
+    color: @text@;
+    border: 1px solid @border_line@;
+    border-radius: 2px;
+    gridline-color: @border_line@;
+    selection-background-color: @main@;
+    selection-color: @on_accent@;
+}
+
+QMenuBar {
+    background: rgba(@bevel_bottom_rgb@, 248);
+    color: @text@;
+    border-bottom: 1px solid @border_line@;
+}
+
+QMenuBar::item {
+    padding: 4px 10px;
+    background: transparent;
+}
+
+QMenuBar::item:selected {
+    background: rgba(@main_rgb@, 45);
+    color: @text_bright@;
+}
+
+QMenu {
+    background: rgba(@bevel_bottom_rgb@, 250);
+    color: @text@;
+    border: 1px solid @main@;
+}
+
+QMenu::item {
+    padding: 4px 24px;
+    background: transparent;
+}
+
+QMenu::item:selected {
+    background: rgba(@main_rgb@, 55);
+    color: @text_bright@;
+}
+
+QMenu::separator {
+    height: 1px;
+    background: @border_line@;
+    margin: 4px 8px;
+}
+
+QMessageBox {
+    background: rgba(@bevel_bottom_rgb@, 248);
+}
+
+QStatusBar {
+    background: rgba(@bevel_bottom_rgb@, 248);
+    color: @text_tint@;
+    border-top: 1px solid @border_line@;
+}
+
+QStatusBar::item {
+    border: none;
+}
+
+QToolTip {
+    background: rgba(@bevel_bottom_rgb@, 252);
+    color: @text_bright@;
+    border: 1px solid @main@;
+    padding: 4px;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(@main_rgb@, 110);
+    border-radius: 2px;
+    min-height: 24px;
+    margin: 2px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: @main@;
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background: rgba(@main_rgb@, 110);
+    border-radius: 2px;
+    min-width: 24px;
+    margin: 2px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: @main@;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    width: 0;
+    height: 0;
+}
+
+QScrollBar::add-page, QScrollBar::sub-page {
+    background: transparent;
+}

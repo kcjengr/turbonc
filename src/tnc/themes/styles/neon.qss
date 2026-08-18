@@ -1,0 +1,11 @@
+/*===========================================================================*/
+/*  TurBoNC view style — NEON (default)                                      */
+/*                                                                           */
+/*  The neon look (translucent gradient panels, 1px neon borders, beveled    */
+/*  edges, glow) is the base theme itself, so this overlay intentionally     */
+/*  contains no rules. The active base theme (dark/light x accent) provides  */
+/*  the whole look.                                                          */
+/*                                                                           */
+/*  Overlays may use accent placeholder tokens (see view_styles.py) should   */
+/*  you want to add refinements on top of the base theme.                    */
+/*===========================================================================*/

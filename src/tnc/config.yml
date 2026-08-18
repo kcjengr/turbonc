@@ -2,7 +2,7 @@
 
 qtdesigner:
   ui_file: ( windows.mainwindow.kwargs.ui_file )
-  qss_file: {{ file.dir }}/dark.qss
+  qss_file: {{ file.dir }}/themes/dark.qss
 
 vcp:
   name: TurBoNC
@@ -61,7 +61,7 @@ windows:
 
 application:
   kwargs:
-   stylesheet: {{ file.dir }}/dark.qss
+   stylesheet: {{ file.dir }}/themes/dark.qss
 
 # GCodeEditor visual styling (applied by VCPMainWindow via apply_yaml_config_to_editor)
 gcode_editor_style_defaults:
@@ -114,6 +114,9 @@ gcode_syntax_profile:
       tokens: ["string"]
 
 dialogs:
+  settings:
+    provider: tnc.dialogs.settings:TncSettingsDialog
+
   zero_xy:
     provider: tnc.dialogs.zero_xy:ZeroXY
     kwargs:
@@ -126,6 +129,59 @@ dialogs:
 
 
 settings:
+  theme.name:
+    description: UI theme, base and accent.
+    default_value: 0
+    options: [Dark Cyan, Light Cyan, Dark Magenta, Light Magenta, Dark Green, Light Green, Dark Amber, Light Amber, Dark Blue, Light Blue, Dark Orange, Light Orange]
+    persistent: true
+
+  theme.style:
+    description: Widget style for buttons, frames and borders.
+    default_value: 0
+    options: [Neon, Flat, Sharp, Rounded, Glow, Chamfer, Retro]
+    persistent: true
+
+  theme.background:
+    description: Background texture behind the UI panels.
+    default_value: 0
+    options: [Plain, Brushed Metal, Wood]
+    persistent: true
+
+  theme.background-tint:
+    description: Overlay the theme accent color on the background.
+    default_value: false
+    persistent: true
+
+  theme.background-tint-opacity:
+    description: Strength of the accent tint overlay on the background.
+    default_value: 40
+    min_value: 0
+    max_value: 240
+    persistent: true
+
+  theme.background-tint-color:
+    description: Custom color for the background tint, theme uses the accent tone.
+    default_value: "theme"
+    value_type: str
+    persistent: true
+
+  theme.panel-opacity:
+    description: Opacity of the translucent panels and dialog glass.
+    default_value: 100
+    min_value: 0
+    max_value: 100
+    persistent: true
+
+  app.confirm-exit:
+    description: Ask for confirmation before quitting TurboNC.
+    default_value: false
+    persistent: true
+
+  rdro.start-server-on-launch:
+    description: Start the RDRO server when the screen opens.
+    default_value: false
+    persistent: true
+
   touch-probe.calibration-offset:
     description: Probe trigger point offset.
     default_value: 0.0

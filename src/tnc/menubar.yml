@@ -110,6 +110,12 @@ default_menubar:
 
   - title: Settings
     items:
+      - title: "Settings…"
+        action: win.showDialog
+        args: [settings]
+
+      - separator
+
       - title: Show On-screen Keyboard
         action: settings.virtual-input.enable
 
