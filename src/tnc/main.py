@@ -235,23 +235,8 @@ class MainWindow(VCPMainWindow):
                                       VIEW_STYLE_FILES[style_name])
             with open(style_path, 'r', encoding='utf-8') as style_file:
                 overlay_qss = style_file.read()
-            ar, ag, ab = CURRENT_ACCENT
-            base = "dark" if CURRENT_DARK else "light"
-            cut_dir = os.path.join(VCP_DIR, THEMES_DIR, "cut")
-            cut_tokens = {}
-            for fam in ("", "estop", "power"):
-                fam_part = "-" + fam if fam else ""
-                for state in ("normal", "hover", "pressed", "checked",
-                              "disabled", "focus"):
-                    key = "cut" + fam_part
-                    if state != "normal":
-                        key += "-" + state
-                    cut_tokens[key] = os.path.join(
-                        cut_dir, "cut-%d-%d-%d-%s%s-%s.svg"
-                        % (ar, ag, ab, base, fam_part, state))
             overlay_qss = render_view_style(overlay_qss, CURRENT_ACCENT,
-                                            CURRENT_DARK,
-                                            extra_tokens=cut_tokens)
+                                            CURRENT_DARK)
             # background texture (optional) appended last, stretched to fill
             bg_rule = ""
             bg_file = BACKGROUND_FILES.get(self._resolve_background())

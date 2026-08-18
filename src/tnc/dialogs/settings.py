@@ -148,8 +148,8 @@ class TncSettingsDialog(QDialog):
         opacity_form = QFormLayout(opacity_group)
         opacity_form.setSpacing(8)
         # qtpyvcp sets the slider range from the setting's min/max on init.
-        tint_slider = VCPSettingsSlider(opacity_group)
-        tint_slider.settingName = "theme.background-tint-opacity"
+        tint_slider = self._make_slider("theme.background-tint-opacity",
+                                        opacity_group)
         tint_slider.valueChanged.connect(self._on_opacity_changed)
         opacity_form.addRow("Tint Strength", tint_slider)
 
@@ -168,8 +168,7 @@ class TncSettingsDialog(QDialog):
         tint_color_row.addWidget(tint_auto_btn)
         opacity_form.addRow("Tint Color", tint_color_row)
         self._refresh_tint_button(self._effective_tint_color())
-        panel_slider = VCPSettingsSlider(opacity_group)
-        panel_slider.settingName = "theme.panel-opacity"
+        panel_slider = self._make_slider("theme.panel-opacity", opacity_group)
         panel_slider.valueChanged.connect(self._on_opacity_changed)
         opacity_form.addRow("Panel Opacity", panel_slider)
         op_hint = QLabel("Tint strength darkens and colors the background "
@@ -256,6 +255,19 @@ class TncSettingsDialog(QDialog):
         check.setText(label)
         check.settingName = setting_name
         return check
+
+    @staticmethod
+    def _make_slider(setting_name, parent):
+        """VCPSettingsSlider bound to a persisted int setting.
+
+        The parent-only QSlider constructor defaults to VERTICAL in PySide6
+        6.11 (Qt6 deprecated that constructor), so the orientation is set
+        explicitly to keep the tint/opacity controls as horizontal bars.
+        """
+        slider = VCPSettingsSlider(parent)
+        slider.settingName = setting_name
+        slider.setOrientation(Qt.Horizontal)
+        return slider
 
     # -- theme handling -----------------------------------------------------
 

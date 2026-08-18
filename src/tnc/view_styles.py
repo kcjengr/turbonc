@@ -16,7 +16,7 @@ from tnc.generate_themes import _hex_to_rgb, palette as _gen_palette
 
 # Display name -> overlay file (relative to the themes/ dir). "Neon" is the
 # default look: the base themes already are neon, so its overlay is empty.
-VIEW_STYLE_NAMES = ["Neon", "Flat", "Sharp", "Rounded", "Glow", "Chamfer",
+VIEW_STYLE_NAMES = ["Neon", "Flat", "Sharp", "Rounded", "Glow",
                     "Retro"]
 
 VIEW_STYLE_FILES = {
@@ -25,7 +25,6 @@ VIEW_STYLE_FILES = {
     "Sharp": "styles/sharp.qss",
     "Rounded": "styles/rounded.qss",
     "Glow": "styles/glow.qss",
-    "Chamfer": "styles/chamfer.qss",
     "Retro": "styles/retro.qss",
 }
 
@@ -40,12 +39,20 @@ PRESSED_HEX = "#ff2bd6"
 # NOTE: the option names must not be Python literal-like strings ("None",
 # "True", "1", ...): qtpyvcp interpolates every config string through a
 # jinja2 NativeEnvironment, which would turn e.g. "None" into a real null.
-BACKGROUND_NAMES = ["Plain", "Brushed Metal", "Wood"]
+BACKGROUND_NAMES = ["Plain", "Brushed Metal", "Wood", "Vintage Floral",
+                    "Engine Gears", "Metal Cutting", "Lake", "Barn Wood",
+                    "Edinburgh Castle"]
 
 BACKGROUND_FILES = {
     "Plain": None,
     "Brushed Metal": "backgrounds/brushed-metal-dim.jpg",
     "Wood": "backgrounds/wood-dim.jpg",
+    "Vintage Floral": "backgrounds/floral-vintage-dim.jpg",
+    "Engine Gears": "backgrounds/engine-gears-dim.jpg",
+    "Metal Cutting": "backgrounds/metal-cutting-dim.jpg",
+    "Lake": "backgrounds/lake-dim.jpg",
+    "Barn Wood": "backgrounds/barn-wood-dim.jpg",
+    "Edinburgh Castle": "backgrounds/edinburgh-castle-dim.jpg",
 }
 
 
@@ -107,7 +114,7 @@ def render_view_style(overlay, accent_rgb, dark, extra_tokens=None):
         accent_rgb: (r, g, b) tuple of the active theme accent.
         dark: True for dark base themes, False for light.
         extra_tokens: optional dict of extra @token@ -> value substitutions
-            (e.g. the chamfer ring SVG path), applied last.
+            (e.g. per-family ring SVG paths), applied last.
 
     Returns:
         The rendered QSS with the active theme's palette baked in.
@@ -128,10 +135,13 @@ def render_view_style(overlay, accent_rgb, dark, extra_tokens=None):
     if dark:
         overlay = overlay.replace("@text@", "#dcefff")
         overlay = overlay.replace("@text_bright@", "#ffffff")
+        overlay = overlay.replace("@on_accent@", "#001418")
     else:
         overlay = overlay.replace("@text@", "#16222f")
         overlay = overlay.replace("@text_bright@", "#0b0f14")
-    overlay = overlay.replace("@on_accent@", "#001418")
+        # Light themes use the deepened accent for filled surfaces, so the
+        # on-accent text must be light to stay readable.
+        overlay = overlay.replace("@on_accent@", "#f2fdff")
 
     for key, value in p.items():
         if key == "rgb":

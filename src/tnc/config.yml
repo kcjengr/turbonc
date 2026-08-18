@@ -138,13 +138,13 @@ settings:
   theme.style:
     description: Widget style for buttons, frames and borders.
     default_value: 0
-    options: [Neon, Flat, Sharp, Rounded, Glow, Chamfer, Retro]
+    options: [Neon, Flat, Sharp, Rounded, Glow, Retro]
     persistent: true
 
   theme.background:
     description: Background texture behind the UI panels.
     default_value: 0
-    options: [Plain, Brushed Metal, Wood]
+    options: [Plain, Brushed Metal, Wood, Vintage Floral, Engine Gears, Metal Cutting, Lake, Barn Wood, Edinburgh Castle]
     persistent: true
 
   theme.background-tint:

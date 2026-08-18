@@ -11,6 +11,14 @@ accent hue. Edits to dark.qss / light.qss propagate by re-running:
 
 Safety colors are kept constant (estop red, armed green). The frosted dialog
 glass is painted in code and stays cyan.
+
+The color scheme is consolidated per base: ``palette()`` clamps the accent's
+lightness into a visibility band so every accent has the same visual weight
+as the reference neon cyan. Dark base keeps accents bright (the canonical
+dark.qss is untouched); light base deepens them so borders, bevels and text
+tints don't wash out on the near-white background, and the on-accent text
+flips to light. The canonical light.qss is regenerated through the same
+substitution pipeline as the variants (cyan consolidated for light).
 """
 
 import colorsys
@@ -33,143 +41,6 @@ ACCENTS = {
 }
 
 BASES = {"dark": "dark.qss", "light": "light.qss"}
-
-# Chamfered ring SVGs (one per accent x base x state) for the Chamfer view
-# style. The ring is a 9-slice border image: top-left and bottom-right
-# corners are cut diagonally, top-right and bottom-left stay square (Qt maps
-# border-image corners directly, so the cuts land on the matching widget
-# corners).
-#
-# The FILL is baked into the SVG (Qt paints the widget's own QSS background
-# under the border-image, so with a QSS fill the cut corners would show that
-# fill instead of the window). The corner regions are left transparent, so
-# the cuts genuinely show what is behind the widget - the same cut-out look
-# as the frosted dialog glass. Each region carries a shade along the
-# bevel_top -> bevel_bottom diagonal so the fill keeps a diagonal gradient
-# feel even though the 9-slice center is stretched flat.
-CUT_DIR = THEMES / "cut"
-CUT_SLICE = 6
-CUT_SIZE = CUT_SLICE * 3
-CUT_RING_WIDTH = 2
-CUT_FILL_OPACITY = 0.92
-
-# diagonal shade per 9-slice region: 0 = bevel_top (bright, TL) .. 1 = dark
-CUT_REGIONS = {
-    "tl": 0.00, "tr": 0.25, "bl": 0.60, "br": 1.00,
-    "top": 0.12, "left": 0.25, "right": 0.70, "bottom": 1.00,
-    "center": 0.45,
-}
-
-# state -> (tint palette key or None, tint amount, or special)
-CUT_STATES = {
-    "normal": (None, 0.0),
-    "hover": ("main", 0.30),
-    "pressed": ("pressed", 0.35),
-    "checked": ("main", 0.75),
-    "disabled": ("border_disabled", 0.60),
-    "focus": ("main", 0.25),
-}
-
-
-
-def _mix_hex(h1, h2, t):
-    c1, c2 = _hex_to_rgb(h1), _hex_to_rgb(h2)
-    return _rgb_to_hex(tuple(a + (b - a) * t for a, b in zip(c1, c2)))
-
-
-def _build_cut_svg(ring_hex, cols, bottom=None):
-    """One chamfered ring SVG: 9-slice fills (corners cut) + ring.
-
-    Args:
-        ring_hex: accent color of the ring.
-        cols: per-region fill colors.
-        bottom: optional safety color for the bottom ring edge (status
-            buttons keep their red/green bottom accent line).
-    """
-    n, s = CUT_SIZE, CUT_SLICE
-    e = n - s
-    # chamfered ring path (TL + BR cut). With a bottom color the bottom edge
-    # becomes a separate segment so the safety color survives the 9-slice.
-    if bottom is None:
-        ring = (f'  <path d="M {s} 1 L {n - 1} 1 L {n - 1} {n - 1 - s} '
-                f'L {n - 1 - s} {n - 1} L 1 {n - 1} L 1 {s} Z" '
-                f'fill="none" stroke="{ring_hex}" '
-                f'stroke-width="{CUT_RING_WIDTH}"/>\n')
-    else:
-        ring = (
-            f'  <path d="M 1 {n - 1} L 1 {s} L {s} 1 L {n - 1} 1 '
-            f'L {n - 1} {n - 1 - s} L {n - 1 - s} {n - 1}" '
-            f'fill="none" stroke="{ring_hex}" '
-            f'stroke-width="{CUT_RING_WIDTH}" stroke-linecap="round"/>\n'
-            f'  <path d="M {n - 1 - s} {n - 1} L 1 {n - 1}" '
-            f'fill="none" stroke="{bottom}" '
-            f'stroke-width="{CUT_RING_WIDTH}" stroke-linecap="round"/>\n')
-    return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{n}" height="{n}" viewBox="0 0 {n} {n}">\n'
-        f'  <rect x="{s}" y="0" width="{s}" height="{s}" '
-        f'fill="{cols["top"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <rect x="0" y="{s}" width="{s}" height="{s}" '
-        f'fill="{cols["left"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <rect x="{e}" y="{s}" width="{s}" height="{s}" '
-        f'fill="{cols["right"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <rect x="{s}" y="{e}" width="{s}" height="{s}" '
-        f'fill="{cols["bottom"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <rect x="{s}" y="{s}" width="{s}" height="{s}" '
-        f'fill="{cols["center"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <polygon points="{s},0 {s},{s} 0,{s}" '
-        f'fill="{cols["tl"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <rect x="{e}" y="0" width="{s}" height="{s}" '
-        f'fill="{cols["tr"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <rect x="0" y="{e}" width="{s}" height="{s}" '
-        f'fill="{cols["bl"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        f'  <polygon points="{e},{e} {n},{e} {e},{n}" '
-        f'fill="{cols["br"]}" fill-opacity="{CUT_FILL_OPACITY}"/>\n'
-        + ring
-        + "</svg>\n")
-
-
-def write_cut_svgs():
-    """Emit chamfer ring SVGs for every accent x base x state x family.
-
-    Families: standard ring, estop (red bottom edge), power/home (accent
-    bottom edge). The checked state of the status buttons turns the bottom
-    edge green (armed).
-    """
-    CUT_DIR.mkdir(parents=True, exist_ok=True)
-    produced = set()
-    for accent_name, (main_hex, pressed_hex) in ACCENTS.items():
-        r, g, b = _hex_to_rgb(main_hex)
-        for base in BASES:
-            p = palette(main_hex, pressed_hex, base)
-            # base normal region colors (diagonal bevel shading)
-            normal = {key: _mix_hex(p["bevel_top"], p["bevel_bottom"], t)
-                      for key, t in CUT_REGIONS.items()}
-            for state, (tint_key, tint_t) in CUT_STATES.items():
-                if state == "normal":
-                    cols = normal
-                else:
-                    tint = p[tint_key]
-                    cols = {key: _mix_hex(c, tint, tint_t)
-                            for key, c in normal.items()}
-                green = "#00ff9d"
-                for fam, bottom in (
-                        ("", None),
-                        ("estop", green if state == "checked" else "#ff1744"),
-                        ("power", green if state == "checked" else main_hex),
-                ):
-                    fam_part = "-" + fam if fam else ""
-                    fname = (f"cut-{r}-{g}-{b}-{base}{fam_part}-"
-                             f"{state}.svg")
-                    (CUT_DIR / fname).write_text(
-                        _build_cut_svg(main_hex, cols, bottom=bottom),
-                        encoding="utf-8")
-                    produced.add(fname)
-    # drop stale rings from previous geometries/names
-    for old in CUT_DIR.glob("cut-*.svg"):
-        if old.name not in produced:
-            old.unlink()
-    return sorted(produced)
 
 
 # Background textures: the originals in themes/backgrounds/ are the source;
@@ -259,6 +130,7 @@ LIGHT_MAP = {
     "#bfe8ff": "#1d3148",
     "#e6f7ff": "#15202c",
     "#ffffff": "#0b0f14",
+    "#001418": "#f2fdff",
     "#8ba3c7": "#5a6f88",
     "#4a5a6e": "#7d8fa4",
     "#ffd9f7": "#9c2a76",
@@ -304,9 +176,25 @@ def _mix(c1, c2, t):
 
 
 def palette(main_hex, pressed_hex, base):
-    """Full color set for one accent x base combination."""
+    """Full color set for one accent x base combination.
+
+    The accent's lightness is clamped into a per-base visibility band so all
+    accents (cyan, magenta, green, amber, blue, orange) carry the same visual
+    weight as the reference neon cyan:
+
+    - dark base: [0.50, 0.70] - keeps accents bright (all current accents
+      already sit in the band, so the dark themes are unchanged)
+    - light base: [0.20, 0.34] - deepens bright hues (cyan, green, amber,
+      orange, ...) that would otherwise wash out on the near-white base
+    """
     main = _hex_to_rgb(main_hex)
     h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in main))
+    if base == "dark":
+        l = min(max(l, 0.50), 0.70)
+    else:
+        l = min(max(l, 0.20), 0.34)
+    main = tuple(round(c * 255) for c in colorsys.hls_to_rgb(h, l, s))
+    main_hex = _rgb_to_hex(main)
 
     def col(sat, light):
         return _rgb_to_hex(tuple(c * 255 for c in colorsys.hls_to_rgb(h, light, sat)))
@@ -496,6 +384,17 @@ def substitute(text, accent, base):
     ar, ag, ab = p["rgb"]
     text = text.replace(tok["rgba_main"], f"rgba({ar}, {ag}, {ab}, ")
     text = text.replace(tok["rgba_tint"], f"rgba({ar}, {ag}, {ab}, ")
+    if base == "light":
+        # The canonical borders are drawn at 140-150 alpha (fine over the
+        # near-black dark base, washed out over the near-white light base):
+        # raise every rgba stop of the consolidated accent so the light
+        # themes keep visible neon edges. All other (surface) alphas are
+        # untouched - they are recolored by hue, not by the accent rgb.
+        text = re.sub(
+            r"rgba\((%d,\s*%d,\s*%d,\s*)(\d+)\)" % (ar, ag, ab),
+            lambda m: "rgba(%s%d)" % (m.group(1),
+                                       min(255, int(m.group(2)) + 60)),
+            text)
     # recolor the surface gradients to the accent hue
     h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in p["rgb"]))
     for token, alpha in SURFACE_STOPS[base]:
@@ -513,12 +412,20 @@ def substitute(text, accent, base):
 def main():
     # derive the canonical light base from the dark base so they stay in sync
     dark_canon = (THEMES / BASES["dark"]).read_text(encoding="utf-8")
+    light_derived = derive_light(dark_canon)
+    # The canonical light theme is the cyan accent consolidated for the light
+    # base (palette() deepens it + the accent alphas are raised), so it reads
+    # as well as the dark neon.
     (THEMES / BASES["light"]).write_text(
-        derive_light(dark_canon), encoding="utf-8")
+        substitute(light_derived, ACCENTS["cyan"], "light"),
+        encoding="utf-8")
 
     produced = []
     for base_name, base_file in BASES.items():
-        base_text = (THEMES / base_file).read_text(encoding="utf-8")
+        # Variants are generated from the identity-literal text (freshly
+        # derived for light: light.qss on disk no longer carries the cyan
+        # literals after the consolidation above).
+        base_text = (dark_canon if base_name == "dark" else light_derived)
         for accent_name, accent in ACCENTS.items():
             if accent_name == "cyan":
                 continue  # the canonical files already are the cyan themes
@@ -526,13 +433,9 @@ def main():
             out.write_text(substitute(base_text, accent, base_name),
                            encoding="utf-8")
             produced.append(out.name)
-    cut_files = write_cut_svgs()
     bg_files = write_background_variants()
     print(f"generated {len(produced)} theme variant(s):")
     for name in produced:
-        print("  " + name)
-    print(f"generated {len(cut_files)} chamfer ring SVG(s):")
-    for name in cut_files:
         print("  " + name)
     print(f"generated {len(bg_files)} dimmed background(s):")
     for name in bg_files:
