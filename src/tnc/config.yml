@@ -132,13 +132,13 @@ settings:
   theme.name:
     description: UI theme, base and accent.
     default_value: 0
-    options: [Dark Cyan, Light Cyan, Dark Magenta, Light Magenta, Dark Green, Light Green, Dark Amber, Light Amber, Dark Blue, Light Blue, Dark Orange, Light Orange]
+    options: [Dark Cyan, Light Cyan, Dark Magenta, Light Magenta, Dark Green, Light Green, Dark Amber, Light Amber, Dark Blue, Light Blue, Dark Orange, Light Orange, Dark White, Light Black]
     persistent: true
 
   theme.style:
     description: Widget style for buttons, frames and borders.
     default_value: 0
-    options: [Neon, Flat, Sharp, Rounded, Glow, Retro]
+    options: [Neon, Flat, Sharp, Rounded, Glow, Retro, Ink]
     persistent: true
 
   theme.background:

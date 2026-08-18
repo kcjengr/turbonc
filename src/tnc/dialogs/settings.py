@@ -44,6 +44,18 @@ def _accent_hex():
     return "#%02x%02x%02x" % _accent()
 
 
+def _ink_style_active():
+    """True when the e-paper Ink view style is active."""
+    return getattr(tnc_main, "CURRENT_STYLE", "Neon") == "Ink"
+
+
+def _hint_style():
+    """Stylesheet for the small gray hint labels (color follows the style)."""
+    color = "#8a8577" if _ink_style_active() else "#8ba3c7"
+    return (f"color: {color}; font-size: 9pt; border: none; "
+            "background: transparent;")
+
+
 class TncSettingsDialog(QDialog):
     def __init__(self, parent=None, **kwargs):
         super().__init__(parent)
@@ -52,7 +64,9 @@ class TncSettingsDialog(QDialog):
         # treatment as the zero-xy / home-all dialogs).
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint)
-        self.setMinimumWidth(440)
+        self.setMinimumWidth(620)
+        # roomier default size; content scrolls on smaller screens
+        self.resize(660, 800)
         self._drag_offset = None
 
         title = QLabel("TNC SETTINGS", self)
@@ -93,8 +107,7 @@ class TncSettingsDialog(QDialog):
         hint = QLabel("Applied immediately and remembered for the next "
                       "launch.", theme_group)
         hint.setWordWrap(True)
-        hint.setStyleSheet("color: #8ba3c7; font-size: 9pt; border: none; "
-                           "background: transparent;")
+        hint.setStyleSheet(_hint_style())
         theme_form.addRow(hint)
         groups.addWidget(theme_group)
 
@@ -110,10 +123,9 @@ class TncSettingsDialog(QDialog):
                 self._style_combo.itemText(idx)))
         style_form.addRow("Widget Style", self._style_combo)
         style_hint = QLabel("How buttons, frames and borders are drawn. "
-                            "Colors still follow the theme.", style_group)
+                            "Most styles tint with the theme accent.", style_group)
         style_hint.setWordWrap(True)
-        style_hint.setStyleSheet("color: #8ba3c7; font-size: 9pt; border: none; "
-                                 "background: transparent;")
+        style_hint.setStyleSheet(_hint_style())
         style_form.addRow(style_hint)
         groups.addWidget(style_group)
 
@@ -138,8 +150,7 @@ class TncSettingsDialog(QDialog):
         bg_hint = QLabel("Texture behind the UI panels, dimmed so the "
                          "theme stays readable.", bg_group)
         bg_hint.setWordWrap(True)
-        bg_hint.setStyleSheet("color: #8ba3c7; font-size: 9pt; border: none; "
-                              "background: transparent;")
+        bg_hint.setStyleSheet(_hint_style())
         bg_form.addRow(bg_hint)
         groups.addWidget(bg_group)
 
@@ -175,8 +186,7 @@ class TncSettingsDialog(QDialog):
                          "overlay; panel opacity affects panels, dialogs "
                          "and fills.", opacity_group)
         op_hint.setWordWrap(True)
-        op_hint.setStyleSheet("color: #8ba3c7; font-size: 9pt; border: none; "
-                              "background: transparent;")
+        op_hint.setStyleSheet(_hint_style())
         opacity_form.addRow(op_hint)
         groups.addWidget(opacity_group)
 
@@ -367,15 +377,15 @@ class TncSettingsDialog(QDialog):
         super().showEvent(event)
 
     def _refresh_title_color(self):
+        color = "#1a1a1a" if _ink_style_active() else _accent_hex()
         self._title_label.setStyleSheet(
-            f"color: {_accent_hex()}; font-size: 14pt; font-weight: 700;"
+            f"color: {color}; font-size: 14pt; font-weight: 700;"
             "letter-spacing: 2px;")
 
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
         rect = self.rect().adjusted(1, 1, -1, -1)
-        ar, ag, ab = _accent()
         top, bottom = tnc_main.glass_fill()
         path = tnc_main.glass_path(rect)
 
@@ -394,19 +404,20 @@ class TncSettingsDialog(QDialog):
         painter.setBrush(sheen)
         painter.drawPath(path)
 
-        # soft neon glow from the top-left corner
+        # soft glow from the top-left corner
         glow = QRadialGradient(
             QPointF(rect.x() + rect.width() * 0.2,
                     rect.y() + rect.height() * 0.2),
             rect.width() * 0.9)
-        glow.setColorAt(0.0, QColor(ar, ag, ab, 40))
-        glow.setColorAt(1.0, QColor(ar, ag, ab, 0))
+        glow_start, glow_end = tnc_main.glass_glow()
+        glow.setColorAt(0.0, glow_start)
+        glow.setColorAt(1.0, glow_end)
         painter.setBrush(glow)
         painter.drawPath(path)
 
-        # neon border
+        # border
         painter.setBrush(Qt.NoBrush)
-        painter.setPen(QPen(QColor(ar, ag, ab, 150), 1))
+        painter.setPen(QPen(tnc_main.glass_border(), 1))
         painter.drawPath(path)
         painter.end()
 

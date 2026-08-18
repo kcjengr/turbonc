@@ -8,11 +8,6 @@ from qtpyvcp.widgets.dialogs.base_dialog import BaseDialog
 import tnc.main as tnc_main
 
 
-def _accent():
-    """(r, g, b) of the currently applied theme accent."""
-    return getattr(tnc_main, "CURRENT_ACCENT", (0, 229, 255))
-
-
 class HomeAll(BaseDialog):
     def __init__(self, ui_file):
         super(HomeAll, self).__init__(stay_on_top=True, frameless=True,
@@ -28,7 +23,7 @@ class HomeAll(BaseDialog):
 
     def paintEvent(self, event):
         """Semi-translucent glass with chamfered (cut) corners, a top sheen
-        and a neon border matching the theme accent.
+        and a border matching the active theme/view style.
 
         Painted in code because Qt does not reliably draw the stylesheet
         background of a translucent top-level window.
@@ -36,7 +31,6 @@ class HomeAll(BaseDialog):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
         rect = self.rect().adjusted(1, 1, -1, -1)
-        ar, ag, ab = _accent()
         top, bottom = tnc_main.glass_fill()
         path = tnc_main.glass_path(rect)
 
@@ -55,19 +49,20 @@ class HomeAll(BaseDialog):
         painter.setBrush(sheen)
         painter.drawPath(path)
 
-        # soft neon glow from the top-left corner
+        # soft glow from the top-left corner
         glow = QRadialGradient(
             QPointF(rect.x() + rect.width() * 0.2,
                     rect.y() + rect.height() * 0.2),
             rect.width() * 0.9)
-        glow.setColorAt(0.0, QColor(ar, ag, ab, 40))
-        glow.setColorAt(1.0, QColor(ar, ag, ab, 0))
+        glow_start, glow_end = tnc_main.glass_glow()
+        glow.setColorAt(0.0, glow_start)
+        glow.setColorAt(1.0, glow_end)
         painter.setBrush(glow)
         painter.drawPath(path)
 
-        # neon border
+        # border
         painter.setBrush(Qt.NoBrush)
-        painter.setPen(QPen(QColor(ar, ag, ab, 150), 1))
+        painter.setPen(QPen(tnc_main.glass_border(), 1))
         painter.drawPath(path)
         painter.end()
 

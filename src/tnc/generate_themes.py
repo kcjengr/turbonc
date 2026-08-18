@@ -204,7 +204,10 @@ def palette(main_hex, pressed_hex, base):
         bevel_bottom = col(s * 0.45, max(l - 0.30, 0.05))
         border = col(s * 0.55, max(l - 0.20, 0.08))
         border_line = col(s * 0.65, max(l - 0.10, 0.12))
-        border_disabled = col(0.10, max(l - 0.22, 0.10))
+        # neutral accents (s == 0) get a pure-gray disabled border; colored
+        # accents keep the fixed 0.10 saturation as before
+        border_disabled = (col(0.10, max(l - 0.22, 0.10)) if s
+                           else col(0.0, max(l - 0.22, 0.10)))
         text_tint = col(s * 0.9, min(l + 0.44, 0.92))
     else:
         bevel_top = _rgb_to_hex(_mix(main, (255, 255, 255), 0.55))
@@ -409,6 +412,86 @@ def substitute(text, accent, base):
     return text
 
 
+# ---------------------------------------------------------------------------
+# Monochrome (black/white) themes
+#
+# The hue-recolor pipeline above cannot produce them: a neutral accent has no
+# hue (colorsys reports 0), which would tint every surface red. So the mono
+# themes run a dedicated grayscale substitution: the accent palette is a
+# neutral gray and every remaining surface / text color is desaturated to
+# gray (same lightness). Safety / error colors stay colored so the estop and
+# armed lamps keep their real red / green meaning.
+# ---------------------------------------------------------------------------
+
+# output name -> (base name, accent main hex, pressed hex)
+MONO_THEMES = {
+    "dark-white": ("dark", "#f2f2f2", "#555555"),   # light-gray accent on black
+    "light-black": ("light", "#1a1a1a", "#666666"),  # near-black accent on white
+}
+
+# lamp / error colors preserved in the monochrome themes (dark + light forms)
+SAFETY_HEXES = frozenset(("#ff1744", "#00ff9d", "#ffd9d9", "#c9ffe9",
+                          "#b0352c", "#0d7a52", "#8c1428"))
+
+
+def _neutralize_hex(token):
+    """Desaturate a hex color to gray, keeping its lightness."""
+    r, g, b = _hex_to_rgb(token)
+    _, l, _ = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    return _rgb_to_hex((round(l * 255),) * 3)
+
+
+def _neutralize_rgba(token, alpha):
+    """Desaturate an rgba surface stop to gray, keeping its lightness."""
+    r, g, b = (int(c) for c in re.findall(r"\d+", token)[:3])
+    _, l, _ = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    v = round(l * 255)
+    return f"rgba({v}, {v}, {v}, {alpha})"
+
+
+def substitute_mono(text, accent, base):
+    """Grayscale variant of substitute(): neutral accent palette and every
+    remaining surface / text color desaturated to gray (safety lamps kept)."""
+    tok = TOKENS[base]
+    p = palette(accent[0], accent[1], base)
+    keys = ("main", "light", "mid", "deep", "pressed",
+            "bevel_top", "bevel_bottom", "border", "border_line",
+            "border_disabled", "power", "text_tint")
+    # Stage 1/2: token swap (same sentinel dance as substitute())
+    for i, key in enumerate(keys):
+        text = text.replace(tok[key], f"\x00S{i}\x00")
+    for i, key in enumerate(keys):
+        text = text.replace(f"\x00S{i}\x00", p[key])
+    ar, ag, ab = p["rgb"]
+    text = text.replace(tok["rgba_main"], f"rgba({ar}, {ag}, {ab}, ")
+    text = text.replace(tok["rgba_tint"], f"rgba({ar}, {ag}, {ab}, ")
+    if base == "light":
+        # raise the accent-edge alphas (same as substitute()) so the dark-gray
+        # neon edges stay visible over the near-white base
+        text = re.sub(
+            r"rgba\((%d,\s*%d,\s*%d,\s*)(\d+)\)" % (ar, ag, ab),
+            lambda m: "rgba(%s%d)" % (m.group(1),
+                                       min(255, int(m.group(2)) + 60)),
+            text)
+    text = text.replace(
+        "/*  TurBoNC — cyberpunk theme: translucent panels + neon borders             */",
+        "/*  TurBoNC — monochrome BLACK/WHITE theme (neutral grays, no hues)        */")
+    text = text.replace(
+        "/*  TurBoNC — cyberpunk LIGHT theme (frosted light panels + neon edges)     */",
+        "/*  TurBoNC — monochrome LIGHT theme (black on white, no hues)            */")
+    # desaturate every remaining hex (safety colors kept) and rgba fill
+    for m in reversed(list(re.finditer(r"#[0-9a-fA-F]{6}", text))):
+        if m.group(0).lower() in SAFETY_HEXES:
+            continue
+        text = text[:m.start()] + _neutralize_hex(m.group(0)) + text[m.end():]
+    for m in reversed(list(re.finditer(
+            r"rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\d+)\)", text))):
+        text = (text[:m.start()]
+                + _neutralize_rgba(m.group(0), int(m.group(4)))
+                + text[m.end():])
+    return text
+
+
 def main():
     # derive the canonical light base from the dark base so they stay in sync
     dark_canon = (THEMES / BASES["dark"]).read_text(encoding="utf-8")
@@ -433,6 +516,13 @@ def main():
             out.write_text(substitute(base_text, accent, base_name),
                            encoding="utf-8")
             produced.append(out.name)
+    # monochrome black/white themes (grayscale substitution, see above)
+    for theme_name, (base_name, accent_hex, pressed_hex) in MONO_THEMES.items():
+        base_text = (dark_canon if base_name == "dark" else light_derived)
+        out = THEMES / f"{theme_name}.qss"
+        out.write_text(substitute_mono(base_text, (accent_hex, pressed_hex),
+                                       base_name), encoding="utf-8")
+        produced.append(out.name)
     bg_files = write_background_variants()
     print(f"generated {len(produced)} theme variant(s):")
     for name in produced:

@@ -17,7 +17,7 @@ from tnc.generate_themes import _hex_to_rgb, palette as _gen_palette
 # Display name -> overlay file (relative to the themes/ dir). "Neon" is the
 # default look: the base themes already are neon, so its overlay is empty.
 VIEW_STYLE_NAMES = ["Neon", "Flat", "Sharp", "Rounded", "Glow",
-                    "Retro"]
+                    "Retro", "Ink"]
 
 VIEW_STYLE_FILES = {
     "Neon": "styles/neon.qss",
@@ -26,6 +26,7 @@ VIEW_STYLE_FILES = {
     "Rounded": "styles/rounded.qss",
     "Glow": "styles/glow.qss",
     "Retro": "styles/retro.qss",
+    "Ink": "styles/ink.qss",
 }
 
 # Fixed pressed accent, matching generate_themes.py's cyan->magenta pairing.
@@ -130,7 +131,13 @@ def render_view_style(overlay, accent_rgb, dark, extra_tokens=None):
     """
     ar, ag, ab = accent_rgb
     main_hex = "#%02x%02x%02x" % (ar, ag, ab)
-    p = _gen_palette(main_hex, PRESSED_HEX, "dark" if dark else "light")
+    if ar == ag == ab:
+        # monochrome (black/white) accent: keep the pressed state neutral
+        # too, instead of the neon complementary color
+        pressed_hex = "#555555" if dark else "#666666"
+    else:
+        pressed_hex = PRESSED_HEX
+    p = _gen_palette(main_hex, pressed_hex, "dark" if dark else "light")
 
     if dark:
         overlay = overlay.replace("@text@", "#dcefff")
