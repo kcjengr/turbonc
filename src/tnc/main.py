@@ -481,7 +481,7 @@ class MainWindow(VCPMainWindow):
         """
         from PySide6.QtCore import QObject
         from PySide6.QtGui import QColor
-        import colorsys
+        from tnc.generate_themes import recolor_to_accent
         ar, ag, ab = CURRENT_ACCENT
         if CURRENT_STYLE == "Ink":
             # e-paper: flat warm-paper chrome with ink text; the accent stays
@@ -523,20 +523,10 @@ class MainWindow(VCPMainWindow):
         # to the current accent hue (Ink keeps flat paper instead).
         if CURRENT_STYLE == "Ink":
             bg_hex, text_hex = "#f7f4ec", "#1a1a1a"
-        elif CURRENT_DARK:
-            bg_base, text_rgb = (13, 35, 51), (220, 239, 255)
-            ah, _, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
-            h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in bg_base))
-            br, bg2, bb = (round(c * 255)
-                           for c in colorsys.hls_to_rgb(ah, l, s))
-            bg_hex = "#%02x%02x%02x" % (br, bg2, bb)
-            text_hex = "#%02x%02x%02x" % text_rgb
         else:
-            bg_base, text_rgb = (221, 233, 243), (22, 34, 47)
-            ah, _, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
-            h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in bg_base))
-            br, bg2, bb = (round(c * 255)
-                           for c in colorsys.hls_to_rgb(ah, l, s))
+            bg_base, text_rgb = ((13, 35, 51), (220, 239, 255)) \
+                if CURRENT_DARK else ((221, 233, 243), (22, 34, 47))
+            br, bg2, bb = recolor_to_accent(bg_base, (ar, ag, ab))
             bg_hex = "#%02x%02x%02x" % (br, bg2, bb)
             text_hex = "#%02x%02x%02x" % text_rgb
 
@@ -584,36 +574,76 @@ class MainWindow(VCPMainWindow):
             ed.setStyleSheet(sheet)
 
     def _apply_backplot_theme(self):
-        """Recolor the VTK backplot gradient background to match the theme.
-
-        Sets the widget's backgroundColor / backgroundColor2 properties (the
-        setters re-render immediately, so this applies live on theme change).
-        """
-        from PySide6.QtCore import QObject
+        """Recolor the VTK backplot to match the theme: the gradient
+        background, the motion-type path colors and the camera-orientation
+        gizmo axes. The loaded program is re-rendered so colors apply live."""
+        from PySide6.QtCore import QObject, QTimer
         from PySide6.QtGui import QColor
-        import colorsys
+        from tnc.generate_themes import (axis_colors,
+                                         palette as _theme_palette,
+                                         recolor_to_accent)
+
         ar, ag, ab = CURRENT_ACCENT
         if CURRENT_STYLE == "Ink":
-            # e-paper: subtle warm-paper vertical gradient, no accent hue.
+            # e-paper: warm-paper background, ink-gray path colors and axes
             top, bottom = QColor("#f2eee4"), QColor("#ddd5c4")
+            path_colors = {
+                "traverse": QColor("#8a8577"),
+                "feed": QColor("#1a1a1a"),
+                "arcfeed": QColor("#3a3a3a"),
+                "dwell": QColor("#5a554a"),
+                "user": QColor("#1a1a1a"),
+            }
+            nav_x = QColor("#1a1a1a")
+            nav_y = QColor("#5a554a")
+            nav_z = QColor("#8a8577")
         else:
-            ah, _, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
             if CURRENT_DARK:
                 bases = ((13, 35, 51), (10, 14, 20))   # top, bottom
             else:
                 bases = ((221, 233, 243), (238, 242, 247))
 
-            def _recolor(base):
-                h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in base))
-                r, g, b = (round(c * 255)
-                           for c in colorsys.hls_to_rgb(ah, l, s))
-                return QColor(r, g, b)
+            top = QColor(*recolor_to_accent(bases[0], (ar, ag, ab)))
+            bottom = QColor(*recolor_to_accent(bases[1], (ar, ag, ab)))
+            # motion-type path colors from the consolidated accent palette
+            main_hex = "#%02x%02x%02x" % (ar, ag, ab)
+            if ar == ag == ab:
+                pressed = "#555555" if CURRENT_DARK else "#666666"
+            else:
+                pressed = "#ff2bd6"
+            p = _theme_palette(main_hex, pressed,
+                               "dark" if CURRENT_DARK else "light")
+            path_colors = {
+                "traverse": QColor(p["deep"]),
+                "feed": QColor(p["main"]),
+                "arcfeed": QColor(p["light"]),
+                "dwell": QColor(p["mid"]),
+                "user": QColor(p["pressed"]),
+            }
+            # gizmo axes: the accent plus 120/240 degree hue rotations (or
+            # distinct neutral grays for the monochrome themes) so the three
+            # axes stay distinguishable and match the theme
+            nav_x, nav_y, nav_z = (
+                QColor(*c) for c in axis_colors((ar, ag, ab)))
 
-            top, bottom = _recolor(bases[0]), _recolor(bases[1])
         for obj in self.findChildren(QObject):
             if obj.metaObject().className() in ("VTKBackPlot", "VtkBackPlot"):
                 obj.setProperty("backgroundColor", top)
                 obj.setProperty("backgroundColor2", bottom)
+                obj.setProperty("traverseColor", path_colors["traverse"])
+                obj.setProperty("arcfeedColor", path_colors["arcfeed"])
+                obj.setProperty("feedColor", path_colors["feed"])
+                obj.setProperty("dwellColor", path_colors["dwell"])
+                obj.setProperty("userColor", path_colors["user"])
+                obj.setProperty("navHelperXAxisColor", nav_x)
+                obj.setProperty("navHelperYAxisColor", nav_y)
+                obj.setProperty("navHelperZAxisColor", nav_z)
+                if hasattr(obj, "reapplyNavHelperConfig"):
+                    obj.reapplyNavHelperConfig()
+                # re-render the loaded program with the new path colors
+                if (hasattr(obj, "reload_program")
+                        and getattr(obj, "_last_filename", None)):
+                    QTimer.singleShot(0, obj.reload_program)
 
     def setTheme(self, name):
         """Persist and apply a theme by display name.
@@ -724,6 +754,30 @@ class MainWindow(VCPMainWindow):
         # After that, force the theme's editor colors (they win at startup).
         QTimer.singleShot(1500, self._apply_gcode_editor_theme)
         QTimer.singleShot(1500, self._apply_backplot_theme)
+        # Live-enable/disable the camera-orientation gizmo from the
+        # backplot.show-nav-helper setting (dialog checkbox + View menu).
+        try:
+            from qtpyvcp.utilities.settings import connectSetting
+            connectSetting('backplot.show-nav-helper',
+                           self._apply_nav_helper_enabled)
+        except Exception:
+            LOG.exception("Failed to connect backplot.show-nav-helper setting")
+
+    def _apply_nav_helper_enabled(self, enabled, *_args):
+        """Show/hide the camera-orientation gizmo on every backplot widget
+        following the ``backplot.show-nav-helper`` setting."""
+        from PySide6.QtCore import QObject
+        try:
+            setting = getSetting('backplot.show-nav-helper')
+            if setting is not None:
+                enabled = bool(setting.getValue())
+        except Exception:
+            LOG.exception("Failed to read backplot.show-nav-helper setting")
+        for obj in self.findChildren(QObject):
+            if obj.metaObject().className() in ("VTKBackPlot", "VtkBackPlot"):
+                obj.setProperty("navHelperEnabled", bool(enabled))
+                if hasattr(obj, "reapplyNavHelperConfig"):
+                    obj.reapplyNavHelperConfig()
 
     @Slot(QAbstractButton)
     def on_probeTabGroup_buttonClicked(self, button):

@@ -372,3 +372,8 @@ settings:
 
   backplot.multitool-colors:
     default_value: True
+
+  backplot.show-nav-helper:
+    description: Show the camera-orientation gizmo on the backplot.
+    default_value: True
+    persistent: true

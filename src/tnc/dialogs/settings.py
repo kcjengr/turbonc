@@ -217,6 +217,8 @@ class TncSettingsDialog(QDialog):
                                              bp_group))
         bp_layout.addWidget(self._make_check("backplot.perspective-view",
                                              "Perspective View", bp_group))
+        bp_layout.addWidget(self._make_check("backplot.show-nav-helper",
+                                             "Show Camera Gizmo", bp_group))
         view_row = QHBoxLayout()
         view_row.addWidget(QLabel("View", bp_group))
         view_combo = VCPSettingsComboBox(bp_group)

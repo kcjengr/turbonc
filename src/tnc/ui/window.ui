@@ -1151,6 +1151,24 @@
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="navHelperEnabled" stdset="0">
+                 <bool>true</bool>
+                </property>
+                <property name="navHelperAnimate" stdset="0">
+                 <bool>true</bool>
+                </property>
+                <property name="navHelperContainerVisibility" stdset="0">
+                 <bool>true</bool>
+                </property>
+                <property name="navHelperDragable" stdset="0">
+                 <bool>false</bool>
+                </property>
+                <property name="navHelperHandleVisibility" stdset="0">
+                 <bool>true</bool>
+                </property>
+                <property name="navHelperProcessEvents" stdset="0">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
               <item>
@@ -1736,6 +1754,7 @@
            <widget class="QLabel" name="label_4">
             <property name="font">
              <font>
+              <family>3270 Nerd Font Propo</family>
               <pointsize>18</pointsize>
               <bold>true</bold>
              </font>
@@ -1774,6 +1793,7 @@
             </property>
             <property name="font">
              <font>
+              <family>3270 Nerd Font Propo</family>
               <pointsize>14</pointsize>
               <fontweight>DemiBold</fontweight>
              </font>
@@ -1807,6 +1827,7 @@ USB
             </property>
             <property name="font">
              <font>
+              <family>3270 Nerd Font Propo</family>
               <pointsize>14</pointsize>
               <fontweight>DemiBold</fontweight>
              </font>
@@ -11137,7 +11158,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
+  <buttongroup name="probeTabGroup"/>
  </buttongroups>
 </ui>

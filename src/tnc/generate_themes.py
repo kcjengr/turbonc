@@ -234,6 +234,49 @@ def palette(main_hex, pressed_hex, base):
     }
 
 
+def recolor_to_accent(base_rgb, accent_rgb):
+    """Recolor a base color toward the accent hue.
+
+    Colored accents rotate the base to the accent's hue (same lightness and
+    saturation). Monochrome (r == g == b) accents desaturate the base to a
+    neutral gray of the same lightness instead: gray has no hue (colorsys
+    reports 0), which would otherwise tint every surface red.
+    """
+    ar, ag, ab = accent_rgb
+    if ar == ag == ab:
+        _, l, _ = colorsys.rgb_to_hls(*(c / 255 for c in base_rgb))
+        v = round(l * 255)
+        return (v, v, v)
+    h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in base_rgb))
+    ah, _, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
+    return tuple(round(c * 255) for c in colorsys.hls_to_rgb(ah, l, s))
+
+
+def axis_colors(accent_rgb):
+    """X/Y/Z camera-gizmo axis colors for an accent.
+
+    Colored accents: the accent plus 120/240 degree hue rotations so the
+    three axes stay distinguishable and match the theme. Monochrome accents:
+    three distinct neutral grays around the accent lightness so X/Y/Z still
+    read apart on black/white themes.
+    """
+    ar, ag, ab = accent_rgb
+    if ar == ag == ab:
+        _, l, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
+
+        def _gray(offset):
+            return (round(min(1.0, max(0.0, l + offset)) * 255),) * 3
+
+        return ((ar, ag, ab), _gray(-0.22), _gray(0.22))
+    h, l, s = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
+
+    def _rotated(deg):
+        h2 = (h + deg / 360.0) % 1.0
+        return tuple(round(c * 255) for c in colorsys.hls_to_rgb(h2, l, s))
+
+    return ((ar, ag, ab), _rotated(120), _rotated(240))
+
+
 # tokens to replace in the canonical files (cyan theme) per base
 TOKENS = {
     "dark": {

@@ -137,6 +137,11 @@ default_menubar:
 
       - separator
 
+      - title: Show Camera Gizmo
+        action: settings.backplot.show-nav-helper
+
+      - separator
+
       - title: Perspective View
         action: settings.backplot.perspective-view
 
