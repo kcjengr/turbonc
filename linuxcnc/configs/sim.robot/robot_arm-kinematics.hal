@@ -45,7 +45,12 @@ setp genserkins.D-1 0
 setp genserkins.D-2 0
 setp genserkins.D-3 230
 setp genserkins.D-4 0
-setp genserkins.D-5 76
+# D-5 76 -> 164.15: the flange is 76mm below the wrist pitch, and the
+# spindle's tool-exit face is another 88.15mm along the tool axis. The TCP
+# (where the rendered tool sits) must be AT the spindle nose, so D-5 carries
+# the full wrist->nose distance. The arm animation is unaffected (the
+# relative M_cur @ inv(M_home) transform cancels d).
+setp genserkins.D-5 164.15
 
 setp genserkins.max-iterations      0x00000128
 setp genserkins.unrotate-0 0

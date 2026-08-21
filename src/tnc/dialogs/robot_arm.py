@@ -314,7 +314,8 @@ def _rewrite_hal_setp(text, values):
 
 # Fallback DH (alpha rad, a mm, d mm) per joint, matching the shipped
 # ``robot_arm-kinematics.hal`` (STL-derived: d-0 186, a-2 224, d-3 230,
-# d-5 76). Used when neither HAL nor the file is readable.
+# d-5 164.15 = wrist -> flange 76 + spindle depth 88.15, so the TCP is at
+# the spindle nose). Used when neither HAL nor the file is readable.
 _PI2 = math.pi / 2.0
 _DH_DEFAULTS = (
     (0.0,     0.0, 186.0),
@@ -322,7 +323,7 @@ _DH_DEFAULTS = (
     (0.0,   224.0,   0.0),
     (-_PI2,   0.0, 230.0),
     (_PI2,    0.0,   0.0),
-    (-_PI2,   0.0,  76.0),
+    (-_PI2,   0.0, 164.15),
 )
 
 
@@ -2432,11 +2433,34 @@ class RobotWorkspaceDialog(QDialog):
     # ------------------------------------------------------------------
     # Tool / spindle actor at the arm tip (nozzle)
     # ------------------------------------------------------------------
+    def _yml_has_spindle(self):
+        """True when the machine-parts yml already defines a spindle/tool part
+        (so the synthetic tool actor below would double-render it)."""
+        def walk(node):
+            if isinstance(node, dict):
+                model = node.get("model")
+                if isinstance(model, str) and \
+                        model.replace("\\", "/").lower().endswith("spindle.stl"):
+                    return True
+                return any(walk(v) for v in node.values())
+            if isinstance(node, list):
+                return any(walk(v) for v in node)
+            return False
+        try:
+            return walk(self._machine_parts_data)
+        except Exception:  # noqa: BLE001 - best-effort
+            return False
+
     def _add_tool_actor(self):
         """Attach the spindle STL as the end-effector/nozzle at the tip of the
         arm (joint_5), as a child of that part's assembly so it follows the
         arm as joints rotate."""
         self._clear_tool_actor()
+        # When the machine-parts yml carries the spindle as a part (child of
+        # the tip assembly), it renders through the normal part pipeline -
+        # adding a synthetic actor here would draw a second spindle.
+        if self._yml_has_spindle():
+            return
         try:
             tip = self._find_tip_def()
             if tip is None or not self._config_dir:
@@ -2486,12 +2510,18 @@ class RobotWorkspaceDialog(QDialog):
         self._tool_actor = None
 
     def _find_tip_def(self):
-        """Return the def whose assembly is the deepest angular/non-angular part
-        (the end effector of the arm chain), or None."""
+        """Return the end-effector def of the arm chain: the spindle/tool part
+        when the assembly defines one, else the last angular joint."""
+        # A spindle/tool part mounted on the tip is the real end effector -
+        # prefer it over the last angular joint when present.
+        for _d in reversed(self._part_defs):
+            node = _d.get("node") or {}
+            model = node.get("model")
+            if isinstance(model, str) and \
+                    model.replace("\\", "/").lower().endswith("spindle.stl"):
+                return _d
         angular = [_d for _d in self._part_defs if _d.get("type") == "angular"]
-        if angular:
-            return angular[-1]
-        return None
+        return angular[-1] if angular else None
 
     # ------------------------------------------------------------------
     # VTK scene setup

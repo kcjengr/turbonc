@@ -164,237 +164,464 @@
                  </attribute>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
-                   <layout class="QVBoxLayout" name="verticalLayout_22">
+                   <layout class="QHBoxLayout" name="horizontalLayout_23">
                     <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_23">
-                      <item>
-                       <widget class="QLabel" name="label_3">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="text">
-                         <string>X</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="DROLabel" name="drolabel_10">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="midLineWidth">
-                         <number>0</number>
-                        </property>
-                        <property name="text">
-                         <string>     0.000</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                        </property>
-                        <property name="referenceType" stdset="0">
-                         <number>1</number>
-                        </property>
-                        <property name="axisNumber" stdset="0">
-                         <number>0</number>
-                        </property>
-                        <property name="inchFormat" stdset="0">
-                         <string>%9.4f</string>
-                        </property>
-                        <property name="millimeterFormat" stdset="0">
-                         <string>%10.3f</string>
-                        </property>
-                        <property name="degreeFormat" stdset="0">
-                         <string>%10.2f</string>
-                        </property>
-                        <property name="latheMode" stdset="0">
-                         <number>0</number>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
+                     <widget class="QLabel" name="label_3">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>X</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
                     </item>
                     <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_24">
-                      <item>
-                       <widget class="QLabel" name="label_5">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="text">
-                         <string>Y</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="DROLabel" name="drolabel_15">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="midLineWidth">
-                         <number>0</number>
-                        </property>
-                        <property name="text">
-                         <string>     0.000</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                        </property>
-                        <property name="referenceType" stdset="0">
-                         <number>1</number>
-                        </property>
-                        <property name="axisNumber" stdset="0">
-                         <number>1</number>
-                        </property>
-                        <property name="inchFormat" stdset="0">
-                         <string>%9.4f</string>
-                        </property>
-                        <property name="millimeterFormat" stdset="0">
-                         <string>%10.3f</string>
-                        </property>
-                        <property name="degreeFormat" stdset="0">
-                         <string>%10.2f</string>
-                        </property>
-                        <property name="latheMode" stdset="0">
-                         <number>0</number>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
+                     <widget class="DROLabel" name="drolabel_10">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_24">
+                    <item>
+                     <widget class="QLabel" name="label_5">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>Y</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
                     </item>
                     <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_25">
-                      <item>
-                       <widget class="QLabel" name="label_6">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="text">
-                         <string>Z</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="DROLabel" name="drolabel_16">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="midLineWidth">
-                         <number>0</number>
-                        </property>
-                        <property name="text">
-                         <string>     0.000</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                        </property>
-                        <property name="referenceType" stdset="0">
-                         <number>1</number>
-                        </property>
-                        <property name="axisNumber" stdset="0">
-                         <number>2</number>
-                        </property>
-                        <property name="inchFormat" stdset="0">
-                         <string>%9.4f</string>
-                        </property>
-                        <property name="millimeterFormat" stdset="0">
-                         <string>%10.3f</string>
-                        </property>
-                        <property name="degreeFormat" stdset="0">
-                         <string>%10.2f</string>
-                        </property>
-                        <property name="latheMode" stdset="0">
-                         <number>0</number>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
+                     <widget class="DROLabel" name="drolabel_15">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_25">
+                    <item>
+                     <widget class="QLabel" name="label_6">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>Z</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_16">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>2</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_38">
+                    <item>
+                     <widget class="QLabel" name="label_10">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>A</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_17">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>3</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_40">
+                    <item>
+                     <widget class="QLabel" name="label_11">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>B</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_18">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>4</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_41">
+                    <item>
+                     <widget class="QLabel" name="label_12">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>C</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_19">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>5</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
@@ -406,240 +633,470 @@
                  </attribute>
                  <layout class="QVBoxLayout" name="verticalLayout_20">
                   <item>
-                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                   <layout class="QHBoxLayout" name="horizontalLayout_26">
                     <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_26">
-                      <item>
-                       <widget class="QLabel" name="label_7">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="text">
-                         <string>X</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="DROLabel" name="drolabel_7">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                          <underline>false</underline>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="midLineWidth">
-                         <number>0</number>
-                        </property>
-                        <property name="text">
-                         <string>     0.000</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                        </property>
-                        <property name="referenceType" stdset="0">
-                         <number>0</number>
-                        </property>
-                        <property name="axisNumber" stdset="0">
-                         <number>0</number>
-                        </property>
-                        <property name="inchFormat" stdset="0">
-                         <string>%9.4f</string>
-                        </property>
-                        <property name="millimeterFormat" stdset="0">
-                         <string>%10.3f</string>
-                        </property>
-                        <property name="degreeFormat" stdset="0">
-                         <string>%10.2f</string>
-                        </property>
-                        <property name="latheMode" stdset="0">
-                         <number>0</number>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
+                     <widget class="QLabel" name="label_7">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>X</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
                     </item>
                     <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_27">
-                      <item>
-                       <widget class="QLabel" name="label_8">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="text">
-                         <string>Y</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="DROLabel" name="drolabel_8">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                          <underline>false</underline>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="midLineWidth">
-                         <number>0</number>
-                        </property>
-                        <property name="text">
-                         <string>     0.000</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                        </property>
-                        <property name="referenceType" stdset="0">
-                         <number>0</number>
-                        </property>
-                        <property name="axisNumber" stdset="0">
-                         <number>1</number>
-                        </property>
-                        <property name="inchFormat" stdset="0">
-                         <string>%9.4f</string>
-                        </property>
-                        <property name="millimeterFormat" stdset="0">
-                         <string>%10.3f</string>
-                        </property>
-                        <property name="degreeFormat" stdset="0">
-                         <string>%10.2f</string>
-                        </property>
-                        <property name="latheMode" stdset="0">
-                         <number>0</number>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
+                     <widget class="DROLabel" name="drolabel_7">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                        <underline>false</underline>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_27">
+                    <item>
+                     <widget class="QLabel" name="label_8">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>Y</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
                     </item>
                     <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_29">
-                      <item>
-                       <widget class="QLabel" name="label_9">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="text">
-                         <string>Z</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="DROLabel" name="drolabel_9">
-                        <property name="font">
-                         <font>
-                          <family>3270 Semi-Condensed</family>
-                          <pointsize>38</pointsize>
-                          <bold>true</bold>
-                          <underline>false</underline>
-                         </font>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::Shape::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Sunken</enum>
-                        </property>
-                        <property name="lineWidth">
-                         <number>3</number>
-                        </property>
-                        <property name="midLineWidth">
-                         <number>0</number>
-                        </property>
-                        <property name="text">
-                         <string>     0.000</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-                        </property>
-                        <property name="referenceType" stdset="0">
-                         <number>0</number>
-                        </property>
-                        <property name="axisNumber" stdset="0">
-                         <number>2</number>
-                        </property>
-                        <property name="inchFormat" stdset="0">
-                         <string>%9.4f</string>
-                        </property>
-                        <property name="millimeterFormat" stdset="0">
-                         <string>%10.3f</string>
-                        </property>
-                        <property name="degreeFormat" stdset="0">
-                         <string>%10.2f</string>
-                        </property>
-                        <property name="latheMode" stdset="0">
-                         <number>0</number>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
+                     <widget class="DROLabel" name="drolabel_8">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                        <underline>false</underline>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>1</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_29">
+                    <item>
+                     <widget class="QLabel" name="label_9">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>Z</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_9">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                        <underline>false</underline>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>2</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_43">
+                    <item>
+                     <widget class="QLabel" name="label_13">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>A</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_11">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                        <underline>false</underline>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>3</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_45">
+                    <item>
+                     <widget class="QLabel" name="label_14">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>B</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_12">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                        <underline>false</underline>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>4</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_46">
+                    <item>
+                     <widget class="QLabel" name="label_15">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="text">
+                       <string>C</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="DROLabel" name="drolabel_13">
+                      <property name="font">
+                       <font>
+                        <family>3270 Semi-Condensed</family>
+                        <pointsize>38</pointsize>
+                        <bold>true</bold>
+                        <underline>false</underline>
+                       </font>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::Shape::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Shadow::Sunken</enum>
+                      </property>
+                      <property name="lineWidth">
+                       <number>3</number>
+                      </property>
+                      <property name="midLineWidth">
+                       <number>0</number>
+                      </property>
+                      <property name="text">
+                       <string>     0.000</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+                      </property>
+                      <property name="referenceType" stdset="0">
+                       <number>0</number>
+                      </property>
+                      <property name="axisNumber" stdset="0">
+                       <number>5</number>
+                      </property>
+                      <property name="inchFormat" stdset="0">
+                       <string>%9.4f</string>
+                      </property>
+                      <property name="millimeterFormat" stdset="0">
+                       <string>%10.3f</string>
+                      </property>
+                      <property name="degreeFormat" stdset="0">
+                       <string>%10.2f</string>
+                      </property>
+                      <property name="latheMode" stdset="0">
+                       <number>0</number>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
@@ -2317,13 +2774,16 @@ USB
            <item>
             <widget class="MDIButton" name="kins_mode_cartesian">
              <property name="minimumSize">
-              <size><width>0</width><height>44</height></size>
-             </property>
-             <property name="text">
-              <string>CARTESIAN (M428)</string>
+              <size>
+               <width>0</width>
+               <height>44</height>
+              </size>
              </property>
              <property name="toolTip">
               <string>Switch to genserkins world/cartesian kinematics (M428).</string>
+             </property>
+             <property name="text">
+              <string>CARTESIAN (M428)</string>
              </property>
              <property name="MDICommand" stdset="0">
               <string>M428</string>
@@ -2333,13 +2793,16 @@ USB
            <item>
             <widget class="MDIButton" name="kins_mode_joint">
              <property name="minimumSize">
-              <size><width>0</width><height>44</height></size>
-             </property>
-             <property name="text">
-              <string>JOINT (M429)</string>
+              <size>
+               <width>0</width>
+               <height>44</height>
+              </size>
              </property>
              <property name="toolTip">
               <string>Switch to identity/joint kinematics (M429).</string>
+             </property>
+             <property name="text">
+              <string>JOINT (M429)</string>
              </property>
              <property name="MDICommand" stdset="0">
               <string>M429</string>
@@ -2360,319 +2823,35 @@ USB
          </widget>
         </item>
         <item>
-         <widget class="QGroupBox" name="groupBox_cells">
-          <property name="title">
-           <string>CELL SUBROUTINES</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_cells">
-           <item row="0" column="1">
-            <widget class="QLabel" name="cell_col_1_label">
-             <property name="text"><string>C1</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="cell_col_2_label">
-             <property name="text"><string>C2</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QLabel" name="cell_col_3_label">
-             <property name="text"><string>C3</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="0" column="4">
-            <widget class="QLabel" name="cell_col_4_label">
-             <property name="text"><string>C4</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="0" column="5">
-            <widget class="QLabel" name="cell_col_5_label">
-             <property name="text"><string>C5</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="cell_row_1_label">
-             <property name="text"><string>R1</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="SubCallButton" name="sub_cell_r1_c1">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R1C1</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r1_c1.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r1_c1.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="SubCallButton" name="sub_cell_r1_c2">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R1C2</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r1_c2.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r1_c2.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="3">
-            <widget class="SubCallButton" name="sub_cell_r1_c3">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R1C3</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r1_c3.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r1_c3.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="4">
-            <widget class="SubCallButton" name="sub_cell_r1_c4">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R1C4</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r1_c4.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r1_c4.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="5">
-            <widget class="SubCallButton" name="sub_cell_r1_c5">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R1C5</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r1_c5.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r1_c5.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="cell_row_2_label">
-             <property name="text"><string>R2</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="SubCallButton" name="sub_cell_r2_c1">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R2C1</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r2_c1.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r2_c1.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="SubCallButton" name="sub_cell_r2_c2">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R2C2</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r2_c2.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r2_c2.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="3">
-            <widget class="SubCallButton" name="sub_cell_r2_c3">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R2C3</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r2_c3.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r2_c3.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="4">
-            <widget class="SubCallButton" name="sub_cell_r2_c4">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R2C4</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r2_c4.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r2_c4.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="5">
-            <widget class="SubCallButton" name="sub_cell_r2_c5">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R2C5</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r2_c5.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r2_c5.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="cell_row_3_label">
-             <property name="text"><string>R3</string></property>
-             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="SubCallButton" name="sub_cell_r3_c1">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R3C1</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r3_c1.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r3_c1.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="2">
-            <widget class="SubCallButton" name="sub_cell_r3_c2">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R3C2</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r3_c2.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r3_c2.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="3">
-            <widget class="SubCallButton" name="sub_cell_r3_c3">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R3C3</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r3_c3.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r3_c3.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="4">
-            <widget class="SubCallButton" name="sub_cell_r3_c4">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R3C4</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r3_c4.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r3_c4.ngc</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="5">
-            <widget class="SubCallButton" name="sub_cell_r3_c5">
-             <property name="minimumSize">
-              <size><width>0</width><height>56</height></size>
-             </property>
-             <property name="text">
-              <string>R3C5</string>
-             </property>
-             <property name="toolTip">
-              <string>Run subroutine sub_r3_c5.ngc</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>sub_r3_c5.ngc</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_cells_status">
           <item>
            <widget class="QLabel" name="cell_status">
-            <property name="text"><string>idle</string></property>
+            <property name="text">
+             <string>idle</string>
+            </property>
            </widget>
           </item>
           <item>
            <spacer name="horizontalSpacer_cells">
-            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
-            <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
            </spacer>
           </item>
           <item>
            <widget class="MDIButton" name="cell_abort">
-            <property name="text"><string>ABORT</string></property>
-            <property name="toolTip"><string>Abort the running program.</string></property>
+            <property name="toolTip">
+             <string>Abort the running program.</string>
+            </property>
+            <property name="text">
+             <string>ABORT</string>
+            </property>
             <property name="MDICommand" stdset="0">
              <string>M2</string>
             </property>
@@ -2682,8 +2861,15 @@ USB
         </item>
         <item>
          <spacer name="verticalSpacer_cells">
-          <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
-          <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
          </spacer>
         </item>
        </layout>
@@ -9290,12 +9476,6 @@ USB
          <string>JOINTS</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_joints">
-         <property name="horizontalSpacing">
-          <number>6</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>4</number>
-         </property>
          <property name="leftMargin">
           <number>4</number>
          </property>
@@ -9307,6 +9487,12 @@ USB
          </property>
          <property name="bottomMargin">
           <number>2</number>
+         </property>
+         <property name="horizontalSpacing">
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>4</number>
          </property>
          <item row="0" column="0">
           <widget class="QLabel" name="jog_joint_heading">
@@ -11735,7 +11921,7 @@ X Y</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="modeGroup"/>
   <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>

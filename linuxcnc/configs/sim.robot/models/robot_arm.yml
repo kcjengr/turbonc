@@ -114,5 +114,25 @@ root:
                                 origin: [224, 0, -120]
                                 axis: "-z"
                                 joint: 5
-                                # d-5 = 76: wrist pitch -> flange.
-                                mount: [0, 76, 0, -90, 0, 0]
+                                # d-5 = 164.15: wrist pitch -> flange (76) + the
+                                # spindle depth (88.15) so the TCP sits at the
+                                # spindle's tool-exit face (where the tool
+                                # renders). See robot_arm-kinematics.hal.
+                                mount: [0, 164.15, 0, -90, 0, 0]
+                                # Spindle / end-effector, re-authored onto the
+                                # DH tool home frame like the other meshes. It
+                                # is a child of the J5 assembly so it follows
+                                # the arm (the dialog skips its synthetic tool
+                                # actor when this part is present).
+                                spindle:
+                                    id: "spindle"
+                                    color: [0.55, 0.55, 0.6]
+                                    power: 3
+                                    model: "models/spindle.stl"
+                                    type: "table"
+                                    position: [0, 0, 0, 0, 0, 0]
+                                    # the spindle's reference = the TCP at its
+                                    # tool-exit face (DH tool frame origin)
+                                    origin: [224, 0, -208.15]
+                                    axis: null
+                                    joint: null
