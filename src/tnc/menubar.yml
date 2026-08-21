@@ -171,6 +171,12 @@ default_menubar:
       - title: Simulated Probe
         action: tool.simulate_probe
 
+      - separator
+
+      - title: Robot Arm / Workspace
+        action: win.showDialog
+        args: [robot_arm]
+
   - title: About
     items:
       - title: About QtPyVCP

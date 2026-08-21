@@ -1,0 +1,19 @@
+# user space components
+# (no hal_manualtoolchange: TurboNC uses the qtpyvcp tool-change dialog,
+# which registers the qtpyvcp_manualtoolchange component itself)
+
+loadrt [KINS]KINEMATICS
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS num_dio=8 num_aio=4
+
+addf motion-command-handler      servo-thread
+addf motion-controller           servo-thread
+
+# estop loopback
+net estop-loop iocontrol.0.user-enable-out iocontrol.0.emc-enable-in
+
+# create signals for tool loading (qtpyvcp tool-change dialog pattern,
+# same as sim.qtpyvcp/hallib/core_sim_3.hal)
+net tool-number             <=  iocontrol.0.tool-prep-number
+net tool-change-request     <=  iocontrol.0.tool-change
+net tool-change-confirmed   =>  iocontrol.0.tool-changed
+net tool-prepare-loopback   iocontrol.0.tool-prepare  =>  iocontrol.0.tool-prepared

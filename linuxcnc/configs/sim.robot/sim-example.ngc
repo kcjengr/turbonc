@@ -1,0 +1,32 @@
+G90
+
+(joint mode - start pose)
+M429
+G01 X0 Y-25 Z70 A0 B-45 C0 F500
+
+(cartesian mode)
+M428
+
+o<sub_r1_c1> call
+o<sub_r1_c2> call
+o<sub_r1_c3> call
+o<sub_r1_c4> call
+o<sub_r1_c5> call
+
+o<sub_r2_c1> call
+o<sub_r2_c2> call
+o<sub_r2_c3> call
+o<sub_r2_c4> call
+o<sub_r2_c5> call
+
+o<sub_r3_c1> call
+o<sub_r3_c2> call
+o<sub_r3_c3> call
+o<sub_r3_c4> call
+o<sub_r3_c5> call
+
+(joint mode - end pose)
+M429
+G01 X0 Y-25 Z70 A0 B-45 C0 F500
+
+M2

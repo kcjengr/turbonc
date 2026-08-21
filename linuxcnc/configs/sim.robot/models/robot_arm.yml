@@ -1,0 +1,101 @@
+# Robot arm machine-parts definition for the sim.robot Meca500-style arm.
+#
+# Each STL is exported in *home-pose world coordinates* (all joints at zero):
+# the mesh geometry centre coincides with that joint's DH frame origin, and the
+# geometry is axis-aligned with the machine's Cartesian frame (Z up). The live
+# DH renderer therefore moves a part with the relative transform
+#   M_current(joint) @ inv(M_home(joint))
+# which spins it about its own joint axis at the physical pivot.
+#
+# `position` is kept at zero (the actor adds no extra offset). `origin` is the
+# joint pivot expressed in those same home-world coordinates (used for the
+# on-screen pivot cross). `mount` is the DH link pose of the joint frame
+# relative to its parent: [a, -sin(alpha)*d, cos(alpha)*d, alpha_deg, 0, 0],
+# which the "Compute DH from parts" button round-trips back to (alpha, a, d).
+
+root:
+    id: "table"
+    color: [0.33, 0.33, 0.33]
+    power: 3
+    model: "models/table.stl"
+    type: "table"
+    position: [0, 0, 0, 0, 0, 0]
+    origin: [0, 0, 0]
+    axis: null
+    joint: null
+    base:
+        id: "BASE"
+        color: [0.33, 0.33, 0.33]
+        power: 3
+        model: "models/arm_base.stl"
+        type: "table"
+        position: [0, 0, 0, 0, 0, 0]
+        origin: [0, 0, 0]
+        axis: null
+        joint: null
+        joint_0:
+            id: "joint_0"
+            color: [0.33, 0.33, 0.33]
+            power: 3
+            model: "models/arm_joint_0.stl"
+            type: "angular"
+            position: [0, 0, 0, 0, 0, 0]
+            origin: [0, 0, 76]
+            axis: "z"
+            joint: 0
+            mount: [0, 0, 135, 0, 0, 0]
+            joint_1:
+                id: "joint_1"
+                color: [0.33, 0.33, 0.33]
+                power: 3
+                model: "models/arm_joint_1.stl"
+                type: "angular"
+                position: [0, 0, 0, 0, 0, 0]
+                origin: [0, 0, 186]
+                axis: "y"
+                joint: 1
+                mount: [0, 0, 0, 0, 0, 0]
+                joint_2:
+                    id: "joint_2"
+                    color: [0.33, 0.33, 0.33]
+                    power: 3
+                    model: "models/arm_joint_2.stl"
+                    type: "angular"
+                    position: [0, 0, 0, 0, 0, 0]
+                    origin: [0, 0, 410]
+                    axis: "y"
+                    joint: 2
+                    mount: [135, 0, 0, 0, 0, 0]
+                    joint_3:
+                        id: "joint_3"
+                        color: [0.33, 0.33, 0.33]
+                        power: 3
+                        model: "models/arm_joint_3.stl"
+                        type: "angular"
+                        position: [0, 0, 0, 0, 0, 0]
+                        origin: [126, 0, 410]
+                        axis: "-z"
+                        joint: 3
+                        mount: [38, 120, 0, -90, 0, 0]
+                        joint_4:
+                            id: "joint_4"
+                            color: [0.33, 0.33, 0.33]
+                            power: 3
+                            model: "models/arm_joint_4.stl"
+                            type: "angular"
+                            position: [0, 0, 0, 0, 0, 0]
+                            origin: [230, 0, 410]
+                            axis: "y"
+                            joint: 4
+                            mount: [0, 0, 0, 90, 0, 0]
+                            joint_5:
+                                id: "joint_5"
+                                color: [0.33, 0.33, 0.33]
+                                power: 3
+                                model: "models/arm_joint_5.stl"
+                                type: "angular"
+                                position: [0, 0, 0, 0, 0, 0]
+                                origin: [306, 0, 410]
+                                axis: "-z"
+                                joint: 5
+                                mount: [0, 70, 0, -90, 0, 0]

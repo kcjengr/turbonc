@@ -117,6 +117,12 @@ dialogs:
   settings:
     provider: tnc.dialogs.settings:TncSettingsDialog
 
+  workspace:
+    provider: tnc.dialogs.robot_arm:RobotWorkspaceDialog
+
+  robot_arm:
+    provider: tnc.dialogs.robot_arm:RobotWorkspaceDialog
+
   zero_xy:
     provider: tnc.dialogs.zero_xy:ZeroXY
     kwargs:

@@ -17,8 +17,6 @@ from qtpyvcp.utilities import logger
 
 LOG = logger.getLogger("QtPyVCP." + __name__)
 
-from qtpyvcp import actions
-
 import resources_rc
 
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -762,6 +760,58 @@ class MainWindow(VCPMainWindow):
                            self._apply_nav_helper_enabled)
         except Exception:
             LOG.exception("Failed to connect backplot.show-nav-helper setting")
+        self._wire_joint_jog_buttons()
+
+    def _wire_joint_jog_buttons(self):
+        """Wire the joint jog buttons declared in the JOG group box (.ui).
+
+        The buttons are declared in window.ui with objectNames like
+        ``jog_joint_<n>_minus`` / ``jog_joint_<n>_plus``. They jog the robot in
+        joint mode (free + teleop off), which the standard X/Y/Z
+        ``machine.jog.axis`` buttons cannot do. Press to jog continuously,
+        release to stop."""
+        from PySide6.QtWidgets import QPushButton
+
+        connected = 0
+        for btn in self.findChildren(QPushButton):
+            name = btn.objectName()
+            # jog_joint_<n>_minus / jog_joint_<n>_plus
+            if not name.startswith('jog_joint_'):
+                continue
+            try:
+                _, jnum_str, direction = name.rsplit('_', 2)
+                jnum = int(jnum_str)
+            except Exception:
+                continue
+            direction = 1 if direction == 'plus' else -1
+            btn.pressed.connect(lambda jn=jnum, d=direction: self._jog_joint(jn, d))
+            btn.released.connect(lambda jn=jnum: self._jog_joint(jn, 0))
+            connected += 1
+        LOG.info("Wired %d joint jog buttons from window.ui", connected)
+
+    def _jog_speed_mm(self):
+        """Jog speed in mm/s for directive joint jog commands."""
+        try:
+            from qtpyvcp import actions
+            return float(actions.machine.jog.linear_speed.value) / 60.0
+        except Exception:
+            return 66.67  # 4000 mm/min default
+
+    def _jog_joint(self, jnum, direction):
+        """Jog a single joint (+/-) or stop (0) in joint mode."""
+        import linuxcnc
+        from qtpyvcp.actions.base_actions import setTaskMode
+        cmd = linuxcnc.command()
+        try:
+            if not direction:
+                cmd.jog(linuxcnc.JOG_STOP, True, int(jnum))
+                return
+            setTaskMode(linuxcnc.MODE_MANUAL)
+            cmd.teleop_enable(0)
+            cmd.jog(linuxcnc.JOG_CONTINUOUS, True, int(jnum),
+                    self._jog_speed_mm() * direction)
+        except Exception:
+            LOG.exception("Failed to jog joint %d", jnum)
 
     def _apply_nav_helper_enabled(self, enabled, *_args):
         """Show/hide the camera-orientation gizmo on every backplot widget
