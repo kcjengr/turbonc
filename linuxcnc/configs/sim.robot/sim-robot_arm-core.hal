@@ -8,6 +8,14 @@ loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JO
 addf motion-command-handler      servo-thread
 addf motion-controller           servo-thread
 
+# Switchable kinematics select.
+# subroutines/428.ngc and 429.ngc write the wanted kinematics type with
+# "M68 E3 Qn", which drives motion.analog-out-03. That has to be netted to
+# motion.switchkins-type for the switch to actually take effect:
+#   0 = genserkins (cartesian / world)   1 = identity (joint)
+# (genserkins is built on switchkins.[ch], so it provides both.)
+net kinstype-select motion.analog-out-03 => motion.switchkins-type
+
 # estop loopback
 net estop-loop iocontrol.0.user-enable-out iocontrol.0.emc-enable-in
 

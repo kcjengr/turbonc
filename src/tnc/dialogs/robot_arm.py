@@ -21,15 +21,20 @@ menu (see ``menubar.yml``).
 """
 
 import copy
+import math
 import os
+from typing import ClassVar
 
 from PySide6.QtCore import Qt, QPointF, QTimer
 from PySide6.QtGui import (QColor, QLinearGradient, QPainter, QPen,
                            QRadialGradient)
-from PySide6.QtWidgets import (QComboBox, QDialog, QDoubleSpinBox, QFrame,
-                               QGridLayout, QGroupBox, QHBoxLayout, QLabel,
-                               QLineEdit, QPushButton, QScrollArea, QSlider,
-                               QSpinBox, QTabWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QComboBox, QDialog,
+                               QDoubleSpinBox, QFrame, QGridLayout, QGroupBox,
+                               QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+                               QPlainTextEdit, QPushButton, QScrollArea,
+                               QSlider, QSpinBox, QTableWidget,
+                               QTableWidgetItem, QTabWidget, QTreeWidget,
+                               QTreeWidgetItem, QVBoxLayout, QWidget)
 
 import vtk
 import yaml
@@ -37,6 +42,7 @@ import yaml
 IN_DESIGNER = os.getenv("DESIGNER", False)
 
 import tnc.main as tnc_main
+from tnc.dialogs import dh_analysis
 
 
 def _accent():
@@ -306,36 +312,33 @@ def _rewrite_hal_setp(text, values):
                   repl, text)
 
 
+# Fallback DH (alpha rad, a mm, d mm) per joint, matching the shipped
+# ``robot_arm-kinematics.hal`` (STL-derived: d-0 186, a-2 224, d-3 230,
+# d-5 76). Used when neither HAL nor the file is readable.
+_PI2 = math.pi / 2.0
+_DH_DEFAULTS = (
+    (0.0,     0.0, 186.0),
+    (-_PI2,   0.0,   0.0),
+    (0.0,   224.0,   0.0),
+    (-_PI2,   0.0, 230.0),
+    (_PI2,    0.0,   0.0),
+    (-_PI2,   0.0,  76.0),
+)
+
+
 def _dh_default_params():
-    """Default DH (alpha, a, d) per joint in radians/mm, matching the current
-    ``robot_arm-kinematics.hal`` (standard Meca500). Used as a fallback when
-    the .hal file can't be read."""
-    import math
-    pi2 = math.pi / 2.0
-    return [
-        (0.0,    0.0, 135.0),
-        (-pi2,   0.0,   0.0),
-        (0.0,  135.0,   0.0),
-        (-pi2,  38.0, 120.0),
-        (pi2,    0.0,   0.0),
-        (-pi2,   0.0,  70.0),
-    ]
+    """Default DH (alpha, a, d) per joint in radians/mm."""
+    return list(_DH_DEFAULTS)
 
 
 def _dh_from_values(values):
     """Build the (alpha, a, d) per-joint list from a dict keyed like the
     kinematics hal (``ALPHA-0``, ``A-2``, ``D-5``, values in radians/mm)."""
-    import math
-    pi2 = math.pi / 2.0
-    defs = [(0.0, 0.0, 135.0), (-pi2, 0.0, 0.0), (0.0, 135.0, 0.0),
-            (-pi2, 38.0, 120.0), (pi2, 0.0, 0.0), (-pi2, 0.0, 70.0)]
     out = []
-    for j in range(6):
-        al, a, d = defs[j]
-        al = float(values.get("ALPHA-%d" % j, al))
-        a = float(values.get("A-%d" % j, a))
-        d = float(values.get("D-%d" % j, d))
-        out.append((al, a, d))
+    for j, (al, a, d) in enumerate(_DH_DEFAULTS):
+        out.append((float(values.get("ALPHA-%d" % j, al)),
+                    float(values.get("A-%d" % j, a)),
+                    float(values.get("D-%d" % j, d))))
     return out
 
 
@@ -479,6 +482,7 @@ class RobotWorkspaceDialog(QDialog):
         self._picker = None
         self._freeze_dh = False   # True = keep manual part positions (no DH override)
         self._loading_props = False  # guard so populating fields doesn't mark edits
+        self._report = None          # last dh_analysis.Report
 
         title = QLabel("ROBOT ARM · WORKSPACE", self)
         title.setAlignment(Qt.AlignCenter)
@@ -521,8 +525,24 @@ class RobotWorkspaceDialog(QDialog):
         part_tab.setFont(_tabfont)
         pl = QVBoxLayout(part_tab)
         pl.setContentsMargins(0, 6, 0, 0)
-        pl.addWidget(self._edit_panel)
-        pl.addWidget(self._props_panel)
+        pl.setSpacing(8)
+        # Wrap the (tall) Part panels in a scroll area, matching the Jog tab,
+        # so the fields and buttons keep their natural size/style instead of
+        # being squished into the capped tab height.
+        part_scroll = QScrollArea(part_tab)
+        part_scroll.setWidgetResizable(True)
+        part_scroll.setFrameShape(QFrame.NoFrame)
+        part_scroll.viewport().setAutoFillBackground(False)
+        part_content = QWidget()
+        part_content.setAutoFillBackground(False)
+        pcl = QVBoxLayout(part_content)
+        pcl.setContentsMargins(4, 4, 4, 4)
+        pcl.setSpacing(10)
+        pcl.addWidget(self._edit_panel)
+        pcl.addWidget(self._props_panel)
+        pcl.addStretch(1)
+        part_scroll.setWidget(part_content)
+        pl.addWidget(part_scroll)
         dh_tab = QWidget(self)
         dh_tab.setAutoFillBackground(False)
         dh_tab.setFont(_tabfont)
@@ -531,9 +551,16 @@ class RobotWorkspaceDialog(QDialog):
         dl = QVBoxLayout(dh_tab)
         dl.setContentsMargins(0, 6, 0, 0)
         dl.addWidget(self._dh_panel)
+        self._dh_tab = dh_tab
+        analyze_tab = self._build_analyze_tab()
+        analyze_tab.setFont(_tabfont)
         self._tabs.addTab(self._jog_tab, "Jog")
         self._tabs.addTab(part_tab, "Part")
         self._tabs.addTab(dh_tab, "DH")
+        self._tabs.addTab(analyze_tab, "Analyze")
+        # The Analyze tab holds tables, so give the panel more room when it is
+        # selected and shrink back for the compact Jog / Part / DH tabs.
+        self._tabs.currentChanged.connect(self._on_tab_changed)
 
         load_btn = QPushButton("Load…", self)
         load_btn.clicked.connect(self._on_load)
@@ -717,6 +744,14 @@ class RobotWorkspaceDialog(QDialog):
         # tab scrolls internally when there isn't room (e.g. 9-joint robots).
         self._tabs.setMaximumHeight(320)
         self._tabs.setMinimumHeight(180)
+
+    def _on_tab_changed(self, index):
+        """Give the Analyze tab more vertical room than the compact tabs."""
+        try:
+            analyzing = self._tabs.widget(index) is self._analyze_tab
+        except (AttributeError, RuntimeError):
+            return
+        self._tabs.setMaximumHeight(560 if analyzing else 320)
 
     def _on_jog_speed(self, value):
         _JOG_SPEED["pct"] = value
@@ -1263,7 +1298,9 @@ class RobotWorkspaceDialog(QDialog):
         compute_btn = QPushButton("Compute DH from parts", box)
         compute_btn.setToolTip(
             "Derive alpha/a/d from each part's \"mount\" placement and write "
-            "them to robot_arm-kinematics.hal.")
+            "them to robot_arm-kinematics.hal.\n\nThis only reads the mount "
+            "values as written - use the Analyze tab to validate the result "
+            "against the real STL geometry.")
         compute_btn.setStyleSheet("font-size: 11pt;")
         compute_btn.clicked.connect(self._on_compute_dh)
         grid.addWidget(compute_btn, row + 1, 0, 1, 5)
@@ -1271,6 +1308,339 @@ class RobotWorkspaceDialog(QDialog):
         # load current values from HAL (if reachable)
         self._dh_load_values()
         return box
+
+    # ------------------------------------------------------------------
+    # Analyze tab: STL + yaml geometry -> DH parameters, with validation
+    # ------------------------------------------------------------------
+    _SEVERITY_COLORS: ClassVar[dict] = {
+        "error": "#ff5252",
+        "warning": "#ffb300",
+        "info": "#4fc3f7",
+        "ok": "#66bb6a",
+    }
+
+    def _build_analyze_tab(self):
+        """Build the geometry analysis tab.
+
+        Reads the machine-parts yaml and its STL meshes, derives the joint axes
+        and the DH parameters they imply, and validates the active table
+        (Jacobian rank / conditioning / singularities) so a structurally
+        impossible table is caught here instead of showing up as an opaque
+        "kinematicsInverse failed" at runtime.
+        """
+        tab = QWidget(self)
+        tab.setAutoFillBackground(False)
+        outer = QVBoxLayout(tab)
+        outer.setContentsMargins(0, 6, 0, 0)
+        outer.setSpacing(6)
+
+        # ---- action bar + status banner ---------------------------------
+        bar = QHBoxLayout()
+        bar.setSpacing(6)
+        run_btn = QPushButton("Analyze model", tab)
+        run_btn.setToolTip(
+            "Read the machine-parts yaml + STL meshes, derive the joint axes "
+            "and DH parameters, and check the active table for rank / "
+            "conditioning problems.")
+        run_btn.clicked.connect(self._on_analyze)
+        self._an_run_btn = run_btn
+
+        copy_btn = QPushButton("Copy report", tab)
+        copy_btn.setToolTip("Copy the full text report to the clipboard.")
+        copy_btn.clicked.connect(self._on_copy_report)
+        copy_btn.setEnabled(False)
+        self._an_copy_btn = copy_btn
+
+        apply_btn = QPushButton("Load derived → DH tab", tab)
+        apply_btn.setToolTip(
+            "Put the derived alpha/a/d values into the DH tab's fields so you "
+            "can review them before applying or saving.")
+        apply_btn.clicked.connect(self._on_use_derived)
+        apply_btn.setEnabled(False)
+        self._an_apply_btn = apply_btn
+
+        bar.addWidget(run_btn)
+        bar.addWidget(copy_btn)
+        bar.addWidget(apply_btn)
+        bar.addStretch(1)
+        outer.addLayout(bar)
+
+        banner = QLabel("not analyzed yet", tab)
+        banner.setWordWrap(True)
+        banner.setStyleSheet(
+            "color: #888; font-size: 11pt; padding: 4px 8px;"
+            "border-radius: 6px; background: rgba(255,255,255,0.04);")
+        self._an_banner = banner
+        outer.addWidget(banner)
+
+        # ---- result sub-tabs --------------------------------------------
+        sub = QTabWidget(tab)
+        sub.setFont(tab.font())
+        self._an_tabs = sub
+
+        self._an_findings = self._make_findings_tree(sub)
+        sub.addTab(self._wrap_scroll(self._an_findings), "Findings")
+
+        self._an_joints = self._make_table(
+            sub, ["J", "part", "origin (mm)", "axis", "mesh", "size (mm)"])
+        sub.addTab(self._wrap_scroll(self._an_joints), "Joints")
+
+        self._an_geom = self._make_table(
+            sub, ["pair", "distance (mm)", "twist (deg)", "relation"])
+        sub.addTab(self._wrap_scroll(self._an_geom), "Geometry")
+
+        self._an_dh = self._make_table(
+            sub, ["i", "active α°", "active a", "active d",
+                  "derived α°", "derived a", "derived d"])
+        sub.addTab(self._wrap_scroll(self._an_dh), "DH compare")
+
+        self._an_sweep = self._make_table(
+            sub, ["joint angle (deg)", "rank", "conditioning σ_min"])
+        sub.addTab(self._wrap_scroll(self._an_sweep), "Conditioning")
+
+        self._an_text = QPlainTextEdit(sub)
+        self._an_text.setReadOnly(True)
+        self._an_text.setLineWrapMode(QPlainTextEdit.NoWrap)
+        self._an_text.setStyleSheet(
+            "font-family: monospace; font-size: 10pt;")
+        sub.addTab(self._an_text, "Report")
+
+        outer.addWidget(sub, 1)
+        self._analyze_tab = tab
+        self._report = None
+        return tab
+
+    def _wrap_scroll(self, widget):
+        """Put a result widget in a frameless scroll area."""
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.NoFrame)
+        scroll.viewport().setAutoFillBackground(False)
+        scroll.setWidget(widget)
+        return scroll
+
+    def _make_table(self, parent, headers):
+        """A compact read-only table styled for the analysis panels."""
+        t = QTableWidget(0, len(headers), parent)
+        t.setHorizontalHeaderLabels(headers)
+        t.verticalHeader().setVisible(False)
+        t.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        t.setSelectionBehavior(QAbstractItemView.SelectRows)
+        t.setAlternatingRowColors(True)
+        t.setStyleSheet("font-size: 10pt;")
+        head = t.horizontalHeader()
+        head.setStretchLastSection(True)
+        for c in range(len(headers)):
+            head.setSectionResizeMode(c, QHeaderView.ResizeToContents)
+        return t
+
+    def _make_findings_tree(self, parent):
+        tree = QTreeWidget(parent)
+        tree.setColumnCount(1)
+        tree.setHeaderHidden(True)
+        tree.setStyleSheet("font-size: 10pt;")
+        tree.setSelectionMode(QAbstractItemView.NoSelection)
+        return tree
+
+    def _on_analyze(self):
+        """Run the geometry analysis and populate every result panel."""
+        if not self._machine_parts_file:
+            self._an_banner.setText(
+                "No [VTK] MACHINE_PARTS yaml for this config - nothing to "
+                "analyze.")
+            self._an_banner.setStyleSheet(
+                "color: %s; font-size: 11pt; padding: 4px 8px;"
+                "border-radius: 6px; background: rgba(255,179,0,0.12);"
+                % self._SEVERITY_COLORS["warning"])
+            return
+
+        current = None
+        if self._config_dir:
+            hal_path = os.path.join(self._config_dir,
+                                    "robot_arm-kinematics.hal")
+            if os.path.isfile(hal_path):
+                current = dh_analysis.read_hal_table(
+                    hal_path, self._dh_joint_count())
+
+        self._an_run_btn.setEnabled(False)
+        try:
+            report = dh_analysis.analyse(
+                self._machine_parts_file,
+                data=self._machine_parts_data,
+                config_dir=self._config_dir,
+                current_table=current)
+        except Exception as exc:  # noqa: BLE001 - surface analysis failures
+            tnc_main.LOG.exception("RobotArm: analysis failed")
+            self._an_banner.setText("analysis failed: %s" % exc)
+            self._an_banner.setStyleSheet(
+                "color: %s; font-size: 11pt; padding: 4px 8px;"
+                "border-radius: 6px; background: rgba(255,82,82,0.12);"
+                % self._SEVERITY_COLORS["error"])
+            return
+        finally:
+            self._an_run_btn.setEnabled(True)
+
+        self._report = report
+        self._populate_analysis(report)
+        self._an_copy_btn.setEnabled(True)
+        self._an_apply_btn.setEnabled(bool(report.derived))
+
+    def _populate_analysis(self, report):
+        """Fill the findings / joints / geometry / DH / sweep panels."""
+        # ---- banner ------------------------------------------------------
+        counts = {}
+        for f in report.findings:
+            counts[f.severity] = counts.get(f.severity, 0) + 1
+        worst = report.worst
+        bits = ["%d %s" % (counts[k], k)
+                for k in ("error", "warning", "info") if k in counts]
+        summary = ", ".join(bits) if bits else "no problems found"
+        rank_txt = ""
+        if report.current_rank is not None:
+            rank_txt = "   |   active table rank %d/%d, \u03c3min %.4f" % (
+                report.current_rank, len(report.current or []) or 6,
+                report.current_sigma or 0.0)
+        self._set_banner(worst, "%d joints analyzed \u2014 %s%s"
+                         % (len(report.joints), summary, rank_txt))
+
+        # ---- findings ----------------------------------------------------
+        tree = self._an_findings
+        tree.clear()
+        order = dh_analysis.SEVERITY_ORDER
+        for f in sorted(report.findings,
+                        key=lambda x: order.get(x.severity, 9)):
+            item = QTreeWidgetItem(["[%s]  %s" % (f.severity.upper(), f.title)])
+            item.setForeground(0, QColor(self._SEVERITY_COLORS.get(
+                f.severity, "#cccccc")))
+            if f.detail:
+                child = QTreeWidgetItem([f.detail])
+                child.setForeground(0, QColor("#aaaaaa"))
+                item.addChild(child)
+            tree.addTopLevelItem(item)
+        tree.expandAll()
+
+        # ---- joints ------------------------------------------------------
+        t = self._an_joints
+        t.setRowCount(len(report.joints))
+        for r, j in enumerate(report.joints):
+            mesh = report.meshes.get(j.index)
+            if mesh is None or not mesh.exists:
+                mesh_txt = mesh.error if mesh is not None else "not read"
+                size_txt = ""
+            else:
+                mesh_txt = "%d tris" % mesh.triangles
+                size_txt = " x ".join("%.1f" % v for v in mesh.size)
+            cells = ["J%d" % j.index, str(j.part_id),
+                     ", ".join("%.1f" % v for v in j.origin),
+                     str(j.axis_name), mesh_txt, size_txt]
+            for c, text in enumerate(cells):
+                t.setItem(r, c, QTableWidgetItem(text))
+
+        # ---- pairwise geometry -------------------------------------------
+        t = self._an_geom
+        t.setRowCount(len(report.pairs))
+        for r, p in enumerate(report.pairs):
+            cells = ["J%d \u2192 J%d" % (p.i, p.i + 1),
+                     "%.3f" % p.distance, "%.2f" % p.angle_deg, p.relation]
+            for c, text in enumerate(cells):
+                item = QTableWidgetItem(text)
+                if c == 3 and p.relation == "coincident":
+                    item.setForeground(QColor(self._SEVERITY_COLORS["error"]))
+                t.setItem(r, c, item)
+
+        # ---- DH comparison ------------------------------------------------
+        t = self._an_dh
+        rows = max(len(report.current or []), len(report.derived or []))
+        t.setRowCount(rows)
+        for r in range(rows):
+            cur = report.current[r] if r < len(report.current or []) else None
+            der = report.derived[r] if r < len(report.derived or []) else None
+            t.setItem(r, 0, QTableWidgetItem(str(r)))
+            for base, trip in ((1, cur), (4, der)):
+                if trip is None:
+                    continue
+                alpha, a, d = trip
+                for off, val in enumerate((_rad2deg(alpha), a, d)):
+                    t.setItem(r, base + off, QTableWidgetItem("%.3f" % val))
+            # highlight where the active table disagrees with the model
+            if cur and der:
+                for off in range(3):
+                    cv = cur[off] if off else _rad2deg(cur[0])
+                    dv = der[off] if off else _rad2deg(der[0])
+                    if abs(float(cv) - float(dv)) > 1e-3:
+                        for col in (1 + off, 4 + off):
+                            it = t.item(r, col)
+                            if it is not None:
+                                it.setForeground(
+                                    QColor(self._SEVERITY_COLORS["warning"]))
+
+        # ---- conditioning sweep -------------------------------------------
+        t = self._an_sweep
+        t.setRowCount(len(report.sweep))
+        njoints = len(report.current or []) or 6
+        for r, (ang, rank, sigma) in enumerate(report.sweep):
+            cells = ["%.1f" % ang, "%d" % rank, "%.4f" % sigma]
+            for c, text in enumerate(cells):
+                item = QTableWidgetItem(text)
+                if rank < njoints:
+                    item.setForeground(QColor(self._SEVERITY_COLORS["error"]))
+                elif sigma < 0.05:
+                    item.setForeground(QColor(self._SEVERITY_COLORS["warning"]))
+                t.setItem(r, c, item)
+
+        # ---- full text report ----------------------------------------------
+        self._an_text.setPlainText(dh_analysis.format_report(report))
+
+    def _set_banner(self, severity, text):
+        """Colour the analysis banner according to the worst finding."""
+        color = self._SEVERITY_COLORS.get(severity, "#888")
+        rgba = {"error": "rgba(255,82,82,0.12)",
+                "warning": "rgba(255,179,0,0.12)",
+                "info": "rgba(79,195,247,0.12)",
+                "ok": "rgba(102,187,106,0.12)"}.get(severity,
+                                                   "rgba(255,255,255,0.04)")
+        self._an_banner.setText(text)
+        self._an_banner.setStyleSheet(
+            "color: %s; font-size: 11pt; font-weight: 600; padding: 4px 8px;"
+            "border-radius: 6px; background: %s;" % (color, rgba))
+
+    def _on_copy_report(self):
+        """Copy the plain-text analysis report to the clipboard."""
+        if self._report is None:
+            return
+        try:
+            from PySide6.QtWidgets import QApplication
+            QApplication.clipboard().setText(
+                dh_analysis.format_report(self._report))
+            self._status.setText("analysis report copied")
+        except Exception as exc:  # noqa: BLE001 - clipboard is best-effort
+            tnc_main.LOG.exception("RobotArm: copy report failed")
+            self._status.setText("copy failed: %s" % exc)
+
+    def _on_use_derived(self):
+        """Load the derived alpha/a/d into the DH tab for review.
+
+        Deliberately does *not* apply or save - the derived table comes from
+        the drawn pose, which may not be a valid kinematic zero, so it needs a
+        human look before it goes anywhere near the running kinematics.
+        """
+        if self._report is None or not self._report.derived:
+            return
+        n = self._dh_joint_count()
+        for j, (alpha, a, d) in enumerate(self._report.derived[:n]):
+            try:
+                self._dh["alpha"][j].setValue(_rad2deg(alpha))
+                self._dh["a"][j].setValue(a)
+                self._dh["d"][j].setValue(d)
+            except (KeyError, RuntimeError):
+                continue
+        # jump to the DH tab so the loaded values are visible straight away
+        try:
+            self._tabs.setCurrentIndex(self._tabs.indexOf(self._dh_tab))
+        except Exception:  # noqa: BLE001 - tab lookup is cosmetic
+            pass
+        self._status.setText(
+            "derived DH loaded into the DH tab - review, then Apply/Save")
 
     def _dh_joint_count(self):
         return 6
@@ -2409,11 +2779,10 @@ class RobotWorkspaceDialog(QDialog):
         FK. Reads the real ``genserkins`` HAL pins when reachable (so live Apply
         DH edits take effect immediately), else the on-disk kinematics .hal
         (via the same parser the DH panel uses), else the Meca500 defaults."""
-        live = False
+        vals = {}
+        ok = 0
         hal = self._dh_hal()
         if hal is not None:
-            vals = {}
-            ok = 0
             try:
                 for j in range(6):
                     vals["ALPHA-%d" % j] = hal.getp("genserkins.ALPHA-%d" % j)
@@ -2422,9 +2791,7 @@ class RobotWorkspaceDialog(QDialog):
                     ok += 1
             except Exception:  # noqa: BLE001 - fall back below
                 ok = 0
-            if ok == 6:
-                live = True
-        if live:
+        if ok == 6:
             return _dh_from_values(vals)
         file_vals = self._dh_file_values()
         if file_vals:
@@ -2520,36 +2887,6 @@ class RobotWorkspaceDialog(QDialog):
             t = vtk.vtkTransform()
             t.SetMatrix(_np_to_vtk(local))
             self._tool_actor.SetUserTransform(t)
-
-    @staticmethod
-    def _apply_joint_transform(part, joint_positions):
-        """Replicate vtk_backplot.VTKBackPlot.move_part for angular joints."""
-        pivot = part.GetPartOrigin()
-        if pivot is None:
-            pivot = part.GetPartPosition()
-        axis = part.GetPartAxis()
-        jnum = part.GetPartJoint()
-        try:
-            angle = float(joint_positions(jnum))
-        except Exception:  # noqa: BLE001 - joint not yet available
-            angle = 0.0
-
-        t = vtk.vtkTransform()
-        t.Translate(pivot[0], pivot[1], pivot[2])
-        if axis == "x":
-            t.RotateX(angle)
-        elif axis == "y":
-            t.RotateY(angle)
-        elif axis == "z":
-            t.RotateZ(angle)
-        elif axis == "-x":
-            t.RotateX(-angle)
-        elif axis == "-y":
-            t.RotateY(-angle)
-        elif axis == "-z":
-            t.RotateZ(-angle)
-        t.Translate(-pivot[0], -pivot[1], -pivot[2])
-        part.SetUserTransform(t)
 
     # ------------------------------------------------------------------
     # Window chrome (glass/drag) - same treatment as workspace dialog

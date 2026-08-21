@@ -1,17 +1,23 @@
-# Robot arm machine-parts definition for the sim.robot Meca500-style arm.
+# Robot arm machine-parts definition for the sim.robot arm (STL-derived).
 #
-# Each STL is exported in *home-pose world coordinates* (all joints at zero):
-# the mesh geometry centre coincides with that joint's DH frame origin, and the
-# geometry is axis-aligned with the machine's Cartesian frame (Z up). The live
-# DH renderer therefore moves a part with the relative transform
+# The STLs were measured from the assembly and re-authored onto the DH home
+# frames (theta=0): the arm is drawn straight - base yaw at z=186, upper arm
+# 224 along +x, forearm 230 hanging down, flange 76 below the wrist. The
+# DH renderer moves a part with the relative transform
 #   M_current(joint) @ inv(M_home(joint))
-# which spins it about its own joint axis at the physical pivot.
+# which spins it about its own joint axis at the physical pivot, so the view
+# tracks genserkins exactly.
 #
 # `position` is kept at zero (the actor adds no extra offset). `origin` is the
-# joint pivot expressed in those same home-world coordinates (used for the
-# on-screen pivot cross). `mount` is the DH link pose of the joint frame
-# relative to its parent: [a, -sin(alpha)*d, cos(alpha)*d, alpha_deg, 0, 0],
-# which the "Compute DH from parts" button round-trips back to (alpha, a, d).
+# joint pivot on the DH home frame (used for the on-screen pivot cross).
+# `mount` is the DH link pose of the joint frame relative to its parent:
+# [a, -sin(alpha)*d, cos(alpha)*d, alpha_deg, 0, 0], which the "Compute DH
+# from parts" button round-trips back to (alpha, a, d). It mirrors the values
+# in robot_arm-kinematics.hal:
+#   alpha [0, -90, 0, -90, 90, -90]   a [0, 0, 224, 0, 0, 0]
+#   d     [186, 0, 0, 230, 0, 76]
+# The machine HOME pose [0, -90, 0, 0, 10, 180] shows the arm in the classic
+# drawn/vertical orientation.
 
 root:
     id: "table"
@@ -43,7 +49,8 @@ root:
             origin: [0, 0, 76]
             axis: "z"
             joint: 0
-            mount: [0, 0, 135, 0, 0, 0]
+            # d-0 = 186: base -> shoulder height.
+            mount: [0, 0, 186, 0, 0, 0]
             joint_1:
                 id: "joint_1"
                 color: [0.33, 0.33, 0.33]
@@ -54,7 +61,9 @@ root:
                 origin: [0, 0, 186]
                 axis: "y"
                 joint: 1
-                mount: [0, 0, 0, 0, 0, 0]
+                # alpha-1 = -90: shoulder pitch axis (+Y) is perpendicular to
+                # the base yaw (+Z).
+                mount: [0, 0, 0, -90, 0, 0]
                 joint_2:
                     id: "joint_2"
                     color: [0.33, 0.33, 0.33]
@@ -62,10 +71,11 @@ root:
                     model: "models/arm_joint_2.stl"
                     type: "angular"
                     position: [0, 0, 0, 0, 0, 0]
-                    origin: [0, 0, 410]
+                    origin: [224, 0, 186]
                     axis: "y"
                     joint: 2
-                    mount: [135, 0, 0, 0, 0, 0]
+                    # a-2 = 224: the upper-arm length (shoulder -> elbow).
+                    mount: [224, 0, 0, 0, 0, 0]
                     joint_3:
                         id: "joint_3"
                         color: [0.33, 0.33, 0.33]
@@ -73,10 +83,13 @@ root:
                         model: "models/arm_joint_3.stl"
                         type: "angular"
                         position: [0, 0, 0, 0, 0, 0]
-                        origin: [126, 0, 410]
+                        # J3 is the forearm ROLL. At the DH zero pose the
+                        # forearm hangs straight down, so the roll axis is -Z.
+                        origin: [224, 0, 60]
                         axis: "-z"
                         joint: 3
-                        mount: [38, 120, 0, -90, 0, 0]
+                        # d-3 = 230: forearm length (elbow -> wrist).
+                        mount: [0, 230, 0, -90, 0, 0]
                         joint_4:
                             id: "joint_4"
                             color: [0.33, 0.33, 0.33]
@@ -84,9 +97,10 @@ root:
                             model: "models/arm_joint_4.stl"
                             type: "angular"
                             position: [0, 0, 0, 0, 0, 0]
-                            origin: [230, 0, 410]
+                            origin: [224, 0, -44]
                             axis: "y"
                             joint: 4
+                            # alpha-4 = +90: wrist pitch.
                             mount: [0, 0, 0, 90, 0, 0]
                             joint_5:
                                 id: "joint_5"
@@ -95,7 +109,10 @@ root:
                                 model: "models/arm_joint_5.stl"
                                 type: "angular"
                                 position: [0, 0, 0, 0, 0, 0]
-                                origin: [306, 0, 410]
+                                # J5 is the tool ROLL; its flange disc is at
+                                # the bottom of the hanging wrist.
+                                origin: [224, 0, -120]
                                 axis: "-z"
                                 joint: 5
-                                mount: [0, 70, 0, -90, 0, 0]
+                                # d-5 = 76: wrist pitch -> flange.
+                                mount: [0, 76, 0, -90, 0, 0]

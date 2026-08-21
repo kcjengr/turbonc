@@ -5,7 +5,7 @@ import os
 # Force qtpy to use PySide6
 os.environ['QT_API'] = 'pyside6'
 
-from PySide6.QtCore import QFileSystemWatcher, QTimer, Slot
+from PySide6.QtCore import QFileSystemWatcher, QObject, QTimer, Slot
 from PySide6.QtGui import QPalette
 from PySide6.QtWidgets import (QAbstractButton, QApplication, QMessageBox)
 
@@ -761,6 +761,43 @@ class MainWindow(VCPMainWindow):
         except Exception:
             LOG.exception("Failed to connect backplot.show-nav-helper setting")
         self._wire_joint_jog_buttons()
+        self._wire_cell_buttons()
+
+    # ------------------------------------------------------------------
+    # Cells tab: kinematics mode + subroutine call buttons
+    # ------------------------------------------------------------------
+    def _wire_cell_buttons(self):
+        """Set up the Cells tab's live kinematics-mode indicator.
+
+        The cell SubCallButtons and kinematics MDIButtons are declared in
+        window.ui as native qtpyvcp widgets (SubCallButton / MDIButton) which
+        handle their own MDI calls, mode switching and enable/disable - no
+        manual wiring needed. We just poll the kinematics type to keep the
+        status label updated.
+        """
+        self._kins_timer = QTimer(self)
+        self._kins_timer.setInterval(500)
+        self._kins_timer.timeout.connect(self._refresh_kins_mode)
+        self._kins_timer.start()
+        self._refresh_kins_mode()
+
+    def _refresh_kins_mode(self):
+        """Reflect the live ``motion.switchkins-type`` on the mode label."""
+        kinstype = None
+        try:
+            import hal
+            kinstype = int(round(float(hal.getp("motion.switchkins-type"))))
+        except Exception:  # noqa: BLE001 - HAL not up yet / pin absent
+            pass
+        status = self.findChild(QObject, 'kins_mode_status')
+        if status is None or not hasattr(status, 'setText'):
+            return
+        if kinstype is None:
+            status.setText("mode: --")
+        else:
+            name = {0: "cartesian", 1: "joint", 2: "userk"}.get(
+                kinstype, str(kinstype))
+            status.setText("mode: %s" % name)
 
     def _wire_joint_jog_buttons(self):
         """Wire the joint jog buttons declared in the JOG group box (.ui).

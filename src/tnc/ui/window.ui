@@ -2303,6 +2303,391 @@ USB
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="tab_cells">
+       <attribute name="title">
+        <string>Cells</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_cells">
+        <item>
+         <widget class="QGroupBox" name="groupBox_kins_mode">
+          <property name="title">
+           <string>KINEMATICS MODE</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_kins_mode">
+           <item>
+            <widget class="MDIButton" name="kins_mode_cartesian">
+             <property name="minimumSize">
+              <size><width>0</width><height>44</height></size>
+             </property>
+             <property name="text">
+              <string>CARTESIAN (M428)</string>
+             </property>
+             <property name="toolTip">
+              <string>Switch to genserkins world/cartesian kinematics (M428).</string>
+             </property>
+             <property name="MDICommand" stdset="0">
+              <string>M428</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="MDIButton" name="kins_mode_joint">
+             <property name="minimumSize">
+              <size><width>0</width><height>44</height></size>
+             </property>
+             <property name="text">
+              <string>JOINT (M429)</string>
+             </property>
+             <property name="toolTip">
+              <string>Switch to identity/joint kinematics (M429).</string>
+             </property>
+             <property name="MDICommand" stdset="0">
+              <string>M429</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="kins_mode_status">
+             <property name="text">
+              <string>mode: --</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_cells">
+          <property name="title">
+           <string>CELL SUBROUTINES</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_cells">
+           <item row="0" column="1">
+            <widget class="QLabel" name="cell_col_1_label">
+             <property name="text"><string>C1</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="cell_col_2_label">
+             <property name="text"><string>C2</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="cell_col_3_label">
+             <property name="text"><string>C3</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="cell_col_4_label">
+             <property name="text"><string>C4</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="cell_col_5_label">
+             <property name="text"><string>C5</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="cell_row_1_label">
+             <property name="text"><string>R1</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="SubCallButton" name="sub_cell_r1_c1">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R1C1</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r1_c1.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r1_c1.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="SubCallButton" name="sub_cell_r1_c2">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R1C2</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r1_c2.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r1_c2.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="SubCallButton" name="sub_cell_r1_c3">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R1C3</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r1_c3.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r1_c3.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="SubCallButton" name="sub_cell_r1_c4">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R1C4</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r1_c4.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r1_c4.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="SubCallButton" name="sub_cell_r1_c5">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R1C5</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r1_c5.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r1_c5.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="cell_row_2_label">
+             <property name="text"><string>R2</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="SubCallButton" name="sub_cell_r2_c1">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R2C1</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r2_c1.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r2_c1.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="SubCallButton" name="sub_cell_r2_c2">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R2C2</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r2_c2.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r2_c2.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="SubCallButton" name="sub_cell_r2_c3">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R2C3</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r2_c3.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r2_c3.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="SubCallButton" name="sub_cell_r2_c4">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R2C4</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r2_c4.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r2_c4.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="SubCallButton" name="sub_cell_r2_c5">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R2C5</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r2_c5.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r2_c5.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="cell_row_3_label">
+             <property name="text"><string>R3</string></property>
+             <property name="alignment"><set>Qt::AlignmentFlag::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="SubCallButton" name="sub_cell_r3_c1">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R3C1</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r3_c1.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r3_c1.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="SubCallButton" name="sub_cell_r3_c2">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R3C2</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r3_c2.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r3_c2.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="SubCallButton" name="sub_cell_r3_c3">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R3C3</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r3_c3.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r3_c3.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="SubCallButton" name="sub_cell_r3_c4">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R3C4</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r3_c4.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r3_c4.ngc</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="SubCallButton" name="sub_cell_r3_c5">
+             <property name="minimumSize">
+              <size><width>0</width><height>56</height></size>
+             </property>
+             <property name="text">
+              <string>R3C5</string>
+             </property>
+             <property name="toolTip">
+              <string>Run subroutine sub_r3_c5.ngc</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>sub_r3_c5.ngc</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_cells_status">
+          <item>
+           <widget class="QLabel" name="cell_status">
+            <property name="text"><string>idle</string></property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_cells">
+            <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="MDIButton" name="cell_abort">
+            <property name="text"><string>ABORT</string></property>
+            <property name="toolTip"><string>Abort the running program.</string></property>
+            <property name="MDICommand" stdset="0">
+             <string>M2</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_cells">
+          <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+          <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
         <string>Probe</string>
@@ -10607,6 +10992,11 @@ X Y</string>
    <class>SubCallButton</class>
    <extends>QPushButton</extends>
    <header>qtpyvcp.widgets.button_widgets.subcall_button</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
   </customwidget>
   <customwidget>
    <class>DialogButton</class>
