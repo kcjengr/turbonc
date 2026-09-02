@@ -22,8 +22,6 @@ import resources_rc
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
 THEMES_DIR = "themes"
 
-LIGHT_STYLESHEET_FILE = "light.qss"
-DARK_STYLESHEET_FILE = "dark.qss"
 
 from tnc.view_styles import (BACKGROUND_FILES, BACKGROUND_NAMES,
                              VIEW_STYLE_FILES, VIEW_STYLE_NAMES,
@@ -44,8 +42,8 @@ THEME_NAMES = [
     "Dark White", "Light Black",
 ]
 THEME_FILES = {
-    "Dark Cyan": DARK_STYLESHEET_FILE,
-    "Light Cyan": LIGHT_STYLESHEET_FILE,
+    "Dark Cyan": "dark.qss",
+    "Light Cyan": "light.qss",
     "Dark Magenta": "dark-magenta.qss",
     "Light Magenta": "light-magenta.qss",
     "Dark Green": "dark-green.qss",
@@ -786,7 +784,7 @@ class MainWindow(VCPMainWindow):
         kinstype = None
         try:
             import hal
-            kinstype = int(round(float(hal.getp("motion.switchkins-type"))))
+            kinstype = int(round(float(hal.get_p("motion.switchkins-type"))))
         except Exception:  # noqa: BLE001 - HAL not up yet / pin absent
             pass
         status = self.findChild(QObject, 'kins_mode_status')
@@ -906,4 +904,3 @@ class MainWindow(VCPMainWindow):
         except Exception:
             LOG.exception('Failed to read app.confirm-exit setting')
         super(MainWindow, self).closeEvent(event)
-            
