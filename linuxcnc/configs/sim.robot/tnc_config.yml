@@ -31,9 +31,15 @@ data_plugins:
       use_program_units: True
 
   tooltable:
-    provider: qtpyvcp.plugins.tool_table:ToolTable
+    # DB-backed: shares [EMCIO] DB_PROGRAM's mill_tools.db with the
+    # LinuxCNC-spawned tool_db_backend (single source of truth). The legacy
+    # file-based plugin can't persist anything here and leaves the DB-backed
+    # Tools-tab widgets (ToolSTLField) pointed at an unconfigured db.sqlite.
+    provider: qtpyvcp.plugins.db_tool_table:DBToolTable
     kwargs:
         columns: TXYZABCDR
+        # Mill flavor: enables the tool_mill extras (ATC) column.
+        extras: mill
 
   offsettable:
     provider: qtpyvcp.plugins.offset_table:OffsetTable

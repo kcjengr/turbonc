@@ -17,8 +17,9 @@ import math
 
 ALPHA = [0.0,          -math.pi/2.0, 0.0,
          -math.pi/2.0,  math.pi/2.0, -math.pi/2.0]
-A = [0.0, 0.0, 135.0, 38.0, 0.0, 0.0]
-D = [135.0, 0.0, 0.0, 120.0, 0.0, 70.0]
+# Mirrors robot_arm-kinematics.hal / models/robot_arm.yml (STL-derived DH).
+A = [0.0, 0.0, 224.0, 0.0, 0.0, 0.0]
+D = [186.0, 0.0, 0.0, 230.0, 0.0, 164.15]
 NAMES = ["joint_0", "joint_1", "joint_2", "joint_3", "joint_4", "joint_5"]
 
 

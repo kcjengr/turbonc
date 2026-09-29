@@ -9,12 +9,24 @@ addf motion-command-handler      servo-thread
 addf motion-controller           servo-thread
 
 # Switchable kinematics select.
-# subroutines/428.ngc and 429.ngc write the wanted kinematics type with
-# "M68 E3 Qn", which drives motion.analog-out-03. That has to be netted to
-# motion.switchkins-type for the switch to actually take effect:
-#   0 = genserkins (cartesian / world)   1 = identity (joint)
-# (genserkins is built on switchkins.[ch], so it provides both.)
-net kinstype-select motion.analog-out-03 => motion.switchkins-type
+# M428/M429 (subroutines/428.ngc, 429.ngc) now switch with G12.1 P-, which
+# synchronises the interpreter and motion in one step (0 = genserkins /
+# cartesian, 1 = identity / joint). No HAL pin or analog net is involved;
+# motion.kins-type is an OUT pin reflecting the type in force.
+
+# Reach guard: stop Cartesian (teleop) jogs that would walk the TCP past the
+# arm's reachable envelope, so genserkins' iterative IK is never asked to
+# invert an unreachable pose (which faults the machine and disables it).
+# See reach_guard.py for the geometry.
+# loadusr -Wn NAME waits for the *named* component (reach_guard) to become
+# ready; plain "-W" would wait for a component called "python3" and stall.
+loadusr -Wn reach_guard python3 /home/turboss/Dev/CNC/turbonc/linuxcnc/configs/sim.robot/reach_guard.py
+net reach-x           axis.x.pos-cmd          => reach_guard.x
+net reach-y           axis.y.pos-cmd          => reach_guard.y
+net reach-z           axis.z.pos-cmd          => reach_guard.z
+net reach-jog-active  motion.jog-is-active    => reach_guard.jog-active
+net reach-teleop      motion.teleop-mode      => reach_guard.teleop-mode
+net reach-jog-stop    reach_guard.jog-stop    => motion.jog-stop
 
 # estop loopback
 net estop-loop iocontrol.0.user-enable-out iocontrol.0.emc-enable-in

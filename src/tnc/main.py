@@ -760,6 +760,8 @@ class MainWindow(VCPMainWindow):
             LOG.exception("Failed to connect backplot.show-nav-helper setting")
         self._wire_joint_jog_buttons()
         self._wire_cell_buttons()
+        self._wire_lcnc_indicators()
+        self._wire_jog_controls()
 
     # ------------------------------------------------------------------
     # Cells tab: kinematics mode + subroutine call buttons
@@ -780,11 +782,22 @@ class MainWindow(VCPMainWindow):
         self._refresh_kins_mode()
 
     def _refresh_kins_mode(self):
-        """Reflect the live ``motion.switchkins-type`` on the mode label."""
+        """Reflect the live kinematics type on the mode label.
+
+        Prefers ``motion.kins-type`` (the OUT pin G12.1/G13.1 update), falling
+        back to the deprecated ``motion.switchkins-type`` input pin for older
+        configurations that still drive the switch through HAL.
+        """
         kinstype = None
         try:
             import hal
-            kinstype = int(round(float(hal.get_p("motion.switchkins-type"))))
+            for pin in ("motion.kins-type", "motion.switchkins-type"):
+                try:
+                    kinstype = round(float(hal.get_p(pin)))
+                except Exception:  # noqa: BLE001 - try the next pin name
+                    LOG.debug("kins mode: HAL pin %s unavailable", pin)
+                    continue
+                break
         except Exception:  # noqa: BLE001 - HAL not up yet / pin absent
             pass
         status = self.findChild(QObject, 'kins_mode_status')
@@ -796,6 +809,182 @@ class MainWindow(VCPMainWindow):
             name = {0: "cartesian", 1: "joint", 2: "userk"}.get(
                 kinstype, str(kinstype))
             status.setText("mode: %s" % name)
+
+    def _wire_lcnc_indicators(self):
+        """Add STEP + TASK indicator chips to the Program-tab run row.
+
+        Reads the qtpyvcp STATUS channels ``stepping`` / ``taskbeat`` /
+        ``heartbeat`` that were added for LinuxCNC 2.10. On older builds the
+        channels report 0/False, so the chips simply stay neutral - never an
+        error. Cosmetic + watchdog only; every failure is logged, never fatal.
+        """
+        if getattr(self, '_lcnc_timer', None) is not None:
+            return
+        try:
+            from qtpyvcp.plugins import getPlugin
+            status = getPlugin('status')
+        except Exception:  # noqa: BLE001
+            status = None
+        if status is None:
+            LOG.info("status plugin unavailable; skipping LCNC indicator chips")
+            return
+
+        # STEP / TASK indicator chips are declared in window.ui (Program tab,
+        # PROGRAM run row); grab them here instead of building them in code.
+        self._step_label = self.findChild(QObject, 'lcnc_step_label')
+        self._task_label = self.findChild(QObject, 'lcnc_task_label')
+        if self._step_label is None or self._task_label is None:
+            LOG.info("LCNC indicator labels not found in window.ui; "
+                     "skipping STEP/TASK chips")
+            return
+
+        self._status_plugin = status
+        self._step_state = None
+        self._task_state = None
+        self._taskbeat_last = None
+        self._stall_ms = 0
+
+        self._lcnc_timer = QTimer(self)
+        self._lcnc_timer.setInterval(250)
+        self._lcnc_timer.timeout.connect(self._update_lcnc_indicators)
+        self._lcnc_timer.start()
+        LOG.info("Wired LinuxCNC STEP/TASK indicator chips")
+
+    def _update_lcnc_indicators(self):
+        """Refresh the STEP/TASK chips from the qtpyvcp status channels."""
+        status = getattr(self, '_status_plugin', None)
+        if status is None:
+            return
+        try:
+            stepping = bool(getattr(status, 'stepping', None).value)
+        except Exception:  # noqa: BLE001 - older linuxcnc: channel absent
+            stepping = False
+        try:
+            enabled = bool(status.enabled.value)
+        except Exception:  # noqa: BLE001
+            enabled = False
+        try:
+            taskbeat = int(getattr(status, 'taskbeat', None).value or 0)
+        except Exception:  # noqa: BLE001
+            taskbeat = None
+
+        # Single-step indicator: lit only while motion runs one stepped block.
+        if stepping != self._step_state:
+            self._step_state = stepping
+            if stepping:
+                self._step_label.setText('\u25cf STEP')
+                self._step_label.setStyleSheet(
+                    'QLabel { background-color: #d97706; color: #fff;'
+                    ' border-radius: 4px; font-weight: 700; }')
+            else:
+                self._step_label.setText('STEP')
+                self._step_label.setStyleSheet(
+                    'QLabel { color: #6b7280; font-weight: 600; }')
+
+        # Task watchdog: milltask should tick its taskbeat continuously while
+        # the machine is on; a stall longer than 4 s means it has wedged.
+        task_state = 'idle'
+        if enabled and taskbeat is not None:
+            if self._taskbeat_last is not None:
+                if taskbeat == self._taskbeat_last:
+                    self._stall_ms += 250
+                else:
+                    self._stall_ms = 0
+            self._taskbeat_last = taskbeat
+            task_state = 'stall' if self._stall_ms >= 4000 else 'ok'
+        else:
+            self._taskbeat_last = None
+            self._stall_ms = 0
+
+        if task_state != self._task_state:
+            self._task_state = task_state
+            if task_state == 'ok':
+                self._task_label.setText('\u25cf TASK OK')
+                self._task_label.setStyleSheet(
+                    'QLabel { background-color: #15803d; color: #fff;'
+                    ' border-radius: 4px; font-weight: 700; }')
+            elif task_state == 'stall':
+                self._task_label.setText('\u25cf TASK STALL')
+                self._task_label.setStyleSheet(
+                    'QLabel { background-color: #b91c1c; color: #fff;'
+                    ' border-radius: 4px; font-weight: 700; }')
+                LOG.warning('LinuxCNC task heartbeat stalled >= 4 s'
+                            ' while the machine is on')
+            else:
+                self._task_label.setText('TASK')
+                self._task_label.setStyleSheet(
+                    'QLabel { color: #6b7280; font-weight: 600; }')
+
+    def _wire_jog_controls(self):
+        """Wire the jog mode / increment buttons in the INCREMENTS group box.
+
+        The axis jog pad (``machine.jog.axis:*`` ActionButtons) honours the
+        qtpyvcp settings ``machine.jog.mode-incremental`` and
+        ``machine.jog.increment``, so CONT + the 0.001-10 mm buttons just set
+        those. Checked state is cosmetic only; failures are logged, never
+        fatal.
+        """
+        from PySide6.QtWidgets import QPushButton
+        try:
+            from qtpyvcp.utilities.settings import getSetting, setSetting
+        except Exception:
+            LOG.exception("jog controls: qtpyvcp settings unavailable")
+            return
+
+        cont_btn = self.findChild(QPushButton, 'jog_cont_button')
+        inc_buttons = []
+        for value, name in (('0.001', 'jog_inc_0001'),
+                            ('0.01', 'jog_inc_001'),
+                            ('0.1', 'jog_inc_01'),
+                            ('1', 'jog_inc_1'),
+                            ('10', 'jog_inc_10')):
+            btn = self.findChild(QPushButton, name)
+            if btn is not None:
+                inc_buttons.append((float(value), btn))
+        if cont_btn is None and not inc_buttons:
+            LOG.info("JOG CONT/increment buttons not found in window.ui")
+            return
+
+        def reflect(continuous, selected_inc=None):
+            if cont_btn is not None:
+                cont_btn.setChecked(continuous)
+            for inc, btn in inc_buttons:
+                btn.setChecked(not continuous and selected_inc is not None
+                               and abs(inc - selected_inc) < 1e-9)
+
+        def set_continuous():
+            try:
+                setSetting('machine.jog.mode-incremental', False)
+            except Exception:
+                LOG.exception("Failed to set jog mode to continuous")
+            reflect(True)
+
+        def set_increment(value):
+            try:
+                setSetting('machine.jog.mode-incremental', True)
+                setSetting('machine.jog.increment', str(value))
+            except Exception:
+                LOG.exception("Failed to set jog increment")
+            reflect(False, value)
+
+        if cont_btn is not None:
+            cont_btn.clicked.connect(lambda: set_continuous())
+        for value, btn in inc_buttons:
+            btn.clicked.connect(lambda _=False, v=value: set_increment(v))
+
+        # Reflect the current settings on startup.
+        try:
+            incremental = bool(getSetting('machine.jog.mode-incremental')
+                               .getValue())
+            current = float(getSetting('machine.jog.increment').getValue())
+        except Exception:  # noqa: BLE001 - getSetting may raise for missing key
+            incremental, current = True, None
+        if incremental:
+            reflect(False, current)
+        else:
+            reflect(True)
+        LOG.info("Wired jog CONT/increment buttons (%d increments)",
+                 len(inc_buttons))
 
     def _wire_joint_jog_buttons(self):
         """Wire the joint jog buttons declared in the JOG group box (.ui).

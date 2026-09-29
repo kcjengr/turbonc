@@ -23,7 +23,7 @@
 #   J5 (224,0,-120) axis -Z    tool roll    alpha-5 = -90, d-5 = 76 (flange)
 #
 # With this table the Jacobian is full rank 6 (sigma_min ~0.7 at generic
-# poses). The machine HOME pose [0, -90, 0, 0, 10, 180] (see sim-robot_arm.ini)
+# poses). The machine HOME pose [0, -90, 40, 0, -50, 0] (see sim-robot_arm.ini)
 # displays the arm in the classic drawn orientation, clear of the J4=0 wrist
 # singularity.
 setp genserkins.ALPHA-0 0
@@ -52,7 +52,11 @@ setp genserkins.D-4 0
 # relative M_cur @ inv(M_home) transform cancels d).
 setp genserkins.D-5 164.15
 
-setp genserkins.max-iterations      0x00000128
+# Iteration cap for genserkins' numerical IK. The default 0x128 (296) was
+# being exhausted (last-iterations ~295) on ordinary Cartesian moves, so the
+# solver occasionally failed to converge on a reachable pose and disabled the
+# machine. 2000 gives it headroom; the sim has no hard RT deadline.
+setp genserkins.max-iterations      0x000007d0
 setp genserkins.unrotate-0 0
 setp genserkins.unrotate-1 0
 setp genserkins.unrotate-2 0

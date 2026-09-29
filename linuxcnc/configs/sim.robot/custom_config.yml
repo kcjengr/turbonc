@@ -14,9 +14,12 @@ data_plugins:
     provider: qtpyvcp.plugins.clock:Clock
 
   tooltable:
-    provider: qtpyvcp.plugins.tool_table:ToolTable
+    # Kept in sync with tnc_config.yml (the config TurboNC actually loads):
+    # DB-backed so the Tools tab shares mill_tools.db with the db_program.
+    provider: qtpyvcp.plugins.db_tool_table:DBToolTable
     kwargs:
         columns: TXYZABCDR
+        extras: mill
 
   persistent_data_manager:
     provider: qtpyvcp.plugins.persistent_data_manager:PersistentDataManager
