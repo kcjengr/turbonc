@@ -53,7 +53,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -166,6 +166,29 @@
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_23">
                     <item>
+                     <widget class="QPushButton" name="dro_offset_rel_X">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set X offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLabel" name="label_3">
                       <property name="font">
                        <font>
@@ -242,6 +265,29 @@
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_24">
+                    <item>
+                     <widget class="QPushButton" name="dro_offset_rel_Y">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set Y offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QLabel" name="label_5">
                       <property name="font">
@@ -320,6 +366,29 @@
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_25">
                     <item>
+                     <widget class="QPushButton" name="dro_offset_rel_Z">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set Z offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLabel" name="label_6">
                       <property name="font">
                        <font>
@@ -396,6 +465,29 @@
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_38">
+                    <item>
+                     <widget class="QPushButton" name="dro_offset_rel_A">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set A offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QLabel" name="label_10">
                       <property name="font">
@@ -474,6 +566,29 @@
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_40">
                     <item>
+                     <widget class="QPushButton" name="dro_offset_rel_B">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set B offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLabel" name="label_11">
                       <property name="font">
                        <font>
@@ -550,6 +665,29 @@
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_41">
+                    <item>
+                     <widget class="QPushButton" name="dro_offset_rel_C">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set C offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QLabel" name="label_12">
                       <property name="font">
@@ -635,6 +773,29 @@
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_26">
                     <item>
+                     <widget class="QPushButton" name="dro_offset_abs_X">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set X offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLabel" name="label_7">
                       <property name="font">
                        <font>
@@ -712,6 +873,29 @@
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_27">
+                    <item>
+                     <widget class="QPushButton" name="dro_offset_abs_Y">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set Y offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QLabel" name="label_8">
                       <property name="font">
@@ -791,6 +975,29 @@
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_29">
                     <item>
+                     <widget class="QPushButton" name="dro_offset_abs_Z">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set Z offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLabel" name="label_9">
                       <property name="font">
                        <font>
@@ -868,6 +1075,29 @@
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_43">
+                    <item>
+                     <widget class="QPushButton" name="dro_offset_abs_A">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set A offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QLabel" name="label_13">
                       <property name="font">
@@ -947,6 +1177,29 @@
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_45">
                     <item>
+                     <widget class="QPushButton" name="dro_offset_abs_B">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set B offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QLabel" name="label_14">
                       <property name="font">
                        <font>
@@ -1024,6 +1277,29 @@
                   </item>
                   <item>
                    <layout class="QHBoxLayout" name="horizontalLayout_46">
+                    <item>
+                     <widget class="QPushButton" name="dro_offset_abs_C">
+                      <property name="minimumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>26</width>
+                        <height>26</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Set C offset</string>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="../resources.qrc">
+                        <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
+                       </property>
+                     </widget>
+                    </item>
                     <item>
                      <widget class="QLabel" name="label_15">
                       <property name="font">
@@ -1655,6 +1931,62 @@
            </layout>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="tool_change_group">
+          <property name="title">
+           <string>Tool Change</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_toolchange">
+           <item>
+            <widget class="QLabel" name="tool_number_label">
+             <property name="text">
+              <string>Tool #</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="tool_number_entry">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>99</number>
+             </property>
+             <property name="minimumWidth">
+              <number>60</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="change_tool_button">
+             <property name="text">
+              <string>CHANGE TOOL</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="enable_tlo_checkbox">
+             <property name="text">
+              <string>Enable TLO (G43 H)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_toolchange">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -2762,7 +3094,7 @@ USB
       </widget>
       <widget class="QWidget" name="tab_9">
        <attribute name="title">
-        <string>Página</string>
+        <string>Offsets</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_51">
         <item>
@@ -3002,9 +3334,6 @@ USB
                   </property>
                   <item row="1" column="0">
                    <widget class="ActionButton" name="actionbutton_g54_2">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3021,9 +3350,6 @@ USB
                   </item>
                   <item row="1" column="1">
                    <widget class="ActionButton" name="actionbutton_g55_2">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3040,9 +3366,6 @@ USB
                   </item>
                   <item row="1" column="2">
                    <widget class="ActionButton" name="actionbutton_g56_2">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3059,9 +3382,6 @@ USB
                   </item>
                   <item row="1" column="3">
                    <widget class="ActionButton" name="actionbutton_g57_2">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3078,9 +3398,6 @@ USB
                   </item>
                   <item row="1" column="4">
                    <widget class="ActionButton" name="actionbutton_g58_2">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3097,9 +3414,6 @@ USB
                   </item>
                   <item row="2" column="1">
                    <widget class="ActionButton" name="actionbutton_g59_4">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3116,9 +3430,6 @@ USB
                   </item>
                   <item row="2" column="2">
                    <widget class="ActionButton" name="actionbutton_g59_5">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3135,9 +3446,6 @@ USB
                   </item>
                   <item row="2" column="3">
                    <widget class="ActionButton" name="actionbutton_g59_6">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -3154,9 +3462,6 @@ USB
                   </item>
                   <item row="2" column="4">
                    <widget class="ActionButton" name="actionbutton_g59_7">
-                    <property name="enabled">
-                     <bool>false</bool>
-                    </property>
                     <property name="focusPolicy">
                      <enum>Qt::FocusPolicy::NoFocus</enum>
                     </property>
@@ -10148,6 +10453,9 @@ OFFSET</string>
       </item>
       <item>
        <widget class="QGroupBox" name="groupBox_joints">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="font">
          <font>
           <family>3270 Semi-Condensed</family>
@@ -10388,116 +10696,6 @@ OFFSET</string>
             <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;Feed Override {ch[0]:.0%}\&quot;&quot;, &quot;name&quot;: &quot;Feed Rate&quot;}]</string>
            </property>
           </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_37">
-           <property name="spacing">
-            <number>10</number>
-           </property>
-           <item>
-            <widget class="ActionSlider" name="feed_slider">
-             <property name="minimumSize">
-              <size>
-               <width>120</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>3270 Semi-Condensed</family>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="minimum">
-              <number>10</number>
-             </property>
-             <property name="maximum">
-              <number>100</number>
-             </property>
-             <property name="value">
-              <number>100</number>
-             </property>
-             <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
-             </property>
-             <property name="actionName" stdset="0">
-              <string>machine.feed-override.set</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="StatusLabel" name="statuslabel_5">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>50</width>
-               <height>34</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>55</width>
-               <height>36</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>3270 Semi-Condensed</family>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-             <property name="margin">
-              <number>-6</number>
-             </property>
-             <property name="indent">
-              <number>0</number>
-             </property>
-             <property name="rules" stdset="0">
-              <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle.0.override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;f\&quot;{(ch[0]):.0%}\&quot;&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="ActionButton" name="actionbutton_30">
-             <property name="minimumSize">
-              <size>
-               <width>60</width>
-               <height>42</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>100</width>
-               <height>100</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>3270 Semi-Condensed</family>
-               <pointsize>16</pointsize>
-               <fontweight>DemiBold</fontweight>
-              </font>
-             </property>
-             <property name="focusPolicy">
-              <enum>Qt::FocusPolicy::NoFocus</enum>
-             </property>
-             <property name="text">
-              <string>F 100%</string>
-             </property>
-             <property name="actionName" stdset="0">
-              <string>spindle.override.reset</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_14">
@@ -11291,81 +11489,7 @@ OFFSET</string>
         </layout>
        </widget>
       </item>
-      <item>
-       <widget class="QGroupBox" name="part_gbox">
-        <property name="font">
-         <font>
-          <family>3270 Semi-Condensed</family>
-          <pointsize>10</pointsize>
-          <fontweight>DemiBold</fontweight>
-         </font>
-        </property>
-        <property name="title">
-         <string>PART</string>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="DialogButton" name="zero_dbutton_2">
-           <property name="minimumSize">
-            <size>
-             <width>68</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>3270 Semi-Condensed</family>
-             <pointsize>16</pointsize>
-             <fontweight>DemiBold</fontweight>
-            </font>
-           </property>
-           <property name="text">
-            <string>ZERO
-X Y</string>
-           </property>
-           <property name="dialogName" stdset="0">
-            <string>zero_xy</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="DialogButton" name="zero_dbutton">
-           <property name="minimumSize">
-            <size>
-             <width>68</width>
-             <height>48</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>3270 Semi-Condensed</family>
-             <pointsize>16</pointsize>
-             <fontweight>DemiBold</fontweight>
-            </font>
-           </property>
-           <property name="text">
-            <string>ZERO</string>
-           </property>
-           <property name="dialogName" stdset="0">
-            <string>set_work_offsets</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
+      
       <item>
        <widget class="QGroupBox" name="program_gbox">
         <property name="font">

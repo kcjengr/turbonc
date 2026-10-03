@@ -85,10 +85,6 @@ default_menubar:
           action: coolant.mist.toggle
           shortcut: F8
 
-    - title: Set Work Offsets
-      action: win.showDialog
-      args: [set_work_offsets]
-
     - separator
 
     - title: Override Limits

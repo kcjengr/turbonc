@@ -762,6 +762,227 @@ class MainWindow(VCPMainWindow):
         self._wire_cell_buttons()
         self._wire_lcnc_indicators()
         self._wire_jog_controls()
+        self._build_set_to_zero_panel()
+        self._wire_dro_offset_buttons()
+        self._wire_tool_change_controls()
+
+    # ------------------------------------------------------------------
+    # Tools tab: "Tool Change" groupbox (change tool + optional G43 H TLO)
+    # ------------------------------------------------------------------
+    def _wire_tool_change_controls(self):
+        """Wire the Program tab "Tool Change" groupbox.
+
+        CHANGE TOOL issues ``T<n> M6`` and, when the TLO checkbox is ticked,
+        appends ``G43 H<n>`` to enable tool length compensation.
+        """
+        from PySide6.QtWidgets import QCheckBox, QPushButton, QSpinBox
+
+        self._tool_number_entry = self.findChild(QSpinBox, 'tool_number_entry')
+        self._enable_tlo_checkbox = self.findChild(QCheckBox, 'enable_tlo_checkbox')
+        change_btn = self.findChild(QPushButton, 'change_tool_button')
+        if change_btn is None:
+            LOG.info("Tool Change groupbox not found in window.ui")
+            return
+        change_btn.clicked.connect(self._change_tool)
+
+        # seed with the tool currently in the spindle and keep it in sync
+        self._sync_tool_number()
+        try:
+            from qtpyvcp.plugins import getPlugin
+            getPlugin('status').tool_in_spindle.notify(
+                lambda _v=None: self._sync_tool_number())
+        except Exception:
+            LOG.debug("tool_in_spindle channel unavailable; "
+                      "TOOL CHANGE spinbox will not auto-sync")
+
+    def _sync_tool_number(self):
+        w = getattr(self, '_tool_number_entry', None)
+        if w is None or w.hasFocus():
+            return
+        st = self._lc_stat()
+        if st is None:
+            return
+        try:
+            st.poll()
+            n = int(st.tool_in_spindle)
+        except Exception:
+            return
+        if n > 0 and w.value() != n:
+            w.setValue(n)
+
+    def _tool_number(self):
+        w = getattr(self, '_tool_number_entry', None)
+        try:
+            return int(w.value())
+        except Exception:
+            return 0
+
+    def _change_tool(self):
+        from qtpyvcp.actions.machine_actions import issue_mdi
+        n = self._tool_number()
+        if n <= 0:
+            return
+        cmd = "T%d M6" % n
+        cb = getattr(self, '_enable_tlo_checkbox', None)
+        if cb is not None and cb.isChecked():
+            cmd += " G43 H%d" % n
+        issue_mdi(cmd)
+        LOG.info("tool change: %s", cmd)
+
+    # ------------------------------------------------------------------
+    # DRO: per-axis "set offset" button before each axis letter
+    # ------------------------------------------------------------------
+    def _wire_dro_offset_buttons(self):
+        """Connect the per-axis "set offset" buttons declared in window.ui.
+
+        Each is named ``dro_offset_<rel|abs>_<AXIS>`` and sits immediately
+        before the axis letter in the Relative (``tab_8``) and Absolute
+        (``tab_7``) DRO rows.  Clicking it opens
+        :class:`tnc.dialogs.axis_offset.AxisOffsetDialog` for that axis.
+        """
+        from PySide6.QtWidgets import QPushButton
+
+        count = 0
+        for btn in self.findChildren(QPushButton):
+            name = btn.objectName()
+            if not name.startswith("dro_offset_"):
+                continue
+            axis = name.rsplit("_", 1)[-1].upper()
+            if len(axis) != 1 or axis not in "XYZABCUVW":
+                continue
+            btn.clicked.connect(
+                lambda _=False, a=axis: self._open_axis_offset_dialog(a))
+            count += 1
+        LOG.info("DRO offset buttons wired: %d", count)
+
+    def _open_axis_offset_dialog(self, axis):
+        try:
+            from tnc.dialogs.axis_offset import AxisOffsetDialog
+        except Exception:
+            LOG.exception("could not import AxisOffsetDialog")
+            return
+        dlg = AxisOffsetDialog(axis, parent=self)
+        dlg.open()
+
+    # ------------------------------------------------------------------
+    # Offsets tab: "SET TO ZERO" per-axis touch-off panel
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _lc_stat():
+        try:
+            from qtpyvcp.plugins import getPlugin
+            return getPlugin('status').stat
+        except Exception:
+            try:
+                from qtpyvcp.plugins.status import STAT
+                return STAT
+            except Exception:
+                return None
+
+    def _build_set_to_zero_panel(self):
+        """Fill the Offsets tab's frame_32 placeholder with one row per axis.
+
+        Each row shows WC current position, machine coords, WC offset,
+        G52/G92 offset and tool offset, plus a ZERO button that touch-offs
+        that axis of the active WCS at the current position
+        (``G10 L20 P<wcs> <axis>0``).
+        """
+        from PySide6.QtWidgets import (QGridLayout, QLabel, QPushButton,
+                                       QVBoxLayout)
+        from PySide6.QtGui import QFont
+        from qtpyvcp.utilities.info import Info
+
+        frame = self.findChild(QObject, 'frame_32')
+        if frame is None:
+            LOG.warning("Offsets tab: frame_32 placeholder not found; "
+                        "SET TO ZERO panel not built")
+            return
+
+        base = frame.layout()
+        if base is None:
+            base = QVBoxLayout(frame)
+        else:
+            while base.count():
+                item = base.takeAt(0)
+                w = item.widget()
+                if w is not None:
+                    w.deleteLater()
+
+        try:
+            self._stz_axes = list(Info().getCoordinates())
+        except Exception:
+            self._stz_axes = ['x', 'y', 'z', 'a', 'b', 'c']
+
+        grid = QGridLayout()
+        base.addLayout(grid)
+        grid.setContentsMargins(2, 2, 2, 2)
+        grid.setSpacing(3)
+        head_font = QFont("3270 Semi-Condensed", 10)
+        cell_font = QFont("Monospace", 10)
+        heads = ["SET TO ZERO", "AXIS", "WC CURRENT", "MACHINE",
+                 "WC OFFSET", "G52/G92", "TOOL OFFSET"]
+        for c, h in enumerate(heads):
+            lbl = QLabel(h)
+            lbl.setFont(head_font)
+            grid.addWidget(lbl, 0, c)
+
+        self._stz_cells = {}
+        for r, ax in enumerate(self._stz_axes, start=1):
+            btn = QPushButton("ZERO")
+            btn.setFixedWidth(52)
+            btn.clicked.connect(lambda _=False, a=ax: self._set_axis_zero(a))
+            grid.addWidget(btn, r, 0)
+            al = QLabel(ax.upper())
+            al.setFont(head_font)
+            grid.addWidget(al, r, 1)
+            cells = []
+            for c in range(2, 7):
+                lbl = QLabel("0.0000")
+                lbl.setFont(cell_font)
+                grid.addWidget(lbl, r, c)
+                cells.append(lbl)
+            self._stz_cells[ax] = cells
+
+        if not hasattr(self, '_stz_timer'):
+            self._stz_timer = QTimer(self)
+            self._stz_timer.timeout.connect(self._update_set_to_zero_panel)
+            self._stz_timer.start(150)
+        self._update_set_to_zero_panel()
+
+    def _set_axis_zero(self, axis):
+        """Touch off ``axis`` of the active WCS at the current position."""
+        from qtpyvcp.actions.machine_actions import issue_mdi
+        st = self._lc_stat()
+        try:
+            st.poll()
+            wcs = int(st.g5x_index)
+        except Exception:
+            wcs = 1
+        wcs = max(1, min(9, wcs))
+        issue_mdi("G10 L20 P%d %s0" % (wcs, axis.upper()))
+
+    def _update_set_to_zero_panel(self):
+        cells = getattr(self, '_stz_cells', None)
+        if not cells:
+            return
+        st = self._lc_stat()
+        if st is None:
+            return
+        try:
+            st.poll()
+            machine = list(st.actual_position)
+            g5x = list(st.g5x_offset)
+            g92 = list(st.g92_offset)
+            tool = list(st.tool_offset)
+        except Exception:
+            return
+        for i, ax in enumerate(self._stz_axes):
+            if ax not in cells or i >= len(machine):
+                continue
+            wc = machine[i] - g5x[i] - g92[i] - tool[i]
+            for lbl, v in zip(cells[ax],
+                              (wc, machine[i], g5x[i], g92[i], tool[i])):
+                lbl.setText("%.4f" % v)
 
     # ------------------------------------------------------------------
     # Cells tab: kinematics mode + subroutine call buttons

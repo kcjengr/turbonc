@@ -1,0 +1,96 @@
+{
+  "base": [
+    {
+      "model": "models/base_0.glb",
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "models/base_1.glb",
+      "color": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "link1": [
+    {
+      "model": "models/link1.glb",
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "link2": [
+    {
+      "model": "models/link2_0.glb",
+      "color": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "models/link2_1.glb",
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "link3": [
+    {
+      "model": "models/link3.glb",
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "link4": [
+    {
+      "model": "models/link4_0.glb",
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "models/link4_1.glb",
+      "color": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "link5": [
+    {
+      "model": "models/link5.glb",
+      "color": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "link6": [
+    {
+      "model": "models/link6.glb",
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}
