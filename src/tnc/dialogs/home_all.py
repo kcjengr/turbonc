@@ -9,7 +9,10 @@ import tnc.main as tnc_main
 
 
 class HomeAll(BaseDialog):
-    def __init__(self, ui_file):
+    def __init__(self, ui_file=None):
+        if ui_file is None:
+            ui_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                   'home_all.ui')
         super(HomeAll, self).__init__(stay_on_top=True, frameless=True,
                                       ui_file=ui_file)
         # Translucent window: the frosted fill blends with the desktop behind
