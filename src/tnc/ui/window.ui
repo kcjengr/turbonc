@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>600</height>
+    <width>1652</width>
+    <height>789</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -53,7 +53,7 @@
        <enum>QTabWidget::TabShape::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -185,7 +185,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -285,7 +285,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -385,7 +385,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -485,7 +485,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -585,7 +585,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -685,7 +685,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -792,7 +792,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -893,7 +893,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -994,7 +994,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -1095,7 +1095,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -1196,7 +1196,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -1297,7 +1297,7 @@
                       <property name="icon">
                        <iconset resource="../resources.qrc">
                         <normaloff>:/images/edit.png</normaloff>:/images/edit.png</iconset>
-                       </property>
+                      </property>
                      </widget>
                     </item>
                     <item>
@@ -1953,9 +1953,6 @@
              <property name="maximum">
               <number>99</number>
              </property>
-             <property name="minimumWidth">
-              <number>60</number>
-             </property>
             </widget>
            </item>
            <item>
@@ -2177,7 +2174,7 @@
             <property name="font">
              <font>
               <family>Probe Basic Bebas Mono</family>
-              <pointsize>11</pointsize>
+              <pointsize>13</pointsize>
               <italic>false</italic>
               <bold>false</bold>
              </font>
@@ -2231,7 +2228,7 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>440</width>
+            <width>800</width>
             <height>16777215</height>
            </size>
           </property>
@@ -2344,6 +2341,12 @@
             <layout class="QHBoxLayout" name="horizontalLayout_122">
              <item>
               <widget class="FileSystemTable" name="filesystemtable">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::WheelFocus</enum>
                </property>
@@ -2541,6 +2544,12 @@
           </property>
           <item>
            <widget class="QLabel" name="label_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="font">
              <font>
               <family>3270 Nerd Font Propo</family>
@@ -2574,6 +2583,12 @@
           </item>
           <item>
            <widget class="QPushButton" name="copy_from_usb">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>56</width>
@@ -2608,6 +2623,12 @@ USB
             <property name="enabled">
              <bool>true</bool>
             </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="maximumSize">
              <size>
               <width>56</width>
@@ -2638,7 +2659,7 @@ USB
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
+              <width>1</width>
               <height>27</height>
              </size>
             </property>
@@ -2649,7 +2670,7 @@ USB
         <item>
          <widget class="QFrame" name="frame_35">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -2662,7 +2683,7 @@ USB
           </property>
           <property name="maximumSize">
            <size>
-            <width>440</width>
+            <width>800</width>
             <height>16777215</height>
            </size>
           </property>
@@ -2775,6 +2796,12 @@ USB
             <layout class="QHBoxLayout" name="horizontalLayout_125">
              <item>
               <widget class="FileSystemTable" name="filesystemtable_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="focusPolicy">
                 <enum>Qt::FocusPolicy::WheelFocus</enum>
                </property>
@@ -6585,7 +6612,7 @@ OFFSET</string>
                    <x>213</x>
                    <y>333</y>
                    <width>20</width>
-                   <height>14</height>
+                   <height>20</height>
                   </rect>
                  </property>
                  <property name="sizePolicy">
@@ -11489,7 +11516,6 @@ OFFSET</string>
         </layout>
        </widget>
       </item>
-      
       <item>
        <widget class="QGroupBox" name="program_gbox">
         <property name="font">
@@ -12732,7 +12758,7 @@ OFFSET</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probeTabGroup"/>
   <buttongroup name="modeGroup"/>
+  <buttongroup name="probeTabGroup"/>
  </buttongroups>
 </ui>
