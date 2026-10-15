@@ -136,6 +136,9 @@ default_menubar:
       - title: Show Camera Gizmo
         action: settings.backplot.show-nav-helper
 
+      - title: Show FPS
+        action: settings.backplot.show-fps
+
       - separator
 
       - title: Perspective View

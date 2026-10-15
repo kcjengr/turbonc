@@ -623,7 +623,10 @@ class MainWindow(VCPMainWindow):
                 QColor(*c) for c in axis_colors((ar, ag, ab)))
 
         for obj in self.findChildren(QObject):
-            if obj.metaObject().className() in ("VTKBackPlot", "VtkBackPlot"):
+            widget_class = obj.metaObject().className()
+            is_vtk_backplot = widget_class in ("VTKBackPlot", "VtkBackPlot")
+            is_qt3d_backplot = widget_class == "Qt3DBackPlot"
+            if is_vtk_backplot or is_qt3d_backplot:
                 obj.setProperty("backgroundColor", top)
                 obj.setProperty("backgroundColor2", bottom)
                 obj.setProperty("traverseColor", path_colors["traverse"])
@@ -631,15 +634,17 @@ class MainWindow(VCPMainWindow):
                 obj.setProperty("feedColor", path_colors["feed"])
                 obj.setProperty("dwellColor", path_colors["dwell"])
                 obj.setProperty("userColor", path_colors["user"])
-                obj.setProperty("navHelperXAxisColor", nav_x)
-                obj.setProperty("navHelperYAxisColor", nav_y)
-                obj.setProperty("navHelperZAxisColor", nav_z)
-                if hasattr(obj, "reapplyNavHelperConfig"):
-                    obj.reapplyNavHelperConfig()
-                # re-render the loaded program with the new path colors
-                if (hasattr(obj, "reload_program")
-                        and getattr(obj, "_last_filename", None)):
-                    QTimer.singleShot(0, obj.reload_program)
+                if is_vtk_backplot or is_qt3d_backplot:
+                    obj.setProperty("navHelperXAxisColor", nav_x)
+                    obj.setProperty("navHelperYAxisColor", nav_y)
+                    obj.setProperty("navHelperZAxisColor", nav_z)
+                if is_vtk_backplot:
+                    if hasattr(obj, "reapplyNavHelperConfig"):
+                        obj.reapplyNavHelperConfig()
+                    # VTK setters update the stored color but don't replot.
+                    if (hasattr(obj, "reload_program")
+                            and getattr(obj, "_last_filename", None)):
+                        QTimer.singleShot(0, obj.reload_program)
 
     def setTheme(self, name):
         """Persist and apply a theme by display name.
