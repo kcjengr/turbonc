@@ -11,14 +11,31 @@ for a chosen coordinate system (P0 = the currently active WCS, or P1..P9).
 """
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QFont
-from PySide6.QtWidgets import (QComboBox, QDoubleSpinBox, QGridLayout, QHBoxLayout,
-                               QLabel, QPushButton, QVBoxLayout)
+from PySide6.QtWidgets import (QCheckBox, QComboBox, QDoubleSpinBox, QGridLayout,
+                               QHBoxLayout, QLabel, QPushButton, QVBoxLayout)
 
 from qtpyvcp.actions.machine_actions import issue_mdi
 from qtpyvcp.utilities import logger
 from qtpyvcp.widgets.dialogs.base_dialog import BaseDialog
 
 LOG = logger.getLogger(__name__)
+
+
+def build_offset_command(mode, system, axis, value, *,
+                         tool_offset=None, apply_tool_offset=True):
+    """Build the ``G10`` MDI command for an axis offset.
+
+    For a Z touch-off (``L20``) with *apply_tool_offset* false, the entered
+    value is reduced by the active tool-length offset so the resulting
+    coordinate-system offset does not include TLO (the zero is set at the
+    spindle reference rather than the tool tip).
+    """
+    axis = str(axis).upper()
+    value = float(value)
+    if (mode == "L20" and axis == "Z" and not apply_tool_offset
+            and tool_offset is not None):
+        value -= float(tool_offset)
+    return "G10 %s %s %s%.4f" % (mode, system, axis, value)
 
 # (data, label)
 SYSTEMS = [
@@ -38,6 +55,17 @@ def active_wcs():
         return max(1, min(9, int(st.g5x_index)))
     except Exception:
         return 1
+
+
+def active_tool_z_offset():
+    """Current applied tool-length offset for Z (0.0 when unavailable)."""
+    try:
+        from qtpyvcp.plugins import getPlugin
+        st = getPlugin('status').stat
+        st.poll()
+        return float(st.tool_offset[2])
+    except Exception:
+        return 0.0
 
 
 class AxisOffsetDialog(BaseDialog):
@@ -74,6 +102,17 @@ class AxisOffsetDialog(BaseDialog):
         grid.addWidget(QLabel("Value:"), 2, 0)
         grid.addWidget(self.value_input, 2, 1)
 
+        # Tool-length-offset control is only meaningful for the Z touch-off.
+        self.tool_offset_cb = None
+        if self.axis == "Z":
+            self.tool_offset_cb = QCheckBox("Apply tool Z offset (G43/TLO)")
+            self.tool_offset_cb.setChecked(True)
+            self.tool_offset_cb.setToolTip(
+                "Checked: touch off at the tool tip (current tool length offset "
+                "is included).\nUnchecked: set the zero ignoring the tool "
+                "length offset (spindle reference).")
+            grid.addWidget(self.tool_offset_cb, 3, 0, 1, 2)
+
         set_btn = QPushButton("Set")
         set_btn.setDefault(True)
         cancel_btn = QPushButton("Cancel")
@@ -100,7 +139,12 @@ class AxisOffsetDialog(BaseDialog):
         mode = self.mode_combo.currentData()          # L20 or L2
         system = self._resolved_system()
         value = self.value_input.value()
-        cmd = "G10 %s %s %s%.4f" % (mode, system, self.axis, value)
+        apply_tool_offset = (self.tool_offset_cb is None
+                             or self.tool_offset_cb.isChecked())
+        cmd = build_offset_command(
+            mode, system, self.axis, value,
+            tool_offset=active_tool_z_offset(),
+            apply_tool_offset=apply_tool_offset)
         try:
             issue_mdi(cmd)
             LOG.info("axis offset set: %s", cmd)

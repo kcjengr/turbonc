@@ -1444,44 +1444,6 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pan_view">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>56</width>
-                     <height>22</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>70</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>3270 Semi-Condensed</family>
-                     <pointsize>10</pointsize>
-                     <fontweight>DemiBold</fontweight>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Pan</string>
-                   </property>
-                   <property name="checkable">
-                    <bool>true</bool>
-                   </property>
-                   <property name="checked">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="QPushButton" name="machine_view">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1548,38 +1510,6 @@
                    </property>
                    <property name="autoExclusive">
                     <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="path_view">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>56</width>
-                     <height>22</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>70</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>3270 Semi-Condensed</family>
-                     <pointsize>10</pointsize>
-                     <fontweight>DemiBold</fontweight>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Path</string>
                    </property>
                   </widget>
                  </item>
@@ -1765,44 +1695,6 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="plotP">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>56</width>
-                     <height>22</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>70</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>3270 Semi-Condensed</family>
-                     <pointsize>10</pointsize>
-                     <fontweight>DemiBold</fontweight>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>P</string>
-                   </property>
-                   <property name="checkable">
-                    <bool>false</bool>
-                   </property>
-                   <property name="autoExclusive">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
                   <widget class="ActionComboBox" name="actioncombobox">
                    <property name="maximumSize">
                     <size>
@@ -1877,27 +1769,7 @@
                </widget>
               </item>
               <item>
-               <widget class="Qt3DBackPlot" name="qt3dbackplot">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>600</width>
-                  <height>300</height>
-                 </size>
-                </property>
-                <property name="backgroundColor2" stdset="0">
-                 <color>
-                  <red>61</red>
-                  <green>56</green>
-                  <blue>70</blue>
-                 </color>
-                </property>
-               </widget>
+               <widget class="Qt3D0" name="qt3d0"/>
               </item>
               <item>
                <widget class="GCodeEditor" name="gcodeEditor_2">
@@ -11968,7 +11840,7 @@ OFFSET</string>
    <header>qtpyvcp.widgets.display_widgets.dro_label</header>
   </customwidget>
   <customwidget>
-   <class>Qt3DBackPlot</class>
+   <class>Qt3D0</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.designer_plugins</header>
    <container>1</container>
@@ -12069,12 +11941,12 @@ OFFSET</string>
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>156</x>
-     <y>66</y>
+     <x>1004</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>58</y>
+     <x>953</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12085,12 +11957,12 @@ OFFSET</string>
    <slot>setRootPath(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>188</x>
-     <y>66</y>
+     <x>1030</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>58</y>
+     <x>953</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12101,12 +11973,12 @@ OFFSET</string>
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>165</x>
-     <y>66</y>
+     <x>1170</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>58</y>
+     <x>953</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12117,12 +11989,12 @@ OFFSET</string>
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>285</x>
-     <y>79</y>
+     <x>691</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
-     <y>58</y>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12133,12 +12005,12 @@ OFFSET</string>
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>106</x>
-     <y>66</y>
+     <x>346</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
-     <y>58</y>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12149,12 +12021,12 @@ OFFSET</string>
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>250</x>
-     <y>79</y>
+     <x>524</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
-     <y>58</y>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12165,12 +12037,12 @@ OFFSET</string>
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>309</x>
-     <y>79</y>
+     <x>1348</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>58</y>
+     <x>953</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12181,12 +12053,12 @@ OFFSET</string>
    <slot>loadSelectedFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>267</x>
-     <y>77</y>
+     <x>760</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
-     <y>58</y>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12197,12 +12069,12 @@ OFFSET</string>
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>97</x>
-     <y>66</y>
+     <x>180</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
-     <y>58</y>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12213,12 +12085,12 @@ OFFSET</string>
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>133</x>
-     <y>68</y>
+     <x>913</x>
+     <y>79</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>58</y>
+     <x>953</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12229,12 +12101,12 @@ OFFSET</string>
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
-     <y>79</y>
+     <x>1515</x>
+     <y>509</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>58</y>
+     <x>953</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12245,12 +12117,12 @@ OFFSET</string>
    <slot>ejectDevice()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>326</x>
-     <y>77</y>
+     <x>1583</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>188</x>
-     <y>66</y>
+     <x>1030</x>
+     <y>78</y>
     </hint>
    </hints>
   </connection>
@@ -12261,8 +12133,8 @@ OFFSET</string>
    <slot>deleteSelectedTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>35</x>
-     <y>57</y>
+     <x>36</x>
+     <y>489</y>
     </hint>
     <hint type="destinationlabel">
      <x>123</x>
@@ -12277,8 +12149,8 @@ OFFSET</string>
    <slot>addTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>56</x>
-     <y>57</y>
+     <x>453</x>
+     <y>489</y>
     </hint>
     <hint type="destinationlabel">
      <x>123</x>
@@ -12293,8 +12165,8 @@ OFFSET</string>
    <slot>saveToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>78</x>
-     <y>57</y>
+     <x>871</x>
+     <y>489</y>
     </hint>
     <hint type="destinationlabel">
      <x>123</x>
@@ -12309,8 +12181,8 @@ OFFSET</string>
    <slot>loadToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>99</x>
-     <y>57</y>
+     <x>1288</x>
+     <y>489</y>
     </hint>
     <hint type="destinationlabel">
      <x>123</x>
@@ -12325,12 +12197,12 @@ OFFSET</string>
    <slot>toolSelected(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>459</x>
-     <y>48</y>
+     <x>458</x>
+     <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>98</x>
-     <y>51</y>
+     <x>892</x>
+     <y>77</y>
     </hint>
    </hints>
   </connection>
@@ -12341,12 +12213,12 @@ OFFSET</string>
    <slot>saveField()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>98</x>
-     <y>55</y>
+     <x>892</x>
+     <y>455</y>
     </hint>
     <hint type="destinationlabel">
-     <x>98</x>
-     <y>51</y>
+     <x>892</x>
+     <y>77</y>
     </hint>
    </hints>
   </connection>
@@ -12358,11 +12230,11 @@ OFFSET</string>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
-     <y>56</y>
+     <y>481</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12373,12 +12245,12 @@ OFFSET</string>
    <slot>saveFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>99</x>
-     <y>47</y>
+     <x>165</x>
+     <y>48</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12389,12 +12261,12 @@ OFFSET</string>
    <slot>saveFileAs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>47</y>
+     <x>246</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12405,12 +12277,12 @@ OFFSET</string>
    <slot>undo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>47</y>
+     <x>322</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12421,12 +12293,12 @@ OFFSET</string>
    <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>129</x>
-     <y>47</y>
+     <x>398</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12437,12 +12309,12 @@ OFFSET</string>
    <slot>selectAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>139</x>
-     <y>47</y>
+     <x>492</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12453,12 +12325,12 @@ OFFSET</string>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>149</x>
-     <y>47</y>
+     <x>568</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12469,12 +12341,12 @@ OFFSET</string>
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>159</x>
-     <y>47</y>
+     <x>644</x>
+     <y>77</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>52</y>
+     <x>100</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>
@@ -12490,7 +12362,7 @@ OFFSET</string>
     </hint>
     <hint type="destinationlabel">
      <x>129</x>
-     <y>58</y>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
@@ -12501,12 +12373,12 @@ OFFSET</string>
    <slot>loadOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>436</x>
-     <y>60</y>
+     <x>882</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
-     <x>136</x>
-     <y>60</y>
+     <x>118</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>
@@ -12517,12 +12389,12 @@ OFFSET</string>
    <slot>clearSelection()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>136</x>
-     <y>60</y>
+     <x>145</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
-     <x>136</x>
-     <y>60</y>
+     <x>118</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>
@@ -12533,12 +12405,12 @@ OFFSET</string>
    <slot>saveOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>335</x>
-     <y>60</y>
+     <x>637</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
-     <x>136</x>
-     <y>60</y>
+     <x>118</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>
@@ -12549,172 +12421,140 @@ OFFSET</string>
    <slot>clearOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>235</x>
-     <y>60</y>
+     <x>391</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
-     <x>136</x>
-     <y>60</y>
+     <x>118</x>
+     <y>76</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>clear_view</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
+   <receiver>qt3d0</receiver>
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>371</x>
-     <y>96</y>
+     <x>400</x>
+     <y>93</y>
     </hint>
     <hint type="destinationlabel">
-     <x>462</x>
-     <y>96</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>program_view</sender>
-   <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
-   <slot>setViewProgram()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>370</x>
-     <y>180</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>430</x>
-     <y>179</y>
+     <x>455</x>
+     <y>92</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>machine_view</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
+   <receiver>qt3d0</receiver>
    <slot>setViewMachine()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>355</x>
-     <y>147</y>
+     <x>395</x>
+     <y>146</y>
     </hint>
     <hint type="destinationlabel">
-     <x>463</x>
-     <y>152</y>
+     <x>453</x>
+     <y>147</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>path_view</sender>
+   <sender>program_view</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
+   <receiver>qt3d0</receiver>
    <slot>setViewProgram()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>402</x>
-     <y>213</y>
+     <x>381</x>
+     <y>182</y>
     </hint>
     <hint type="destinationlabel">
-     <x>460</x>
-     <y>213</y>
+     <x>488</x>
+     <y>185</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>zoom_out</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
+   <receiver>qt3d0</receiver>
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>389</x>
-     <y>239</y>
+     <x>402</x>
+     <y>242</y>
     </hint>
     <hint type="destinationlabel">
-     <x>447</x>
-     <y>236</y>
+     <x>467</x>
+     <y>247</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>zoom_in</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
+   <receiver>qt3d0</receiver>
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>389</x>
-     <y>266</y>
+     <x>394</x>
+     <y>263</y>
     </hint>
     <hint type="destinationlabel">
-     <x>460</x>
-     <y>270</y>
+     <x>519</x>
+     <y>285</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>plotX</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
+   <receiver>qt3d0</receiver>
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>389</x>
+     <x>404</x>
      <y>303</y>
     </hint>
     <hint type="destinationlabel">
-     <x>491</x>
-     <y>303</y>
+     <x>494</x>
+     <y>326</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>plotY</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
+   <receiver>qt3d0</receiver>
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>385</x>
-     <y>335</y>
+     <x>366</x>
+     <y>321</y>
     </hint>
     <hint type="destinationlabel">
-     <x>454</x>
-     <y>336</y>
+     <x>509</x>
+     <y>349</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>plotZ</sender>
    <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
-   <slot>setViewXZ()</slot>
+   <receiver>qt3d0</receiver>
+   <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>385</x>
-     <y>358</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>452</x>
+     <x>365</x>
      <y>365</y>
     </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>plotP</sender>
-   <signal>clicked()</signal>
-   <receiver>qt3dbackplot</receiver>
-   <slot>setViewPersp()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>390</x>
-     <y>389</y>
-    </hint>
     <hint type="destinationlabel">
-     <x>477</x>
-     <y>396</y>
+     <x>520</x>
+     <y>372</y>
     </hint>
    </hints>
   </connection>
@@ -12737,7 +12577,7 @@ OFFSET</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="modeGroup"/>
   <buttongroup name="probeTabGroup"/>
+  <buttongroup name="modeGroup"/>
  </buttongroups>
 </ui>

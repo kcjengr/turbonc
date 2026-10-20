@@ -625,7 +625,7 @@ class MainWindow(VCPMainWindow):
         for obj in self.findChildren(QObject):
             widget_class = obj.metaObject().className()
             is_vtk_backplot = widget_class in ("VTKBackPlot", "VtkBackPlot")
-            is_qt3d_backplot = widget_class == "Qt3DBackPlot"
+            is_qt3d_backplot = widget_class == "Qt3D0"
             if is_vtk_backplot or is_qt3d_backplot:
                 obj.setProperty("backgroundColor", top)
                 obj.setProperty("backgroundColor2", bottom)

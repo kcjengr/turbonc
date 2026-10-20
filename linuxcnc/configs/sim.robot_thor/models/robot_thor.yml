@@ -100,36 +100,3 @@ root:
                                 axis: "-y"
                                 joint: 5
                                 mount: [0.0, -119.283752, 0.0, 90.0, 0.0, 0.0]
-                                spindle_htnc_0:
-                                    id: "spindle_htnc_0"
-                                    color: [0.7799999713897705, 0.7799999713897705, 0.800000011920929]
-                                    power: 3
-                                    model: "models/spindle_htnc_0.stl"
-                                    type: "static"
-                                    position: [0, 0, 0, 0, 0, 0]
-                                    origin: [0, 0, 0]
-                                    axis: null
-                                    joint: null
-                                    mount: null
-                                spindle_htnc_1:
-                                    id: "spindle_htnc_1"
-                                    color: [0.029999999329447746, 0.029999999329447746, 0.03500000014901161]
-                                    power: 3
-                                    model: "models/spindle_htnc_1.stl"
-                                    type: "static"
-                                    position: [0, 0, 0, 0, 0, 0]
-                                    origin: [0, 0, 0]
-                                    axis: null
-                                    joint: null
-                                    mount: null
-                                spindle_htnc_3:
-                                    id: "spindle_htnc_3"
-                                    color: [0.029999999329447746, 0.029999999329447746, 0.03500000014901161]
-                                    power: 3
-                                    model: "models/spindle_htnc_3.stl"
-                                    type: "static"
-                                    position: [0, 0, 0, 0, 0, 0]
-                                    origin: [0, 0, 0]
-                                    axis: null
-                                    joint: null
-                                    mount: null
