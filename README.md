@@ -105,7 +105,6 @@ The main window includes the following functional areas:
 - Probe controls, calibration workflows, probe parameters, and probe-result handling
 - Cells controls for subroutine calls and kinematics mode indication
 - HAL Meter, HAL Scope, HAL Show, LinuxCNC status, calibration, ClassicLadder, and simulated-probe tools
-- Robot Arm / Workspace support for the included robot-oriented configuration
 - Optional on-screen keyboard and persisted application settings
 
 ## Themes and settings

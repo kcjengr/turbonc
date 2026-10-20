@@ -117,12 +117,6 @@ dialogs:
   settings:
     provider: tnc.dialogs.settings:TncSettingsDialog
 
-  workspace:
-    provider: tnc.dialogs.robot_arm:RobotWorkspaceDialog
-
-  robot_arm:
-    provider: tnc.dialogs.robot_arm:RobotWorkspaceDialog
-
   home_all:
     provider: tnc.dialogs.home_all:HomeAll
     kwargs:
@@ -341,7 +335,7 @@ settings:
   dro.degree-format:
     default_value: '%9.2f'
 
-  # VTK backplot view settings
+  # 3D backplot view settings
 
   backplot.show-grid:
     default_value: false

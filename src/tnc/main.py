@@ -570,10 +570,10 @@ class MainWindow(VCPMainWindow):
             ed.setStyleSheet(sheet)
 
     def _apply_backplot_theme(self):
-        """Recolor the VTK backplot to match the theme: the gradient
+        """Recolor the 3D backplot to match the theme: the gradient
         background, the motion-type path colors and the camera-orientation
         gizmo axes. The loaded program is re-rendered so colors apply live."""
-        from PySide6.QtCore import QObject, QTimer
+        from PySide6.QtCore import QObject
         from PySide6.QtGui import QColor
         from tnc.generate_themes import (axis_colors,
                                          palette as _theme_palette,
@@ -623,28 +623,18 @@ class MainWindow(VCPMainWindow):
                 QColor(*c) for c in axis_colors((ar, ag, ab)))
 
         for obj in self.findChildren(QObject):
-            widget_class = obj.metaObject().className()
-            is_vtk_backplot = widget_class in ("VTKBackPlot", "VtkBackPlot")
-            is_qt3d_backplot = widget_class == "Qt3D0"
-            if is_vtk_backplot or is_qt3d_backplot:
-                obj.setProperty("backgroundColor", top)
-                obj.setProperty("backgroundColor2", bottom)
-                obj.setProperty("traverseColor", path_colors["traverse"])
-                obj.setProperty("arcfeedColor", path_colors["arcfeed"])
-                obj.setProperty("feedColor", path_colors["feed"])
-                obj.setProperty("dwellColor", path_colors["dwell"])
-                obj.setProperty("userColor", path_colors["user"])
-                if is_vtk_backplot or is_qt3d_backplot:
-                    obj.setProperty("navHelperXAxisColor", nav_x)
-                    obj.setProperty("navHelperYAxisColor", nav_y)
-                    obj.setProperty("navHelperZAxisColor", nav_z)
-                if is_vtk_backplot:
-                    if hasattr(obj, "reapplyNavHelperConfig"):
-                        obj.reapplyNavHelperConfig()
-                    # VTK setters update the stored color but don't replot.
-                    if (hasattr(obj, "reload_program")
-                            and getattr(obj, "_last_filename", None)):
-                        QTimer.singleShot(0, obj.reload_program)
+            if obj.metaObject().className() != "Qt3D0":
+                continue
+            obj.setProperty("backgroundColor", top)
+            obj.setProperty("backgroundColor2", bottom)
+            obj.setProperty("traverseColor", path_colors["traverse"])
+            obj.setProperty("arcfeedColor", path_colors["arcfeed"])
+            obj.setProperty("feedColor", path_colors["feed"])
+            obj.setProperty("dwellColor", path_colors["dwell"])
+            obj.setProperty("userColor", path_colors["user"])
+            obj.setProperty("navHelperXAxisColor", nav_x)
+            obj.setProperty("navHelperYAxisColor", nav_y)
+            obj.setProperty("navHelperZAxisColor", nav_z)
 
     def setTheme(self, name):
         """Persist and apply a theme by display name.
@@ -653,7 +643,7 @@ class MainWindow(VCPMainWindow):
         stylesheet swap is deferred to the next event-loop pass: re-applying
         the app stylesheet from inside a widget signal handler repolishes
         every widget while events are still being delivered, which has
-        crashed the app (segfault in the VTK backplot / OpenGL stack).
+        crashed the app (segfault in the 3D backplot / OpenGL stack).
         """
         if name not in THEME_FILES:
             LOG.warning("Unknown theme: %s", name)
@@ -669,7 +659,7 @@ class MainWindow(VCPMainWindow):
         """Persist and apply a view style by display name (deferred).
 
         Called by the settings dialog; unknown names are ignored. The
-        stylesheet swap is deferred for the same reason as setTheme (VTK
+        stylesheet swap is deferred for the same reason as setTheme (backplot
         repolish segfault mitigation).
         """
         if name not in VIEW_STYLE_FILES:
@@ -708,7 +698,7 @@ class MainWindow(VCPMainWindow):
 
         Coalesces rapid calls (e.g. dragging an opacity slider emits many
         valueChanged signals) into a single deferred apply, and keeps the
-        VTK-safe deferral used by the theme/style setters.
+        backplot-safe deferral used by the theme/style setters.
         """
         if getattr(self, '_style_apply_pending', False):
             return
@@ -1274,7 +1264,7 @@ class MainWindow(VCPMainWindow):
         except Exception:
             LOG.exception("Failed to read backplot.show-nav-helper setting")
         for obj in self.findChildren(QObject):
-            if obj.metaObject().className() in ("VTKBackPlot", "VtkBackPlot"):
+            if obj.metaObject().className() == "Qt3D0":
                 obj.setProperty("navHelperEnabled", bool(enabled))
                 if hasattr(obj, "reapplyNavHelperConfig"):
                     obj.reapplyNavHelperConfig()

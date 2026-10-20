@@ -548,10 +548,10 @@ GCodeEditor {
 }
 
 /*===========================================================================*/
-/*  VTK backplot — gradient background follows the theme accent             */
+/*  3D backplot — gradient background follows the theme accent             */
 /*===========================================================================*/
 
-VTKBackPlot {
+Qt3D0 {
     qproperty-backgroundColor: #0d2333;
     qproperty-backgroundColor2: #0a0e14;
 }

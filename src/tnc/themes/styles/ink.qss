@@ -578,7 +578,7 @@ GCodeEditor {
     qproperty-findStatusBorder: #8a8577;
 }
 
-VTKBackPlot {
+Qt3D0 {
     qproperty-backgroundColor: #f2eee4;
     qproperty-backgroundColor2: #ddd5c4;
 }
