@@ -84,6 +84,10 @@ linuxcnc/configs/sim.qtpyvcp/hal-widgets_ui.py
 src/tnc/resources_rc.py
 src/tnc/rc_resources.py
 src/tnc/resources.py
+# Compiled Qt resource bundle, built from resources.qrc by
+# src/tnc/generate_resources.py (see that file for why we ship a .rcc
+# instead of a generated resources_rc.py).
+src/tnc/tnc.rcc
 .pybuild/cpython3_3.11/scripts/tnc
 .pybuild/cpython3_3.11/turbonc-0.4.post2.dev0+a42095a-py3-none-any.whl
 .pybuild/
