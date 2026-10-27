@@ -17,36 +17,10 @@ from qtpyvcp.utilities import logger
 
 LOG = logger.getLogger("QtPyVCP." + __name__)
 
+import resources_rc
+
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
 THEMES_DIR = "themes"
-
-
-def _register_resources():
-    """Register the compiled Qt resource bundle (``tnc.rcc``).
-
-    The bundle is built from ``resources.qrc`` by
-    ``generate_resources.py`` (``pyside6-rcc --binary``). Registering it as
-    binary data costs no measurable memory, whereas the equivalent
-    ``resources_rc.py`` was a 19 MB source module: importing it made
-    shiboken's ``_mod_uses_pyside`` hook run ``inspect.getsource`` over the
-    whole file, which cached all ~418k lines in ``linecache`` (~40 MB kept
-    for the life of the process).
-
-    Only the ``:/`` URLs are used, so nothing else needs to change.
-    """
-    from PySide6.QtCore import QResource
-
-    rcc_path = os.path.join(VCP_DIR, "tnc.rcc")
-    if not os.path.isfile(rcc_path):
-        LOG.error("Qt resource bundle missing: %s (run "
-                  "generate_resources.py)", rcc_path)
-        return
-
-    if not QResource.registerResource(rcc_path):
-        LOG.error("Failed to register Qt resource bundle: %s", rcc_path)
-
-
-_register_resources()
 
 
 from tnc.view_styles import (BACKGROUND_FILES, BACKGROUND_NAMES,
