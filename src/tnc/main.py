@@ -1381,3 +1381,13 @@ class MainWindow(VCPMainWindow):
         except Exception:
             LOG.exception('Failed to read app.confirm-exit setting')
         super(MainWindow, self).closeEvent(event)
+
+
+# QUiLoader instantiates the .ui root widget (declared as VCPMainWindow) as a
+# temporary window while loading the layout. That instance also builds the
+# configured menu, and without this mirror it logs a bogus
+# "no attribute saveProgramAs" error before the real MainWindow menu exists.
+# The temporary window is deleted immediately; the real MainWindow defines its
+# own method and wins normal attribute lookup.
+if not hasattr(VCPMainWindow, "saveProgramAs"):
+    VCPMainWindow.saveProgramAs = MainWindow.saveProgramAs
