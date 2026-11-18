@@ -141,6 +141,22 @@ The `linuxcnc/configs/sim.robot_thor/` directory contains a six-axis Thor
 robot simulation with robot models, kinematics/HAL files, tool data, sample
 G-code, and a TurboNC-specific configuration overlay.
 
+The arm meshes are regenerated with the scripts in
+`linuxcnc/configs/sim.robot_thor/models/`; `thor_dh.py` is the single source of
+truth for the DH table, joint offsets, and home pose. After touching it, run:
+
+```sh
+python3 models/fetch_thor_meshes.py     # per-material GLBs from the upstream DAE
+python3 models/build_thor_spindle.py    # spindle body on the link-6 flange
+blender -b -P models/build_thor_arm.py  # rebuild asm_thor.blend + export GLBs
+python3 models/gen_thor_config.py       # robot_thor.yml + kinematics HAL
+```
+
+The renderer places each `type: angular` node with
+`M_current(joint) @ inv(M_home(joint))`, so every mesh must be authored in the
+DH-zero pose and every sub-mesh of a link must carry the same
+`joint`/`mount` pair, otherwise it will not follow the arm.
+
 Select the desired INI file from the LinuxCNC configuration chooser, or run it
 using the standard LinuxCNC command-line tools. The simulation configurations
 are intended for UI and integration testing; they are not machine-specific

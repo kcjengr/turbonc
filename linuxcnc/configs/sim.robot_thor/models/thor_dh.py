@@ -37,10 +37,14 @@ Q_LIMITS = [(-170.0, 170.0), (-90.0, 90.0), (-90.0, 90.0),
             (-170.0, 170.0), (-90.0, 90.0), (-170.0, 170.0)]
 
 # --- extracted modified DH (mm / deg) --------------------------------------
-# D[5] carries the spindle-nose offset NOSE along the tool axis, so the
-# genserkins frame-5 origin (the machine's controlled point) is the spindle
-# NOSE rather than the flange.  The world/gcode path then references the nose.
-NOSE = 92.0                                     # mm, flange -> spindle nose
+# D[5] is the flange -> controlled point (TCP) distance along the tool axis, so
+# the genserkins frame-5 origin is where G-code X/Y/Z lands.  The value is the
+# one the machine has always been configured with (the Robot CNC export
+# measured it from the mounted spindle): 13.5 mm is the URDF link-6 origin
+# offset above the flange and 105.7838 mm is the clamped-tool reference plane.
+# It also defines the G54/G55 work offsets in linuxcnc.var, so changing it
+# shifts every existing program along the tool axis.
+NOSE = 105.78375244140625                       # mm, flange -> TCP
 ALPHA = [0.0, 90.0, 0.0, 90.0, 90.0, 90.0]     # deg
 A = [0.0, 0.0, 160.0, 0.0, 0.0, 0.0]           # mm
 D = [202.0, 0.0, 0.0, 194.0, 0.0, 13.5 + NOSE]  # mm

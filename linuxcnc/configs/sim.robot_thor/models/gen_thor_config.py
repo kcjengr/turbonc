@@ -56,33 +56,46 @@ def load_manifest():
         return json.load(fh)
 
 
-def mesh_parts(part, entries, default_color, fallback):
-    """(primary_model, primary_color, static_children_for_extra_groups).
+def mesh_parts(part, entries, default_color, fallback, motion=None):
+    """(primary_model, primary_color, children_for_extra_material_groups).
 
-    The VTK actor paints one colour per node, so a part whose original COLLADA
+    The renderer paints one colour per node, so a part whose original COLLADA
     has several materials is split into the first group (the node itself) plus
-    one static child per remaining material.
+    one child per remaining material.
+
+    ``motion`` carries the parent link's ``type``/``origin``/``axis``/``joint``/
+    ``mount`` and is copied onto every extra child.  That is required: the
+    machine-parts renderer only animates nodes with ``type: angular`` *and* a
+    ``joint``/``mount`` pair, so a plain ``static`` child would stay frozen at
+    the DH zero pose while its link rotates and the arm would fall apart.
     """
     if not entries:
         return fallback, default_color, {}
     model = entries[0]["model"]
     color = entries[0]["color"]
+    motion = motion or {}
     kids = {}
     for i, e in enumerate(entries[1:], start=1):
         pid = "%s_%d" % (part, i)
-        kids[pid] = node(pid, e["color"], "static", [0, 0, 0], model=e["model"])
+        kids[pid] = node(pid, e["color"], motion.get("type", "static"),
+                         motion.get("origin", [0, 0, 0]),
+                         axis=motion.get("axis"), joint=motion.get("joint"),
+                         mnt=motion.get("mount"), model=e["model"])
     return model, color, kids
 
 
 def build_tree():
     man = load_manifest()
-    spindle = node("spindle", SPINDLE, "static", origin(5),
-                   model="models/spindle.stl")
+    # The spindle is bolted to link 6, so it has to ride joint 5 as well.
+    spindle = node("spindle", SPINDLE, "angular", origin(5),
+                   axis_name(5), 5, mount(5), model="models/spindle.stl")
     child = {"spindle": spindle}
     for j in range(5, -1, -1):
         part = "link%d" % (j + 1)
         model, color, kids = mesh_parts(
-            part, man.get(part), LINK, "models/%s.stl" % part)
+            part, man.get(part), LINK, "models/%s.stl" % part,
+            motion=dict(type="angular", origin=origin(j), axis=axis_name(j),
+                        joint=j, mount=mount(j)))
         kids = dict(kids)
         kids.update(child)
         link = node(part, color, "angular", origin(j),
@@ -134,8 +147,9 @@ HDR = """\
 # authored in the renderer home pose (joint feedback = 0, i.e. physical
 # q = -JOINT_OFFSET) and are moved with  M_current(joint) @ inv(M_home).  A part
 # whose COLLADA has several materials is split into the angular node (first
-# material) plus one static child per remaining material, each with its colour.
-# Joint actuators are baked into each link mesh; only linkN rotate.
+# material) plus one child per remaining material, each with its colour and the
+# same joint/mount so it rotates with the link.  Joint actuators are baked into
+# each link mesh; only linkN rotate.
 #
 #   alpha [%s] deg
 #   a     [%s] mm
@@ -177,7 +191,7 @@ def main():
     k = os.path.join(HERE, "..", "robot_thor-kinematics.hal")
     with open(k, "w") as fh:
         fh.write(KIN % (dh.JOINT_OFFSET, dh.machine_home(),
-                        alpha, a, dd, unrot))
+                        alpha, a, dd, unrot) + "\n")
     T = dh.dh_frames(dh.machine_home())[5]
     r = dh.rpy_deg(T[:3, :3])
     print("wrote", d, "and", os.path.normpath(k))

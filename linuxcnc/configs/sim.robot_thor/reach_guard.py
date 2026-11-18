@@ -37,9 +37,12 @@ import thor_dh as dh  # noqa: E402
 import hal  # noqa: E402
 
 # Shoulder pitch axis height in machine coordinates (mm) and reach sphere.
+# The fully-stretched arm measures A[2] + D[3] + D[5] from the shoulder, so the
+# guard must use the same D[5] as genserkins (a shorter value would let jogs
+# walk past the real envelope and fault the controller's IK).
 SHOULDER_Z = 202.0
-HARD_LIMIT = 459.5
-R_MAX_DEFAULT = 439.5
+HARD_LIMIT = dh.A[2] + dh.D[3] + dh.D[5]
+R_MAX_DEFAULT = HARD_LIMIT - 20.0
 
 # Look-ahead distance (mm) and Newton iteration budget for the IK check.
 LOOKAHEAD = 40.0
@@ -49,10 +52,20 @@ IK_TOL = 1e-7
 MOVE_EPS = 1e-4
 # After a trip, hold jog-stop asserted for this many scans (20 ms each).
 HOLD_SCANS = 5
+# A solved look-ahead pose may not move a joint further than this in one scan,
+# and must stay inside the physical joint travel.  genserkins has no joint
+# limits of its own, so without this a jog can walk the wrist into another
+# 360 deg branch (the arm visibly spins several turns) and then trip the
+# controller's soft limits on the next move.
+MAX_JOINT_STEP = 45.0       # deg
+JOINT_MARGIN = 5.0          # deg allowed outside the URDF travel
 
 _ALPHA = np.radians(dh.ALPHA)
 _A = dh.A
 _D = dh.D
+# Physical joint travel in machine coordinates (theta = physical + offset).
+J_MIN = [dh.Q_LIMITS[j][0] + dh.JOINT_OFFSET[j] - JOINT_MARGIN for j in range(6)]
+J_MAX = [dh.Q_LIMITS[j][1] + dh.JOINT_OFFSET[j] + JOINT_MARGIN for j in range(6)]
 
 
 def _dh_mat(al, a, d, th_deg):
@@ -108,19 +121,38 @@ def _pose(x, y, z, a, b, c):
     return T
 
 
-def _solvable(target, seed):
+def _solve(target, seed):
+    """Newton solve like genserkins; returns the joint solution or ``None``."""
     th = list(seed)
     for _ in range(IK_ITERS):
         e = _err(_frames(th)[5], target)
         if np.linalg.norm(e) < IK_TOL:
-            return True
+            return th
         try:
             dq = np.linalg.solve(_jac(th), e)
         except np.linalg.LinAlgError:
-            return False
+            return None
         for j in range(6):
             th[j] += math.degrees(dq[j])
-    return False
+    return None
+
+
+def _bad_solution(solution, seed):
+    """Why a look-ahead solution must not be followed, or ``''`` if it is fine."""
+    for j in range(6):
+        if solution[j] < J_MIN[j] or solution[j] > J_MAX[j]:
+            return "joint %d leaves its travel (%.0f..%.0f -> %.1f)" % (
+                j, J_MIN[j], J_MAX[j], solution[j])
+        if abs(solution[j] - seed[j]) > MAX_JOINT_STEP:
+            return "joint %d jumps %.0f deg in one scan" % (
+                j, solution[j] - seed[j])
+    return ""
+
+
+def _solvable(target, seed):
+    """True when a look-ahead pose is both solvable and inside the travel."""
+    solution = _solve(target, seed)
+    return solution is not None and not _bad_solution(solution, seed)
 
 
 comp = None
@@ -181,7 +213,17 @@ def main():
                         target = _pose(x + dx * u, y + dy * u, z + dz * u,
                                        comp["a"], comp["b"], comp["c"])
                         seed = [comp["j%d" % j] for j in range(6)]
-                        ik_stop = not _solvable(target, seed)
+                        solution = _solve(target, seed)
+                        if solution is None:
+                            ik_stop = True
+                        else:
+                            reason = _bad_solution(solution, seed)
+                            if reason:
+                                ik_stop = True
+                                if not comp["tripped"]:
+                                    # rtapi_print is not available in userspace
+                                    print("reach_guard: %s" % reason,
+                                          file=sys.stderr, flush=True)
 
                 if reach_stop or ik_stop or hold > 0:
                     comp["jog-stop"] = True

@@ -113,3 +113,7 @@ linuxcnc/configs/sim.qtpyvcp/tool_table.db
 *.db-wal
 *.db.bak-*
 .check_bounds.*.ngc
+
+# Blender autosave/backup files (models/asm_thor.blend is tracked).
+*.blend1
+*.blend2
