@@ -1,4 +1,17 @@
 #!/usr/bin/env python3
+"""LEGACY tool database backend -- superseded by QtPyVCP's backend.
+
+The sim INIs now call::
+
+    DB_PROGRAM = /usr/bin/python3 -m qtpyvcp.tools.tool_db_backend <db>
+
+Do not use ``python3 -m tool_db_backend`` from this directory: LinuxCNC
+chdirs to the config directory, so that name resolves this file. This module
+opens ``tools.sqlite`` in the current directory and ignores any database
+path argument, while the GUI's DBToolTable reads ``[EMCIO] TOOL_DB_FILE``.
+
+Kept only as a reference for the older schema; not used by the shipped sims.
+"""
 
 import os
 import sys

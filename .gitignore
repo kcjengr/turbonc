@@ -98,3 +98,18 @@ debian/python3-turbonc.substvars
 poetry.lock
 *_ui.py
 .dbeaver/
+
+# Compiled Qt resource bundle; built from resources.qrc by
+# src/tnc/generate_resources.py and by debian/rules.
+src/tnc/tnc.rcc
+
+# Runtime state and generated tool databases (the seed *.db files that are
+# intentionally tracked are mill_tools.db in the sim configs).
+linuxcnc/configs/sim.qtpyvcp/.vcp_persistent_data.json
+linuxcnc/configs/sim.robot_thor/.vcp_persistent_data.pickle
+linuxcnc/configs/sim.qtpyvcp/tool_table.db
+*.sqlite
+*.db-shm
+*.db-wal
+*.db.bak-*
+.check_bounds.*.ngc

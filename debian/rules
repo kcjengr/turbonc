@@ -7,6 +7,19 @@ export PYBUILD_SYSTEM=pyproject
 
 override_dh_auto_test:
 
-override_dh_install:
-	dh_install
-	qcompile debian/python3-turbonc
+override_dh_auto_build:
+	# Compile src/tnc/resources.qrc into the binary resource bundle
+	# src/tnc/tnc.rcc, registered at runtime by tnc.main.
+	#
+	# This must run BEFORE dh_auto_build: pybuild builds the wheel during
+	# that step, and the bundle has to be present for Poetry to include it.
+	# Generating it in override_dh_install (after dh_install) silently
+	# produced a package without the resources on a clean build.
+	#
+	# This replaces `qcompile`, which produced a generated resources_rc.py.
+	# That 19 MB source module cost ~40 MB of RSS at startup: importing it
+	# makes shiboken run inspect.getsource() over the whole file, and
+	# linecache keeps every line for the process lifetime. The .rcc carries
+	# the same resources with no measurable cost.
+	pyside6-rcc --binary src/tnc/resources.qrc -o src/tnc/tnc.rcc
+	dh_auto_build

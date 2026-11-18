@@ -10,7 +10,7 @@ accent hue. Edits to dark.qss / light.qss propagate by re-running:
     python3 generate_themes.py
 
 Safety colors are kept constant (estop red, armed green). The frosted dialog
-glass is painted in code and stays cyan.
+glass is painted in code and is tinted toward the active theme accent.
 
 The color scheme is consolidated per base: ``palette()`` clamps the accent's
 lightness into a visibility band so every accent has the same visual weight
@@ -116,7 +116,6 @@ LIGHT_MAP = {
     "rgba(13, 20, 34, 252)": "rgba(240, 246, 252, 252)",
     "rgba(13, 20, 34, 248)": "rgba(238, 244, 250, 248)",
     "rgba(10, 16, 26, 220)": "rgba(218, 228, 240, 220)",
-    "#0d2333": "#dde9f3",
     "#101622": "#e0e8f2",
     "#161e3c": "#d2ddf2",
     "#141c2a": "#e4ebf4",
@@ -188,27 +187,27 @@ def palette(main_hex, pressed_hex, base):
       orange, ...) that would otherwise wash out on the near-white base
     """
     main = _hex_to_rgb(main_hex)
-    h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in main))
+    h, lum, s = colorsys.rgb_to_hls(*(c / 255 for c in main))
     if base == "dark":
-        l = min(max(l, 0.50), 0.70)
+        lum = min(max(lum, 0.50), 0.70)
     else:
-        l = min(max(l, 0.20), 0.34)
-    main = tuple(round(c * 255) for c in colorsys.hls_to_rgb(h, l, s))
+        lum = min(max(lum, 0.20), 0.34)
+    main = tuple(round(c * 255) for c in colorsys.hls_to_rgb(h, lum, s))
     main_hex = _rgb_to_hex(main)
 
     def col(sat, light):
         return _rgb_to_hex(tuple(c * 255 for c in colorsys.hls_to_rgb(h, light, sat)))
 
     if base == "dark":
-        bevel_top = col(s * 0.6, min(l + 0.20, 0.75))
-        bevel_bottom = col(s * 0.45, max(l - 0.30, 0.05))
-        border = col(s * 0.55, max(l - 0.20, 0.08))
-        border_line = col(s * 0.65, max(l - 0.10, 0.12))
+        bevel_top = col(s * 0.6, min(lum + 0.20, 0.75))
+        bevel_bottom = col(s * 0.45, max(lum - 0.30, 0.05))
+        border = col(s * 0.55, max(lum - 0.20, 0.08))
+        border_line = col(s * 0.65, max(lum - 0.10, 0.12))
         # neutral accents (s == 0) get a pure-gray disabled border; colored
         # accents keep the fixed 0.10 saturation as before
-        border_disabled = (col(0.10, max(l - 0.22, 0.10)) if s
-                           else col(0.0, max(l - 0.22, 0.10)))
-        text_tint = col(s * 0.9, min(l + 0.44, 0.92))
+        border_disabled = (col(0.10, max(lum - 0.22, 0.10)) if s
+                           else col(0.0, max(lum - 0.22, 0.10)))
+        text_tint = col(s * 0.9, min(lum + 0.44, 0.92))
     else:
         bevel_top = _rgb_to_hex(_mix(main, (255, 255, 255), 0.55))
         bevel_bottom = _rgb_to_hex(_mix(main, (0, 0, 0), 0.38))
@@ -219,9 +218,9 @@ def palette(main_hex, pressed_hex, base):
 
     return {
         "main": main_hex,
-        "light": col(s, min(l + 0.32, 0.78)) if base == "dark" else _rgb_to_hex(_mix(main, (255, 255, 255), 0.35)),
-        "mid": col(s, max(l - 0.04, 0.32)),
-        "deep": col(s, max(l - 0.26, 0.12)),
+        "light": col(s, min(lum + 0.32, 0.78)) if base == "dark" else _rgb_to_hex(_mix(main, (255, 255, 255), 0.35)),
+        "mid": col(s, max(lum - 0.04, 0.32)),
+        "deep": col(s, max(lum - 0.26, 0.12)),
         "pressed": pressed_hex,
         "bevel_top": bevel_top,
         "bevel_bottom": bevel_bottom,
@@ -244,12 +243,12 @@ def recolor_to_accent(base_rgb, accent_rgb):
     """
     ar, ag, ab = accent_rgb
     if ar == ag == ab:
-        _, l, _ = colorsys.rgb_to_hls(*(c / 255 for c in base_rgb))
-        v = round(l * 255)
+        _, lum, _ = colorsys.rgb_to_hls(*(c / 255 for c in base_rgb))
+        v = round(lum * 255)
         return (v, v, v)
-    h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in base_rgb))
+    h, lum, s = colorsys.rgb_to_hls(*(c / 255 for c in base_rgb))
     ah, _, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
-    return tuple(round(c * 255) for c in colorsys.hls_to_rgb(ah, l, s))
+    return tuple(round(c * 255) for c in colorsys.hls_to_rgb(ah, lum, s))
 
 
 def axis_colors(accent_rgb):
@@ -262,17 +261,17 @@ def axis_colors(accent_rgb):
     """
     ar, ag, ab = accent_rgb
     if ar == ag == ab:
-        _, l, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
+        _, lum, _ = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
 
         def _gray(offset):
-            return (round(min(1.0, max(0.0, l + offset)) * 255),) * 3
+            return (round(min(1.0, max(0.0, lum + offset)) * 255),) * 3
 
         return ((ar, ag, ab), _gray(-0.22), _gray(0.22))
-    h, l, s = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
+    h, lum, s = colorsys.rgb_to_hls(ar / 255, ag / 255, ab / 255)
 
     def _rotated(deg):
         h2 = (h + deg / 360.0) % 1.0
-        return tuple(round(c * 255) for c in colorsys.hls_to_rgb(h2, l, s))
+        return tuple(round(c * 255) for c in colorsys.hls_to_rgb(h2, lum, s))
 
     return ((ar, ag, ab), _rotated(120), _rotated(240))
 
@@ -398,18 +397,18 @@ HEX_STOPS = {
 def _recolor_rgba(token, alpha, hue):
     """Recolor an rgba surface stop to the given hue (same brightness)."""
     r, g, b = (int(c) for c in re.findall(r"\d+", token)[:3])
-    h, l, s = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    h, lum, s = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
     nr, ng, nb = (round(c * 255)
-                  for c in colorsys.hls_to_rgb(hue, l, s))
+                  for c in colorsys.hls_to_rgb(hue, lum, s))
     return f"rgba({nr}, {ng}, {nb}, {alpha})"
 
 
 def _recolor_hex(token, hue):
     """Recolor a hex color to the given hue (same brightness)."""
     r, g, b = _hex_to_rgb(token)
-    h, l, s = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    h, lum, s = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
     nr, ng, nb = (round(c * 255)
-                  for c in colorsys.hls_to_rgb(hue, l, s))
+                  for c in colorsys.hls_to_rgb(hue, lum, s))
     return _rgb_to_hex((nr, ng, nb))
 
 
@@ -442,7 +441,7 @@ def substitute(text, accent, base):
                                        min(255, int(m.group(2)) + 60)),
             text)
     # recolor the surface gradients to the accent hue
-    h, l, s = colorsys.rgb_to_hls(*(c / 255 for c in p["rgb"]))
+    h, lum, s = colorsys.rgb_to_hls(*(c / 255 for c in p["rgb"]))
     for token, alpha in SURFACE_STOPS[base]:
         if token in text:
             text = text.replace(token, _recolor_rgba(token, alpha, h))
@@ -480,15 +479,15 @@ SAFETY_HEXES = frozenset(("#ff1744", "#00ff9d", "#ffd9d9", "#c9ffe9",
 def _neutralize_hex(token):
     """Desaturate a hex color to gray, keeping its lightness."""
     r, g, b = _hex_to_rgb(token)
-    _, l, _ = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
-    return _rgb_to_hex((round(l * 255),) * 3)
+    _, lum, _ = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    return _rgb_to_hex((round(lum * 255),) * 3)
 
 
 def _neutralize_rgba(token, alpha):
     """Desaturate an rgba surface stop to gray, keeping its lightness."""
     r, g, b = (int(c) for c in re.findall(r"\d+", token)[:3])
-    _, l, _ = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
-    v = round(l * 255)
+    _, lum, _ = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    v = round(lum * 255)
     return f"rgba({v}, {v}, {v}, {alpha})"
 
 

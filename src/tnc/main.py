@@ -17,16 +17,47 @@ from qtpyvcp.utilities import logger
 
 LOG = logger.getLogger("QtPyVCP." + __name__)
 
-import resources_rc
-
 VCP_DIR = os.path.dirname(os.path.abspath(__file__))
 THEMES_DIR = "themes"
-
 
 from tnc.view_styles import (BACKGROUND_FILES, BACKGROUND_NAMES,
                              VIEW_STYLE_FILES, VIEW_STYLE_NAMES,
                              render_view_style, scale_rgba_alphas,
-                             tint_color, tint_overlay)
+                             tint_overlay)
+
+
+def _register_resources():
+    """Register the compiled Qt resource bundle (``tnc.rcc``).
+
+    The bundle is built from ``resources.qrc`` by ``generate_resources.py``
+    (``pyside6-rcc --binary``) and, from a Debian package, by
+    ``debian/rules`` before the wheel is installed. Registering the binary
+    bundle costs no measurable memory, whereas the equivalent
+    ``resources_rc.py`` was a 19 MB source module: importing it made
+    shiboken's ``_mod_uses_pyside`` hook run ``inspect.getsource`` over the
+    whole file, which cached all ~418k lines in ``linecache`` (~40 MB kept
+    for the life of the process).
+
+    For older ``qcompile``-based checkouts the generated ``resources_rc``
+    module is still accepted as a fallback. A missing bundle is logged but
+    not fatal; the UI simply has no icons.
+    """
+    rcc_path = os.path.join(VCP_DIR, "tnc.rcc")
+    if os.path.isfile(rcc_path):
+        from PySide6.QtCore import QResource
+        if QResource.registerResource(rcc_path):
+            return
+        LOG.error("Failed to register Qt resource bundle: %s", rcc_path)
+    try:
+        import resources_rc  # noqa: F401  (registers the resources on import)
+        return
+    except ImportError:
+        pass
+    LOG.error("Qt resource bundle missing: %s (run "
+              "src/tnc/generate_resources.py)", rcc_path)
+
+
+_register_resources()
 
 # Theme registry: display name -> qss file. The `theme.name` setting stores
 # the index of the selected name in THEME_NAMES. The non-cyan variants are
@@ -1229,13 +1260,36 @@ class MainWindow(VCPMainWindow):
             connected += 1
         LOG.info("Wired %d joint jog buttons from window.ui", connected)
 
-    def _jog_speed_mm(self):
-        """Jog speed in mm/s for directive joint jog commands."""
+    def _jog_speed(self, jnum):
+        """Jog speed in joint-units per second for directive joint jogging.
+
+        Angular joints (``[JOINT_n] TYPE = ANGULAR``, e.g. all six Thor
+        joints) take a speed in degrees/second and use the angular-speed
+        setting; linear joints use the linear-speed setting. Both settings
+        are stored in units/minute by QtPyVCP.
+        """
+        angular = False
+        try:
+            import linuxcnc
+            st = self._lc_stat()
+            if st is not None:
+                st.poll()
+                angular = st.joint[int(jnum)]['jointType'] == linuxcnc.ANGULAR
+        except Exception:  # noqa: BLE001 - status may not be up yet
+            LOG.debug("joint %s type unavailable; assuming linear", jnum)
+
         try:
             from qtpyvcp import actions
-            return float(actions.machine.jog.linear_speed.value) / 60.0
-        except Exception:
-            return 66.67  # 4000 mm/min default
+        except Exception:  # noqa: BLE001 - actions unavailable outside the app
+            return (360.0 if angular else 4000.0) / 60.0
+
+        try:
+            if angular:
+                return float(actions.machine.jog_angular_speed.value) / 60.0
+            return float(actions.machine.jog_linear_speed.value) / 60.0
+        except Exception:  # noqa: BLE001 - setting may be absent
+            LOG.debug("jog speed setting unavailable; using default")
+            return (360.0 if angular else 4000.0) / 60.0
 
     def _jog_joint(self, jnum, direction):
         """Jog a single joint (+/-) or stop (0) in joint mode."""
@@ -1249,7 +1303,7 @@ class MainWindow(VCPMainWindow):
             setTaskMode(linuxcnc.MODE_MANUAL)
             cmd.teleop_enable(0)
             cmd.jog(linuxcnc.JOG_CONTINUOUS, True, int(jnum),
-                    self._jog_speed_mm() * direction)
+                    self._jog_speed(jnum) * direction)
         except Exception:
             LOG.exception("Failed to jog joint %d", jnum)
 
@@ -1269,13 +1323,31 @@ class MainWindow(VCPMainWindow):
                 if hasattr(obj, "reapplyNavHelperConfig"):
                     obj.reapplyNavHelperConfig()
 
+    def saveProgramAs(self):
+        """Save the active G-code editor buffer under a new name.
+
+        The editor is a native QtPyVCP widget, so this is the only place
+        that knows how to reach its ``saveFileAs()`` slot from the menu.
+        """
+        editors = []
+        for name in ("gcodeEditor", "gcodeEditor_2"):
+            editor = self.findChild(QObject, name)
+            if editor is not None and hasattr(editor, "saveFileAs"):
+                editors.append(editor)
+        if not editors:
+            LOG.warning("Save As: no GCodeEditor widget found")
+            return
+        editor = next((e for e in editors if e.hasFocus()), None)
+        if editor is None:
+            editor = next((e for e in editors if e.isVisible()), editors[0])
+        try:
+            editor.saveFileAs()
+        except Exception:  # noqa: BLE001 - the native editor reports its own errors
+            LOG.exception("Save As failed")
+
     @Slot(QAbstractButton)
     def on_probeTabGroup_buttonClicked(self, button):
         self.probe_tab_widget.setCurrentIndex(button.property('page'))
-
-    @Slot(QAbstractButton)
-    def on_sidebarTabGroup_buttonClicked(self, button):
-        self.sidebar_widget.setCurrentIndex(button.property('page'))
 
     # Fwd/Back buttons off the stacked widget
     def on_probe_help_next_released(self):

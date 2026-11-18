@@ -18,10 +18,11 @@ TurboNC is developed and packaged for:
 - Python 3.11 or newer
 - QtPyVCP with PySide6
 
-The Debian package declares the remaining Qt, VTK, PyQtGraph, YAML, SQLAlchemy,
-serial, and related runtime dependencies. Real machines also require a
-working LinuxCNC configuration, HAL setup, and appropriate hardware safety
-systems.
+The Debian package declares the remaining Qt, YAML, SQLAlchemy, serial, and
+related runtime dependencies. The 3D backplot uses the Qt Quick 3D widget
+provided by the matching QtPyVCP build (`Qt3D0`); the public PyPI QtPyVCP
+release does not provide it. Real machines also require a working LinuxCNC
+configuration, HAL setup, and appropriate hardware safety systems.
 
 ## Installation
 
@@ -52,6 +53,8 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e .
+# Build the icon resource bundle (gitignored; needs pyside6-rcc):
+python src/tnc/generate_resources.py
 ```
 
 The package installs the `tnc` command and registers TurboNC as a QtPyVCP VCP
@@ -64,8 +67,12 @@ tnc --help
 ```
 
 For packaging work, the Debian build uses `dpkg-buildpackage` and the
-`debian/rules` file. It also runs `qcompile` during package installation so
-QtPyVCP can discover the installed VCP resources.
+`debian/rules` file. It compiles `src/tnc/resources.qrc` into the binary
+`src/tnc/tnc.rcc` with `pyside6-rcc` before the Python package is installed;
+`tnc.main` registers that bundle at startup. This avoids the generated
+19 MB `resources_rc.py` that `qcompile` used to produce (which cost roughly
+40 MB of RSS at startup), and keeps the bundled resources inside the
+installed package.
 
 ## Running with LinuxCNC
 
@@ -96,7 +103,7 @@ examples of this in `linuxcnc/configs/sim.qtpyvcp/` and
 
 The main window includes the following functional areas:
 
-- Program loading, G-code editing, syntax highlighting, run/step/pause/resume/abort controls, and a VTK backplot
+- Program loading, G-code editing, syntax highlighting, run/step/pause/resume/abort controls, and a 3D backplot
 - Machine power, E-stop, homing, coolant, override-limit, and jog controls
 - Relative and absolute DROs with per-axis offset actions
 - A dynamically populated `SET TO ZERO` panel for the machine's configured axes

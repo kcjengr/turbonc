@@ -326,7 +326,6 @@ class TncSettingsDialog(QDialog):
         return QColor(r, g, b)
 
     def _pick_tint_color(self):
-        from PySide6.QtGui import QColor
         from PySide6.QtWidgets import QColorDialog
         color = QColorDialog.getColor(self._effective_tint_color(), self,
                                       "Tint Color")

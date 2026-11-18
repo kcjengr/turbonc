@@ -17,7 +17,8 @@ default_menubar:
       action: program.clear
 
     - title: "Save &As"
-      action:
+      action: win.saveProgramAs
+      shortcut: ctrl+shift+s
 
     - separator
 
@@ -58,7 +59,7 @@ default_menubar:
 
     - title: Resume
       action: program.resume
-      shortcut: R
+      shortcut: ctrl+r
 
     - title: Abort
       action: program.abort

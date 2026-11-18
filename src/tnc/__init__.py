@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
-"""Main entry point for Jauria CNC.
+"""Main entry point for TurboNC.
 
-This module contains the code necessary to be able to launch Jauria CNC
+This module contains the code necessary to be able to launch TurboNC
 directly from the command line, without using qtpyvcp. It handles
 parsing command line args and starting the main application.
 
 Example:
     Assuming the dir this file is located in is on the PATH, you can
-    launch Jauria CNC by saying::
+    launch TurboNC by saying::
 
         $ tnc --ini=/path/to/config.ini [options ...]
 

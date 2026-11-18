@@ -6,7 +6,8 @@ qtdesigner:
 
 vcp:
   name: TurBoNC
-  version: v0.0.3
+  # Informational only; `tnc --version` reports the package metadata version.
+  version: dev
   author: TurBoss
   description: Just the basic functions I need to run linuxcnc
 

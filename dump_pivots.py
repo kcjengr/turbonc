@@ -1,4 +1,7 @@
-import bpy, sys, math
+import math
+import sys
+
+import bpy
 
 path = sys.argv[sys.argv.index("--") + 1] if "--" in sys.argv else None
 bpy.ops.wm.open_mainfile(filepath=path)
