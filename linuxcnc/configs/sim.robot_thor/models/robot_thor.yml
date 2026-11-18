@@ -23,7 +23,7 @@ root:
     id: "table"
     color: [0.16, 0.16, 0.17]
     power: 3
-    model: "models/table.stl"
+    model: "models/table.glb"
     type: "table"
     position: [0, 0, 0, 0, 0, 0]
     origin: [0, 0, 0]
@@ -144,7 +144,7 @@ root:
                                     id: "spindle"
                                     color: [0.42, 0.43, 0.45]
                                     power: 3
-                                    model: "models/spindle.stl"
+                                    model: "models/spindle.glb"
                                     type: "angular"
                                     position: [0, 0, 0, 0, 0, 0]
                                     origin: [160.0, 0.0, 127.284]

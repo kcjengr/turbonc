@@ -137,10 +137,18 @@ def _solve(target, seed):
     return None
 
 
+def _overshoot(joint, value):
+    """How far ``value`` is outside the joint travel (0 when inside)."""
+    return max(J_MIN[joint] - value, value - J_MAX[joint], 0.0)
+
+
 def _bad_solution(solution, seed):
     """Why a look-ahead solution must not be followed, or ``''`` if it is fine."""
     for j in range(6):
-        if solution[j] < J_MIN[j] or solution[j] > J_MAX[j]:
+        # Leaving the physical travel is only a problem when the jog is walking
+        # further out: a joint that is already outside must be able to come
+        # back, otherwise the operator is locked out of recovery.
+        if _overshoot(j, solution[j]) > _overshoot(j, seed[j]) + 0.5:
             return "joint %d leaves its travel (%.0f..%.0f -> %.1f)" % (
                 j, J_MIN[j], J_MAX[j], solution[j])
         if abs(solution[j] - seed[j]) > MAX_JOINT_STEP:
@@ -180,6 +188,7 @@ def main():
 
     last = None
     last_ds = None
+    last_reason = ""
     hold = 0
 
     try:
@@ -195,6 +204,7 @@ def main():
             if not guarding:
                 comp["jog-stop"] = False
                 comp["tripped"] = False
+                last_reason = ""
                 hold = 0
                 last = (x, y, z)
                 last_ds = ds
@@ -220,10 +230,11 @@ def main():
                             reason = _bad_solution(solution, seed)
                             if reason:
                                 ik_stop = True
-                                if not comp["tripped"]:
+                                if reason != last_reason:
                                     # rtapi_print is not available in userspace
                                     print("reach_guard: %s" % reason,
                                           file=sys.stderr, flush=True)
+                                    last_reason = reason
 
                 if reach_stop or ik_stop or hold > 0:
                     comp["jog-stop"] = True

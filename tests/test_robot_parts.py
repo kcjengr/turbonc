@@ -8,6 +8,8 @@ link rotates and the arm falls apart.
 """
 
 import importlib.util
+import json
+import struct
 import unittest
 from pathlib import Path
 
@@ -42,6 +44,22 @@ def _load_parts():
     parts = []
     _walk(data, parts)
     return parts
+
+
+def _glb_bounds(path):
+    """((minx, miny, minz), (maxx, maxy, maxz)) from the glTF accessors."""
+    with open(path, "rb") as handle:
+        data = handle.read()
+    length = struct.unpack_from("<I", data, 12)[0]
+    document = json.loads(data[20:20 + length].decode("utf-8"))
+    lows, highs = [], []
+    for accessor in document.get("accessors", []):
+        if accessor.get("type") == "VEC3" and "min" in accessor:
+            lows.append(accessor["min"])
+            highs.append(accessor["max"])
+    low = tuple(min(values[i] for values in lows) for i in range(3))
+    high = tuple(max(values[i] for values in highs) for i in range(3))
+    return low, high
 
 
 @unittest.skipIf(yaml is None or numpy is None,
@@ -79,6 +97,26 @@ class MachinePartsTest(unittest.TestCase):
                 continue
             with self.subTest(node=node.get("id"), model=model):
                 self.assertTrue((MODELS / Path(model).name).is_file(), model)
+
+    def test_meshes_are_exported_z_up(self):
+        """The GLBs are baked into the renderer's Y-up frame ("Z+ up").
+
+        machine.py hands QML a transform that is already converted to the Qt
+        Quick 3D Y-up scene frame, so the vertices must be too - that is what
+        Blender's "+Y Up" glTF option writes.  If a re-export drops that
+        option, every part is drawn rotated 90 degrees about X.
+        """
+        low, high = _glb_bounds(MODELS / "table.glb")
+        extents = [high[i] - low[i] for i in range(3)]
+        # The floor plate is flat in the up axis: Y is its smallest extent.
+        self.assertEqual(extents.index(min(extents)), 1,
+                         "table.glb is not Y-up (extents %s)" % extents)
+
+        low, high = _glb_bounds(MODELS / "link1.glb")
+        # link1 is the upright base column: centred on X/Z and above Y=0.
+        self.assertAlmostEqual((low[0] + high[0]) / 2.0, 0.0, delta=5.0)
+        self.assertAlmostEqual((low[2] + high[2]) / 2.0, 0.0, delta=5.0)
+        self.assertGreater(low[1], 0.0)
 
     def test_joint_count_and_order(self):
         joints = [node["joint"] for node, _parent in self.parts

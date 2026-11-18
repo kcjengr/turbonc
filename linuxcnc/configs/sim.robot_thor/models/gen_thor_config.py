@@ -88,7 +88,7 @@ def build_tree():
     man = load_manifest()
     # The spindle is bolted to link 6, so it has to ride joint 5 as well.
     spindle = node("spindle", SPINDLE, "angular", origin(5),
-                   axis_name(5), 5, mount(5), model="models/spindle.stl")
+                   axis_name(5), 5, mount(5), model="models/spindle.glb")
     child = {"spindle": spindle}
     for j in range(5, -1, -1):
         part = "link%d" % (j + 1)
@@ -107,7 +107,7 @@ def build_tree():
     bkids.update(child)
     base = node("base", bcolor, "table", [0, 0, 0], model=bmodel, children=bkids)
     return node("table", DARK, "table", [0, 0, 0],
-                model="models/table.stl", children={"base": base})
+                model="models/table.glb", children={"base": base})
 
 
 KEYS = ["id", "color", "power", "model", "type", "position", "origin", "axis",
