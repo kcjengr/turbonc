@@ -19,7 +19,12 @@ import math
 import unittest
 from pathlib import Path
 
-import yaml
+try:
+    import numpy  # noqa: F401  (thor_dh.py is numpy based)
+    import yaml
+except ImportError:      # pragma: no cover - CI installs PyYAML and NumPy
+    numpy = None
+    yaml = None
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "linuxcnc" / "configs" / "sim.robot_thor"
@@ -57,6 +62,8 @@ def _parts():
     return out
 
 
+@unittest.skipIf(yaml is None or numpy is None,
+                 "PyYAML and NumPy are required for the kinematics checks")
 class KinematicsConsistencyTest(unittest.TestCase):
     def setUp(self):
         self.dh = _thor_dh()

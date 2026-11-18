@@ -11,7 +11,12 @@ import importlib.util
 import unittest
 from pathlib import Path
 
-import yaml
+try:
+    import numpy  # noqa: F401  (gen_thor_config.py -> thor_dh.py is numpy based)
+    import yaml
+except ImportError:      # pragma: no cover - CI installs PyYAML and NumPy
+    numpy = None
+    yaml = None
 
 ROOT = Path(__file__).resolve().parents[1]
 MODELS = ROOT / "linuxcnc" / "configs" / "sim.robot_thor" / "models"
@@ -39,6 +44,8 @@ def _load_parts():
     return parts
 
 
+@unittest.skipIf(yaml is None or numpy is None,
+                 "PyYAML and NumPy are required for the machine-parts checks")
 class MachinePartsTest(unittest.TestCase):
     def setUp(self):
         self.parts = _load_parts()
